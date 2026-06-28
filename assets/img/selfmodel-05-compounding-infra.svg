@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">第五层：复利的底层基础设施</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：知识、技能、声誉等复利曲线建立在健康与财务这两块底层基础设施之上；如果健康崩溃或财务失控，上层复利会归零；AI 通过采集、分析、反馈、行为构建自我管理闭环。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 28px; font-weight: 760; }
+      .claim { font-size: 17px; font-weight: 700; }
+      .claim-sub { font-size: 14px; fill: #4b2e83; }
+      .panel-title { font-size: 19px; font-weight: 760; }
+      .node-title { font-size: 17px; font-weight: 760; }
+      .small-title { font-size: 14px; font-weight: 760; }
+      .caption { font-size: 13px; fill: #3f4e4c; }
+      .tiny { font-size: 11.5px; fill: #596362; }
+      .badge { font-size: 12px; font-weight: 760; }
+      .footer { font-size: 18px; font-weight: 760; }
+      .panel { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.35; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.78; }
+      .dash { stroke-dasharray: 6 7; }
+      .zero-line { stroke: #f1a23a; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .warn-text { fill: #7a3f00; }
+      .green-text { fill: #006b61; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+    </style>
+  </defs>
+
+  <!-- Header and central claim -->
+  <text x="512" y="42" text-anchor="middle" class="title">第五层：复利的底层基础设施</text>
+  <rect x="70" y="66" width="884" height="64" rx="8" class="purple"/>
+  <text x="512" y="94" text-anchor="middle" class="claim purple-text">知识、技能、声誉等复利都有隐含前提：人的状态可持续</text>
+  <text x="512" y="117" text-anchor="middle" class="claim-sub">健康和财务不是附属项，而是所有长期积累的底层基础设施。</text>
+
+  <!-- Upper compounding assets -->
+  <rect x="52" y="154" width="920" height="195" rx="8" class="panel"/>
+  <text x="82" y="186" class="panel-title">上层：可见的复利曲线</text>
+  <text x="305" y="186" class="caption">只有状态持续，曲线才会继续向上弯。</text>
+
+  <rect x="82" y="204" width="252" height="96" rx="8" class="white"/>
+  <text x="105" y="232" class="node-title blue-text">知识复利</text>
+  <text x="105" y="254" class="tiny">阅读、写作、判断力</text>
+  <line x1="114" y1="278" x2="303" y2="278" class="soft-line"/>
+  <line x1="114" y1="278" x2="114" y2="246" class="soft-line"/>
+  <path d="M 124 275 C 157 271, 181 262, 205 250 C 235 235, 263 221, 298 212" fill="none" stroke="#4f8fd6" stroke-width="2.4" stroke-linecap="round"/>
+  <polygon points="298,212 288,211 292,221" fill="#4f8fd6"/>
+
+  <rect x="386" y="204" width="252" height="96" rx="8" class="white"/>
+  <text x="409" y="232" class="node-title green-text">技能复利</text>
+  <text x="409" y="254" class="tiny">工具、项目、执行密度</text>
+  <line x1="418" y1="278" x2="607" y2="278" class="soft-line"/>
+  <line x1="418" y1="278" x2="418" y2="246" class="soft-line"/>
+  <path d="M 428 275 C 463 272, 488 263, 514 249 C 544 233, 571 219, 602 210" fill="none" stroke="#10a98c" stroke-width="2.4" stroke-linecap="round"/>
+  <polygon points="602,210 592,210 596,220" fill="#10a98c"/>
+
+  <rect x="690" y="204" width="252" height="96" rx="8" class="white"/>
+  <text x="713" y="232" class="node-title purple-text">声誉复利</text>
+  <text x="713" y="254" class="tiny">信任、机会、协作半径</text>
+  <line x1="722" y1="278" x2="911" y2="278" class="soft-line"/>
+  <line x1="722" y1="278" x2="722" y2="246" class="soft-line"/>
+  <path d="M 732 275 C 765 271, 790 263, 818 247 C 846 231, 874 218, 906 211" fill="none" stroke="#8b6fd6" stroke-width="2.4" stroke-linecap="round"/>
+  <polygon points="906,211 896,210 900,220" fill="#8b6fd6"/>
+
+  <line x1="208" y1="300" x2="208" y2="316" class="soft-line"/>
+  <line x1="512" y1="300" x2="512" y2="316" class="soft-line"/>
+  <line x1="816" y1="300" x2="816" y2="316" class="soft-line"/>
+  <rect x="84" y="316" width="856" height="22" rx="8" fill="#ffffff" stroke="#d5d1c7" stroke-width="1.1"/>
+  <text x="512" y="331" text-anchor="middle" class="badge">共同承重梁：可持续的身体状态 + 可控的现金流</text>
+
+  <path d="M 870 314 L 883 324 L 873 334 L 886 344" class="zero-line"/>
+  <rect x="748" y="162" width="188" height="36" rx="8" class="yellow"/>
+  <text x="842" y="185" text-anchor="middle" class="small-title warn-text">基础断裂 -> 曲线归零</text>
+  <line x1="870" y1="314" x2="870" y2="204" class="zero-line dash"/>
+  <polygon points="870,204 864,214 876,214" fill="#f1a23a"/>
+
+  <!-- Foundation -->
+  <line x1="308" y1="350" x2="308" y2="376" class="line"/>
+  <polygon points="308,376 302,366 314,366" fill="#74736c"/>
+  <line x1="716" y1="350" x2="716" y2="376" class="line"/>
+  <polygon points="716,376 710,366 722,366" fill="#74736c"/>
+
+  <rect x="52" y="376" width="920" height="126" rx="8" class="panel"/>
+  <text x="82" y="410" class="panel-title">底层：复利的基础设施</text>
+  <text x="316" y="410" class="caption">这两块地基决定长期曲线能不能继续存在。</text>
+
+  <rect x="92" y="428" width="392" height="56" rx="8" class="green"/>
+  <text x="118" y="456" class="node-title green-text">健康：状态可持续</text>
+  <text x="118" y="476" class="caption">体力、睡眠、情绪、认知稳定性</text>
+
+  <rect x="540" y="428" width="392" height="56" rx="8" class="blue"/>
+  <text x="566" y="456" class="node-title blue-text">财务：现金流可持续</text>
+  <text x="566" y="476" class="caption">负债、储备、风险边界、收入韧性</text>
+
+  <!-- Failure modes -->
+  <rect x="52" y="526" width="420" height="164" rx="8" class="panel"/>
+  <text x="82" y="559" class="panel-title warn-text">基础失效时发生什么</text>
+
+  <rect x="82" y="576" width="360" height="31" rx="8" class="yellow"/>
+  <text x="101" y="597" class="small-title warn-text">健康崩了</text>
+  <text x="194" y="597" class="caption warn-text">知识、技能、声誉曲线同时归零</text>
+
+  <rect x="82" y="617" width="360" height="31" rx="8" class="yellow"/>
+  <text x="101" y="638" class="small-title warn-text">财务失控</text>
+  <text x="194" y="638" class="caption warn-text">被迫用短期生存替代长期积累</text>
+
+  <rect x="82" y="658" width="360" height="31" rx="8" class="yellow"/>
+  <text x="101" y="679" class="small-title warn-text">过去短板</text>
+  <text x="194" y="679" class="caption warn-text">身体和钱最缺系统性管理工具</text>
+
+  <!-- AI loop -->
+  <rect x="500" y="526" width="472" height="164" rx="8" class="panel"/>
+  <text x="530" y="559" class="panel-title blue-text">AI 的角色：加固基础</text>
+  <text x="739" y="559" class="caption">用数据、模式、实时反馈建立闭环。</text>
+
+  <rect x="530" y="584" width="86" height="42" rx="8" class="blue"/>
+  <text x="573" y="610" text-anchor="middle" class="small-title blue-text">采集</text>
+  <line x1="616" y1="605" x2="641" y2="605" class="line"/>
+  <polygon points="641,605 633,600 633,610" fill="#74736c"/>
+
+  <rect x="645" y="584" width="86" height="42" rx="8" class="blue"/>
+  <text x="688" y="610" text-anchor="middle" class="small-title blue-text">分析</text>
+  <line x1="731" y1="605" x2="756" y2="605" class="line"/>
+  <polygon points="756,605 748,600 748,610" fill="#74736c"/>
+
+  <rect x="760" y="584" width="86" height="42" rx="8" class="blue"/>
+  <text x="803" y="610" text-anchor="middle" class="small-title blue-text">反馈</text>
+  <line x1="846" y1="605" x2="871" y2="605" class="line"/>
+  <polygon points="871,605 863,600 863,610" fill="#74736c"/>
+
+  <rect x="875" y="584" width="66" height="42" rx="8" class="green"/>
+  <text x="908" y="610" text-anchor="middle" class="small-title green-text">行为</text>
+
+  <path d="M 908 626 L 908 650 L 573 650 L 573 632" class="line"/>
+  <polygon points="573,632 567,642 579,642" fill="#74736c"/>
+  <rect x="608" y="635" width="260" height="30" rx="8" class="purple"/>
+  <text x="738" y="655" text-anchor="middle" class="caption purple-text">不靠感觉和意志力，靠闭环校正</text>
+
+  <line x1="736" y1="526" x2="736" y2="504" class="line"/>
+  <polygon points="736,504 730,514 742,514" fill="#74736c"/>
+  <text x="754" y="517" class="tiny">持续加固</text>
+
+  <!-- Bottom conclusion -->
+  <rect x="72" y="716" width="880" height="34" rx="8" fill="#ffffff" stroke="#d5d1c7" stroke-width="1.1"/>
+  <text x="512" y="739" text-anchor="middle" class="footer green-text">先管理基础设施，复利才有时间继续发生。</text>
+</svg>

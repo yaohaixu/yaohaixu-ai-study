@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">进化三要素：变异、选择、遗传缺一不可</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：展示 AI 只降低变异成本，真正的进化还必须接上市场选择和记忆遗传，否则一百次尝试会互相孤立，无法形成复利。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 28px; font-weight: 760; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 21px; font-weight: 760; }
+      .section-title { font-size: 18px; font-weight: 760; }
+      .node-title { font-size: 19px; font-weight: 760; }
+      .body { font-size: 14px; fill: #3f4e4c; }
+      .small { font-size: 12.5px; fill: #596362; }
+      .tiny { font-size: 11.5px; fill: #596362; }
+      .footer { font-size: 17px; font-weight: 760; fill: #18343a; }
+      .panel { fill: #f8f7f2; stroke: #d5d1c7; stroke-width: 1.4; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .yellow-soft { fill: #fffaf0; stroke: #f1a23a; stroke-width: 1.1; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .green-soft { fill: #f3fffb; stroke: #10a98c; stroke-width: 1.1; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .blue-soft { fill: #f4f9ff; stroke: #4f8fd6; stroke-width: 1.1; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .purple-soft { fill: #faf7ff; stroke: #8b6fd6; stroke-width: 1.1; }
+      .yellow-text { fill: #7a3f00; }
+      .green-text { fill: #006b61; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+      .muted-text { fill: #596362; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.55; }
+      .dash { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-dasharray: 5 7; stroke-linecap: round; opacity: 0.55; }
+      .chip { font-size: 12px; font-weight: 720; }
+    </style>
+
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#74736c"/>
+    </marker>
+  </defs>
+
+  <text x="512" y="42" text-anchor="middle" class="title">进化三要素：变异、选择、遗传缺一不可</text>
+  <text x="512" y="73" text-anchor="middle" class="claim">AI 只解决了变异成本；真正进化还需要市场选择和记忆遗传。</text>
+  <text x="512" y="96" text-anchor="middle" class="claim">否则 100 次变异互相孤立，不产生复利。</text>
+
+  <rect x="42" y="122" width="632" height="506" rx="10" class="panel"/>
+  <text x="72" y="157" class="panel-title green-text">有进化机制：每一轮都带方向</text>
+  <text x="72" y="181" class="small">AI 变异只是入口；选择和遗传把失败变成下一轮的优势。</text>
+
+  <path d="M 492 254 C 570 265, 623 299, 622 346" class="line" marker-end="url(#arrow)"/>
+  <path d="M 524 466 C 500 512, 476 536, 437 536" class="line" marker-end="url(#arrow)"/>
+  <path d="M 180 468 C 103 399, 129 278, 232 257" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="520" y="288" width="92" height="28" rx="8" class="white"/>
+  <text x="566" y="307" text-anchor="middle" class="chip muted-text">拿去试</text>
+  <rect x="452" y="501" width="114" height="28" rx="8" class="white"/>
+  <text x="509" y="520" text-anchor="middle" class="chip muted-text">留下信号</text>
+  <rect x="94" y="346" width="114" height="28" rx="8" class="white"/>
+  <text x="151" y="365" text-anchor="middle" class="chip muted-text">写回下一轮</text>
+
+  <circle cx="360" cy="382" r="62" fill="#ffffff" stroke="#d5d1c7" stroke-width="1.2"/>
+  <circle cx="360" cy="382" r="43" fill="#f1efe7" stroke="#d5d1c7" stroke-width="1.1"/>
+  <text x="360" y="374" text-anchor="middle" class="section-title">进化复利</text>
+  <text x="360" y="399" text-anchor="middle" class="small">三步闭环</text>
+
+  <rect x="232" y="206" width="260" height="96" rx="8" class="blue"/>
+  <text x="362" y="238" text-anchor="middle" class="node-title blue-text">1 变异</text>
+  <text x="362" y="264" text-anchor="middle" class="body blue-text">AI 低成本生成 / 尝试</text>
+  <text x="362" y="286" text-anchor="middle" class="small blue-text">让假设数量先变多</text>
+
+  <rect x="428" y="346" width="220" height="120" rx="8" class="green"/>
+  <text x="538" y="379" text-anchor="middle" class="node-title green-text">2 选择</text>
+  <text x="538" y="405" text-anchor="middle" class="body green-text">发布到真实市场</text>
+  <text x="538" y="427" text-anchor="middle" class="small green-text">用点击 / 购买 / 留存筛选</text>
+  <text x="538" y="449" text-anchor="middle" class="small green-text">AI 不能替你完成</text>
+
+  <rect x="155" y="468" width="282" height="110" rx="8" class="purple"/>
+  <text x="296" y="500" text-anchor="middle" class="node-title purple-text">3 遗传</text>
+  <text x="296" y="526" text-anchor="middle" class="body purple-text">复盘文档 / 持续运营账号</text>
+  <text x="296" y="548" text-anchor="middle" class="small purple-text">不被遗忘的用户反馈</text>
+  <text x="296" y="570" text-anchor="middle" class="small purple-text">上次输出成为下次输入</text>
+
+  <rect x="80" y="594" width="556" height="24" rx="8" class="blue-soft"/>
+  <text x="358" y="611" text-anchor="middle" class="tiny blue-text">方向感不是来自“生成更多”，而是来自真实筛选后的记忆累积。</text>
+
+  <rect x="704" y="122" width="278" height="506" rx="10" class="yellow-soft"/>
+  <text x="728" y="157" class="panel-title yellow-text">无遗传机制</text>
+  <text x="728" y="181" class="small yellow-text">100 次尝试互相孤立，每次都像第一次。</text>
+
+  <rect x="728" y="214" width="230" height="54" rx="8" class="white"/>
+  <text x="748" y="237" class="section-title yellow-text">第 1 次</text>
+  <text x="748" y="257" class="tiny">生成一个方案，反馈没有写回</text>
+
+  <path d="M 843 272 L 843 288" class="dash"/>
+  <line x1="834" y1="280" x2="852" y2="280" class="soft-line"/>
+
+  <rect x="728" y="292" width="230" height="54" rx="8" class="white"/>
+  <text x="748" y="315" class="section-title yellow-text">第 37 次</text>
+  <text x="748" y="335" class="tiny">仍从零开始，无法继承经验</text>
+
+  <path d="M 843 350 L 843 366" class="dash"/>
+  <line x1="834" y1="358" x2="852" y2="358" class="soft-line"/>
+
+  <rect x="728" y="370" width="230" height="54" rx="8" class="white"/>
+  <text x="748" y="393" class="section-title yellow-text">第 82 次</text>
+  <text x="748" y="413" class="tiny">账号资产和用户反馈断档</text>
+
+  <path d="M 843 428 L 843 444" class="dash"/>
+  <line x1="834" y1="436" x2="852" y2="436" class="soft-line"/>
+
+  <rect x="728" y="448" width="230" height="54" rx="8" class="white"/>
+  <text x="748" y="471" class="section-title yellow-text">第 100 次</text>
+  <text x="748" y="491" class="tiny">尝试数量很高，判断没有变准</text>
+
+  <rect x="728" y="530" width="230" height="72" rx="8" class="yellow"/>
+  <text x="843" y="558" text-anchor="middle" class="node-title yellow-text">结果：没有复利</text>
+  <text x="843" y="582" text-anchor="middle" class="body yellow-text">100 次变异 = 100 个孤岛</text>
+
+  <rect x="42" y="648" width="940" height="84" rx="10" class="panel"/>
+  <text x="512" y="676" text-anchor="middle" class="footer">AI 只让“变异”变便宜；没有“选择”和“遗传”，就没有进化。</text>
+
+  <rect x="124" y="695" width="168" height="28" rx="8" class="blue"/>
+  <text x="208" y="714" text-anchor="middle" class="chip blue-text">变异：更多尝试</text>
+  <path d="M 302 709 L 336 709" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="352" y="695" width="168" height="28" rx="8" class="green"/>
+  <text x="436" y="714" text-anchor="middle" class="chip green-text">选择：真实信号</text>
+  <path d="M 530 709 L 564 709" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="580" y="695" width="178" height="28" rx="8" class="purple"/>
+  <text x="669" y="714" text-anchor="middle" class="chip purple-text">遗传：写回系统</text>
+  <path d="M 768 709 L 802 709" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="818" y="695" width="104" height="28" rx="8" class="green-soft"/>
+  <text x="870" y="714" text-anchor="middle" class="chip green-text">复利</text>
+</svg>

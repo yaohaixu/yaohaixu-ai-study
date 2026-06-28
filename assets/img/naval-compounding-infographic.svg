@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">Naval Ravikant 复利模型信息图</title>
+  <desc id="desc">复利是跨知识、声誉、商业和时间的正反馈人生策略，重点是不要中断复利。</desc>
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+        fill: #18343a;
+      }
+      .caption { fill: #4c4b46; font-size: 17px; }
+      .small { font-size: 16px; }
+      .label { font-size: 20px; font-weight: 700; }
+      .hub-title { font-size: 30px; font-weight: 800; }
+      .hub-sub { font-size: 18px; font-weight: 600; fill: #1b4d7a; }
+      .note-title { font-size: 20px; font-weight: 800; fill: #7a3f00; }
+      .note-text { font-size: 17px; fill: #7a3f00; }
+      .arrow { fill: none; stroke: #74736c; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+      .dash { stroke-dasharray: 7 8; }
+      .card { rx: 14; ry: 14; stroke-width: 2; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; }
+      .green { fill: #ddf7ef; stroke: #10a98c; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; }
+      .muted { fill: #74736c; font-size: 15px; }
+    </style>
+  </defs>
+
+  <!-- Top reading cue -->
+  <text x="512" y="52" text-anchor="middle" class="caption">线性投入经过长期累积，变成指数回报</text>
+  <path d="M360 72 H664" class="arrow dash"/>
+  <polygon points="664,72 655,67 655,77" fill="#74736c"/>
+
+  <!-- Outer cards -->
+  <rect x="98" y="120" width="260" height="138" class="card blue"/>
+  <text x="228" y="159" text-anchor="middle" class="label">知识与技能</text>
+  <text x="128" y="196" class="small">今天学到的</text>
+  <text x="128" y="224" class="small">成为明天的基础</text>
+
+  <rect x="666" y="120" width="260" height="138" class="card green"/>
+  <text x="796" y="159" text-anchor="middle" class="label">关系与声誉</text>
+  <text x="696" y="196" class="small">长期诚信经营</text>
+  <text x="696" y="224" class="small">带来机会与杠杆</text>
+
+  <rect x="666" y="420" width="260" height="138" class="card purple"/>
+  <text x="796" y="459" text-anchor="middle" class="label">商业资产</text>
+  <text x="696" y="496" class="small">代码 内容 品牌</text>
+  <text x="696" y="524" class="small">可持续积累</text>
+
+  <rect x="98" y="420" width="260" height="138" class="card neutral"/>
+  <text x="228" y="459" text-anchor="middle" class="label">时间杠杆</text>
+  <text x="128" y="496" class="small">选对方向</text>
+  <text x="128" y="524" class="small">让时间发挥作用</text>
+
+  <!-- Center hub -->
+  <rect x="370" y="268" width="284" height="176" class="card neutral"/>
+  <text x="512" y="319" text-anchor="middle" class="hub-title">复利模型</text>
+  <text x="512" y="356" text-anchor="middle" class="hub-sub">跨领域正反馈</text>
+  <text x="512" y="392" text-anchor="middle" class="small">知识 声誉 商业 时间</text>
+
+  <!-- Feedback loop arrows -->
+  <path d="M358 189 C472 104 552 104 666 189" class="arrow"/>
+  <polygon points="666,189 656,188 662,180" fill="#74736c"/>
+
+  <path d="M796 258 C884 310 884 370 796 420" class="arrow"/>
+  <polygon points="796,420 801,411 806,419" fill="#74736c"/>
+
+  <path d="M666 489 C552 574 472 574 358 489" class="arrow"/>
+  <polygon points="358,489 368,490 362,498" fill="#74736c"/>
+
+  <path d="M228 420 C140 370 140 310 228 258" class="arrow"/>
+  <polygon points="228,258 223,267 218,259" fill="#74736c"/>
+
+  <!-- Spokes -->
+  <path d="M358 224 L398 284" class="arrow dash"/>
+  <polygon points="398,284 389,279 397,274" fill="#74736c"/>
+
+  <path d="M666 224 L626 284" class="arrow dash"/>
+  <polygon points="626,284 627,274 635,279" fill="#74736c"/>
+
+  <path d="M666 454 L626 428" class="arrow dash"/>
+  <polygon points="626,428 636,429 631,437" fill="#74736c"/>
+
+  <path d="M358 454 L398 428" class="arrow dash"/>
+  <polygon points="398,428 393,437 388,429" fill="#74736c"/>
+
+  <!-- Warning note -->
+  <rect x="206" y="610" width="612" height="88" class="card yellow"/>
+  <text x="512" y="644" text-anchor="middle" class="note-title">不要中断复利</text>
+  <text x="512" y="675" text-anchor="middle" class="note-text">频繁换方向，就像把利息取出来花掉</text>
+
+  <path d="M512 444 V610" class="arrow"/>
+  <polygon points="512,610 507,601 517,601" fill="#74736c"/>
+
+  <!-- Bottom summary -->
+  <text x="512" y="738" text-anchor="middle" class="caption">一句话：选对方向，长期坚持，让时间把线性投入转化为指数回报</text>
+</svg>

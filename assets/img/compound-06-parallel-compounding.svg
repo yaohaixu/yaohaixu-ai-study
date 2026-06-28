@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">多线程 -&gt; 并行复利</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：对比独立开发者单线程 6 个月循环与多 Agent 并行网络，说明多条复利曲线互相喂养后会产生复利的复利。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 30px; font-weight: 780; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 21px; font-weight: 780; }
+      .section-title { font-size: 17px; font-weight: 760; }
+      .node-title { font-size: 18px; font-weight: 760; }
+      .node-main { font-size: 22px; font-weight: 800; }
+      .caption { font-size: 14px; fill: #3f4e4c; }
+      .tiny { font-size: 12px; font-weight: 720; fill: #596362; }
+      .month { font-size: 12px; fill: #596362; }
+      .footer { font-size: 19px; font-weight: 780; fill: #364642; }
+      .footer-small { font-size: 15px; fill: #3f4e4c; }
+      .panel { fill: #f8f7f2; stroke: #d5d1c7; stroke-width: 1.4; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .blue-text { fill: #1b4d7a; }
+      .green-text { fill: #006b61; }
+      .purple-text { fill: #4b2e83; }
+      .yellow-text { fill: #7a3f00; }
+      .muted { fill: #596362; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.35; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.55; }
+      .dash-line { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 5 7; opacity: 0.58; }
+      .axis { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-linecap: round; opacity: 0.72; }
+      .thread { stroke: #10a98c; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.92; }
+      .thread-blue { stroke: #4f8fd6; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.9; }
+      .thread-purple { stroke: #8b6fd6; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.9; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#74736c"/>
+    </marker>
+    <marker id="greenArrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#10a98c"/>
+    </marker>
+    <marker id="blueArrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#4f8fd6"/>
+    </marker>
+    <marker id="purpleArrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#8b6fd6"/>
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="512" y="43" text-anchor="middle" class="title">多线程 -&gt; 并行复利</text>
+  <text x="512" y="73" text-anchor="middle" class="claim">独立开发者的改变不只是“快一点”，而是让产品、营销、反馈和市场数据互相加速。</text>
+
+  <!-- Left: serial loop -->
+  <rect x="44" y="100" width="390" height="508" rx="10" class="panel"/>
+  <text x="74" y="134" class="panel-title yellow-text">单线程：6 个月一轮</text>
+  <text x="74" y="160" class="caption">一条线做完，下一条线才开始；学习只在循环末端发生。</text>
+
+  <line x1="98" y1="210" x2="386" y2="210" class="axis"/>
+  <g>
+    <line x1="98" y1="204" x2="98" y2="216" class="axis"/>
+    <line x1="146" y1="204" x2="146" y2="216" class="axis"/>
+    <line x1="194" y1="204" x2="194" y2="216" class="axis"/>
+    <line x1="242" y1="204" x2="242" y2="216" class="axis"/>
+    <line x1="290" y1="204" x2="290" y2="216" class="axis"/>
+    <line x1="338" y1="204" x2="338" y2="216" class="axis"/>
+    <line x1="386" y1="204" x2="386" y2="216" class="axis"/>
+    <text x="98" y="196" text-anchor="middle" class="month">0</text>
+    <text x="146" y="196" text-anchor="middle" class="month">1</text>
+    <text x="194" y="196" text-anchor="middle" class="month">2</text>
+    <text x="242" y="196" text-anchor="middle" class="month">3</text>
+    <text x="290" y="196" text-anchor="middle" class="month">4</text>
+    <text x="338" y="196" text-anchor="middle" class="month">5</text>
+    <text x="386" y="196" text-anchor="middle" class="month">6</text>
+    <text x="401" y="215" class="month">月</text>
+  </g>
+
+  <rect x="98" y="235" width="144" height="56" rx="8" class="blue"/>
+  <text x="122" y="260" class="node-title blue-text">产品开发</text>
+  <text x="122" y="282" class="caption">3 个月</text>
+  <path d="M 242 263 L 274 263 L 274 319" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="242" y="319" width="96" height="56" rx="8" class="purple"/>
+  <text x="258" y="344" class="node-title purple-text">营销获客</text>
+  <text x="258" y="366" class="caption">2 个月</text>
+  <path d="M 338 347 L 362 347 L 362 431" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="338" y="431" width="48" height="56" rx="8" class="yellow"/>
+  <text x="362" y="456" text-anchor="middle" class="section-title yellow-text">反馈</text>
+  <text x="362" y="478" text-anchor="middle" class="tiny">1 个月</text>
+
+  <rect x="84" y="411" width="190" height="42" rx="8" class="white"/>
+  <text x="103" y="437" class="caption">其余任务只能等待</text>
+  <path d="M 114 453 L 114 503 L 346 503 L 346 490" class="dash-line"/>
+
+  <path d="M 362 487 L 362 543 L 100 543 L 100 298" class="line" marker-end="url(#arrow)"/>
+  <text x="219" y="531" text-anchor="middle" class="section-title muted">迭代：下一轮再开始</text>
+
+  <rect x="84" y="560" width="306" height="28" rx="14" class="yellow"/>
+  <text x="237" y="580" text-anchor="middle" class="tiny yellow-text">瓶颈：完整闭环需要 6 个月</text>
+
+  <!-- Right: parallel compounding network -->
+  <rect x="462" y="100" width="518" height="508" rx="10" class="panel"/>
+  <text x="492" y="134" class="panel-title green-text">多线程：并行复利网络</text>
+  <text x="492" y="160" class="caption">自己抓核心产品，同时让多个 Agent 跑市场、营销和反馈。</text>
+
+  <rect x="646" y="278" width="180" height="88" rx="10" class="green"/>
+  <text x="736" y="310" text-anchor="middle" class="node-main green-text">核心产品</text>
+  <text x="736" y="334" text-anchor="middle" class="caption">独立开发者亲自做</text>
+  <text x="736" y="354" text-anchor="middle" class="tiny">判断力留在主线</text>
+
+  <rect x="516" y="178" width="178" height="78" rx="8" class="blue"/>
+  <text x="540" y="206" class="node-title blue-text">竞品监控</text>
+  <text x="540" y="229" class="caption">市场分析 Agent</text>
+  <text x="540" y="246" class="tiny">机会 / 定价 / 趋势</text>
+
+  <rect x="780" y="178" width="166" height="78" rx="8" class="purple"/>
+  <text x="804" y="206" class="node-title purple-text">营销内容</text>
+  <text x="804" y="229" class="caption">SEO / 渠道 Agent</text>
+  <text x="804" y="246" class="tiny">关键词 / 选题</text>
+
+  <rect x="508" y="396" width="184" height="78" rx="8" class="blue"/>
+  <text x="532" y="424" class="node-title blue-text">用户反馈</text>
+  <text x="532" y="447" class="caption">优先级整理 Agent</text>
+  <text x="532" y="464" class="tiny">痛点 / 需求 / 证据</text>
+
+  <rect x="768" y="396" width="178" height="78" rx="8" class="green"/>
+  <text x="792" y="424" class="node-title green-text">更多用户</text>
+  <text x="792" y="447" class="caption">口碑降低获客成本</text>
+  <text x="792" y="464" class="tiny">数据继续变厚</text>
+
+  <rect x="536" y="510" width="380" height="50" rx="8" class="yellow"/>
+  <text x="726" y="531" text-anchor="middle" class="section-title yellow-text">复利的复利</text>
+  <text x="726" y="550" text-anchor="middle" class="caption">每条线的产出，都会成为其他线的输入。</text>
+
+  <path d="M 636 256 C 666 260, 688 268, 699 278" class="thread-blue" marker-end="url(#blueArrow)"/>
+  <text x="656" y="271" class="tiny blue-text">决策更准</text>
+
+  <path d="M 694 217 L 780 217" class="thread-purple" marker-end="url(#purpleArrow)"/>
+  <text x="722" y="205" class="tiny purple-text">选题更准</text>
+
+  <path d="M 826 301 C 852 290, 862 272, 862 256" class="thread" marker-end="url(#greenArrow)"/>
+  <text x="842" y="292" class="tiny green-text">卖点更清楚</text>
+
+  <path d="M 863 256 L 863 396" class="thread-purple" marker-end="url(#purpleArrow)"/>
+  <text x="880" y="330" class="tiny purple-text">获客</text>
+
+  <path d="M 786 366 C 814 376, 833 384, 845 396" class="thread" marker-end="url(#greenArrow)"/>
+  <text x="795" y="385" class="tiny green-text">产品更好</text>
+
+  <path d="M 768 435 C 736 452, 704 451, 692 435" class="thread" marker-end="url(#greenArrow)"/>
+  <text x="704" y="464" class="tiny green-text">更多数据</text>
+
+  <path d="M 600 396 C 610 374, 626 360, 646 350" class="thread-blue" marker-end="url(#blueArrow)"/>
+  <text x="543" y="374" class="tiny blue-text">优先级更准</text>
+
+  <path d="M 600 474 C 626 498, 669 506, 718 510" class="thread-blue" marker-end="url(#blueArrow)"/>
+  <path d="M 857 474 C 846 492, 823 506, 790 512" class="thread" marker-end="url(#greenArrow)"/>
+
+  <rect x="492" y="575" width="458" height="18" rx="9" fill="#ffffff" stroke="#d5d1c7" stroke-width="1"/>
+  <text x="721" y="589" text-anchor="middle" class="tiny">并行不是把 6 个月压扁，而是让每条线提前产生反馈。</text>
+
+  <!-- Bottom conclusion -->
+  <rect x="64" y="638" width="896" height="88" rx="10" class="yellow"/>
+  <text x="512" y="674" text-anchor="middle" class="footer">不是只快一点，而是多条复利曲线互相喂养。</text>
+  <text x="512" y="704" text-anchor="middle" class="footer-small">营销数据让产品更准，产品带来口碑，口碑降低获客成本，更多用户又带来更多数据。</text>
+</svg>

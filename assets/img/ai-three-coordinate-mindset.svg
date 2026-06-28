@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="430" viewBox="0 0 1024 430" role="img" aria-labelledby="title desc">
+  <title id="title">理解 AI 的三个坐标</title>
+  <desc id="desc">用三个坐标判断 AI：AI 的特性，AI 可以嵌入人的哪些系统，以及 AI 核心概念的发展脉络。</desc>
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .axis-title { font-size: 20px; font-weight: 780; }
+      .node-title { font-size: 17px; font-weight: 760; }
+      .node-text { font-size: 13px; fill: #526367; }
+      .small { font-size: 12px; fill: #647579; }
+      .panel { fill: rgba(247, 252, 255, .68); stroke: #d5eee9; stroke-width: 1.4; }
+      .feature { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .system { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .concept { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .question { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .blue-text { fill: #1b4d7a; }
+      .green-text { fill: #006b61; }
+      .purple-text { fill: #4b2e83; }
+      .orange-text { fill: #7a3f00; }
+      .arrow { fill: none; stroke: #74736c; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .divider { stroke: #d5d1c7; stroke-width: 1.2; stroke-dasharray: 7 8; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#74736c"/>
+    </marker>
+  </defs>
+
+  <rect x="34" y="26" width="956" height="378" rx="24" class="panel"/>
+
+  <text x="64" y="67" class="axis-title blue-text">1 AI 的特性：为什么它值得嵌入系统</text>
+  <text x="64" y="191" class="axis-title green-text">2 人的系统：把 AI 放进哪里</text>
+  <text x="64" y="314" class="axis-title purple-text">3 概念脉络：它扩展了哪条能力边界</text>
+
+  <line x1="64" y1="148" x2="960" y2="148" class="divider"/>
+  <line x1="64" y1="272" x2="960" y2="272" class="divider"/>
+
+  <rect x="64" y="86" width="128" height="44" rx="14" class="feature"/>
+  <text x="128" y="111" text-anchor="middle" class="node-title blue-text">聪明</text>
+  <text x="128" y="126" text-anchor="middle" class="small">认知质量</text>
+
+  <rect x="210" y="86" width="128" height="44" rx="14" class="feature"/>
+  <text x="274" y="111" text-anchor="middle" class="node-title blue-text">成长</text>
+  <text x="274" y="126" text-anchor="middle" class="small">工具升值</text>
+
+  <rect x="356" y="86" width="128" height="44" rx="14" class="feature"/>
+  <text x="420" y="111" text-anchor="middle" class="node-title blue-text">低成本</text>
+  <text x="420" y="126" text-anchor="middle" class="small">高频试错</text>
+
+  <rect x="502" y="86" width="128" height="44" rx="14" class="feature"/>
+  <text x="566" y="111" text-anchor="middle" class="node-title blue-text">不休息</text>
+  <text x="566" y="126" text-anchor="middle" class="small">反馈压缩</text>
+
+  <rect x="648" y="86" width="128" height="44" rx="14" class="feature"/>
+  <text x="712" y="111" text-anchor="middle" class="node-title blue-text">多线程</text>
+  <text x="712" y="126" text-anchor="middle" class="small">并行推进</text>
+
+  <rect x="794" y="86" width="128" height="44" rx="14" class="feature"/>
+  <text x="858" y="111" text-anchor="middle" class="node-title blue-text">时代红利</text>
+  <text x="858" y="126" text-anchor="middle" class="small">放大收益</text>
+
+  <path d="M512 142 V166" class="arrow" marker-end="url(#arrow)"/>
+
+  <rect x="64" y="210" width="128" height="44" rx="14" class="system"/>
+  <text x="128" y="235" text-anchor="middle" class="node-title green-text">学习系统</text>
+  <text x="128" y="250" text-anchor="middle" class="small">任务先行</text>
+
+  <rect x="210" y="210" width="128" height="44" rx="14" class="system"/>
+  <text x="274" y="235" text-anchor="middle" class="node-title green-text">提问系统</text>
+  <text x="274" y="250" text-anchor="middle" class="small">设计问题</text>
+
+  <rect x="356" y="210" width="128" height="44" rx="14" class="system"/>
+  <text x="420" y="235" text-anchor="middle" class="node-title green-text">知识系统</text>
+  <text x="420" y="250" text-anchor="middle" class="small">持续编译</text>
+
+  <rect x="502" y="210" width="128" height="44" rx="14" class="system"/>
+  <text x="566" y="235" text-anchor="middle" class="node-title green-text">生产系统</text>
+  <text x="566" y="250" text-anchor="middle" class="small">输入输出</text>
+
+  <rect x="648" y="210" width="128" height="44" rx="14" class="system"/>
+  <text x="712" y="235" text-anchor="middle" class="node-title green-text">成长系统</text>
+  <text x="712" y="250" text-anchor="middle" class="small">进化闭环</text>
+
+  <rect x="794" y="210" width="128" height="44" rx="14" class="system"/>
+  <text x="858" y="235" text-anchor="middle" class="node-title green-text">自我系统</text>
+  <text x="858" y="250" text-anchor="middle" class="small">数据建模</text>
+
+  <path d="M512 266 V290" class="arrow" marker-end="url(#arrow)"/>
+
+  <rect x="64" y="330" width="118" height="44" rx="14" class="concept"/>
+  <text x="123" y="356" text-anchor="middle" class="node-title purple-text">Prompt</text>
+  <text x="123" y="371" text-anchor="middle" class="small">怎么问</text>
+
+  <path d="M190 352 H216" class="arrow" marker-end="url(#arrow)"/>
+
+  <rect x="224" y="330" width="118" height="44" rx="14" class="concept"/>
+  <text x="283" y="356" text-anchor="middle" class="node-title purple-text">Context</text>
+  <text x="283" y="371" text-anchor="middle" class="small">看见什么</text>
+
+  <path d="M350 352 H376" class="arrow" marker-end="url(#arrow)"/>
+
+  <rect x="384" y="330" width="118" height="44" rx="14" class="concept"/>
+  <text x="443" y="356" text-anchor="middle" class="node-title purple-text">Memory</text>
+  <text x="443" y="371" text-anchor="middle" class="small">保留什么</text>
+
+  <path d="M510 352 H536" class="arrow" marker-end="url(#arrow)"/>
+
+  <rect x="544" y="330" width="118" height="44" rx="14" class="concept"/>
+  <text x="603" y="356" text-anchor="middle" class="node-title purple-text">Tool Use</text>
+  <text x="603" y="371" text-anchor="middle" class="small">调用什么</text>
+
+  <path d="M670 352 H696" class="arrow" marker-end="url(#arrow)"/>
+
+  <rect x="704" y="330" width="118" height="44" rx="14" class="concept"/>
+  <text x="763" y="356" text-anchor="middle" class="node-title purple-text">Agent</text>
+  <text x="763" y="371" text-anchor="middle" class="small">行动到哪里</text>
+
+  <path d="M830 352 H856" class="arrow" marker-end="url(#arrow)"/>
+
+  <rect x="864" y="330" width="98" height="44" rx="14" class="question"/>
+  <text x="913" y="354" text-anchor="middle" class="node-title orange-text">Workflow</text>
+  <text x="913" y="369" text-anchor="middle" class="small">复用系统</text>
+</svg>

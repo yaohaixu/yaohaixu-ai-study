@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">纵深记忆让 AI 用你的历史证据反驳当下绝望</title>
+  <desc id="desc">日记、项目、心力周期和目标进入 AI 纵深记忆，转化为个人证据，再形成更有力的反驳和恢复策略。</desc>
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Segoe UI", sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 24px; font-weight: 700; }
+      .subtitle { font-size: 16px; fill: #4f5650; }
+      .section { font-size: 18px; font-weight: 700; fill: #343631; }
+      .label { font-size: 20px; font-weight: 700; }
+      .body { font-size: 15px; fill: #46504a; }
+      .small { font-size: 14px; fill: #535852; }
+      .tiny { font-size: 13px; fill: #5c625d; }
+      .card-neutral { fill: #f1efe7; stroke: #d5d1c7; }
+      .card-yellow { fill: #fff1d9; stroke: #f1a23a; }
+      .card-green { fill: #ddf7ef; stroke: #10a98c; }
+      .card-blue { fill: #e6f2ff; stroke: #4f8fd6; }
+      .card-purple { fill: #f0e8ff; stroke: #8b6fd6; }
+      .arrow { stroke: #74736c; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .dash { stroke: #74736c; stroke-width: 1.8; fill: none; stroke-dasharray: 6 8; stroke-linecap: round; }
+      .divider { stroke: #202020; stroke-width: 1.2; opacity: 0.2; }
+    </style>
+  </defs>
+
+  <!-- Claim -->
+  <rect x="74" y="38" width="876" height="78" rx="8" class="card-neutral" stroke-width="1.5"/>
+  <text x="512" y="73" text-anchor="middle" class="title">纵深记忆：AI 能看到你的来时路</text>
+  <text x="512" y="99" text-anchor="middle" class="subtitle">核心：用你自己的历史证据，反驳此刻的绝望感</text>
+
+  <!-- Section headers -->
+  <text x="126" y="158" text-anchor="middle" class="section">历史材料</text>
+  <text x="512" y="158" text-anchor="middle" class="section">AI 纵深记忆</text>
+  <text x="808" y="158" text-anchor="middle" class="section">个人证据</text>
+
+  <!-- Left timeline rail -->
+  <path d="M126 190 L126 460" class="dash"/>
+  <circle cx="126" cy="210" r="5" fill="#74736c"/>
+  <circle cx="126" cy="292" r="5" fill="#74736c"/>
+  <circle cx="126" cy="374" r="5" fill="#74736c"/>
+  <circle cx="126" cy="456" r="5" fill="#74736c"/>
+
+  <rect x="158" y="180" width="178" height="60" rx="8" class="card-blue" stroke-width="1.5"/>
+  <text x="247" y="207" text-anchor="middle" class="label">日记片段</text>
+  <text x="247" y="229" text-anchor="middle" class="small">“那次也撑过来”</text>
+
+  <rect x="158" y="262" width="178" height="60" rx="8" class="card-green" stroke-width="1.5"/>
+  <text x="247" y="289" text-anchor="middle" class="label">得意项目</text>
+  <text x="247" y="311" text-anchor="middle" class="small">低潮后仍能产出</text>
+
+  <rect x="158" y="344" width="178" height="60" rx="8" class="card-yellow" stroke-width="1.5"/>
+  <text x="247" y="371" text-anchor="middle" class="label">心力周期</text>
+  <text x="247" y="393" text-anchor="middle" class="small">冲刺两周后低潮</text>
+
+  <rect x="158" y="426" width="178" height="60" rx="8" class="card-purple" stroke-width="1.5"/>
+  <text x="247" y="453" text-anchor="middle" class="label">目标记录</text>
+  <text x="247" y="475" text-anchor="middle" class="small">暂时忘了方向</text>
+
+  <!-- Left to center arrows -->
+  <path d="M336 210 C374 210 392 250 416 286" class="arrow"/>
+  <polygon points="413,277 423,297 402,289" fill="#74736c"/>
+  <path d="M336 292 L415 312" class="arrow"/>
+  <polygon points="408,303 426,315 405,319" fill="#74736c"/>
+  <path d="M336 374 L415 354" class="arrow"/>
+  <polygon points="405,350 426,351 409,363" fill="#74736c"/>
+  <path d="M336 456 C374 456 392 398 416 376" class="arrow"/>
+  <polygon points="405,379 425,368 415,388" fill="#74736c"/>
+
+  <!-- Center memory card -->
+  <rect x="426" y="214" width="172" height="210" rx="8" class="card-purple" stroke-width="1.8"/>
+  <text x="512" y="252" text-anchor="middle" class="label">AI 纵深记忆</text>
+  <line x1="454" y1="273" x2="570" y2="273" class="divider"/>
+  <text x="512" y="307" text-anchor="middle" class="body">检索来时路</text>
+  <text x="512" y="337" text-anchor="middle" class="body">识别反复模式</text>
+  <text x="512" y="367" text-anchor="middle" class="body">区分该推/该停</text>
+  <text x="512" y="397" text-anchor="middle" class="body">召回真实目标</text>
+
+  <!-- Center to right arrow -->
+  <path d="M598 319 L672 319" class="arrow"/>
+  <polygon points="664,311 680,319 664,327" fill="#74736c"/>
+  <text x="639" y="302" text-anchor="middle" class="tiny">转化为</text>
+
+  <!-- Right evidence stack -->
+  <rect x="688" y="180" width="238" height="64" rx="8" class="card-green" stroke-width="1.5"/>
+  <text x="807" y="207" text-anchor="middle" class="label">恢复证据</text>
+  <text x="807" y="230" text-anchor="middle" class="small">三个月前崩溃后已恢复</text>
+
+  <rect x="688" y="266" width="238" height="64" rx="8" class="card-yellow" stroke-width="1.5"/>
+  <text x="807" y="293" text-anchor="middle" class="label">周期证据</text>
+  <text x="807" y="316" text-anchor="middle" class="small">低潮是节律，不是终局</text>
+
+  <rect x="688" y="352" width="238" height="64" rx="8" class="card-blue" stroke-width="1.5"/>
+  <text x="807" y="379" text-anchor="middle" class="label">方向证据</text>
+  <text x="807" y="402" text-anchor="middle" class="small">目标还在，只是被遮住</text>
+
+  <!-- Evidence bracket to bottom -->
+  <path d="M807 244 L807 258" class="arrow"/>
+  <polygon points="799,251 807,267 815,251" fill="#74736c"/>
+  <path d="M807 330 L807 344" class="arrow"/>
+  <polygon points="799,337 807,353 815,337" fill="#74736c"/>
+  <path d="M807 416 C807 454 730 469 673 486" class="arrow"/>
+  <polygon points="679,476 663,489 684,491" fill="#74736c"/>
+
+  <!-- Bottom outcome lane -->
+  <text x="512" y="535" text-anchor="middle" class="section">恢复策略：反驳更有力，因为证据来自自己</text>
+
+  <rect x="96" y="568" width="236" height="88" rx="8" class="card-yellow" stroke-width="1.5"/>
+  <text x="214" y="602" text-anchor="middle" class="label">当下视角坍缩</text>
+  <text x="214" y="629" text-anchor="middle" class="body">只看到“现在不行”</text>
+
+  <path d="M332 612 L402 612" class="arrow"/>
+  <polygon points="394,604 410,612 394,620" fill="#74736c"/>
+
+  <rect x="410" y="552" width="204" height="120" rx="8" class="card-purple" stroke-width="1.5"/>
+  <text x="512" y="587" text-anchor="middle" class="label">历史证据反驳</text>
+  <text x="512" y="617" text-anchor="middle" class="body">“你不是没方向”</text>
+  <text x="512" y="645" text-anchor="middle" class="body">“你经历过恢复”</text>
+
+  <path d="M614 612 L684 612" class="arrow"/>
+  <polygon points="676,604 692,612 676,620" fill="#74736c"/>
+
+  <rect x="692" y="568" width="236" height="88" rx="8" class="card-green" stroke-width="1.5"/>
+  <text x="810" y="602" text-anchor="middle" class="label">推或停的建议</text>
+  <text x="810" y="629" text-anchor="middle" class="body">按你的节律恢复心力</text>
+
+  <!-- Small note -->
+  <rect x="298" y="690" width="428" height="42" rx="8" class="card-neutral" stroke-width="1.2"/>
+  <text x="512" y="716" text-anchor="middle" class="small">外部鸡汤给观点；纵深记忆给你亲身经历的证据链。</text>
+</svg>

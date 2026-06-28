@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">2026 后为什么从模型榜单转向 Agent 框架</title>
+  <desc id="desc">解释 2026 年后行业关注点从模型排行榜转向 Agent 框架的原因：模型能力趋同、榜单饱和、够用阈值跨过，使生产瓶颈从单次问答能力转向多步骤、长时间、跨工具的可靠完成能力。</desc>
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 25px; font-weight: 800; letter-spacing: 0; }
+      .subtitle { font-size: 16px; fill: #4c4b46; letter-spacing: 0; }
+      .kicker { font-size: 13px; font-weight: 800; fill: #74736c; letter-spacing: 0; }
+      .section-title { font-size: 20px; font-weight: 800; letter-spacing: 0; }
+      .card-title { font-size: 18px; font-weight: 800; letter-spacing: 0; }
+      .card-subtitle { font-size: 14px; font-weight: 700; letter-spacing: 0; }
+      .body { font-size: 15px; fill: #4c4b46; letter-spacing: 0; }
+      .small { font-size: 13px; fill: #4c4b46; letter-spacing: 0; }
+      .big { font-size: 28px; font-weight: 850; fill: #7a3f00; letter-spacing: 0; }
+      .result { font-size: 20px; font-weight: 850; fill: #006b61; letter-spacing: 0; }
+      .card { rx: 8; ry: 8; stroke-width: 2; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; }
+      .green { fill: #ddf7ef; stroke: #10a98c; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; }
+      .line { fill: none; stroke: #74736c; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .dash { stroke-dasharray: 7 8; }
+      .divider { stroke: #d5d1c7; stroke-width: 1.4; }
+    </style>
+  </defs>
+
+  <text x="512" y="42" text-anchor="middle" class="title">为什么 2026 后，大家开始研究 Agent 框架？</text>
+  <text x="512" y="72" text-anchor="middle" class="subtitle">单模型跑分的边际差异变小，真正差异转向系统完成能力</text>
+
+  <rect x="54" y="112" width="260" height="74" class="card yellow"/>
+  <text x="80" y="140" class="kicker">旧焦点</text>
+  <text x="80" y="166" class="section-title" fill="#7a3f00">模型榜单时代</text>
+
+  <rect x="382" y="112" width="260" height="74" class="card blue"/>
+  <text x="512" y="141" text-anchor="middle" class="kicker">关注点迁移</text>
+  <text x="512" y="166" text-anchor="middle" class="section-title" fill="#1b4d7a">从模型能力到任务系统</text>
+
+  <rect x="710" y="112" width="260" height="74" class="card purple"/>
+  <text x="736" y="140" class="kicker">新焦点</text>
+  <text x="736" y="166" class="section-title" fill="#4b2e83">Agent 框架时代</text>
+
+  <text x="184" y="216" text-anchor="middle" class="kicker">三条退潮原因</text>
+
+  <rect x="64" y="234" width="240" height="78" class="card neutral"/>
+  <circle cx="96" cy="273" r="18" fill="#18343a"/>
+  <text x="96" y="279" text-anchor="middle" font-size="14" font-weight="800" fill="#ffffff">1</text>
+  <text x="128" y="262" class="card-title">能力趋同</text>
+  <text x="128" y="289" class="body">代差消失，差异收窄</text>
+
+  <rect x="64" y="338" width="240" height="78" class="card yellow"/>
+  <circle cx="96" cy="377" r="18" fill="#f1a23a"/>
+  <text x="96" y="383" text-anchor="middle" font-size="14" font-weight="800" fill="#ffffff">2</text>
+  <text x="128" y="366" class="card-title" fill="#7a3f00">Benchmark 饱和</text>
+  <text x="128" y="393" class="body">单次问答难再区分</text>
+
+  <rect x="64" y="442" width="240" height="78" class="card blue"/>
+  <circle cx="96" cy="481" r="18" fill="#4f8fd6"/>
+  <text x="96" y="487" text-anchor="middle" font-size="14" font-weight="800" fill="#ffffff">3</text>
+  <text x="128" y="470" class="card-title" fill="#1b4d7a">够用阈值跨过</text>
+  <text x="128" y="497" class="body">商业场景已可用</text>
+
+  <path d="M304 273 C336 273 346 292 374 316" class="line"/>
+  <polygon points="374,316 364,313 371,305" fill="#74736c"/>
+  <path d="M304 377 H370" class="line"/>
+  <polygon points="370,377 361,372 361,382" fill="#74736c"/>
+  <path d="M304 481 C336 481 346 462 374 438" class="line"/>
+  <polygon points="374,438 371,449 364,441" fill="#74736c"/>
+
+  <rect x="370" y="276" width="284" height="180" class="card yellow"/>
+  <text x="512" y="310" text-anchor="middle" class="kicker">新瓶颈</text>
+  <text x="512" y="350" text-anchor="middle" class="big">完成一整件事</text>
+  <line x1="414" y1="374" x2="610" y2="374" class="divider"/>
+  <text x="512" y="404" text-anchor="middle" class="body">不只是更聪明的一答</text>
+  <text x="512" y="430" text-anchor="middle" class="body">而是多步骤、长时间、跨工具</text>
+
+  <path d="M654 366 H700" class="line"/>
+  <polygon points="700,366 691,361 691,371" fill="#74736c"/>
+
+  <text x="840" y="216" text-anchor="middle" class="kicker">框架要解决的事</text>
+
+  <rect x="710" y="234" width="122" height="80" class="card purple"/>
+  <text x="771" y="267" text-anchor="middle" class="card-title" fill="#4b2e83">任务分解</text>
+  <text x="771" y="293" text-anchor="middle" class="small">规划 / 分工</text>
+
+  <rect x="848" y="234" width="122" height="80" class="card blue"/>
+  <text x="909" y="267" text-anchor="middle" class="card-title" fill="#1b4d7a">工具调用</text>
+  <text x="909" y="293" text-anchor="middle" class="small">搜索 / 代码</text>
+
+  <rect x="710" y="338" width="122" height="80" class="card neutral"/>
+  <text x="771" y="371" text-anchor="middle" class="card-title">记忆状态</text>
+  <text x="771" y="397" text-anchor="middle" class="small">上下文沉淀</text>
+
+  <rect x="848" y="338" width="122" height="80" class="card yellow"/>
+  <text x="909" y="371" text-anchor="middle" class="card-title" fill="#7a3f00">评估回退</text>
+  <text x="909" y="397" text-anchor="middle" class="small">失败可修复</text>
+
+  <path d="M771 314 V338" class="line"/>
+  <polygon points="771,338 766,329 776,329" fill="#74736c"/>
+  <path d="M909 314 V338" class="line"/>
+  <polygon points="909,338 904,329 914,329" fill="#74736c"/>
+  <path d="M771 418 V458" class="line"/>
+  <polygon points="771,458 766,449 776,449" fill="#74736c"/>
+  <path d="M909 418 V458" class="line"/>
+  <polygon points="909,458 904,449 914,449" fill="#74736c"/>
+
+  <rect x="710" y="458" width="260" height="92" class="card green"/>
+  <text x="840" y="493" text-anchor="middle" class="result">可靠交付</text>
+  <text x="840" y="522" text-anchor="middle" class="body">把够聪明的模型</text>
+  <text x="840" y="544" text-anchor="middle" class="body">变成可运行的工作系统</text>
+
+  <rect x="350" y="500" width="324" height="76" class="card neutral"/>
+  <text x="512" y="530" text-anchor="middle" class="card-title">CPU 类比</text>
+  <text x="512" y="555" text-anchor="middle" class="body">单核跑分之后，系统架构更重要</text>
+
+  <path d="M512 456 V500" class="line dash"/>
+  <polygon points="512,500 507,491 517,491" fill="#74736c"/>
+
+  <rect x="92" y="632" width="840" height="80" class="card green"/>
+  <text x="512" y="665" text-anchor="middle" class="card-subtitle" fill="#006b61">结论</text>
+  <text x="512" y="695" text-anchor="middle" class="section-title" fill="#006b61">竞争从“谁的模型更强”，转向“谁能让模型稳定完成复杂任务”。</text>
+</svg>

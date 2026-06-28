@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">第四层：从记录到建模 / 数字孪生</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：连续数据、深入分析和实时反馈汇入个人数字孪生，形成消费弹性、运动衰减曲线和投资情绪模式三个预测模型，并辅助决策。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 27px; font-weight: 780; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 20px; font-weight: 780; }
+      .section-title { font-size: 18px; font-weight: 780; }
+      .node-title { font-size: 17px; font-weight: 780; }
+      .hub-title { font-size: 25px; font-weight: 820; }
+      .body { font-size: 13px; fill: #3f4e4c; }
+      .small { font-size: 12px; fill: #596362; }
+      .tiny { font-size: 11px; fill: #596362; }
+      .footer { font-size: 21px; font-weight: 820; fill: #364642; }
+      .footer-small { font-size: 14px; fill: #3f4e4c; }
+      .badge { font-size: 12px; font-weight: 800; }
+      .panel { fill: #f8f7f2; stroke: #d5d1c7; stroke-width: 1.4; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .green-soft { fill: #f3fffb; stroke: #10a98c; stroke-width: 1.4; }
+      .yellow-text { fill: #7a3f00; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+      .green-text { fill: #006b61; }
+      .muted-text { fill: #596362; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.35; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.6; }
+      .dash-line { stroke: #74736c; stroke-width: 1.35; stroke-dasharray: 5 7; fill: none; stroke-linecap: round; opacity: 0.55; }
+      .blue-line { stroke: #4f8fd6; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .green-line { stroke: #10a98c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .purple-line { stroke: #8b6fd6; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .yellow-line { stroke: #f1a23a; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .axis { stroke: #a8a49a; stroke-width: 1.2; fill: none; stroke-linecap: round; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#74736c"/>
+    </marker>
+    <marker id="greenArrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#10a98c"/>
+    </marker>
+  </defs>
+
+  <text x="512" y="38" text-anchor="middle" class="title">第四层：从记录到建模 / 数字孪生</text>
+  <text x="512" y="68" text-anchor="middle" class="claim">当数据连续、分析深入、反馈足够快，个人管理从记录过去变成预测未来。</text>
+  <text x="512" y="91" text-anchor="middle" class="claim">你的数字孪生会替你看见 3 / 6 / 12 个月趋势，而不是只显示今天的数据。</text>
+
+  <!-- Input lane -->
+  <rect x="36" y="122" width="246" height="500" rx="10" class="panel"/>
+  <text x="58" y="154" class="panel-title">三种输入</text>
+  <text x="58" y="178" class="small">让记录变成可建模材料</text>
+  <line x1="58" y1="188" x2="260" y2="188" class="dash-line"/>
+
+  <rect x="58" y="210" width="202" height="94" rx="8" class="blue"/>
+  <rect x="76" y="228" width="30" height="24" rx="6" class="white"/>
+  <text x="91" y="245" text-anchor="middle" class="badge blue-text">1</text>
+  <text x="120" y="243" class="node-title blue-text">连续数据</text>
+  <text x="120" y="267" class="body">消费 / 训练 / 投资</text>
+  <text x="120" y="286" class="body">时间戳、强度、金额</text>
+
+  <rect x="58" y="336" width="202" height="94" rx="8" class="purple"/>
+  <rect x="76" y="354" width="30" height="24" rx="6" class="white"/>
+  <text x="91" y="371" text-anchor="middle" class="badge purple-text">2</text>
+  <text x="120" y="369" class="node-title purple-text">深入分析</text>
+  <text x="120" y="393" class="body">识别变量与阈值</text>
+  <text x="120" y="412" class="body">找到重复模式</text>
+
+  <rect x="58" y="462" width="202" height="94" rx="8" class="green"/>
+  <rect x="76" y="480" width="30" height="24" rx="6" class="white"/>
+  <text x="91" y="497" text-anchor="middle" class="badge green-text">3</text>
+  <text x="120" y="495" class="node-title green-text">实时反馈</text>
+  <text x="120" y="519" class="body">结果快速回流</text>
+  <text x="120" y="538" class="body">模型每天校准</text>
+
+  <!-- Input connectors -->
+  <path d="M 260 257 C 292 257, 300 232, 330 232" class="line" marker-end="url(#arrow)"/>
+  <path d="M 260 383 C 292 383, 300 371, 330 371" class="line" marker-end="url(#arrow)"/>
+  <path d="M 260 509 C 292 509, 300 500, 330 500" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Digital twin hub -->
+  <rect x="330" y="122" width="364" height="500" rx="10" class="green-soft"/>
+  <text x="512" y="158" text-anchor="middle" class="hub-title green-text">个人数字孪生</text>
+  <text x="512" y="183" text-anchor="middle" class="small green-text">从记录过去 -&gt; 预测未来</text>
+  <line x1="356" y1="194" x2="668" y2="194" class="dash-line"/>
+
+  <rect x="356" y="216" width="312" height="178" rx="8" class="white"/>
+  <text x="378" y="246" class="section-title">稳定趋势观察层</text>
+  <text x="378" y="268" class="small">持续看 3 / 6 / 12 个月行为线</text>
+  <path d="M 384 356 L 646 356" class="axis"/>
+  <path d="M 384 296 L 384 356" class="axis"/>
+  <path d="M 394 342 C 430 318, 474 328, 514 302 C 560 272, 604 283, 638 252" class="blue-line"/>
+  <path d="M 394 350 C 438 344, 478 334, 516 318 C 560 300, 598 292, 638 286" class="green-line"/>
+  <path d="M 394 330 C 430 334, 462 350, 504 338 C 546 326, 596 334, 638 314" class="purple-line"/>
+  <circle cx="638" cy="252" r="4" class="blue"/>
+  <circle cx="638" cy="286" r="4" class="green"/>
+  <circle cx="638" cy="314" r="4" class="purple"/>
+  <text x="650" y="256" class="tiny blue-text">3月</text>
+  <text x="650" y="290" class="tiny green-text">6月</text>
+  <text x="650" y="318" class="tiny purple-text">12月</text>
+
+  <rect x="356" y="414" width="312" height="128" rx="8" class="neutral"/>
+  <text x="512" y="445" text-anchor="middle" class="section-title">不是冷冰冰仪表盘</text>
+  <text x="512" y="470" text-anchor="middle" class="body">而是可预测、可校准的行为模型</text>
+  <rect x="382" y="492" width="74" height="28" rx="14" class="white"/>
+  <text x="419" y="511" text-anchor="middle" class="tiny">情绪降噪</text>
+  <rect x="475" y="492" width="74" height="28" rx="14" class="white"/>
+  <text x="512" y="511" text-anchor="middle" class="tiny">疲劳降噪</text>
+  <rect x="568" y="492" width="74" height="28" rx="14" class="white"/>
+  <text x="605" y="511" text-anchor="middle" class="tiny">偏差降噪</text>
+
+  <rect x="380" y="560" width="264" height="38" rx="19" class="green"/>
+  <text x="512" y="584" text-anchor="middle" class="body green-text">比当下的你更稳定地看长期趋势</text>
+
+  <!-- Output connectors -->
+  <path d="M 694 371 L 720 371" class="soft-line"/>
+  <line x1="720" y1="249" x2="720" y2="497" class="soft-line"/>
+  <path d="M 720 249 L 742 249" class="line" marker-end="url(#arrow)"/>
+  <path d="M 720 371 L 742 371" class="line" marker-end="url(#arrow)"/>
+  <path d="M 720 497 L 742 497" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Output lane -->
+  <rect x="742" y="122" width="246" height="500" rx="10" class="panel"/>
+  <text x="764" y="154" class="panel-title">三个预测模型</text>
+  <text x="764" y="178" class="small">从趋势线生成决策辅助</text>
+  <line x1="764" y1="188" x2="966" y2="188" class="dash-line"/>
+
+  <rect x="764" y="210" width="202" height="92" rx="8" class="yellow"/>
+  <text x="865" y="241" text-anchor="middle" class="node-title yellow-text">消费弹性</text>
+  <text x="865" y="266" text-anchor="middle" class="body">收入增加 20%</text>
+  <text x="865" y="285" text-anchor="middle" class="body">非必要支出变化</text>
+
+  <rect x="764" y="336" width="202" height="92" rx="8" class="blue"/>
+  <text x="865" y="367" text-anchor="middle" class="node-title blue-text">运动衰减曲线</text>
+  <text x="865" y="392" text-anchor="middle" class="body">停练多少天后</text>
+  <text x="865" y="411" text-anchor="middle" class="body">恢复成本陡增</text>
+
+  <rect x="764" y="462" width="202" height="92" rx="8" class="purple"/>
+  <text x="865" y="493" text-anchor="middle" class="node-title purple-text">投资情绪模式</text>
+  <text x="865" y="518" text-anchor="middle" class="body">哪些市场信号</text>
+  <text x="865" y="537" text-anchor="middle" class="body">触发非理性操作</text>
+
+  <path d="M 865 302 L 865 328" class="soft-line" marker-end="url(#arrow)"/>
+  <path d="M 865 428 L 865 454" class="soft-line" marker-end="url(#arrow)"/>
+  <path d="M 865 554 L 865 572" class="soft-line" marker-end="url(#arrow)"/>
+  <rect x="764" y="578" width="202" height="32" rx="16" class="green"/>
+  <text x="865" y="599" text-anchor="middle" class="body green-text">决策辅助：预警 / 预算 / 暂停键</text>
+
+  <!-- Bottom distinction -->
+  <rect x="56" y="650" width="912" height="78" rx="10" class="neutral"/>
+  <text x="512" y="683" text-anchor="middle" class="footer">数字孪生不是看板，而是行为模型。</text>
+  <text x="512" y="710" text-anchor="middle" class="footer-small">它看见 3 / 6 / 12 个月趋势线，不被当下情绪、疲劳、认知偏差干扰。</text>
+</svg>

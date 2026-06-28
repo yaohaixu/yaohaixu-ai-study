@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">公平 -&gt; 起点复利</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：对比三线城市年轻人过去需要 7 年门槛才开始金融建模能力积累，现在借助 Agent 导师可能 6 个月进入真正积累阶段，并展示 20 岁与 27 岁开始复利的曲线分叉。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 30px; font-weight: 760; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 20px; font-weight: 760; }
+      .lane-title { font-size: 18px; font-weight: 760; }
+      .node-title { font-size: 17px; font-weight: 760; }
+      .caption { font-size: 13.5px; fill: #3f4e4c; }
+      .tiny { font-size: 11.5px; fill: #596362; }
+      .axis { font-size: 12px; fill: #596362; }
+      .badge { font-size: 12px; font-weight: 760; }
+      .footer { font-size: 20px; font-weight: 760; }
+      .footer-sub { font-size: 14.5px; fill: #3f4e4c; }
+      .panel { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; }
+      .dash { stroke-dasharray: 6 7; }
+      .old-text { fill: #7a3f00; }
+      .green-text { fill: #006b61; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+    </style>
+  </defs>
+
+  <!-- Header -->
+  <text x="512" y="46" text-anchor="middle" class="title">公平 -&gt; 起点复利</text>
+  <text x="512" y="76" text-anchor="middle" class="claim">Agent 消除非必要准备期，让学习资格从 7 年压缩到 6 个月。</text>
+
+  <!-- Dual timeline panel -->
+  <rect x="42" y="108" width="628" height="515" rx="8" class="panel"/>
+  <text x="76" y="145" class="panel-title">三线城市年轻人的金融建模路径</text>
+  <text x="76" y="169" class="tiny">读法：左侧从 20 岁开始，绿色节点代表真正进入专业能力积累。</text>
+
+  <!-- Old path -->
+  <rect x="70" y="198" width="572" height="152" rx="8" class="white"/>
+  <text x="93" y="229" class="lane-title old-text">过去：先获得学习资格</text>
+  <rect x="495" y="210" width="118" height="27" rx="13.5" class="yellow"/>
+  <text x="554" y="228" text-anchor="middle" class="badge old-text">7 年门槛</text>
+  <text x="93" y="251" class="tiny">考学、实习、师徒制过滤掉大量时间，真正积累来得很晚。</text>
+
+  <line x1="111" y1="290" x2="595" y2="290" class="soft-line"/>
+  <circle cx="111" cy="290" r="4.5" fill="#74736c"/>
+  <text x="111" y="314" text-anchor="middle" class="axis">20 岁</text>
+  <circle cx="592" cy="290" r="4.5" fill="#10a98c"/>
+  <text x="592" y="314" text-anchor="middle" class="axis">27 岁</text>
+
+  <rect x="92" y="266" width="104" height="58" rx="8" class="yellow"/>
+  <text x="144" y="291" text-anchor="middle" class="node-title old-text">好大学</text>
+  <text x="144" y="311" text-anchor="middle" class="caption">4 年</text>
+  <line x1="196" y1="295" x2="221" y2="295" class="line"/>
+  <polygon points="221,295 213,290 213,300" fill="#74736c"/>
+
+  <rect x="225" y="266" width="104" height="58" rx="8" class="yellow"/>
+  <text x="277" y="291" text-anchor="middle" class="node-title old-text">好公司实习</text>
+  <text x="277" y="311" text-anchor="middle" class="caption">1 年</text>
+  <line x1="329" y1="295" x2="354" y2="295" class="line"/>
+  <polygon points="354,295 346,290 346,300" fill="#74736c"/>
+
+  <rect x="358" y="266" width="104" height="58" rx="8" class="yellow"/>
+  <text x="410" y="291" text-anchor="middle" class="node-title old-text">跟师傅学</text>
+  <text x="410" y="311" text-anchor="middle" class="caption">2 年</text>
+  <line x1="462" y1="295" x2="487" y2="295" class="line"/>
+  <polygon points="487,295 479,290 479,300" fill="#74736c"/>
+
+  <rect x="491" y="266" width="118" height="58" rx="8" class="green"/>
+  <text x="550" y="291" text-anchor="middle" class="node-title green-text">真正积累</text>
+  <text x="550" y="311" text-anchor="middle" class="caption">专业能力复利</text>
+
+  <!-- Agent path -->
+  <rect x="70" y="377" width="572" height="202" rx="8" class="white"/>
+  <text x="93" y="408" class="lane-title blue-text">现在：Agent 当导师</text>
+  <rect x="505" y="389" width="108" height="27" rx="13.5" class="blue"/>
+  <text x="559" y="407" text-anchor="middle" class="badge blue-text">约 6 个月</text>
+  <text x="93" y="430" class="tiny">基础概念、Excel 建模、Python 量化，可以边问边练边反馈。</text>
+
+  <line x1="111" y1="472" x2="595" y2="472" class="soft-line"/>
+  <circle cx="111" cy="472" r="4.5" fill="#74736c"/>
+  <text x="111" y="496" text-anchor="middle" class="axis">20 岁</text>
+  <circle cx="151" cy="472" r="4.5" fill="#10a98c"/>
+  <text x="151" y="496" text-anchor="middle" class="axis">20.5 岁</text>
+
+  <rect x="92" y="448" width="104" height="58" rx="8" class="blue"/>
+  <text x="144" y="473" text-anchor="middle" class="node-title blue-text">基础概念</text>
+  <text x="144" y="493" text-anchor="middle" class="caption">随时追问</text>
+  <line x1="196" y1="477" x2="221" y2="477" class="line"/>
+  <polygon points="221,477 213,472 213,482" fill="#74736c"/>
+
+  <rect x="225" y="448" width="104" height="58" rx="8" class="blue"/>
+  <text x="277" y="473" text-anchor="middle" class="node-title blue-text">Excel 建模</text>
+  <text x="277" y="493" text-anchor="middle" class="caption">练习反馈</text>
+  <line x1="329" y1="477" x2="354" y2="477" class="line"/>
+  <polygon points="354,477 346,472 346,482" fill="#74736c"/>
+
+  <rect x="358" y="448" width="104" height="58" rx="8" class="blue"/>
+  <text x="410" y="473" text-anchor="middle" class="node-title blue-text">Python 量化</text>
+  <text x="410" y="493" text-anchor="middle" class="caption">迭代项目</text>
+  <line x1="462" y1="477" x2="487" y2="477" class="line"/>
+  <polygon points="487,477 479,472 479,482" fill="#74736c"/>
+
+  <rect x="491" y="448" width="118" height="58" rx="8" class="green"/>
+  <text x="550" y="473" text-anchor="middle" class="node-title green-text">真正积累</text>
+  <text x="550" y="493" text-anchor="middle" class="caption">提前 6 年</text>
+
+  <rect x="106" y="529" width="500" height="34" rx="8" class="purple"/>
+  <text x="356" y="551" text-anchor="middle" class="caption purple-text">Agent 消除的不是学习本身，而是非必要准备期</text>
+
+  <!-- Right curve panel -->
+  <rect x="698" y="108" width="284" height="515" rx="8" class="panel"/>
+  <text x="729" y="145" class="panel-title">复利曲线分叉</text>
+  <text x="729" y="169" class="tiny">同样努力，起点时间不同，曲线会越拉越开。</text>
+
+  <!-- Chart area -->
+  <line x1="738" y1="526" x2="948" y2="526" class="line"/>
+  <polygon points="948,526 938,520 938,532" fill="#74736c"/>
+  <line x1="738" y1="526" x2="738" y2="220" class="line"/>
+  <polygon points="738,220 732,230 744,230" fill="#74736c"/>
+  <text x="928" y="550" class="axis">时间</text>
+  <text x="706" y="224" class="axis">能力</text>
+
+  <line x1="758" y1="526" x2="758" y2="238" class="soft-line dash"/>
+  <text x="758" y="547" text-anchor="middle" class="axis">20</text>
+  <line x1="854" y1="526" x2="854" y2="318" class="soft-line dash"/>
+  <text x="854" y="547" text-anchor="middle" class="axis">27</text>
+  <text x="947" y="547" text-anchor="middle" class="axis">35</text>
+
+  <path d="M 758 526 C 796 500, 820 460, 848 410 C 878 354, 908 286, 940 223" fill="none" stroke="#10a98c" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="940,223 930,226 937,235" fill="#10a98c"/>
+
+  <path d="M 758 526 C 792 526, 820 526, 854 526 C 881 500, 907 457, 940 386" fill="none" stroke="#f1a23a" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="940,386 930,389 938,397" fill="#f1a23a"/>
+
+  <path d="M 854 526 C 881 500, 907 457, 940 386 L 940 223 C 908 286, 878 354, 848 410 C 852 448, 854 486, 854 526 Z" fill="#ddf7ef" opacity="0.5"/>
+
+  <rect x="766" y="243" width="104" height="45" rx="8" class="green"/>
+  <text x="818" y="263" text-anchor="middle" class="badge green-text">20 岁开始</text>
+  <text x="818" y="281" text-anchor="middle" class="tiny">时间是本金</text>
+
+  <rect x="839" y="407" width="104" height="45" rx="8" class="yellow"/>
+  <text x="891" y="427" text-anchor="middle" class="badge old-text">27 岁开始</text>
+  <text x="891" y="445" text-anchor="middle" class="tiny">晚 6 年入场</text>
+
+  <rect x="748" y="574" width="184" height="31" rx="8" fill="#ffffff" stroke="#10a98c" stroke-width="1.1"/>
+  <text x="840" y="595" text-anchor="middle" class="caption green-text">复利最强大的是时间</text>
+
+  <!-- Bottom conclusion -->
+  <rect x="72" y="657" width="880" height="72" rx="8" fill="#f1efe7" stroke="#d5d1c7" stroke-width="1.4"/>
+  <text x="512" y="690" text-anchor="middle" class="footer green-text">公平的价值是提前进入复利起点</text>
+  <text x="512" y="714" text-anchor="middle" class="footer-sub">不是承诺结果相同，而是把获得学习资格的门槛变低。</text>
+</svg>

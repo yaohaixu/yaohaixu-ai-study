@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">不用休息 -&gt; 时间复利</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：自媒体创作者用 Agent 把白天写作和夜间改写分发、反馈监控、选题建议接成飞轮，让复利循环在睡觉时继续转。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 30px; font-weight: 760; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 21px; font-weight: 760; }
+      .node-title { font-size: 18px; font-weight: 760; }
+      .node-caption { font-size: 13px; fill: #3f4e4c; }
+      .caption { font-size: 14px; fill: #596362; }
+      .small { font-size: 12px; font-weight: 720; }
+      .metric { font-size: 22px; font-weight: 790; }
+      .footer { font-size: 18px; font-weight: 760; fill: #364642; }
+      .panel { fill: #f8f7f2; stroke: #d5d1c7; stroke-width: 1.4; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .yellow-text { fill: #7a3f00; }
+      .green-text { fill: #006b61; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+      .muted { fill: #596362; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.5; }
+      .dash { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-dasharray: 6 7; opacity: 0.45; }
+    </style>
+
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#74736c"/>
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="512" y="43" text-anchor="middle" class="title">不用休息 -&gt; 时间复利</text>
+  <text x="512" y="72" text-anchor="middle" class="claim">把一天拆成“白天人写核心内容 + 夜间 Agent 继续循环”，增长不再只按天结算。</text>
+
+  <!-- Linear lane -->
+  <rect x="46" y="102" width="284" height="514" rx="10" class="panel"/>
+  <text x="72" y="136" class="panel-title yellow-text">线性写作</text>
+  <rect x="222" y="116" width="78" height="28" rx="14" class="yellow"/>
+  <text x="261" y="135" text-anchor="middle" class="small yellow-text">1 圈/天</text>
+  <text x="72" y="164" class="caption">每天 3 小时写 1 篇</text>
+
+  <rect x="82" y="196" width="212" height="58" rx="8" class="neutral"/>
+  <text x="188" y="230" text-anchor="middle" class="node-title">核心内容</text>
+  <path d="M 188 256 L 188 278" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="82" y="284" width="212" height="58" rx="8" class="neutral"/>
+  <text x="188" y="318" text-anchor="middle" class="node-title">发布 1 篇文章</text>
+  <path d="M 188 344 L 188 366" class="line" marker-end="url(#arrow)"/>
+
+  <rect x="82" y="372" width="212" height="58" rx="8" class="neutral"/>
+  <text x="188" y="406" text-anchor="middle" class="node-title">当天结束</text>
+
+  <rect x="82" y="468" width="212" height="86" rx="8" class="white"/>
+  <text x="188" y="501" text-anchor="middle" class="metric yellow-text">365 篇/年</text>
+  <text x="188" y="529" text-anchor="middle" class="caption">增长来自每天多写一篇</text>
+
+  <path d="M 103 582 L 273 582" class="soft-line"/>
+  <path d="M 103 582 C 138 560, 178 548, 273 530" class="soft-line"/>
+  <text x="188" y="600" text-anchor="middle" class="small muted">线性累积：每天只结算一次</text>
+
+  <!-- Agent flywheel lane -->
+  <rect x="354" y="102" width="624" height="514" rx="10" class="panel"/>
+  <text x="384" y="136" class="panel-title green-text">Agent 时间复利</text>
+  <rect x="828" y="116" width="110" height="28" rx="14" class="green"/>
+  <text x="883" y="135" text-anchor="middle" class="small green-text">2-3 圈/天</text>
+  <text x="384" y="164" class="caption">白天产出核心，夜间继续改写、分发、学习反馈</text>
+
+  <line x1="384" y1="330" x2="948" y2="330" class="dash"/>
+  <rect x="384" y="180" width="94" height="28" rx="14" class="yellow"/>
+  <text x="431" y="199" text-anchor="middle" class="small yellow-text">白天：人写</text>
+  <rect x="816" y="180" width="112" height="28" rx="14" class="blue"/>
+  <text x="872" y="199" text-anchor="middle" class="small blue-text">夜间：Agent</text>
+
+  <!-- Flywheel connectors -->
+  <path d="M 750 205 C 786 207, 812 225, 830 242" class="line" marker-end="url(#arrow)"/>
+  <path d="M 857 304 L 857 352" class="line" marker-end="url(#arrow)"/>
+  <path d="M 778 417 C 746 456, 714 474, 754 503" class="line" marker-end="url(#arrow)"/>
+  <path d="M 585 503 C 546 496, 518 468, 494 421" class="line" marker-end="url(#arrow)"/>
+  <path d="M 468 357 L 468 310" class="line" marker-end="url(#arrow)"/>
+  <path d="M 552 258 C 566 230, 585 212, 582 205" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Center hub -->
+  <circle cx="666" cy="348" r="62" fill="#ffffff" stroke="#d5d1c7" stroke-width="1.3"/>
+  <circle cx="666" cy="348" r="42" fill="#f1efe7" stroke="#d5d1c7" stroke-width="1.1"/>
+  <text x="666" y="339" text-anchor="middle" class="node-title">时间复利</text>
+  <text x="666" y="363" text-anchor="middle" class="small muted">昼夜飞轮</text>
+
+  <!-- Flywheel nodes -->
+  <rect x="582" y="174" width="168" height="62" rx="8" class="green"/>
+  <text x="666" y="201" text-anchor="middle" class="node-title green-text">核心内容</text>
+  <text x="666" y="222" text-anchor="middle" class="node-caption">白天人写判断</text>
+
+  <rect x="780" y="242" width="154" height="62" rx="8" class="blue"/>
+  <text x="857" y="269" text-anchor="middle" class="node-title blue-text">改写格式</text>
+  <text x="857" y="290" text-anchor="middle" class="node-caption">适配不同平台</text>
+
+  <rect x="780" y="358" width="154" height="62" rx="8" class="blue"/>
+  <text x="857" y="385" text-anchor="middle" class="node-title blue-text">自动分发</text>
+  <text x="857" y="406" text-anchor="middle" class="node-caption">持续带来读者</text>
+
+  <rect x="586" y="472" width="168" height="62" rx="8" class="purple"/>
+  <text x="670" y="499" text-anchor="middle" class="node-title purple-text">监控反馈</text>
+  <text x="670" y="520" text-anchor="middle" class="node-caption">评论与互动数据</text>
+
+  <rect x="386" y="358" width="166" height="62" rx="8" class="purple"/>
+  <text x="469" y="385" text-anchor="middle" class="node-title purple-text">选题建议</text>
+  <text x="469" y="406" text-anchor="middle" class="node-caption">整理明天方向</text>
+
+  <rect x="386" y="242" width="166" height="62" rx="8" class="green"/>
+  <text x="469" y="269" text-anchor="middle" class="node-title green-text">更好内容</text>
+  <text x="469" y="290" text-anchor="middle" class="node-caption">选题被优化</text>
+
+  <!-- Agent compounding notes -->
+  <rect x="386" y="554" width="234" height="42" rx="8" class="yellow"/>
+  <text x="503" y="581" text-anchor="middle" class="node-title yellow-text">睡觉时也继续转</text>
+  <rect x="644" y="554" width="294" height="42" rx="8" class="green"/>
+  <text x="791" y="581" text-anchor="middle" class="node-title green-text">飞轮转速翻倍，复利周期翻倍</text>
+
+  <!-- Bottom conclusion -->
+  <rect x="72" y="648" width="880" height="78" rx="8" class="yellow"/>
+  <text x="512" y="680" text-anchor="middle" class="footer">不是多做一点，而是复利循环在睡觉时也继续转。</text>
+  <text x="512" y="709" text-anchor="middle" class="footer">分发带来读者，互动数据优化选题，更好选题再带来更多读者。</text>
+</svg>

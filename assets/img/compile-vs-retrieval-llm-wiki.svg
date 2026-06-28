@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">编译型 LLM Wiki 与 RAG 检索的信息图对照</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：左侧展示 RAG 在查询时临时检索片段并拼装答案，右侧展示编译型 LLM Wiki 在摄入时提取事实、关联实体、推导因果链并更新持久页面。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 27px; font-weight: 760; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 20px; font-weight: 760; }
+      .section-title { font-size: 17px; font-weight: 760; }
+      .node-title { font-size: 15.5px; font-weight: 760; }
+      .body { font-size: 12.8px; fill: #3f4e4c; }
+      .small { font-size: 12px; fill: #596362; }
+      .tiny { font-size: 11.2px; fill: #596362; }
+      .footer { font-size: 18px; font-weight: 760; fill: #006b61; }
+      .panel { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .yellow-soft { fill: #fffaf0; stroke: #f1a23a; stroke-width: 1.1; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .blue-soft { fill: #f4f9ff; stroke: #4f8fd6; stroke-width: 1.1; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .purple-soft { fill: #faf7ff; stroke: #8b6fd6; stroke-width: 1.1; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .green-soft { fill: #f3fffb; stroke: #10a98c; stroke-width: 1.1; }
+      .muted-line { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-linecap: round; }
+      .dashed-line { stroke: #74736c; stroke-width: 1.5; stroke-dasharray: 5 6; fill: none; stroke-linecap: round; }
+      .arrow-line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; }
+      .thin-link { stroke: #10a98c; stroke-width: 1.5; fill: none; stroke-linecap: round; }
+      .yellow-text { fill: #7a3f00; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+      .green-text { fill: #006b61; }
+    </style>
+  </defs>
+
+  <text x="512" y="34" text-anchor="middle" class="title">LLM Wiki：编译知识，而不只是检索片段</text>
+  <text x="512" y="62" text-anchor="middle" class="claim">零散知识是一堆没有连线的节点；RAG 每次提问时临时画线，用完就擦掉。</text>
+  <text x="512" y="84" text-anchor="middle" class="claim">编译型 LLM Wiki 在摄入节点时提取、关联、推导，把该画的线永久保留下来。</text>
+
+  <rect x="206" y="102" width="612" height="42" rx="8" class="blue"/>
+  <text x="246" y="127" class="node-title blue-text">同一个问题</text>
+  <text x="388" y="127" class="body">为什么 GPT-4 每 token 比 Claude 便宜？</text>
+
+  <line x1="512" y1="158" x2="512" y2="608" class="dashed-line"/>
+
+  <rect x="38" y="156" width="452" height="452" rx="8" class="purple"/>
+  <text x="62" y="186" class="panel-title purple-text">检索 / RAG：查询时临时拼装</text>
+  <text x="62" y="210" class="small">来源先作为孤立节点存着，关系等提问时再临时画。</text>
+
+  <rect x="62" y="232" width="124" height="76" rx="8" class="white"/>
+  <text x="124" y="256" text-anchor="middle" class="node-title purple-text">Doc A 声称</text>
+  <text x="124" y="280" text-anchor="middle" class="small">GPT-4: MoE</text>
+  <text x="124" y="299" text-anchor="middle" class="tiny">架构线索</text>
+
+  <rect x="202" y="232" width="124" height="76" rx="8" class="white"/>
+  <text x="264" y="256" text-anchor="middle" class="node-title purple-text">Doc B 说明</text>
+  <text x="264" y="280" text-anchor="middle" class="small">约 1/8 激活</text>
+  <text x="264" y="299" text-anchor="middle" class="tiny">FLOPS 下降</text>
+
+  <rect x="342" y="232" width="124" height="76" rx="8" class="white"/>
+  <text x="404" y="256" text-anchor="middle" class="node-title purple-text">Doc C 显示</text>
+  <text x="404" y="280" text-anchor="middle" class="small">$X / 百万 token</text>
+  <text x="404" y="299" text-anchor="middle" class="tiny">价格线索</text>
+
+  <path d="M124 312 C124 326, 146 326, 160 340" class="dashed-line"/>
+  <path d="M264 312 C248 326, 190 326, 176 340" class="dashed-line"/>
+  <path d="M404 312 C350 326, 224 326, 192 340" class="dashed-line"/>
+
+  <rect x="72" y="340" width="176" height="64" rx="8" class="yellow"/>
+  <text x="160" y="366" text-anchor="middle" class="section-title yellow-text">向量检索</text>
+  <text x="160" y="388" text-anchor="middle" class="small yellow-text">临时捞片段</text>
+
+  <line x1="254" y1="372" x2="272" y2="372" class="arrow-line"/>
+  <polygon points="280,372 270,366 270,378" fill="#74736c"/>
+
+  <rect x="284" y="340" width="176" height="64" rx="8" class="yellow"/>
+  <text x="372" y="366" text-anchor="middle" class="section-title yellow-text">LLM 拼答案</text>
+  <text x="372" y="388" text-anchor="middle" class="small yellow-text">本轮上下文合成</text>
+
+  <line x1="372" y1="410" x2="372" y2="427" class="arrow-line"/>
+  <polygon points="372,435 366,425 378,425" fill="#74736c"/>
+
+  <rect x="134" y="436" width="260" height="58" rx="8" class="purple-soft"/>
+  <text x="264" y="461" text-anchor="middle" class="section-title purple-text">一次性答案</text>
+  <text x="264" y="482" text-anchor="middle" class="small">线索留在对话里，不写回知识库</text>
+
+  <rect x="62" y="516" width="404" height="66" rx="8" class="yellow-soft"/>
+  <text x="82" y="541" class="section-title yellow-text">风险</text>
+  <rect x="136" y="526" width="90" height="28" rx="7" fill="#ffffff" stroke="#f1a23a" stroke-width="1"/>
+  <text x="181" y="545" text-anchor="middle" class="small yellow-text">检索运气</text>
+  <rect x="238" y="526" width="90" height="28" rx="7" fill="#ffffff" stroke="#f1a23a" stroke-width="1"/>
+  <text x="283" y="545" text-anchor="middle" class="small yellow-text">答案一次性</text>
+  <rect x="340" y="526" width="104" height="28" rx="7" fill="#ffffff" stroke="#f1a23a" stroke-width="1"/>
+  <text x="392" y="545" text-anchor="middle" class="small yellow-text">关系不沉淀</text>
+  <text x="82" y="571" class="tiny yellow-text">MoE → 低 FLOPS → 低成本，只在这次回答里临时成立。</text>
+
+  <rect x="534" y="156" width="452" height="452" rx="8" class="green"/>
+  <text x="558" y="186" class="panel-title green-text">编译 / LLM Wiki：摄入时永久链接</text>
+  <text x="558" y="210" class="small">每个节点进库时，系统就把该画的线留下。</text>
+
+  <rect x="558" y="232" width="124" height="58" rx="8" class="white"/>
+  <text x="620" y="255" text-anchor="middle" class="node-title green-text">Doc A</text>
+  <text x="620" y="276" text-anchor="middle" class="small">MoE 说法</text>
+
+  <rect x="698" y="232" width="124" height="58" rx="8" class="white"/>
+  <text x="760" y="255" text-anchor="middle" class="node-title green-text">Doc B</text>
+  <text x="760" y="276" text-anchor="middle" class="small">低 FLOPS</text>
+
+  <rect x="838" y="232" width="124" height="58" rx="8" class="white"/>
+  <text x="900" y="255" text-anchor="middle" class="node-title green-text">Doc C</text>
+  <text x="900" y="276" text-anchor="middle" class="small">价格页面</text>
+
+  <path d="M620 294 C620 306, 606 306, 606 318" class="dashed-line"/>
+  <path d="M760 294 C760 306, 713 306, 713 318" class="dashed-line"/>
+  <path d="M900 294 C900 306, 820 306, 820 318" class="dashed-line"/>
+
+  <rect x="558" y="320" width="94" height="58" rx="8" class="blue"/>
+  <text x="605" y="344" text-anchor="middle" class="node-title blue-text">提取事实</text>
+  <text x="605" y="364" text-anchor="middle" class="tiny blue-text">MoE / 价格</text>
+
+  <line x1="656" y1="349" x2="666" y2="349" class="arrow-line"/>
+  <polygon points="674,349 664,343 664,355" fill="#74736c"/>
+
+  <rect x="678" y="320" width="94" height="58" rx="8" class="blue"/>
+  <text x="725" y="344" text-anchor="middle" class="node-title blue-text">关联实体</text>
+  <text x="725" y="364" text-anchor="middle" class="tiny blue-text">GPT-4 / MoE</text>
+
+  <line x1="776" y1="349" x2="786" y2="349" class="arrow-line"/>
+  <polygon points="794,349 784,343 784,355" fill="#74736c"/>
+
+  <rect x="798" y="320" width="94" height="58" rx="8" class="blue"/>
+  <text x="845" y="344" text-anchor="middle" class="node-title blue-text">推导因果</text>
+  <text x="845" y="364" text-anchor="middle" class="tiny blue-text">MoE→低成本</text>
+
+  <line x1="896" y1="349" x2="906" y2="349" class="arrow-line"/>
+  <polygon points="914,349 904,343 904,355" fill="#74736c"/>
+
+  <rect x="918" y="320" width="52" height="58" rx="8" class="blue"/>
+  <text x="944" y="344" text-anchor="middle" class="tiny blue-text">更新</text>
+  <text x="944" y="364" text-anchor="middle" class="tiny blue-text">Wiki</text>
+
+  <rect x="558" y="398" width="404" height="118" rx="8" class="green-soft"/>
+  <text x="760" y="422" text-anchor="middle" class="section-title green-text">持久页面网络：MoE → 低 FLOPS → 低成本</text>
+  <line x1="666" y1="456" x2="854" y2="456" class="thin-link"/>
+  <line x1="666" y1="488" x2="854" y2="456" class="thin-link"/>
+  <line x1="854" y1="488" x2="666" y2="456" class="thin-link"/>
+
+  <rect x="580" y="436" width="170" height="34" rx="7" fill="#ffffff" stroke="#10a98c" stroke-width="1"/>
+  <text x="665" y="458" text-anchor="middle" class="small green-text">MoE 页面</text>
+  <rect x="770" y="436" width="170" height="34" rx="7" fill="#ffffff" stroke="#10a98c" stroke-width="1"/>
+  <text x="855" y="458" text-anchor="middle" class="small green-text">GPT-4 页面</text>
+  <rect x="580" y="480" width="170" height="34" rx="7" fill="#ffffff" stroke="#10a98c" stroke-width="1"/>
+  <text x="665" y="502" text-anchor="middle" class="small green-text">MoE vs Dense</text>
+  <rect x="770" y="480" width="170" height="34" rx="7" fill="#ffffff" stroke="#10a98c" stroke-width="1"/>
+  <text x="855" y="502" text-anchor="middle" class="small green-text">Compute costs</text>
+
+  <line x1="760" y1="520" x2="760" y2="535" class="arrow-line"/>
+  <polygon points="760,543 754,533 766,533" fill="#74736c"/>
+
+  <rect x="602" y="544" width="320" height="42" rx="8" class="blue-soft"/>
+  <text x="762" y="562" text-anchor="middle" class="node-title blue-text">三个月后再问</text>
+  <text x="762" y="580" text-anchor="middle" class="tiny blue-text">读取已综合页面，不从散片段碰运气</text>
+
+  <rect x="38" y="628" width="948" height="104" rx="8" class="panel"/>
+  <text x="62" y="657" class="section-title">编程类比</text>
+  <rect x="172" y="642" width="332" height="36" rx="8" class="yellow"/>
+  <text x="338" y="665" text-anchor="middle" class="small yellow-text">RAG 像解释型语言：每次运行重新解析</text>
+  <rect x="520" y="642" width="404" height="36" rx="8" class="green"/>
+  <text x="722" y="665" text-anchor="middle" class="small green-text">LLM Wiki 像编译型语言：摄入时完成链接，查询时读优化结果</text>
+  <text x="512" y="712" text-anchor="middle" class="footer">结论：价值在 linking，把跨文档的隐含关系变成系统中的持久连线。</text>
+</svg>

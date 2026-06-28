@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">单一视角陷阱：低谷时的视角坍缩</title>
+  <desc id="desc">事件在情绪低谷中被压缩成单一叙事，经由过度泛化和反题缺席，最终让人卡在正题里。</desc>
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 28px; font-weight: 700; }
+      .subtitle { font-size: 17px; fill: #4a504d; }
+      .label { font-size: 20px; font-weight: 700; }
+      .small { font-size: 16px; fill: #4a504d; }
+      .tiny { font-size: 14px; fill: #59615e; }
+      .caption { font-size: 17px; fill: #4a504d; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; }
+      .warn { fill: #fff1d9; stroke: #f1a23a; }
+      .green { fill: #ddf7ef; stroke: #10a98c; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; }
+      .line { stroke: #74736c; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .dash { stroke: #74736c; stroke-width: 2; fill: none; stroke-dasharray: 7 7; stroke-linecap: round; }
+      .card { stroke-width: 2; rx: 8; }
+      .pill { stroke-width: 2; rx: 24; }
+    </style>
+  </defs>
+
+  <!-- Header -->
+  <text x="512" y="58" class="title" text-anchor="middle">低谷时，痛苦来自视角坍缩</text>
+  <text x="512" y="88" class="subtitle" text-anchor="middle">不是“人太脆弱”，而是事件被压成了一个无法转身的自我叙事</text>
+
+  <!-- Core claim banner -->
+  <rect x="238" y="116" width="548" height="72" class="green card"/>
+  <text x="512" y="146" class="label" text-anchor="middle">核心判断</text>
+  <text x="512" y="171" class="caption" text-anchor="middle">需要恢复的不是意志力，而是重新打开视角</text>
+
+  <!-- Event examples -->
+  <rect x="58" y="256" width="202" height="82" class="blue card"/>
+  <text x="159" y="289" class="label" text-anchor="middle">产品没人用</text>
+  <text x="159" y="318" class="small" text-anchor="middle">一个具体事件</text>
+
+  <rect x="58" y="386" width="202" height="82" class="blue card"/>
+  <text x="159" y="419" class="label" text-anchor="middle">方向选错了</text>
+  <text x="159" y="448" class="small" text-anchor="middle">一次阶段判断</text>
+
+  <!-- Funnel / collapse zone -->
+  <path d="M305 254 L476 298 L476 430 L305 474 Z" fill="#fff1d9" stroke="#f1a23a" stroke-width="2"/>
+  <text x="386" y="337" class="label" text-anchor="middle">视角坍缩</text>
+  <text x="386" y="366" class="small" text-anchor="middle">把局部失败</text>
+  <text x="386" y="390" class="small" text-anchor="middle">压成自我结论</text>
+
+  <path d="M260 297 C280 297 286 297 305 297" class="line"/>
+  <polygon points="305,297 294,291 294,303" fill="#74736c"/>
+  <path d="M260 427 C280 427 286 427 305 427" class="line"/>
+  <polygon points="305,427 294,421 294,433" fill="#74736c"/>
+
+  <!-- Single narrative -->
+  <rect x="522" y="274" width="184" height="78" class="warn card"/>
+  <text x="614" y="306" class="label" text-anchor="middle">单一叙事</text>
+  <text x="614" y="333" class="small" text-anchor="middle">“我不行”</text>
+
+  <rect x="522" y="386" width="184" height="78" class="warn card"/>
+  <text x="614" y="418" class="label" text-anchor="middle">过度泛化</text>
+  <text x="614" y="445" class="small" text-anchor="middle">“一直如此”</text>
+
+  <path d="M476 362 C498 362 500 313 522 313" class="line"/>
+  <polygon points="522,313 511,307 511,319" fill="#74736c"/>
+  <path d="M476 362 C498 362 500 425 522 425" class="line"/>
+  <polygon points="522,425 511,419 511,431" fill="#74736c"/>
+
+  <!-- Missing antithesis and stuck state -->
+  <rect x="754" y="274" width="212" height="78" class="purple card"/>
+  <text x="860" y="306" class="label" text-anchor="middle">反题缺席</text>
+  <text x="860" y="333" class="small" text-anchor="middle">没有第二种解释</text>
+
+  <rect x="754" y="386" width="212" height="78" class="neutral card"/>
+  <text x="860" y="418" class="label" text-anchor="middle">困在正题</text>
+  <text x="860" y="445" class="small" text-anchor="middle">等待被人拽出来</text>
+
+  <path d="M706 313 L754 313" class="line"/>
+  <polygon points="754,313 743,307 743,319" fill="#74736c"/>
+  <path d="M706 425 L754 425" class="line"/>
+  <polygon points="754,425 743,419 743,431" fill="#74736c"/>
+  <path d="M860 352 L860 386" class="line"/>
+  <polygon points="860,386 854,375 866,375" fill="#74736c"/>
+
+  <!-- Dialectic reference strip -->
+  <line x1="70" y1="532" x2="954" y2="532" class="dash"/>
+
+  <rect x="112" y="580" width="172" height="70" class="neutral card"/>
+  <text x="198" y="623" class="label" text-anchor="middle">正题</text>
+
+  <rect x="426" y="580" width="172" height="70" class="purple card"/>
+  <text x="512" y="610" class="label" text-anchor="middle">反题</text>
+  <text x="512" y="636" class="tiny" text-anchor="middle">低谷时不会自动出现</text>
+
+  <rect x="740" y="580" width="172" height="70" class="green card"/>
+  <text x="826" y="623" class="label" text-anchor="middle">合题</text>
+
+  <path d="M284 615 L426 615" class="line"/>
+  <polygon points="426,615 415,609 415,621" fill="#74736c"/>
+  <path d="M598 615 L740 615" class="line"/>
+  <polygon points="740,615 729,609 729,621" fill="#74736c"/>
+
+  <text x="512" y="552" class="caption" text-anchor="middle">辩证法的提醒：一个正题要遇到反题，才可能上升到合题</text>
+  <text x="512" y="696" class="caption" text-anchor="middle">旧方式的问题：等对的人、对的时间、对的话，概率低，等待长</text>
+</svg>

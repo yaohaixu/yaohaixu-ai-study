@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">从回答者到提问者</title>
+  <desc id="desc">AI 时代学生从回答问题的人转为提出问题和设计学习路径的人，价值迁移到定义问题和理解标准。</desc>
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 30px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #4b5454; }
+      .panel-title { font-size: 22px; font-weight: 750; }
+      .panel-kicker { font-size: 15px; fill: #5c6464; }
+      .card-title { font-size: 20px; font-weight: 700; }
+      .card-note { font-size: 15px; fill: #526061; }
+      .small { font-size: 14px; fill: #5c6464; }
+      .caption { font-size: 17px; fill: #344244; }
+      .arrow-label { font-size: 18px; font-weight: 700; fill: #5c5b55; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; }
+      .warning { fill: #fff1d9; stroke: #f1a23a; }
+      .success { fill: #ddf7ef; stroke: #10a98c; }
+      .info { fill: #e6f2ff; stroke: #4f8fd6; }
+      .meta { fill: #f0e8ff; stroke: #8b6fd6; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .dotted { stroke: #74736c; stroke-width: 1.5; stroke-dasharray: 5 7; fill: none; }
+      .card { stroke-width: 2; rx: 8; ry: 8; }
+      .panel { stroke-width: 2; rx: 12; ry: 12; }
+    </style>
+  </defs>
+
+  <text class="title" x="512" y="52" text-anchor="middle">从“回答问题的人”到“提问的人”</text>
+  <text class="subtitle" x="512" y="84" text-anchor="middle">AI 越强，价值越从给出答案迁移到定义问题和学习路径</text>
+
+  <rect class="panel warning" x="56" y="128" width="390" height="438"/>
+  <rect class="panel success" x="578" y="128" width="390" height="438"/>
+
+  <text class="panel-title" x="88" y="172">过去：回答者</text>
+  <text class="panel-kicker" x="88" y="198">别人定义题目，学生交付答案</text>
+
+  <text class="panel-title" x="610" y="172">现在：提问者</text>
+  <text class="panel-kicker" x="610" y="198">学生定义路径，用答案推动下一问</text>
+
+  <rect class="card neutral" x="92" y="230" width="318" height="72"/>
+  <text class="card-title" x="251" y="260" text-anchor="middle">别人出题</text>
+  <text class="card-note" x="251" y="285" text-anchor="middle">考试、作业、论文</text>
+
+  <line class="line" x1="251" y1="312" x2="251" y2="346"/>
+  <polygon points="251,356 246,346 256,346" fill="#74736c"/>
+
+  <rect class="card neutral" x="92" y="360" width="318" height="72"/>
+  <text class="card-title" x="251" y="390" text-anchor="middle">寻找标准答案</text>
+  <text class="card-note" x="251" y="415" text-anchor="middle">目标是答对、写完、交付</text>
+
+  <line class="line" x1="251" y1="442" x2="251" y2="476"/>
+  <polygon points="251,486 246,476 256,476" fill="#74736c"/>
+
+  <rect class="card warning" x="92" y="490" width="318" height="52"/>
+  <text class="card-title" x="251" y="523" text-anchor="middle" fill="#7a3f00">完成任务</text>
+
+  <rect class="card info" x="614" y="230" width="318" height="72"/>
+  <text class="card-title" x="773" y="260" text-anchor="middle">自己设计问题</text>
+  <text class="card-note" x="773" y="285" text-anchor="middle">先问什么，为什么问</text>
+
+  <line class="line" x1="773" y1="312" x2="773" y2="346"/>
+  <polygon points="773,356 768,346 778,346" fill="#74736c"/>
+
+  <rect class="card meta" x="614" y="360" width="318" height="72"/>
+  <text class="card-title" x="773" y="390" text-anchor="middle">安排学习路径</text>
+  <text class="card-note" x="773" y="415" text-anchor="middle">顺序、分支、下一步</text>
+
+  <line class="line" x1="773" y1="442" x2="773" y2="476"/>
+  <polygon points="773,486 768,476 778,476" fill="#74736c"/>
+
+  <rect class="card success" x="614" y="490" width="318" height="52"/>
+  <text class="card-title" x="773" y="523" text-anchor="middle" fill="#006b61">定义真正理解</text>
+
+  <line class="dotted" x1="512" y1="130" x2="512" y2="566"/>
+  <line class="line" x1="466" y1="346" x2="552" y2="346"/>
+  <polygon points="562,346 552,341 552,351" fill="#74736c"/>
+  <text class="arrow-label" x="514" y="329" text-anchor="middle">价值迁移</text>
+  <text class="small" x="514" y="374" text-anchor="middle">从答题能力</text>
+  <text class="small" x="514" y="395" text-anchor="middle">到设题能力</text>
+
+  <rect class="card neutral" x="162" y="612" width="700" height="92"/>
+  <text class="caption" x="512" y="646" text-anchor="middle">核心变化：学生开始做课程设计者过去做的事</text>
+  <text class="caption" x="512" y="676" text-anchor="middle">定义“该问什么、按什么顺序问、怎样才算真正理解”</text>
+</svg>

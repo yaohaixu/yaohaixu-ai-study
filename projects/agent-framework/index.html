@@ -116,6 +116,7 @@
 
       <p>今天你用的 GPT、Gemini、Deepseek、豆包，本质上都是同一种东西——你打一行字，它回一段话，然后就轮到你了。它再聪明，也只是在对话框里给你文字。想真正完成一件事，全靠你自己一步步去操作。</p>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/CKlmb5hsAo1zuvx7zH9cxApfngc.png" alt="Agent革命性"></div>
       <h3 id="s-agent-的革命性在于三个能力的叠加">Agent 的革命性在于三个能力的叠加</h3>
 
       <div class="concept-grid">
@@ -126,6 +127,7 @@
 
       <div class="callout tip"><strong>简单判断标准：</strong>如果 AI 做完之后你还要亲自动手，那就是 Chat AI；如果它交给你的已经是最终结果，那就是 Agent。</div>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/HKRMbJvFNo0GU2x7X6Ec6pxOnWg.png" alt="ChatAI vs Agent"></div>
       <h3 id="s-chat-ai-与-agent-的本质区别">Chat AI 与 Agent 的本质区别</h3>
 
       <div class="concept-grid">
@@ -133,6 +135,7 @@
         <div class="concept-card"><div class="cc-emoji">&#x1F4BB;</div><h4>Agent：有文件系统，可以操作执行</h4><p>有三样东西：一张<strong>办公桌</strong>（工作目录）、一双<strong>手</strong>（工具调用 + 代码执行）、一颗<strong>主动的心</strong>（自主循环执行到底）。</p></div>
       </div>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/Dbi3b9giJoqrgGxWJKXcPwqanFb.png" alt="顾问vs律师" style="display:none;"></div>
       <h4>法律顾问 vs 代理律师——最好的类比</h4>
       <p>顾问和律师的脑子一样好，那为什么律师能帮你打赢官司、顾问只能给建议？因为律师有律所——办公桌能写材料、电话能联系法院、有办案流程能自己推进到底。顾问呢？就一张嘴。ChatGPT 就是只有嘴的顾问——聪明，但聊完就没了。Agent 多了工作空间、操作工具和自主推进的工作流程。</p>
 
@@ -151,6 +154,8 @@
         <div class="concept-card"><div class="cc-emoji">&#x1F4C1;</div><h4>文件空间 — 工作台</h4><p>本地目录或云端容器。存放上下文文件、工具生成结果。资料空的 Agent 再强也是无米之炊。</p></div>
       </div>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/UlovbJf9Goi49FxagVmc1AXbnyg.png" alt="循环流程"></div>
+      <div class="inline-img"><img src="../../assets/img/agent-framework/UlovbJf9Goi49FxagVmc1AXbnyg.png" alt="循环流程"></div>
       <h3>循环流程</h3>
       <div class="phase-timeline">
         <div class="phase-card"><div class="phase-marker trigger">1</div><div class="phase-body"><h4>文件空间给大脑"喂"信息</h4><p>Agent 先读取工作目录下所有相关文件，理解项目背景和当前状态。</p></div></div>
@@ -163,6 +168,7 @@
       <p>看榜单但别迷信。BenchLM Agentic 前排：Claude Mythos 5、GPT-5.5、Claude Opus 4.8、Gemini 3.5 Flash 等。但 Agent 能力不是裸模型分数，还包括具体框架怎么跑任务。SWE-bench 更接近真实代码修复场景，Terminal-Bench 直接排 agent+model 组合——同一个 GPT-5.5，放到不同框架结果也不同。</p>
       <div class="callout insight"><strong>核心认知：</strong>模型仍是 Agent 的大脑，但第一梯队差距正在缩小。对普通人来说，更实用的问题是：能稳定接入这个模型吗？框架能可靠执行吗？文件空间和工具权限够不够？</div>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/MHmSbJEL1oGGdpxbOLVcytyTnne.png" alt="本地vs云端"></div>
       <h3 id="s-文件空间-本地-vs-云端">文件空间：本地 vs 云端</h3>
       <div class="concept-grid">
         <div class="concept-card"><div class="cc-emoji">&#x1F4BB;</div><h4>本地 = Agent 来你家办公</h4><p>数据不出电脑，适合敏感文件。Codex 默认本地，Claude Code 始终本地靠 Git 保底回滚。</p></div>
@@ -207,6 +213,7 @@
 
       <div class="inline-img"><img src="../../assets/img/agent-framework/claude-code-screenshot.jpg" alt="Claude Code" style="border-radius:var(--radius-md);"></div>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/openclaw-screenshot.jpg" alt="OpenClaw"></div>
       <h3 id="s-openclaw-vs-hermes">OpenClaw vs Hermes</h3>
       <p>"生态广度 vs 学习深度"之争。OpenClaw 有 354k Stars 和 13,700+ 技能但记忆脆弱、不会自学。Hermes 是目前唯一内置学习闭环的框架但生态还在早期。有意思的用法：用 Hermes 当"指挥位"，OpenClaw 当"执行位"。</p>
 
@@ -227,18 +234,21 @@
       <h4>Token = 电费的"度"</h4>
       <p>订阅 = 包月不限量（有上限），API = 按度计费。Agent 框架跑起来特别费 token——一个复杂任务可能消耗几万 token，用 API 计费时要留意账单。</p>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/codex-mobile-screenshot.jpg" alt="Codex截图"></div>
       <h3 id="s-codex-上手路径">Codex 上手路径</h3>
       <div class="concept-grid">
         <div class="concept-card"><div class="cc-emoji">&#x1F310;</div><h4>官方 Codex</h4><p>有海外访问条件 + ChatGPT Plus/Pro 订阅。最省心，账号更新安装都跟着 OpenAI 走。</p></div>
         <div class="concept-card"><div class="cc-emoji">&#x1F504;</div><h4>Codex 转接模型版</h4><p>暂无海外订阅。课程 Skill 包把 Codex、课程中转、本地 relay 和配置文件串起来。</p></div>
       </div>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/claude-code-screenshot.jpg" alt="Claude Code"></div>
       <h3 id="s-claude-code-上手路径">Claude Code 上手路径</h3>
       <div class="concept-grid">
         <div class="concept-card"><div class="cc-emoji">&#x1F510;</div><h4>官方 Claude Code</h4><p>能稳定访问 Claude + 有 Pro/Max/Team 或 Console 账号。安装后登录即可。</p></div>
         <div class="concept-card"><div class="cc-emoji">&#x1F4E6;</div><h4>Claude 转接模型版</h4><p>暂无官方 Claude 条件。课程 Skill 包准备 Git、Node.js、VS Code、Claude Code、CC Switch。</p></div>
       </div>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/LDOGbq3Ivo7nMDxwZFKcLKynnDf.png" alt="框架对比"></div>
       <h3 id="s-各框架安装一览">各框架安装一览</h3>
       <div style="overflow-x:auto;"><table class="agent-table"><thead><tr><th>框架</th><th>安装方式</th><th>推荐模型</th><th>适合人群</th></tr></thead><tbody>
         <tr><td style="font-weight:600;">Codex</td><td>桌面 App 安装</td><td>GPT-5.5</td><td>有 ChatGPT 订阅</td></tr>
@@ -250,6 +260,7 @@
         <tr><td style="font-weight:600;">WorkBuddy</td><td>桌面端安装</td><td>内置</td><td>办公场景小白</td></tr>
       </tbody></table></div>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/AwXIbjLgZoLMLSxu220c45ONnTb.png" alt="终端使用"></div>
       <h3 id="s-终端小知识">终端小知识</h3>
       <ul class="num-list">
         <li><span class="num">1</span><div class="num-content"><h5>密码输入时看不到任何字符</h5><p>正常！不是键盘坏了。终端输入密码时不会有任何显示（连 *** 都没有），输入完直接回车。</p></div></li>
@@ -274,6 +285,7 @@
       </div>
       <p>如果还没决定好也完全没头绪，参考以下操作：安装 <strong>Trae</strong> → 让 Trae 帮你安装 cc switch 和 Claude Code → 去 DeepSeek Platform 注册账号获取 API Key → 让 Trae 引导你打开本机配置界面填入 Key → 在 Trae 上安装 Claude 插件。</p>
 
+      <div class="inline-img"><img src="../../assets/img/agent-framework/Mo1MbpNwLoszwYxI7BocXixVn9f.png" alt="作业素材"></div>
       <h3 id="s-小任务-新媒体运营周报">小任务：新媒体运营周报</h3>
       <p>用一个很小的新媒体周报任务，把前面讲过的 Agent 框架真正跑起来。先下载作业附件并解压，用你选择的 Agent App 打开工作文件夹。</p>
 

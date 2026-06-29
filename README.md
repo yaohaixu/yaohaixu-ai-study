@@ -94,6 +94,5 @@ python3 -m http.server 8080
 ## Credits
 
 - **内容与设计**：[yaohaixu](https://github.com/yaohaixu)
-- **灵感参考**：[Social Layer](https://sola.wamo.city)
 - **字体**：Google Fonts — Inter, Playfair Display, Noto Sans SC, Noto Serif SC, JetBrains Mono
 - **部署**：[GitHub Pages](https://pages.github.com)

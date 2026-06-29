@@ -280,3 +280,41 @@ blockquote.insight-quote { margin: 28px 0; padding: 24px 28px; background: var(-
   .site-header, .site-footer, .content-progress { display: none; }
   body { background: #fff; }
 }
+
+
+/* ─── TOC Sidebar Layout ─────────────────────────────────── */
+.project-layout {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: 220px 1fr; gap: 40px;
+  align-items: start;
+}
+.toc-sidebar {
+  position: sticky; top: 88px;
+  max-height: calc(100vh - 104px); overflow-y: auto;
+  padding-right: 12px;
+}
+.toc-sidebar .toc-title {
+  font-family: var(--font-body); font-size: 11px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted);
+  margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+.toc-sidebar a {
+  display: block; padding: 6px 0;
+  font-size: 13.5px; color: var(--text-soft);
+  border-bottom: 1px solid var(--border-soft); transition: all .18s var(--ease-out);
+  line-height: 1.5;
+}
+.toc-sidebar a:last-child { border-bottom: none; }
+.toc-sidebar a:hover { color: var(--accent); padding-left: 4px; }
+.toc-sidebar a.toc-active { color: var(--accent); font-weight: 600; padding-left: 6px; border-left: 2px solid var(--accent); }
+.toc-sidebar a.toc-h2 { font-weight: 600; font-size: 14px; color: var(--text); padding-top: 10px; }
+.toc-sidebar a.toc-h3 { padding-left: 10px; font-size: 12.5px; }
+
+@media (max-width: 860px) {
+  .project-layout { grid-template-columns: 1fr; }
+  .toc-sidebar {
+    position: relative; top: 0; max-height: none;
+    margin-bottom: 32px; padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+}

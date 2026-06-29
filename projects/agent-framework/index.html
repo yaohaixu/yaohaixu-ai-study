@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent 框架选用与基础入门 · yaohaixu AI 学习框架</title>
+  <meta name="description" content="从 Chat AI 到 Agent：理解模型、框架、文件空间和真实上手路径。五幕内容覆盖 Agent 定义、核心条件、框架选型、快速开始与实操项目。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<div class="content-progress"><div class="progress-fill"></div></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/yaohaixu-ai-study/" class="header-brand"><span class="brand-dot"></span>yaohaixu · AI</a>
+    <nav class="header-nav">
+      <a href="/yaohaixu-ai-study/" class="nav-link">首页</a>
+      <a href="/yaohaixu-ai-study/projects/ai-mindset/" class="nav-link">AI Mindset</a>
+      <a href="/yaohaixu-ai-study/projects/agent-framework/" class="active nav-link" aria-current="page">Agent Framework</a>
+      <a href="https://github.com/yaohaixu/yaohaixu-ai-study" class="header-cta" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="project-hero">
+  <div class="page-width">
+    <a href="/yaohaixu-ai-study/" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      返回学习框架
+    </a>
+    <p class="eyebrow">模块 02 · 学习中</p>
+    <h1 class="heading-xl">Agent 框架选用<br><em class="gradient-text">与基础入门</em></h1>
+    <p class="body-lg" style="margin-top:16px;">从 Chat AI 到 Agent：理解模型、框架、文件空间和真实上手路径。Agent 多了一个"身体"——读文件、写代码、调工具、完成任务。</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:32px;">
+  <div class="project-content">
+
+    <div class="act-nav" id="toc">
+      <a href="#act-1">第 1 幕 · 什么是 Agent</a>
+      <a href="#act-2">第 2 幕 · 核心条件</a>
+      <a href="#act-3">第 3 幕 · 框架选型</a>
+      <a href="#act-4">第 4 幕 · 快速开始</a>
+      <a href="#act-5">第 5 幕 · 开始小项目</a>
+    </div>
+
+    <blockquote class="insight-quote">Chat AI 和 Agent 用的是同一个大脑，区别在于 Agent 多了一个身体。大脑负责思考和语言，身体负责接触真实世界。</blockquote>
+
+    <!-- ══════════════════════════════════ Act 1 ══════════════════════════ -->
+    <div class="content-block" id="act-1">
+      <div class="act-header"><div class="act-num">01</div><h2>第 1 幕 · 什么是 Agent？</h2><p class="act-subtitle">Chat AI vs Agent：从"只能说话"到"能替你做"</p></div>
+
+      <p>今天你用的 GPT、Gemini、Deepseek、豆包，本质上都是同一种东西——你打一行字，它回一段话，然后就轮到你了。它再聪明，也只是在对话框里给你文字。想真正完成一件事，全靠你自己一步步去操作。</p>
+
+      <h3>Agent 的革命性在于三个能力的叠加</h3>
+
+      <div class="concept-grid">
+        <div class="concept-card"><div class="cc-emoji">&#x1F9E9;</div><h4>第一：能自己拆任务</h4><p>你说"帮我准备下周一的周会 PPT"，它会自动想到：先看上周会议纪要、再查本周项目进度、然后按模板生成幻灯片。你不需要一步步教它。</p></div>
+        <div class="concept-card"><div class="cc-emoji">&#x1F91E;</div><h4>第二：有"手脚"——能调用工具</h4><p>Chat AI 只能"说"，Agent 能"做"：搜网页、读文件、写代码、调 API、发消息。顾问只能口头建议，助理能真的去打电话、跑腿、填表。</p></div>
+        <div class="concept-card"><div class="cc-emoji">&#x1F504;</div><h4>第三：会自我检查和循环</h4><p>做完一步，它会看看结果对不对，不对就换个方法重试，直到目标达成。这个"目标驱动 + 循环执行"的模式，是 Agent 跟 Chat AI 最本质的区别。</p></div>
+      </div>
+
+      <div class="callout tip"><strong>简单判断标准：</strong>如果 AI 做完之后你还要亲自动手，那就是 Chat AI；如果它交给你的已经是最终结果，那就是 Agent。</div>
+
+      <h3>Chat AI 与 Agent 的本质区别</h3>
+
+      <div class="concept-grid">
+        <div class="concept-card"><div class="cc-emoji">&#x2601;</div><h4>Chat AI：在云端，只负责对话</h4><p>GPT / Gemini / 豆包背后的大模型住在远程服务器上，跟你之间只有一根"文字管道"。它没有硬盘、没有桌面、没有浏览器，什么都摸不到。</p></div>
+        <div class="concept-card"><div class="cc-emoji">&#x1F4BB;</div><h4>Agent：有文件系统，可以操作执行</h4><p>有三样东西：一张<strong>办公桌</strong>（工作目录）、一双<strong>手</strong>（工具调用 + 代码执行）、一颗<strong>主动的心</strong>（自主循环执行到底）。</p></div>
+      </div>
+
+      <h4>法律顾问 vs 代理律师——最好的类比</h4>
+      <p>顾问和律师的脑子一样好，那为什么律师能帮你打赢官司、顾问只能给建议？因为律师有律所——办公桌能写材料、电话能联系法院、有办案流程能自己推进到底。顾问呢？就一张嘴。ChatGPT 就是只有嘴的顾问——聪明，但聊完就没了。Agent 多了工作空间、操作工具和自主推进的工作流程。</p>
+
+      <h3>Chat AI 处理文件 vs Agent 处理文件</h3>
+      <p><strong>隔离 vs 延续。</strong> Chat AI 的每次对话就是一间密封小房间——文件塞进去，看完就锁上。下次新房间什么也没有，得重新上传、重新交代背景。Agent 是一间始终敞开的办公室。你上传的文件、它生成的文件全在同一张桌子上。下次你说"帮我写周报"，它自己先翻一遍桌上已有的需求文档、竞品分析、会议纪要，理解完背景再动手。</p>
+    </div>
+
+    <!-- ══════════════════════════════════ Act 2 ══════════════════════════ -->
+    <div class="content-block" id="act-2">
+      <div class="act-header"><div class="act-num">02</div><h2>第 2 幕 · 使用 Agent 的核心条件</h2><p class="act-subtitle">三个条件：AI 模型、Agent 框架、文件空间</p></div>
+
+      <h3>三件套：大脑 + 身体 + 工作台</h3>
+      <div class="concept-grid">
+        <div class="concept-card"><div class="cc-emoji">&#x1F9E0;</div><h4>AI 模型 — 大脑</h4><p>Claude、GPT、Gemini、DeepSeek 等。负责理解语言、推理、规划。模型弱则 Agent 产出质量差。</p></div>
+        <div class="concept-card"><div class="cc-emoji">&#x1F3D7;</div><h4>Agent 框架 — 身体</h4><p>Claude Code、Codex、OpenClaw、Hermes 等。负责调用工具、管理任务循环。框架弱则跑到一半散架。</p></div>
+        <div class="concept-card"><div class="cc-emoji">&#x1F4C1;</div><h4>文件空间 — 工作台</h4><p>本地目录或云端容器。存放上下文文件、工具生成结果。资料空的 Agent 再强也是无米之炊。</p></div>
+      </div>
+
+      <h3>循环流程</h3>
+      <div class="phase-timeline">
+        <div class="phase-card"><div class="phase-marker trigger">1</div><div class="phase-body"><h4>文件空间给大脑"喂"信息</h4><p>Agent 先读取工作目录下所有相关文件，理解项目背景和当前状态。</p></div></div>
+        <div class="phase-card"><div class="phase-marker peak">2</div><div class="phase-body"><h4>大脑做出判断和规划</h4><p>模型分析信息后制定执行计划，拆解为可操作的步骤。</p></div></div>
+        <div class="phase-card"><div class="phase-marker trough">3</div><div class="phase-body"><h4>框架执行计划</h4><p>Agent 框架调用工具、跑代码、一步步推进任务。</p></div></div>
+        <div class="phase-card"><div class="phase-marker slope">4</div><div class="phase-body"><h4>结果写回文件空间</h4><p>执行结果被写回工作目录，大脑再读取决定下一步——如此循环，直到任务完成。</p></div></div>
+      </div>
+
+      <h3>AI 模型选型</h3>
+      <p>看榜单但别迷信。BenchLM Agentic 前排：Claude Mythos 5、GPT-5.5、Claude Opus 4.8、Gemini 3.5 Flash 等。但 Agent 能力不是裸模型分数，还包括具体框架怎么跑任务。SWE-bench 更接近真实代码修复场景，Terminal-Bench 直接排 agent+model 组合——同一个 GPT-5.5，放到不同框架结果也不同。</p>
+      <div class="callout insight"><strong>核心认知：</strong>模型仍是 Agent 的大脑，但第一梯队差距正在缩小。对普通人来说，更实用的问题是：能稳定接入这个模型吗？框架能可靠执行吗？文件空间和工具权限够不够？</div>
+
+      <h3>文件空间：本地 vs 云端</h3>
+      <div class="concept-grid">
+        <div class="concept-card"><div class="cc-emoji">&#x1F4BB;</div><h4>本地 = Agent 来你家办公</h4><p>数据不出电脑，适合敏感文件。Codex 默认本地，Claude Code 始终本地靠 Git 保底回滚。</p></div>
+        <div class="concept-card"><div class="cc-emoji">&#x2601;</div><h4>云端 = Agent 在别人办公室干活</h4><p>在一次性隔离容器里运行，不影响真实环境，但文件要上传服务器。中国厂商基本都是云端方案。</p></div>
+      </div>
+
+      <h3>五种界面形式</h3>
+      <div class="phase-timeline">
+        <div class="phase-card"><div class="phase-marker trigger">1</div><div class="phase-body"><h4>本地 App — 最直观</h4><p>Codex 桌面版 / Claude Code IDE 集成。能看每一行变化，确认再提交。适合需要精细控制的开发者。</p></div></div>
+        <div class="phase-card"><div class="phase-marker peak">2</div><div class="phase-body"><h4>本地终端 — 最高效</h4><p>纯文字命令行，打字最快、消耗最少。和 App 本质一样：文件在电脑上，只能在这台电脑前操作。</p></div></div>
+        <div class="phase-card"><div class="phase-marker trough">3</div><div class="phase-body"><h4>SSH 远程 — 易混淆</h4><p>看起来跟本地终端一模一样，但你操控的是远程服务器的 Agent 和文件。</p></div></div>
+        <div class="phase-card"><div class="phase-marker slope">4</div><div class="phase-body"><h4>IM 聊天 — 最友好</h4><p>飞书 / Telegram / 微信里直接发消息。不需要装任何东西，但看不到工作过程。</p></div></div>
+        <div class="phase-card"><div class="phase-marker trigger">5</div><div class="phase-body"><h4>网页界面 — 折中方案</h4><p>打开浏览器就能用，既能管理文件又能对话，适合团队多人共享项目空间。</p></div></div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════ Act 3 ══════════════════════════ -->
+    <div class="content-block" id="act-3">
+      <div class="act-header"><div class="act-num">03</div><h2>第 3 幕 · 选择适合你的 Agent 框架</h2><p class="act-subtitle">从顶层到底层：夯 → 顶级 → 人上人 → NPC → 拉</p></div>
+
+      <h3>框架分层：从最强到最弱</h3>
+
+      <div class="phase-timeline">
+        <div class="phase-card"><div class="phase-marker trigger">顶级</div><div class="phase-body"><h4>夯 — 原生天花板</h4><p>Claude Code（只能用 Claude）、Codex（只能用 GPT）。框架最强 + 模型最强，但锁死在自家生态。得有对应的账号订阅，费用不便宜。Agent 完成度目前就是天花板。</p></div></div>
+        <div class="phase-card"><div class="phase-marker peak">高效</div><div class="phase-body"><h4>顶级 — 聪明人的玩法</h4><p>用 Claude Code 这套最强框架，但把模型偷换成便宜的第三方（DeepSeek 等）。Trae + CC Switch 就是这个思路。框架能力不打折，模型费用大幅降低。</p></div></div>
+        <div class="phase-card"><div class="phase-marker trough">前沿</div><div class="phase-body"><h4>人上人 — 更强 Agent 工作台</h4><p>Hermes Agent 不绑任何模型、自学习、越用越聪明；Trae Solo 把编辑器、终端、浏览器、文档收进同一个 workspace。理念超前但生态还在早期。</p></div></div>
+        <div class="phase-card"><div class="phase-marker slope">入门</div><div class="phase-body"><h4>NPC — 门槛最低</h4><p>OpenClaw + 国内云厂商打包方案，加上 WorkBuddy 这种办公场景桌面工作台。飞书扫码、微信直连就能用，但框架能力天花板有限。</p></div></div>
+        <div class="phase-card"><div class="phase-marker trigger">基础</div><div class="phase-body"><h4>拉 — 回到起点</h4><p>ChatGPT、Gemini、豆包、Kimi——纯聊天 AI。只有大脑没有身体的法律顾问。有用，但不是 Agent。</p></div></div>
+      </div>
+
+      <h3>选型路线图</h3>
+      <ul>
+        <li><strong>有海外账号</strong> → Claude Code + Codex，写代码办公都是最强</li>
+        <li><strong>没有但想用最好的，没多端需求</strong> → Trae + CC Switch，同级框架换便宜模型</li>
+        <li><strong>多端设备 + 能上云</strong> → 按办公工具选：飞书→ArkClaw、微信→QClaw、个人→看是否愿意养 Hermes</li>
+        <li><strong>多端设备 + 必须本地</strong> → 能装桌面端→Hermes Desktop，不能→AutoClaw</li>
+        <li><strong>以上都不想碰</strong> → 继续用 Chat AI</li>
+      </ul>
+
+      <h3>Claude Code vs Codex</h3>
+      <p>"质量 vs 效率"之争。一个 Express.js 重构任务，Codex 花约 $15，Claude Code 花约 $155，但盲审认为 Claude Code 产出的代码质量更高（67% vs 25%）。Reddit 500+ 开发者调查中 65% 日常偏好 Codex，但多数专业开发者两个都用——Codex 跑量，Claude Code 做关键提交。</p>
+
+      <div class="inline-img"><img src="../../assets/img/agent-framework/claude-code-screenshot.jpg" alt="Claude Code" style="border-radius:var(--radius-md);"></div>
+
+      <h3>OpenClaw vs Hermes</h3>
+      <p>"生态广度 vs 学习深度"之争。OpenClaw 有 354k Stars 和 13,700+ 技能但记忆脆弱、不会自学。Hermes 是目前唯一内置学习闭环的框架但生态还在早期。有意思的用法：用 Hermes 当"指挥位"，OpenClaw 当"执行位"。</p>
+
+      <div class="inline-img"><img src="../../assets/img/agent-framework/hermes-agent-desktop.png" alt="Hermes Agent" style="border-radius:var(--radius-md);"></div>
+
+      <div class="callout insight"><strong>中国厂商格局：</strong>基本都基于 OpenClaw 做差异化。腾讯 QClaw（微信直连）、字节 ArkClaw（飞书企业级）、MiniMax MaxClaw（小白友好度最高）、KimiClaw（中文办公自动化）。</div>
+    </div>
+
+    <!-- ══════════════════════════════════ Act 4 ══════════════════════════ -->
+    <div class="content-block" id="act-4">
+      <div class="act-header"><div class="act-num">04</div><h2>第 4 幕 · 快速开始</h2><p class="act-subtitle">理解 9 个概念：注册→付费→API Key→框架→调用→Token→费用</p></div>
+
+      <h3>9 个概念一条链</h3>
+      <p>注册账号 → 在平台付费 → 拿到 API Key → 填入 Agent 框架 → 框架调用模型 → 消耗 token → 产生费用。</p>
+
+      <div class="callout warning"><strong>&#x26A0; API Key = 银行卡密码！</strong> 小白最容易犯的错误就是把 API Key 发在群里或贴到公开文档上——别人拿到就能花你的钱。</div>
+
+      <h4>Token = 电费的"度"</h4>
+      <p>订阅 = 包月不限量（有上限），API = 按度计费。Agent 框架跑起来特别费 token——一个复杂任务可能消耗几万 token，用 API 计费时要留意账单。</p>
+
+      <h3>Codex 上手路径</h3>
+      <div class="concept-grid">
+        <div class="concept-card"><div class="cc-emoji">&#x1F310;</div><h4>官方 Codex</h4><p>有海外访问条件 + ChatGPT Plus/Pro 订阅。最省心，账号更新安装都跟着 OpenAI 走。</p></div>
+        <div class="concept-card"><div class="cc-emoji">&#x1F504;</div><h4>Codex 转接模型版</h4><p>暂无海外订阅。课程 Skill 包把 Codex、课程中转、本地 relay 和配置文件串起来。</p></div>
+      </div>
+
+      <h3>Claude Code 上手路径</h3>
+      <div class="concept-grid">
+        <div class="concept-card"><div class="cc-emoji">&#x1F510;</div><h4>官方 Claude Code</h4><p>能稳定访问 Claude + 有 Pro/Max/Team 或 Console 账号。安装后登录即可。</p></div>
+        <div class="concept-card"><div class="cc-emoji">&#x1F4E6;</div><h4>Claude 转接模型版</h4><p>暂无官方 Claude 条件。课程 Skill 包准备 Git、Node.js、VS Code、Claude Code、CC Switch。</p></div>
+      </div>
+
+      <h3>各框架安装一览</h3>
+      <div style="overflow-x:auto;"><table class="agent-table"><thead><tr><th>框架</th><th>安装方式</th><th>推荐模型</th><th>适合人群</th></tr></thead><tbody>
+        <tr><td style="font-weight:600;">Codex</td><td>桌面 App 安装</td><td>GPT-5.5</td><td>有 ChatGPT 订阅</td></tr>
+        <tr><td style="font-weight:600;">Claude Code</td><td>终端安装 + CC Switch</td><td>Claude / DeepSeek</td><td>追求代码质量</td></tr>
+        <tr><td style="font-weight:600;">Trae + CC Switch</td><td>IDE 安装 + 插件</td><td>DeepSeek 等</td><td>想用低成本模型</td></tr>
+        <tr><td style="font-weight:600;">Hermes Agent</td><td>桌面端下载</td><td>任意 API</td><td>愿意养自学习 Agent</td></tr>
+        <tr><td style="font-weight:600;">OpenClaw</td><td>让 Trae 帮装</td><td>DeepSeek</td><td>想快速体验</td></tr>
+        <tr><td style="font-weight:600;">Trae Solo</td><td>可视化工作台</td><td>多模型</td><td>已经会用 Trae 的人</td></tr>
+        <tr><td style="font-weight:600;">WorkBuddy</td><td>桌面端安装</td><td>内置</td><td>办公场景小白</td></tr>
+      </tbody></table></div>
+
+      <h3>终端小知识</h3>
+      <ul class="num-list">
+        <li><span class="num">1</span><div class="num-content"><h5>密码输入时看不到任何字符</h5><p>正常！不是键盘坏了。终端输入密码时不会有任何显示（连 *** 都没有），输入完直接回车。</p></div></li>
+        <li><span class="num">2</span><div class="num-content"><h5>Ctrl+C = 万能中止</h5><p>任何时候卡住或不知道发生了什么，按 Ctrl+C 回到正常状态。</p></div></li>
+        <li><span class="num">3</span><div class="num-content"><h5>上箭头翻历史</h5><p>不想重新打长命令？按上箭头找回之前输入过的命令。</p></div></li>
+        <li><span class="num">4</span><div class="num-content"><h5>Tab 自动补全</h5><p>打一半文件名或命令时按 Tab，自动补全剩余部分。</p></div></li>
+        <li><span class="num">5</span><div class="num-content"><h5>大量文字滚动不要慌</h5><p>安装日志是正常的，大量输出不等于报错。</p></div></li>
+        <li><span class="num">6</span><div class="num-content"><h5>实在退不出来直接关窗口</h5><p>不会爆炸。关了再打开就行。</p></div></li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════ Act 5 ══════════════════════════ -->
+    <div class="content-block" id="act-5">
+      <div class="act-header"><div class="act-num">05</div><h2>第 5 幕 · 开始一个小项目</h2><p class="act-subtitle">用一个低风险任务跑完准备环境→打开文件夹→下指令→看结果的完整链路</p></div>
+
+      <h3>开始前的 Checklist</h3>
+      <div class="callout tip">
+        <strong>正式动手前确认：</strong><br>
+        &#x2705; 装好了 Agent<br>
+        &#x2705; 配好了 API<br>
+        &#x2705; 已经可以开始使用
+      </div>
+      <p>如果还没决定好也完全没头绪，参考以下操作：安装 <strong>Trae</strong> → 让 Trae 帮你安装 cc switch 和 Claude Code → 去 DeepSeek Platform 注册账号获取 API Key → 让 Trae 引导你打开本机配置界面填入 Key → 在 Trae 上安装 Claude 插件。</p>
+
+      <h3>小任务：新媒体运营周报</h3>
+      <p>用一个很小的新媒体周报任务，把前面讲过的 Agent 框架真正跑起来。先下载作业附件并解压，用你选择的 Agent App 打开工作文件夹。</p>
+
+      <div class="concept-grid">
+        <div class="concept-card"><div class="cc-emoji">&#x1F4C2;</div><h4>第一步：打开工作文件夹</h4><p>下载作业附件 zip 并解压，用 Codex / Claude Code / Trae 任意一种 Agent App 打开这个工作文件夹。</p></div>
+        <div class="concept-card"><div class="cc-emoji">&#x1F4AC;</div><h4>第二步：让 Agent 执行</h4><p>告诉 Agent："请阅读当前文件夹里的所有文件，了解我这周的新媒体运营情况，参考上周周报格式，帮我生成本周运营周报（5/12-5/18）。回应老板的所有问题，分析爆款视频，给出下周建议。"</p></div>
+        <div class="concept-card"><div class="cc-emoji">&#x1F4CA;</div><h4>第三步：查看输出结果</h4><p>Agent 会自动分析文件夹内的数据文件、上周周报格式、本周运营数据，生成完整周报并给出下周策略建议。</p></div>
+      </div>
+
+      <blockquote class="insight-quote">一个简单的判断标准：如果 AI 做完之后你还要亲自动手，那就是 Chat AI；如果它交给你的已经是最终结果，那就是 Agent。</blockquote>
+    </div>
+
+    <div style="text-align:center;padding:48px 0;">
+      <a href="/yaohaixu-ai-study/" class="btn btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        返回所有项目
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner page-width">
+    <div class="footer-brand">yaohaixu · AI 学习框架</div>
+    <div class="footer-links">
+      <a href="/yaohaixu-ai-study/">首页</a>
+      <a href="https://github.com/yaohaixu/yaohaixu-ai-study" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/js/main.js"></script>
+<script>
+(() => {
+  const nav = document.getElementById('toc'); if (!nav) return;
+  const links = nav.querySelectorAll('a');
+  const sections = [...links].map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (s.getBoundingClientRect().top <= 120) current = '#' + s.id; });
+    links.forEach(a => a.classList.toggle('active-act', a.getAttribute('href') === current));
+  }, {passive: true});
+})();
+</script>
+</body>
+</html>

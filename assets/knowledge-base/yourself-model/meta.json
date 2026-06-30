@@ -1,0 +1,60 @@
+{
+  "name": "姚海旭",
+  "slug": "yaohaixu",
+  "created_at": "2026-06-30T09:20:35.711961",
+  "updated_at": "2026-06-30T09:20:35.711968",
+  "version": "v1",
+  "profile": {
+    "occupation": "软件测试/QA → AI转型中",
+    "city": "上海/中国",
+    "mbti": "推断 INTP/INTJ (系统化思维+深度分析+自驱学习)",
+    "zodiac": "未知"
+  },
+  "tags": {
+    "personality": [
+      "系统化思维者",
+      "深度探索者",
+      "实用主义者",
+      "自驱学习者",
+      "高效沟通者"
+    ],
+    "lifestyle": [
+      "工具优化型",
+      "兴趣驱动型",
+      "AI重度用户",
+      "持续学习者"
+    ],
+    "interests": [
+      "金融分析",
+      "紫微斗数",
+      "AI Agent构建",
+      "Python编程",
+      "软件测试"
+    ],
+    "values": [
+      "成长",
+      "效率",
+      "深度理解",
+      "系统",
+      "财富"
+    ],
+    "thinking_style": [
+      "结构化",
+      "底层原理导向",
+      "第一性原理",
+      "多框架并行"
+    ]
+  },
+  "impression": "一个用AI工具深度探索世界的自驱学习者。沟通极简但思维极深。在理性分析与命理框架之间自如切换，在金融数字与紫微星曜之间建立自己独特的认知坐标系。正在从AI使用者向AI构建者演化。",
+  "data_source": {
+    "type": "ChatGPT export",
+    "conversations": 1421,
+    "user_messages": 6931,
+    "date_range": "2023-10-17 ~ 2026-06-26"
+  },
+  "memory_sources": [
+    "ChatGPT chat.html export",
+    "conversations-000~014.json"
+  ],
+  "corrections_count": 0
+}

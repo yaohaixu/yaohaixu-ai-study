@@ -351,7 +351,7 @@ blockquote.insight-quote { margin: 28px 0; padding: 24px 28px; background: var(-
 }
 
 /* ─── Knowledge Base TOC ─────────────────────────────────── */
-.kb-toc { display: flex; flex-direction: column; gap: 10px; max-width: 900px; margin: 0 auto; }
+.kb-toc { display: flex; flex-direction: column; gap: 10px; max-width: 900px; margin: 0 auto; padding: 0 24px; }
 .kb-chapter {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius-md); overflow: hidden;

@@ -359,7 +359,7 @@ blockquote.insight-quote { margin: 28px 0; padding: 24px 28px; background: var(-
 }
 .kb-chapter:hover { border-color: var(--accent-soft); box-shadow: var(--shadow-sm); }
 .kb-chapter.open .kb-ch-chevron { transform: rotate(180deg); }
-.kb-chapter.open .kb-ch-items { grid-template-rows: 1fr; padding: 0 16px 14px; opacity: 1; }
+.kb-chapter.open .kb-ch-items { grid-template-rows: 1fr; padding: 4px 16px 16px; opacity: 1; }
 .kb-chapter-head {
   display: flex; align-items: center; gap: 12px;
   padding: 14px 18px; user-select: none;
@@ -382,11 +382,10 @@ blockquote.insight-quote { margin: 28px 0; padding: 24px 28px; background: var(-
   transition: transform .25s var(--ease-out);
 }
 .kb-ch-items {
-  display: grid; grid-template-rows: 0fr; opacity: 0;
-  transition: grid-template-rows .3s var(--ease-out), opacity .25s var(--ease-out), padding .25s var(--ease-out);
+  display: grid; grid-template-rows: 0fr; overflow: hidden; opacity: 0;
+  transition: grid-template-rows .35s var(--ease-out), opacity .25s var(--ease-out), padding .3s var(--ease-out);
   padding: 0 16px;
 }
-.kb-ch-items > * { overflow: hidden; }
 .kb-item-link {
   display: flex; align-items: center; gap: 10px;
   padding: 8px 12px; border-radius: var(--radius-sm);

@@ -322,3 +322,30 @@ blockquote.insight-quote { margin: 28px 0; padding: 24px 28px; background: var(-
     border-bottom: 1px solid var(--border);
   }
 }
+
+/* ─── Knowledge Base List ───────────────────────────────── */
+.kb-section { margin-top: 64px; }
+.kb-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.kb-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 24px; background: var(--surface);
+  text-decoration: none; color: inherit;
+  transition: all .2s var(--ease-out);
+}
+.kb-item:hover { background: var(--accent-soft); }
+.kb-item:hover .kb-arrow { transform: translateX(4px); color: var(--accent); }
+.kb-num {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11.5px; font-weight: 700; font-family: var(--font-mono);
+}
+.kb-body { flex: 1; min-width: 0; }
+.kb-body h4 { font-size: 15.5px; font-weight: 600; margin-bottom: 2px; }
+.kb-body p { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kb-arrow { flex-shrink: 0; color: var(--text-muted); transition: all .2s var(--ease-out); }
+
+@media (max-width: 768px) {
+  .kb-item { padding: 14px 16px; }
+  .kb-body p { white-space: normal; }
+}

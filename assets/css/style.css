@@ -349,3 +349,62 @@ blockquote.insight-quote { margin: 28px 0; padding: 24px 28px; background: var(-
   .kb-item { padding: 14px 16px; }
   .kb-body p { white-space: normal; }
 }
+
+/* ─── Knowledge Base TOC ─────────────────────────────────── */
+.kb-toc { display: flex; flex-direction: column; gap: 10px; }
+.kb-chapter {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); overflow: hidden;
+  cursor: pointer; transition: all .25s var(--ease-out);
+}
+.kb-chapter:hover { border-color: var(--accent-soft); box-shadow: var(--shadow-sm); }
+.kb-chapter.open .kb-ch-chevron { transform: rotate(180deg); }
+.kb-chapter.open .kb-ch-items { grid-template-rows: 1fr; padding: 0 16px 14px; opacity: 1; }
+.kb-chapter-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px; user-select: none;
+}
+.kb-ch-num {
+  width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--accent-soft); color: var(--accent);
+  font-weight: 700; font-size: 14px; font-family: var(--font-body);
+}
+.kb-ch-title {
+  font-weight: 600; font-size: 15px; color: var(--text);
+  font-family: var(--font-body); flex: 1;
+}
+.kb-ch-count {
+  font-size: 12px; color: var(--text-muted); font-family: var(--font-body);
+}
+.kb-ch-chevron {
+  flex-shrink: 0; color: var(--text-muted);
+  transition: transform .25s var(--ease-out);
+}
+.kb-ch-items {
+  display: grid; grid-template-rows: 0fr; opacity: 0;
+  transition: grid-template-rows .3s var(--ease-out), opacity .25s var(--ease-out), padding .25s var(--ease-out);
+  padding: 0 16px;
+}
+.kb-ch-items > * { overflow: hidden; }
+.kb-item-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; border-radius: var(--radius-sm);
+  font-size: 13.5px; color: var(--text-soft); text-decoration: none;
+  transition: all .18s var(--ease-out);
+}
+.kb-item-link:hover { background: var(--accent-soft); color: var(--accent); }
+.kb-item-link:hover .kb-item-arrow { opacity: 1; transform: translateX(2px); }
+.kb-item-num {
+  font-size: 11px; color: var(--text-muted); min-width: 28px;
+  font-family: var(--font-mono); font-weight: 500;
+}
+.kb-item-text { flex: 1; line-height: 1.4; }
+.kb-item-arrow {
+  flex-shrink: 0; opacity: 0; color: var(--accent);
+  transition: all .18s var(--ease-out);
+}
+@media (max-width: 768px) {
+  .kb-chapter-head { padding: 12px 14px; }
+  .kb-chapter.open .kb-ch-items { padding: 0 10px 10px; }
+}

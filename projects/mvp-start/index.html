@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MVP：找到启动的最短路径 · yaohaixu AI 学习框架</title>
+  <meta name="description" content="给 AI 小产品、黑客松 Demo 和第一版验证准备的 MVP 入门：把大想法压成最小路径，找到真实用户，用反馈决定下一轮。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="/yaohaixu-ai-study/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<div class="content-progress"><div class="progress-fill"></div></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/yaohaixu-ai-study/" class="header-brand"><span class="brand-dot"></span>yaohaixu · AI</a>
+    <nav class="header-nav">
+      <a href="/yaohaixu-ai-study/" class="nav-link">首页</a>
+      <a href="/yaohaixu-ai-study/projects/ai-mindset/" class="nav-link">AI Mindset</a>
+      <a href="/yaohaixu-ai-study/projects/agent-framework/" class="nav-link">Agent Framework</a>
+      <a href="/yaohaixu-ai-study/projects/git-basics/" class="nav-link">Git Basics</a>
+      <a href="/yaohaixu-ai-study/projects/mvp-start/" class="active nav-link" aria-current="page">MVP</a>
+      <a href="https://github.com/yaohaixu/yaohaixu-ai-study" class="header-cta" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="project-hero">
+  <div class="page-width">
+    <a href="/yaohaixu-ai-study/" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      返回学习框架
+    </a>
+    <p class="eyebrow">模块 04 · 产品验证</p>
+    <h1 class="heading-xl">MVP：找到<em class="gradient-text">启动的最短路径</em></h1>
+    <p class="body-lg">MVP 不是丑版完整产品，而是一条验证路径：谁真的需要、第一版只做什么、今天找谁试、下一轮改哪里。</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:32px;">
+  <div class="project-layout">
+    <nav class="toc-sidebar">
+      <div class="toc-title">目录</div>
+      <a href="#act-1" class="toc-h2">第 1 幕 · MVP 先理解成极其简单</a>
+      <a href="#s-map" class="toc-h3">一张 MVP 验证地图</a>
+      <a href="#s-start-small" class="toc-h3">第一版要小到什么程度</a>
+      <a href="#act-2" class="toc-h2">第 2 幕 · 先锁定真实用户</a>
+      <a href="#s-real-user" class="toc-h3">真实用户不是口号</a>
+      <a href="#s-one-question" class="toc-h3">只证明一个问题</a>
+      <a href="#act-3" class="toc-h2">第 3 幕 · 不做清单保护 Demo 链路</a>
+      <a href="#s-not-doing" class="toc-h3">先不做什么</a>
+      <a href="#s-launch-learn" class="toc-h3">先上线，再迭代</a>
+      <a href="#act-4" class="toc-h2">第 4 幕 · 真正学习从用户上手开始</a>
+      <a href="#s-real-use" class="toc-h3">让真人使用</a>
+      <a href="#s-evolvable" class="toc-h3">Minimum evolvable</a>
+      <a href="#act-5" class="toc-h2">第 5 幕 · 前 10 个客户靠手动抠出来</a>
+      <a href="#s-first-users" class="toc-h3">哪里找第一批用户</a>
+      <a href="#s-complaints" class="toc-h3">哪里有抱怨，哪里就有线索</a>
+      <a href="#s-pitch" class="toc-h3">90 秒 Demo Pitch</a>
+      <a href="#s-card" class="toc-h3">给自己的 MVP 填一张卡</a>
+    </nav>
+
+    <div class="project-content">
+      <div class="act-nav" id="toc">
+        <a href="#act-1">第 1 幕 · 极其简单</a>
+        <a href="#act-2">第 2 幕 · 真实用户</a>
+        <a href="#act-3">第 3 幕 · 不做清单</a>
+        <a href="#act-4">第 4 幕 · 用户上手</a>
+        <a href="#act-5">第 5 幕 · 前 10 个客户</a>
+      </div>
+
+      <blockquote class="insight-quote">MVP 不是“丑一点的完整产品”。MVP 是一个足够小、能交到真实用户手里、能验证关键假设的第一版。</blockquote>
+
+      <div class="content-block" id="act-1">
+        <div class="act-header">
+          <div class="act-num">01</div>
+          <h2>第 1 幕 · MVP 先理解成极其简单</h2>
+          <p class="act-subtitle">这一步只解决一件事：把一个大想法压成最短的一条验证路径，让你尽快知道它到底有没有帮到人。</p>
+        </div>
+
+        <p>做 AI 小作品、黑客松 Demo 或产品原型时，最容易发生的不是“想法不够好”，而是：想做给所有人用，结果一个真实用户都说不清；功能表越写越长，第一版永远做不完；页面做得很漂亮，但没人真的试；一直研究竞品、做问卷、改 PPT，却没有把东西递给用户。</p>
+
+        <h3 id="s-map">一张 MVP 验证地图</h3>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>阶段</th><th>要回答的问题</th><th>这一步产出</th><th>先不要做什么</th></tr></thead>
+            <tbody>
+              <tr><td>规划</td><td>谁真的有这个问题？</td><td>第一批真实用户画像</td><td>“所有人都能用”</td></tr>
+              <tr><td>收束</td><td>第一版只帮他完成哪件事？</td><td>一个核心动作</td><td>完整功能清单</td></tr>
+              <tr><td>做出</td><td>用户能不能上手试？</td><td>一个能用的小版本</td><td>长时间闭门打磨</td></tr>
+              <tr><td>交付</td><td>谁愿意现在试？</td><td>5-10 个真实反馈</td><td>等自然增长</td></tr>
+              <tr><td>学习</td><td>他哪里卡住、哪里愿意继续？</td><td>下一轮修改清单</td><td>只看注册数和点赞</td></tr>
+              <tr><td>客户</td><td>谁真的愿意付出时间、注意力或钱？</td><td>前 10 个客户线索</td><td>先砸广告和规模化</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="s-start-small">第一版要小到什么程度</h3>
+        <p>小到它只回答一个问题：我们能不能用一个很小的东西，真的帮到第一批用户？如果还回答不了这个问题，完整系统、复杂账号、漂亮官网、宏大路线图、商业计划，都可以先等一等。</p>
+        <div class="callout insight"><strong>核心判断：</strong>MVP 的起点不是“功能清单”，而是“第一批用户得到的一点真实价值”。只要这点价值不成立，做得再完整也只是更贵的误会。</div>
+      </div>
+
+      <div class="content-block" id="act-2">
+        <div class="act-header">
+          <div class="act-num">02</div>
+          <h2>第 2 幕 · 先锁定真实用户</h2>
+          <p class="act-subtitle">用户不是一句口号。用户必须具体到你能找到、能联系、能观察。</p>
+        </div>
+
+        <h3 id="s-real-user">真实用户不是口号</h3>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>看哪里</th><th>真实用户</th><th>看着像，其实还不是</th></tr></thead>
+            <tbody>
+              <tr><td>痛点</td><td>问题具体、反复出现，已经在用笨办法硬扛</td><td>只是听起来有用</td></tr>
+              <tr><td>关系</td><td>你能找到、能联系、能观察他怎么用</td><td>“所有人”，一个名字都说不出</td></tr>
+              <tr><td>行动</td><td>愿意试、愿意等、愿意反馈</td><td>只说“挺好的”，然后没有下文</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="concept-grid">
+          <div class="concept-card"><div class="cc-emoji">&#x1F3AF;</div><h4>不够具体</h4><p>“所有想提高成绩的学生”不是第一批用户。妈妈说“这个想法很好”也不是验证。</p></div>
+          <div class="concept-card"><div class="cc-emoji">&#x1F50D;</div><h4>接近真实</h4><p>高三表姐每天刷题、错题多到抄不完、现在全靠手机拍照存相册，这才接近真实用户。</p></div>
+          <div class="concept-card"><div class="cc-emoji">&#x1F4AC;</div><h4>很好的早期用户</h4><p>隔壁班学弟主动问能不能先试，还愿意每周反馈，这就是很好的早期用户。</p></div>
+        </div>
+
+        <h3 id="s-one-question">第一版只证明一个问题</h3>
+        <p>第一版不要试图证明所有事。它只证明一件事：这个小东西能不能帮第一批用户完成一个重要动作？</p>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>项目</th><th>第一版只证明什么</th></tr></thead>
+            <tbody>
+              <tr><td>AI 错题本</td><td>能不能把一张错题照片变成可复习的卡片</td></tr>
+              <tr><td>活动报名助手</td><td>能不能让一个人成功提交报名信息</td></tr>
+              <tr><td>简历筛选 Agent</td><td>能不能帮 HR 从 20 份简历里找出 3 个候选人</td></tr>
+              <tr><td>亲子阅读记录</td><td>能不能让家长 1 分钟记下一次阅读反馈</td></tr>
+              <tr><td>小店库存提醒</td><td>能不能提前发现一个快断货的商品</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <blockquote class="insight-quote">如果一句话说不清“第一版只证明什么”，说明 MVP 还太大。</blockquote>
+      </div>
+
+      <div class="content-block" id="act-3">
+        <div class="act-header">
+          <div class="act-num">03</div>
+          <h2>第 3 幕 · 不做清单保护 Demo 链路</h2>
+          <p class="act-subtitle">不做清单不是放弃，而是保护第一版的核心路径。</p>
+        </div>
+
+        <h3 id="s-not-doing">先不做什么</h3>
+        <div class="concept-grid">
+          <div class="concept-card"><div class="cc-emoji">&#x1F6AB;</div><h4>可以先不做</h4><p>完整账号体系、多角色权限、复杂后台、数据大屏、自动支付、精美官网、所有平台适配、未来三个月路线图。</p></div>
+          <div class="concept-card"><div class="cc-emoji">&#x2705;</div><h4>只保留一条核心路径</h4><p>目标用户进入，完成一个关键动作，得到一点明确价值，你能看到他的反馈。第一版只要这条路径跑通，就值得继续。</p></div>
+        </div>
+
+        <h3 id="s-launch-learn">先上线，再迭代</h3>
+        <p>闭门打磨到第 8 周才让用户第一次看到，最危险的地方不是慢，而是你可能前 7 周都在朝错误方向努力。</p>
+        <div class="phase-timeline">
+          <div class="phase-card"><div class="phase-marker trough">慢</div><div class="phase-body"><h4>憋大招，最后才上线</h4><p>很晚才知道方向错没错。页面、账号、后台都做好了，才发现用户根本不需要这条路径。</p></div></div>
+          <div class="phase-card"><div class="phase-marker slope">快</div><div class="phase-body"><h4>先放出一个能用的小版本</h4><p>每一轮都能拿到真实反馈，知道下一步该修路径、换用户，还是砍掉想象中的功能。</p></div></div>
+        </div>
+      </div>
+
+      <div class="content-block" id="act-4">
+        <div class="act-header">
+          <div class="act-num">04</div>
+          <h2>第 4 幕 · 真正学习从用户上手开始</h2>
+          <p class="act-subtitle">调研、竞品、问卷、访谈都有用，但它们替代不了真人使用。</p>
+        </div>
+
+        <h3 id="s-real-use">让真人使用</h3>
+        <p>这里的“上线”不一定是正式发布。它可以是一个能点的网页链接、一段能跑的本地 Demo、一个表单加人工处理、一个微信群里的试用流程，或者一次面对面演示。关键是让真实用户真的接触到它，而不是只听你介绍它。</p>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>方式</th><th>能看到</th><th>看不到</th></tr></thead>
+            <tbody>
+              <tr><td>凭空想象</td><td>你自己的假设</td><td>用户真实反应</td></tr>
+              <tr><td>研究竞品</td><td>别人做了什么</td><td>你的用户是否买账</td></tr>
+              <tr><td>发问卷</td><td>一些泛泛偏好</td><td>用户实际会不会卡住</td></tr>
+              <tr><td>访谈用户</td><td>他嘴上怎么说</td><td>他说的和做的是否一致</td></tr>
+              <tr><td>让真人使用</td><td>真实动作、卡点、犹豫和反馈</td><td>还需要你继续观察</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="s-evolvable">不只要能用，还要能长大</h3>
+        <p>早期产品不只要 minimum viable，也要 minimum evolvable。第一版要小，但不要写死。用户反馈一来，你应该能顺着改，而不是推倒重来。</p>
+        <ul class="num-list">
+          <li><span class="num">1</span><div class="num-content"><h5>核心路径越短越好改</h5><p>第一版越短，越容易判断到底哪里卡住。</p></div></li>
+          <li><span class="num">2</span><div class="num-content"><h5>每次只加真实用户需要的东西</h5><p>不要为了想象中的大规模，先做一堆复杂架构。</p></div></li>
+          <li><span class="num">3</span><div class="num-content"><h5>反馈要集中记录</h5><p>不要散在聊天记录里，每轮迭代都问：这次改动有没有让核心路径更顺？</p></div></li>
+        </ul>
+      </div>
+
+      <div class="content-block" id="act-5">
+        <div class="act-header">
+          <div class="act-num">05</div>
+          <h2>第 5 幕 · 前 10 个客户靠手动抠出来</h2>
+          <p class="act-subtitle">不要等自然增长。早期用户要主动找，前几个人要的不是数量，而是证据。</p>
+        </div>
+
+        <h3 id="s-first-users">哪里找第一批用户</h3>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>类型</th><th>特征</th><th>去哪找</th></tr></thead>
+            <tbody>
+              <tr><td>尝鲜者</td><td>喜欢第一个玩，能容忍不完美</td><td>新技术社群、爱好者圈子、早期产品平台</td></tr>
+              <tr><td>痛点患者</td><td>被问题困住，已经在找办法</td><td>相关群、帖子、论坛、线下场景、抱怨现场</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="concept-grid">
+          <div class="concept-card"><div class="cc-emoji">&#x1F4E9;</div><h4>可以先做这些</h4><p>私信 5 个你确定有这个问题的人；在精准社群认真回复一条求助；线下找本地用户聊 10 分钟；把 Demo 发给一个愿意看你操作的人。</p></div>
+          <div class="concept-card"><div class="cc-emoji">&#x1F9D1;&#x200D;&#x1F4BB;</div><h4>早期手动不低级</h4><p>你亲自演示一次，就能看到用户哪里不懂；你亲自跟进一次，就能知道他是不是真的需要。</p></div>
+        </div>
+
+        <h3 id="s-complaints">哪里有抱怨，哪里就有线索</h3>
+        <p>人们正在抱怨问题的地方，就是最好的客户线索来源。你可以搜这些信号：“有没有省事的办法？”“每次都要手动整理，太麻烦了。”“这个软件功能一堆，但我只想要一个功能。”“试了好几个方案都不行。”“求推荐，别太复杂。”</p>
+        <div class="callout tip">
+          <strong>看到抱怨以后，不要一上来推销。先请教：</strong><br>
+          我正在做一个很小的工具，想解决你刚才说的这个问题。能不能问你两个问题：1. 你现在是怎么处理它的？2. 如果有一个很粗糙的第一版，你愿不愿意帮我试 5 分钟？
+        </div>
+
+        <h3 id="s-pitch">90 秒 Demo Pitch 怎么讲</h3>
+        <ul class="num-list">
+          <li><span class="num">1</span><div class="num-content"><h5>用户是谁</h5><p>具体到一类人或一个场景。</p></div></li>
+          <li><span class="num">2</span><div class="num-content"><h5>他现在怎么痛</h5><p>正在用什么笨办法硬扛。</p></div></li>
+          <li><span class="num">3</span><div class="num-content"><h5>你的第一版做了什么</h5><p>只讲一条核心路径。</p></div></li>
+          <li><span class="num">4</span><div class="num-content"><h5>用户试了以后发生什么</h5><p>反馈、卡点、愿意继续的证据。</p></div></li>
+          <li><span class="num">5</span><div class="num-content"><h5>下一步改什么</h5><p>基于反馈，而不是凭空加功能。</p></div></li>
+        </ul>
+
+        <div class="callout insight">
+          <strong>模板：</strong><br>
+          我们做的是【产品名】，给【具体用户】用。他们现在的问题是【具体痛点】，通常只能用【现有笨办法】解决。第一版我们只做了【一个核心动作】，用户可以在【多少时间】内得到【一点价值】。目前我们已经让【多少个真实用户】试过，发现【一个关键反馈】。下一版我们会先改【最影响核心路径的一件事】。
+        </div>
+
+        <h3 id="s-card">给自己的 MVP 填一张卡</h3>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>问题</th><th>你的答案</th></tr></thead>
+            <tbody>
+              <tr><td>第一批真实用户是谁？</td><td>具体到能找到的人</td></tr>
+              <tr><td>他现在怎么解决这个问题？</td><td>越笨越具体越好</td></tr>
+              <tr><td>第一版只完成哪一个动作？</td><td>一个动作，不是一组功能</td></tr>
+              <tr><td>用户完成后得到什么价值？</td><td>省时间、少出错、看清楚、能交付</td></tr>
+              <tr><td>哪些功能先不做？</td><td>写成明确不做清单</td></tr>
+              <tr><td>今天能找谁试？</td><td>5 个名字或 1 个具体渠道</td></tr>
+              <tr><td>怎么收反馈？</td><td>表格、聊天记录、现场观察</td></tr>
+              <tr><td>下一轮判断标准是什么？</td><td>继续、砍掉、换用户、换切口</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout tip">
+          <strong>可以让本地 Agent 帮你收束：</strong><br>
+          我有一个产品想法：【一句话描述】。第一批用户可能是：【具体人群、真实名字或场景】。他们现在用【笨办法】解决问题。我想做的第一版是：【一个核心动作】。请帮我判断这个 MVP 是否足够小，列出不做清单、5 个用户验证问题，以及今天能去找第一批用户的具体渠道。
+        </div>
+
+        <div style="text-align:center;padding:48px 0;">
+          <a href="/yaohaixu-ai-study/" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            返回所有项目
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner page-width">
+    <div class="footer-brand">yaohaixu · AI 学习框架</div>
+    <div class="footer-links">
+      <a href="/yaohaixu-ai-study/">首页</a>
+      <a href="https://github.com/yaohaixu/yaohaixu-ai-study" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/js/main.js"></script>
+<script>
+(() => {
+  function highlightNav(nav) { if (!nav) return;
+    const links = nav.querySelectorAll('a');
+    const sections = [...links].map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (s.getBoundingClientRect().top <= 120) current = '#' + s.id; });
+      links.forEach(a => a.classList.toggle(a.closest('.toc-sidebar') ? 'toc-active' : 'active-act', a.getAttribute('href') === current));
+    }, {passive: true});
+  }
+  highlightNav(document.getElementById('toc'));
+  highlightNav(document.querySelector('.toc-sidebar'));
+})();
+</script>
+</body>
+</html>

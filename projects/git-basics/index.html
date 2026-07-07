@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Git 基础入门 · yaohaixu AI 学习框架</title>
+  <meta name="description" content="给 AI Demo、网页小作品和黑客松项目准备的 Git 入门：安全存档、分支试验、GitHub 同步、密钥检查和改坏后的求助流程。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="/yaohaixu-ai-study/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<div class="content-progress"><div class="progress-fill"></div></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/yaohaixu-ai-study/" class="header-brand"><span class="brand-dot"></span>yaohaixu · AI</a>
+    <nav class="header-nav">
+      <a href="/yaohaixu-ai-study/" class="nav-link">首页</a>
+      <a href="/yaohaixu-ai-study/projects/ai-mindset/" class="nav-link">AI Mindset</a>
+      <a href="/yaohaixu-ai-study/projects/agent-framework/" class="nav-link">Agent Framework</a>
+      <a href="/yaohaixu-ai-study/projects/git-basics/" class="active nav-link" aria-current="page">Git Basics</a>
+      <a href="https://github.com/yaohaixu/yaohaixu-ai-study" class="header-cta" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="project-hero">
+  <div class="page-width">
+    <a href="/yaohaixu-ai-study/" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      返回学习框架
+    </a>
+    <p class="eyebrow">模块 03 · 基础能力</p>
+    <h1 class="heading-xl">Git <em class="gradient-text">基础入门</em></h1>
+    <p class="body-lg">把 Git 当成项目安全带：能保存、能试错、能回看、能救回。命令可以慢慢熟，安全节奏要先建立。</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:32px;">
+  <div class="project-layout">
+    <nav class="toc-sidebar">
+      <div class="toc-title">目录</div>
+      <a href="#act-1" class="toc-h2">第 1 幕 · 为什么要先学 Git</a>
+      <a href="#s-version-control" class="toc-h3">从手工版本到时间线</a>
+      <a href="#s-short-route" class="toc-h3">最短工作流地图</a>
+      <a href="#act-2" class="toc-h2">第 2 幕 · 仓库、commit 和 push</a>
+      <a href="#s-repo" class="toc-h3">什么时候新建仓库</a>
+      <a href="#s-commit" class="toc-h3">Commit 是存档点</a>
+      <a href="#s-push" class="toc-h3">Push 是云端同步</a>
+      <a href="#act-3" class="toc-h2">第 3 幕 · Branch 是安全试验线</a>
+      <a href="#s-branch-when" class="toc-h3">什么时候开 branch</a>
+      <a href="#s-branch-flow" class="toc-h3">主线和试验线</a>
+      <a href="#act-4" class="toc-h2">第 4 幕 · 和 Agent 协作</a>
+      <a href="#s-small-commits" class="toc-h3">小步提交</a>
+      <a href="#s-agent-prompt" class="toc-h3">让 Agent 带你做连接</a>
+      <a href="#act-5" class="toc-h2">第 5 幕 · 救命流程与密钥安全</a>
+      <a href="#s-recovery" class="toc-h3">改坏以后先别慌</a>
+      <a href="#s-secrets" class="toc-h3">不要把钥匙提交上去</a>
+      <a href="#s-checklist" class="toc-h3">提交前 30 秒检查</a>
+    </nav>
+
+    <div class="project-content">
+      <div class="act-nav" id="toc">
+        <a href="#act-1">第 1 幕 · 为什么要 Git</a>
+        <a href="#act-2">第 2 幕 · 保存与同步</a>
+        <a href="#act-3">第 3 幕 · 分支试验</a>
+        <a href="#act-4">第 4 幕 · Agent 协作</a>
+        <a href="#act-5">第 5 幕 · 救命与安全</a>
+      </div>
+
+      <blockquote class="insight-quote">Git 不是命令考试。它是一套让项目能留下历史、能大胆试错、能在出问题时找回安全点的工作方法。</blockquote>
+
+      <div class="content-block" id="act-1">
+        <div class="act-header">
+          <div class="act-num">01</div>
+          <h2>第 1 幕 · 为什么要先学 Git</h2>
+          <p class="act-subtitle">做 AI Demo、网页小作品或黑客松项目时，最怕的不是不会写代码，而是不知道自己刚刚改坏了哪里。</p>
+        </div>
+
+        <p>最常见的项目事故通常长这样：改到一半页面坏了，不知道刚才动过哪里；文件夹里出现 final、final2、真的 final，但没人知道哪个能交；队友发来新版代码，你自己的修改被盖掉；接 API 时不小心把真实 key 放进公开仓库；让 Agent 大范围改文件，结果坏了以后不知道怎么退。</p>
+
+        <h3 id="s-version-control">从手工版本到时间线</h3>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <div class="cc-emoji">&#x1F4C4;</div>
+            <h4>手工版本控制</h4>
+            <p>版本散在文件名里，靠记忆猜：final.html、final2.html、真的final.html、不要动这个.html。问题是：哪个能交？谁改过？差在哪？坏了找谁？</p>
+          </div>
+          <div class="concept-card">
+            <div class="cc-emoji">&#x23F1;</div>
+            <h4>Git 版本控制</h4>
+            <p>变化进入时间线，每一步都有说明。你可以比较差异、回看历史、找到安全点，而不是在一堆文件名里猜。</p>
+          </div>
+        </div>
+
+        <h3 id="s-short-route">最短工作流地图</h3>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>阶段</th><th>你现在要做什么</th><th>Git 动作</th><th>产出</th></tr></thead>
+            <tbody>
+              <tr><td>拿到项目</td><td>先跑起来，确认起点没坏</td><td>新建或确认仓库</td><td>项目开始有历史线</td></tr>
+              <tr><td>完成小功能</td><td>页面能打开，功能能点</td><td>commit</td><td>一个有名字的存档点</td></tr>
+              <tr><td>准备大改</td><td>接 API、改首页、换视觉</td><td>开 branch</td><td>一条安全试验线</td></tr>
+              <tr><td>想给别人看</td><td>本地已经能跑</td><td>push</td><td>云端展示和协作版本</td></tr>
+              <tr><td>改坏了</td><td>先停手，不乱删</td><td>看历史和差异</td><td>找到能求助的证据</td></tr>
+              <tr><td>交付前</td><td>检查隐私、密钥、说明</td><td>交付检查</td><td>能安全展示的版本</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout insight"><strong>课堂只学这条最短路线：</strong>拿到项目 → 小步提交 → 开试验线 → 推到云端 → 改坏救命 → 交付检查。先能活下来、能协作、能展示，再慢慢补命令细节。</div>
+      </div>
+
+      <div class="content-block" id="act-2">
+        <div class="act-header">
+          <div class="act-num">02</div>
+          <h2>第 2 幕 · 仓库、commit 和 push</h2>
+          <p class="act-subtitle">仓库是历史盒子，commit 是有名字的存档点，push 是把本地历史同步到 GitHub。</p>
+        </div>
+
+        <h3 id="s-repo">什么时候新建仓库</h3>
+        <p>仓库可以理解成“这个项目的历史盒子”。一个项目一旦进入仓库，后面的变化就可以被记录、比较和回看。</p>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <div class="cc-emoji">&#x2705;</div>
+            <h4>适合新建仓库</h4>
+            <p>你已经有一个项目文件夹，接下来会连续改它；准备让 Agent 帮你改代码；准备和队友协作；希望最后把作品放到 GitHub 展示。</p>
+          </div>
+          <div class="concept-card">
+            <div class="cc-emoji">&#x23F3;</div>
+            <h4>可以先不建仓库</h4>
+            <p>只是临时下载一个文件看一下；只是一次性写几行草稿；这个文件夹混着很多无关材料，还没整理出项目边界。</p>
+          </div>
+        </div>
+        <blockquote class="insight-quote">判断口诀：如果这个文件夹会变成你的作品，就让它尽早进入仓库。</blockquote>
+
+        <h3 id="s-commit">Commit 是存档点，不是交作业</h3>
+        <p>Commit 可以先理解成一次有名字的项目存档。更好的节奏是：完成一个小目标，确认它能跑，再存档。</p>
+        <div class="phase-timeline">
+          <div class="phase-card"><div class="phase-marker trigger">好</div><div class="phase-body"><h4>适合 commit 的时机</h4><p>页面终于能打开；新增了一个完整 section；修好一个明确 bug；完成一次可描述的视觉调整；准备让 Agent 或队友做大改之前；今天要收工，想把能跑的状态保存下来。</p></div></div>
+          <div class="phase-card"><div class="phase-marker trough">停</div><div class="phase-body"><h4>不适合 commit 的时机</h4><p>项目还完全跑不起来；自己也不知道刚刚改了什么；文件里有真实 API key、token、密码或隐私信息；只是临时下载的大文件、缓存、依赖目录。</p></div></div>
+        </div>
+
+        <h4>Commit message 是写给未来自己的线索</h4>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>不够清楚</th><th>好一点</th></tr></thead>
+            <tbody>
+              <tr><td>update</td><td>新增报名表成功提示</td></tr>
+              <tr><td>fix</td><td>修复首页移动端按钮换行</td></tr>
+              <tr><td>final</td><td>完成 Demo 展示页初版</td></tr>
+              <tr><td>111</td><td>添加错题上传入口</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="s-push">Push 是把本地存档推到云端</h3>
+        <p>Git 和 GitHub 不是一回事：Git 是电脑里的项目存档系统，GitHub 是云端展示柜和协作大厅。commit 是在自己电脑里保存一次历史，push 是把本地历史上传到 GitHub。</p>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <div class="cc-emoji">&#x1F680;</div>
+            <h4>什么时候 push</h4>
+            <p>已经 commit 过一个能跑的版本；想把作品备份到 GitHub；要让队友看到你的更新；要把项目链接发给老师、同学或评委；一天结束前想确保电脑坏了也不会丢项目历史。</p>
+          </div>
+          <div class="concept-card">
+            <div class="cc-emoji">&#x1F6A7;</div>
+            <h4>什么时候先不要 push</h4>
+            <p>还没检查有没有真实密钥；还没确认仓库是否应该公开；README 还完全看不懂；只是改了一堆混乱文件，还没 commit 成清楚的存档点。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block" id="act-3">
+        <div class="act-header">
+          <div class="act-num">03</div>
+          <h2>第 3 幕 · Branch 是安全试验线</h2>
+          <p class="act-subtitle">main 可以先理解成正式舞台，branch 是从主线拉出来的试验线。</p>
+        </div>
+
+        <h3 id="s-branch-when">什么时候开 branch</h3>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <div class="cc-emoji">&#x1F9EA;</div>
+            <h4>建议开 branch</h4>
+            <p>接入 AI API 或支付、登录、数据库；全站换风格或重构首页结构；修一个不确定原因的 bug；队友同时在改另一块功能；让 Agent 做大范围文件修改。</p>
+          </div>
+          <div class="concept-card">
+            <div class="cc-emoji">&#x1F527;</div>
+            <h4>可以不开 branch</h4>
+            <p>改一个错别字；调整一句文案；改一个很小的颜色或间距；项目很小，而且你刚刚 commit 过安全点。</p>
+          </div>
+        </div>
+
+        <h3 id="s-branch-flow">主线和试验线</h3>
+        <div class="phase-timeline">
+          <div class="phase-card"><div class="phase-marker trigger">main</div><div class="phase-body"><h4>稳定主线</h4><p>最好一直保持能展示，随时可以给评委、同学或队友看。</p></div></div>
+          <div class="phase-card"><div class="phase-marker peak">feature</div><div class="phase-body"><h4>安全试验线</h4><p>全站换风格、接 API、修不确定 bug，都先放这里试。试验成功就检查后合回，试验失败主线仍然能展示。</p></div></div>
+        </div>
+        <blockquote class="insight-quote">判断口诀：大改、危险、不确定，就开 branch。</blockquote>
+      </div>
+
+      <div class="content-block" id="act-4">
+        <div class="act-header">
+          <div class="act-num">04</div>
+          <h2>第 4 幕 · 和 Agent 协作</h2>
+          <p class="act-subtitle">Agent 一次可能改很多文件。越是让 Agent 做事，越需要小步提交和清楚边界。</p>
+        </div>
+
+        <h3 id="s-small-commits">小步提交让你敢和 Agent 协作</h3>
+        <ul class="num-list">
+          <li><span class="num">1</span><div class="num-content"><h5>人先跑一遍项目</h5><p>确认当前版本能打开，不要从一个坏现场开始让 Agent 大改。</p></div></li>
+          <li><span class="num">2</span><div class="num-content"><h5>保存一个干净起点</h5><p>在大改之前先 commit，让你知道退路在哪里。</p></div></li>
+          <li><span class="num">3</span><div class="num-content"><h5>一次只给一个小目标</h5><p>不要一上来就让 Agent “重写整个项目”，先让它完成一个可验证的小任务。</p></div></li>
+          <li><span class="num">4</span><div class="num-content"><h5>改完先看文件差异</h5><p>看它改了哪些文件，再运行项目，确认行为没坏。</p></div></li>
+          <li><span class="num">5</span><div class="num-content"><h5>没问题再存档</h5><p>通过检查后再 commit，形成新的安全点。</p></div></li>
+        </ul>
+
+        <h3 id="s-agent-prompt">让 Agent 带你做 GitHub 连接</h3>
+        <p>Git 本身不需要注册。它是你电脑里的版本控制工具。你要注册的是 GitHub：一个放代码、展示项目、和队友协作的云端平台。</p>
+        <div class="callout tip">
+          <strong>可以直接这样问本地 Agent：</strong><br>
+          我准备开始用 Git 和 GitHub 管理我的项目。请你一步一步带我完成本地电脑和 GitHub 的连接。我的电脑系统是【Mac / Windows / Linux / 不确定】，GitHub【已注册 / 还没有 / 不确定】，项目文件夹是【项目路径或项目名】。请先不要一次性给我一大串命令。每一步只让我做一个动作，并解释这个动作在解决什么问题。最后帮我验证这台电脑能不能把一个测试项目安全推到我的 GitHub。如果过程中需要我复制终端输出，请先告诉我哪些信息不能贴出来，例如 token、API key、密码、真实路径里的隐私信息。
+        </div>
+      </div>
+
+      <div class="content-block" id="act-5">
+        <div class="act-header">
+          <div class="act-num">05</div>
+          <h2>第 5 幕 · 救命流程与密钥安全</h2>
+          <p class="act-subtitle">项目坏掉时，第一步不是乱删文件夹，也不是复制网上的危险命令。先停手。</p>
+        </div>
+
+        <h3 id="s-recovery">改坏以后，先别慌</h3>
+        <div class="phase-timeline">
+          <div class="phase-card"><div class="phase-marker trigger">1</div><div class="phase-body"><h4>停手</h4><p>不要乱删，不要连续尝试高风险命令。</p></div></div>
+          <div class="phase-card"><div class="phase-marker peak">2</div><div class="phase-body"><h4>看 status</h4><p>确认现在在哪个项目、哪条分支、哪些文件刚刚被改过。</p></div></div>
+          <div class="phase-card"><div class="phase-marker trough">3</div><div class="phase-body"><h4>存证据</h4><p>保存截图、报错、终端输出，找到最近一次安全存档。</p></div></div>
+          <div class="phase-card"><div class="phase-marker slope">4</div><div class="phase-body"><h4>先解释，再执行</h4><p>让老师或 Agent 先说明风险和方案，确认哪些修改要保留，哪些可以丢，再选择最小风险恢复动作。</p></div></div>
+        </div>
+
+        <div class="callout warning"><strong>红线：</strong>不要把 reset --hard 当成默认救命按钮。它可能直接丢掉未提交修改。压力越大，越要慢一步。</div>
+
+        <h3 id="s-secrets">不要把钥匙提交上去</h3>
+        <p>API key、token、密码、私钥都属于 secret。它们不是普通配置，而是能调用服务、花钱、读数据的钥匙。如果真实 key 已经 push 到 GitHub，通常要当作泄露处理：废掉旧 key，重新生成新 key。不是把文件删掉就结束，因为历史记录、缓存、别人 clone 的副本里可能还留着。</p>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <div class="cc-emoji">&#x1F512;</div>
+            <h4>不能提交</h4>
+            <p>真实 API key、token、密码、私钥；真实 .env；后台截图、账号截图、带手机号或真实地址的截图；大型缓存、依赖目录、临时文件。</p>
+          </div>
+          <div class="concept-card">
+            <div class="cc-emoji">&#x1F4DD;</div>
+            <h4>可以提交</h4>
+            <p>.env.example、README 变量说明、占位配置示例、帮助别人理解项目的说明文档。</p>
+          </div>
+        </div>
+
+        <h3 id="s-checklist">提交前 30 秒检查</h3>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>检查</th><th>你要确认什么</th></tr></thead>
+            <tbody>
+              <tr><td>文件</td><td>我知道哪些文件改了</td></tr>
+              <tr><td>内容</td><td>我知道这次具体改了什么</td></tr>
+              <tr><td>secret</td><td>没有 key、token、密码、隐私信息</td></tr>
+              <tr><td>README</td><td>别人知道怎么打开或理解这个项目</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <blockquote class="insight-quote">最后用一句话收束：我知道我要提交哪些文件，看过这次改动，没有把钥匙、隐私和大垃圾放进去，这次提交说明也能让未来的我看懂。</blockquote>
+
+        <div style="text-align:center;padding:48px 0;">
+          <a href="/yaohaixu-ai-study/" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            返回所有项目
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner page-width">
+    <div class="footer-brand">yaohaixu · AI 学习框架</div>
+    <div class="footer-links">
+      <a href="/yaohaixu-ai-study/">首页</a>
+      <a href="https://github.com/yaohaixu/yaohaixu-ai-study" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/js/main.js"></script>
+<script>
+(() => {
+  function highlightNav(nav) { if (!nav) return;
+    const links = nav.querySelectorAll('a');
+    const sections = [...links].map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (s.getBoundingClientRect().top <= 120) current = '#' + s.id; });
+      links.forEach(a => a.classList.toggle(a.closest('.toc-sidebar') ? 'toc-active' : 'active-act', a.getAttribute('href') === current));
+    }, {passive: true});
+  }
+  highlightNav(document.getElementById('toc'));
+  highlightNav(document.querySelector('.toc-sidebar'));
+})();
+</script>
+</body>
+</html>

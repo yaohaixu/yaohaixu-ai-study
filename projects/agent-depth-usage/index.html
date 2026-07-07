@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent 深度使用 · yaohaixu AI 学习框架</title>
+  <meta name="description" content="把 Agent 接进真实项目：工作空间、核心文件、Skill、自动化、子 Agent、记忆与安全边界。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="/yaohaixu-ai-study/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<div class="content-progress"><div class="progress-fill"></div></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/yaohaixu-ai-study/" class="header-brand"><span class="brand-dot"></span>yaohaixu · AI</a>
+    <nav class="header-nav">
+      <a href="/yaohaixu-ai-study/" class="nav-link">首页</a>
+      <a href="/yaohaixu-ai-study/projects/ai-mindset/" class="nav-link">AI Mindset</a>
+      <a href="/yaohaixu-ai-study/projects/agent-framework/" class="nav-link">Agent Framework</a>
+      <a href="/yaohaixu-ai-study/projects/agent-depth-usage/" class="active nav-link" aria-current="page">Agent Depth</a>
+      <a href="/yaohaixu-ai-study/projects/git-basics/" class="nav-link">Git Basics</a>
+      <a href="/yaohaixu-ai-study/projects/mvp-start/" class="nav-link">MVP</a>
+      <a href="https://github.com/yaohaixu/yaohaixu-ai-study" class="header-cta" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="project-hero">
+  <div class="page-width">
+    <a href="/yaohaixu-ai-study/" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      返回学习框架
+    </a>
+    <p class="eyebrow">模块 05 · Agent 实战</p>
+    <h1 class="heading-xl">Agent <em class="gradient-text">深度使用</em></h1>
+    <p class="body-lg">从“会让 Agent 做事”走到“能把 Agent 放进真实项目”：工作空间、AGENTS.md、Skill、自动化、子 Agent、记忆和安全边界。</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:32px;">
+  <div class="project-layout">
+    <nav class="toc-sidebar">
+      <div class="toc-title">目录</div>
+      <a href="#act-1" class="toc-h2">第 1 幕 · 工作空间</a>
+      <a href="#s-workspace-map" class="toc-h3">Agent 如何理解项目</a>
+      <a href="#s-workspace-clean" class="toc-h3">整理工作台</a>
+      <a href="#act-2" class="toc-h2">第 2 幕 · 核心文件</a>
+      <a href="#s-agents-md" class="toc-h3">README 与 AGENTS.md</a>
+      <a href="#s-agents-scope" class="toc-h3">作用位置与层级</a>
+      <a href="#act-3" class="toc-h2">第 3 幕 · Skill</a>
+      <a href="#s-skill-why" class="toc-h3">技能是什么</a>
+      <a href="#s-skill-loading" class="toc-h3">如何加载技能</a>
+      <a href="#act-4" class="toc-h2">第 4 幕 · 自动化</a>
+      <a href="#s-automation-map" class="toc-h3">四类自动化</a>
+      <a href="#s-codex-claude" class="toc-h3">Codex 与 Claude Code</a>
+      <a href="#act-5" class="toc-h2">第 5 幕 · 实践技巧</a>
+      <a href="#s-conversation" class="toc-h3">对话技巧</a>
+      <a href="#s-sub-agent" class="toc-h3">子 Agent</a>
+      <a href="#s-debug-memory-security" class="toc-h3">排查、记忆、安全</a>
+      <a href="#act-6" class="toc-h2">第 6 幕 · 综合实践</a>
+      <a href="#s-life-os" class="toc-h3">Life OS 思路</a>
+      <a href="#s-start-card" class="toc-h3">开始前检查卡</a>
+    </nav>
+
+    <div class="project-content">
+      <div class="act-nav" id="toc">
+        <a href="#act-1">第 1 幕 · 工作空间</a>
+        <a href="#act-2">第 2 幕 · 核心文件</a>
+        <a href="#act-3">第 3 幕 · Skill</a>
+        <a href="#act-4">第 4 幕 · 自动化</a>
+        <a href="#act-5">第 5 幕 · 实践技巧</a>
+        <a href="#act-6">第 6 幕 · 综合实践</a>
+      </div>
+
+      <blockquote class="insight-quote">Agent 的能力不只来自模型，也来自它拿到的工作空间、规则、技能和权限。把这些环境搭好，才算真正开始使用 Agent。</blockquote>
+
+      <div class="content-block" id="act-1">
+        <div class="act-header">
+          <div class="act-num">01</div>
+          <h2>第 1 幕 · 理解 Agent 的工作空间</h2>
+          <p class="act-subtitle">你的文件夹就是 Agent 的办公环境。桌面越清楚，它越少猜、越少浪费 token。</p>
+        </div>
+
+        <h3 id="s-workspace-map">Agent 如何理解项目</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/workspace-map.png" alt="Agent 通过工具、文件读取、优先级和交叉关联理解工作空间的示意图" loading="lazy">
+          <figcaption>Agent 先用命令看目录，再按文件类型读取，最后把碎片信息交叉关联成项目理解。</figcaption>
+        </figure>
+        <div class="phase-timeline">
+          <div class="phase-card"><div class="phase-marker trigger">1</div><div class="phase-body"><h4>工具箱</h4><p>Agent 本质上在运行终端命令：看目录、读文件、搜关键词、检查差异，这些就是它的眼睛和手。</p></div></div>
+          <div class="phase-card"><div class="phase-marker peak">2</div><div class="phase-body"><h4>读取方式</h4><p>文本、CSV、PDF、Word、图片各有不同读法。好 Agent 会先判断文件类型，再选工具。</p></div></div>
+          <div class="phase-card"><div class="phase-marker trough">3</div><div class="phase-body"><h4>读取优先级</h4><p>不是把所有文件全读一遍，而是先看 README、任务相关文件、数据文件，再补上下文。</p></div></div>
+          <div class="phase-card"><div class="phase-marker slope">4</div><div class="phase-body"><h4>交叉关联</h4><p>真正的价值在于把需求、数据、会议记录、历史输出串起来，形成能行动的项目地图。</p></div></div>
+        </div>
+
+        <h3 id="s-workspace-clean">整理工作台</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/workspace-readme.png" alt="整理工作空间让 Agent 更好理解项目的说明图" loading="lazy">
+          <figcaption>最省力的优化：写 README、命名清楚、输入输出分开。</figcaption>
+        </figure>
+        <div class="callout insight"><strong>推荐结构：</strong>README.md 放项目背景，TASK.md 放本次任务，data/ 放原始数据，reference/ 放参考资料，notes/ 放会议和草稿，output/ 放 Agent 产出。</div>
+      </div>
+
+      <div class="content-block" id="act-2">
+        <div class="act-header">
+          <div class="act-num">02</div>
+          <h2>第 2 幕 · Agent 的核心文件</h2>
+          <p class="act-subtitle">README 告诉 Agent“这是什么”，AGENTS.md 告诉 Agent“在这里怎么做”。</p>
+        </div>
+
+        <h3 id="s-agents-md">README 与 AGENTS.md</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/agents-md.png" alt="README.md 和 AGENTS.md 的区别与作用示意图" loading="lazy">
+          <figcaption>一个讲项目背景，一个讲 AI 行为规范。两者最好同时存在。</figcaption>
+        </figure>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>文件</th><th>主要读者</th><th>适合写什么</th><th>不要写什么</th></tr></thead>
+            <tbody>
+              <tr><td>README.md</td><td>人和 Agent</td><td>项目目标、目录结构、如何运行、数据说明</td><td>一次性任务细节、长篇聊天记录</td></tr>
+              <tr><td>AGENTS.md</td><td>Agent</td><td>语言风格、操作边界、输出目录、禁区红线、项目规范</td><td>只对当前一轮任务有效的临时要求</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="s-agents-scope">作用位置与层级</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/agents-md-position.png" alt="AGENTS.md 在 Agent 上下文中的位置和读取时机示意图" loading="lazy">
+          <figcaption>AGENTS.md 是长期生效的项目规矩，适合放每次都要遵守的原则。</figcaption>
+        </figure>
+        <div class="concept-grid">
+          <div class="concept-card"><div class="cc-emoji">A</div><h4>项目级规则</h4><p>适合团队协作：同一项目下所有人和 Agent 都遵守同一套工作方式。</p></div>
+          <div class="concept-card"><div class="cc-emoji">G</div><h4>全局默认规则</h4><p>适合个人偏好：比如始终用中文、输出前先说明风险、不要动敏感文件。</p></div>
+          <div class="concept-card"><div class="cc-emoji">S</div><h4>子目录规则</h4><p>前端、后端、数据目录可以有不同规范。越具体的规则优先级越高。</p></div>
+        </div>
+      </div>
+
+      <div class="content-block" id="act-3">
+        <div class="act-header">
+          <div class="act-num">03</div>
+          <h2>第 3 幕 · 给 Agent 装上技能</h2>
+          <p class="act-subtitle">Skill 是把重复纠正沉淀成可复用规则。你说三次同样的话，就该写进 Skill。</p>
+        </div>
+
+        <h3 id="s-skill-why">技能是什么</h3>
+        <div class="concept-grid">
+          <div class="concept-card"><div class="cc-emoji">1</div><h4>操作手册</h4><p>Skill 不替代模型智力，它补的是“你这里怎么做”的细节：模板、口径、格式、流程、禁区。</p></div>
+          <div class="concept-card"><div class="cc-emoji">2</div><h4>默认值</h4><p>Skill 是默认行为，不是死规矩。对话里的明确要求可以覆盖它，长期变化再改 SKILL.md。</p></div>
+          <div class="concept-card"><div class="cc-emoji">3</div><h4>触发器</h4><p>description 是命中关键。要写用户真实会说的词：中文、英文、口语、命令名都可以放进去。</p></div>
+        </div>
+
+        <h3 id="s-skill-loading">如何加载技能</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/skill-loading.png" alt="Agent 技能从安装到触发和加载全文的过程示意图" loading="lazy">
+          <figcaption>技能通常先加载元数据，真正命中后才加载全文，这就是渐进式加载。</figcaption>
+        </figure>
+        <div class="callout tip"><strong>第一个 Skill 可以这样写：</strong>先写触发场景，再写工作流程，接着写“什么时候不要做”，最后补 2-3 个正反例。流程、门禁、案例，比漂亮排版更重要。</div>
+      </div>
+
+      <div class="content-block" id="act-4">
+        <div class="act-header">
+          <div class="act-num">04</div>
+          <h2>第 4 幕 · Agent 自动化</h2>
+          <p class="act-subtitle">自动化不是让 Agent 一直乱跑，而是给它明确触发条件、预算和停止条件。</p>
+        </div>
+
+        <h3 id="s-automation-map">四类自动化</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/automation-types.png" alt="Agent 自动化任务类型，包括定时任务、后台任务、事件触发和长期目标" loading="lazy">
+          <figcaption>先区分任务类型，再决定用哪种工具承载。</figcaption>
+        </figure>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>类型</th><th>像什么</th><th>适合做什么</th><th>风险</th></tr></thead>
+            <tbody>
+              <tr><td>定时任务</td><td>闹钟</td><td>每天查邮件、每周写周报、定期生成摘要</td><td>长期运行会持续消耗 token</td></tr>
+              <tr><td>后台任务</td><td>洗衣机</td><td>竞品调研、批量分析、大规模重构</td><td>中途方向错会浪费一整轮</td></tr>
+              <tr><td>事件触发</td><td>门铃</td><td>新邮件分类、PR Review、报错排查</td><td>触发条件写错会误运行</td></tr>
+              <tr><td>长期目标</td><td>项目经理</td><td>持续推进一个目标，分步检查直到完成</td><td>必须设预算、权限和停止条件</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="s-codex-claude">Codex 与 Claude Code 自动化</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/codex-automation.png" alt="Codex 自动化示意图" loading="lazy">
+          <figcaption>Codex 更适合把代码任务放到远端或后台跑，回来查看差异和结果。</figcaption>
+        </figure>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/claude-code-automation.png" alt="Claude Code 自动化示意图" loading="lazy">
+          <figcaption>Claude Code 的自动化更适合和本地项目、桌面工作流结合使用。</figcaption>
+        </figure>
+        <div class="callout warning"><strong>自动化前先设三件事：</strong>预算上限、可写目录、出错时通知方式。没有边界的自动化，省下来的时间很容易被排错吃掉。</div>
+      </div>
+
+      <div class="content-block" id="act-5">
+        <div class="act-header">
+          <div class="act-num">05</div>
+          <h2>第 5 幕 · 从理解到实践</h2>
+          <p class="act-subtitle">深度使用 Agent 的核心不是多发命令，而是会拆任务、会设检查点、会让它留下证据。</p>
+        </div>
+
+        <h3 id="s-conversation">Agent 对话技巧</h3>
+        <ul class="num-list">
+          <li><span class="num">1</span><div class="num-content"><h5>先想再做</h5><p>让 Agent 先列计划，你确认后再动手。这个习惯能避免大量返工。</p></div></li>
+          <li><span class="num">2</span><div class="num-content"><h5>分步下达</h5><p>一条指令里独立要求不超过 3 个，复杂任务拆成多轮，每轮有可检查输出。</p></div></li>
+          <li><span class="num">3</span><div class="num-content"><h5>新任务开新会话</h5><p>当任务切换、上下文混乱、对话超过很多轮时，不要舍不得旧会话。文件空间才是持久上下文。</p></div></li>
+          <li><span class="num">4</span><div class="num-content"><h5>设置检查点</h5><p>每完成一步停下来给你看。第二步错了只浪费两步，不会跑完十步才发现方向偏了。</p></div></li>
+        </ul>
+
+        <h3 id="s-sub-agent">派子 Agent 去干</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/sub-agent-context.png" alt="使用和不使用子 Agent 时 context 构成差异对比图" loading="lazy">
+          <figcaption>子 Agent 的价值是隔离上下文：主 Agent 只拿摘要，不把所有细节塞进同一个窗口。</figcaption>
+        </figure>
+
+        <h3 id="s-debug-memory-security">排查、记忆、安全</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/agent-debugging.png" alt="Agent 调试与可观测性排查图" loading="lazy">
+          <figcaption>表现不好时先看它读了什么、改了什么、依据是什么，不要只看最终回答。</figcaption>
+        </figure>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/agent-memory.png" alt="Agent 跨会话记忆管理示意图" loading="lazy">
+          <figcaption>跨会话记忆要沉淀到文件、数据库或明确的记忆层，而不是指望聊天窗口永远记得。</figcaption>
+        </figure>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/agent-security.png" alt="Agent 安全与权限边界示意图" loading="lazy">
+          <figcaption>权限越大，越要有边界：密钥、删除、外发、支付、生产环境都必须谨慎。</figcaption>
+        </figure>
+      </div>
+
+      <div class="content-block" id="act-6">
+        <div class="act-header">
+          <div class="act-num">06</div>
+          <h2>第 6 幕 · 综合实践</h2>
+          <p class="act-subtitle">一个长期可用的 Agent 系统，应该把任务、资料、输出、记忆和自动化边界都设计清楚。</p>
+        </div>
+
+        <h3 id="s-life-os">Life OS 思路</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/agent-depth-usage/life-os.png" alt="Life OS Agent 系统设计示意图" loading="lazy">
+          <figcaption>把 Agent 当成系统来设计：待办、日程、项目、知识、财务、健康都要有数据入口和行动出口。</figcaption>
+        </figure>
+
+        <h3 id="s-start-card">开始前检查卡</h3>
+        <div style="overflow-x:auto;">
+          <table class="agent-table">
+            <thead><tr><th>检查项</th><th>要确认的问题</th><th>推荐动作</th></tr></thead>
+            <tbody>
+              <tr><td>工作空间</td><td>Agent 是否知道项目背景和目录结构？</td><td>写 README，整理 input/output，文件名带语义。</td></tr>
+              <tr><td>规则</td><td>哪些行为每次都要遵守？</td><td>写进 AGENTS.md，不要每轮重复口头提醒。</td></tr>
+              <tr><td>技能</td><td>哪些纠正已经重复出现三次？</td><td>沉淀成 Skill，并写清触发词和反例。</td></tr>
+              <tr><td>自动化</td><td>触发条件、预算、停止条件是否清楚？</td><td>先小范围试跑，再放进长期任务。</td></tr>
+              <tr><td>安全</td><td>会不会读到密钥、隐私或生产环境？</td><td>限制权限，使用示例配置，敏感操作先人工确认。</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout tip">
+          <strong>可以直接让 Agent 帮你建第一版工作空间：</strong><br>
+          请根据我这个项目，帮我设计一个适合 Agent 协作的工作空间结构。先不要改文件，先列出 README、AGENTS.md、data、reference、notes、output 应该怎么组织，并说明哪些文件不能让 Agent 自动修改。
+        </div>
+
+        <div style="text-align:center;padding:48px 0;">
+          <a href="/yaohaixu-ai-study/" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            返回所有项目
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner page-width">
+    <div class="footer-brand">yaohaixu · AI 学习框架</div>
+    <div class="footer-links">
+      <a href="/yaohaixu-ai-study/">首页</a>
+      <a href="https://github.com/yaohaixu/yaohaixu-ai-study" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/js/main.js"></script>
+<script>
+(() => {
+  function highlightNav(nav) { if (!nav) return;
+    const links = nav.querySelectorAll('a');
+    const sections = [...links].map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (s.getBoundingClientRect().top <= 120) current = '#' + s.id; });
+      links.forEach(a => a.classList.toggle(a.closest('.toc-sidebar') ? 'toc-active' : 'active-act', a.getAttribute('href') === current));
+    }, {passive: true});
+  }
+  highlightNav(document.getElementById('toc'));
+  highlightNav(document.querySelector('.toc-sidebar'));
+})();
+</script>
+</body>
+</html>

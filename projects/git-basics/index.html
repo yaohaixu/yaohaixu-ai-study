@@ -21,7 +21,9 @@
       <a href="/yaohaixu-ai-study/" class="nav-link">首页</a>
       <a href="/yaohaixu-ai-study/projects/ai-mindset/" class="nav-link">AI Mindset</a>
       <a href="/yaohaixu-ai-study/projects/agent-framework/" class="nav-link">Agent Framework</a>
+      <a href="/yaohaixu-ai-study/projects/agent-depth-usage/" class="nav-link">Agent Depth</a>
       <a href="/yaohaixu-ai-study/projects/git-basics/" class="active nav-link" aria-current="page">Git Basics</a>
+      <a href="/yaohaixu-ai-study/projects/mvp-start/" class="nav-link">MVP</a>
       <a href="https://github.com/yaohaixu/yaohaixu-ai-study" class="header-cta" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </div>
@@ -83,6 +85,10 @@
         <p>最常见的项目事故通常长这样：改到一半页面坏了，不知道刚才动过哪里；文件夹里出现 final、final2、真的 final，但没人知道哪个能交；队友发来新版代码，你自己的修改被盖掉；接 API 时不小心把真实 key 放进公开仓库；让 Agent 大范围改文件，结果坏了以后不知道怎么退。</p>
 
         <h3 id="s-version-control">从手工版本到时间线</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/git-basics/git-version-control.png" alt="手工版本控制和 Git 版本控制的差异示意图" loading="lazy">
+          <figcaption>手工版本靠文件名猜，Git 把变化放进可回看的时间线。</figcaption>
+        </figure>
         <div class="concept-grid">
           <div class="concept-card">
             <div class="cc-emoji">&#x1F4C4;</div>
@@ -159,6 +165,10 @@
 
         <h3 id="s-push">Push 是把本地存档推到云端</h3>
         <p>Git 和 GitHub 不是一回事：Git 是电脑里的项目存档系统，GitHub 是云端展示柜和协作大厅。commit 是在自己电脑里保存一次历史，push 是把本地历史上传到 GitHub。</p>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/git-basics/git-github-sync.png" alt="本地 Git 和云端 GitHub 通过 push 与 pull 同步的示意图" loading="lazy">
+          <figcaption>commit 先在本地形成历史，push 以后队友和评委才能看到云端版本。</figcaption>
+        </figure>
         <div class="concept-grid">
           <div class="concept-card">
             <div class="cc-emoji">&#x1F680;</div>
@@ -195,6 +205,10 @@
         </div>
 
         <h3 id="s-branch-flow">主线和试验线</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/git-basics/git-branch-flow.png" alt="main 稳定主线和 feature 试验线的分支流程示意图" loading="lazy">
+          <figcaption>大改先放到 feature 试验线，主线继续保持能展示。</figcaption>
+        </figure>
         <div class="phase-timeline">
           <div class="phase-card"><div class="phase-marker trigger">main</div><div class="phase-body"><h4>稳定主线</h4><p>最好一直保持能展示，随时可以给评委、同学或队友看。</p></div></div>
           <div class="phase-card"><div class="phase-marker peak">feature</div><div class="phase-body"><h4>安全试验线</h4><p>全站换风格、接 API、修不确定 bug，都先放这里试。试验成功就检查后合回，试验失败主线仍然能展示。</p></div></div>
@@ -234,6 +248,10 @@
         </div>
 
         <h3 id="s-recovery">改坏以后，先别慌</h3>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/git-basics/git-recovery-flow.png" alt="Git 项目改坏后的六步救命流程示意图" loading="lazy">
+          <figcaption>坏现场先停手，再看状态、存证据、找安全点，最后确认执行。</figcaption>
+        </figure>
         <div class="phase-timeline">
           <div class="phase-card"><div class="phase-marker trigger">1</div><div class="phase-body"><h4>停手</h4><p>不要乱删，不要连续尝试高风险命令。</p></div></div>
           <div class="phase-card"><div class="phase-marker peak">2</div><div class="phase-body"><h4>看 status</h4><p>确认现在在哪个项目、哪条分支、哪些文件刚刚被改过。</p></div></div>
@@ -245,6 +263,10 @@
 
         <h3 id="s-secrets">不要把钥匙提交上去</h3>
         <p>API key、token、密码、私钥都属于 secret。它们不是普通配置，而是能调用服务、花钱、读数据的钥匙。如果真实 key 已经 push 到 GitHub，通常要当作泄露处理：废掉旧 key，重新生成新 key。不是把文件删掉就结束，因为历史记录、缓存、别人 clone 的副本里可能还留着。</p>
+        <figure class="pdf-figure">
+          <img src="../../assets/img/git-basics/git-secret-check.png" alt="Git 密钥安全检查示意图，展示不能提交和可以提交的内容" loading="lazy">
+          <figcaption>真实 key 放进 .gitignore 之外也不够，泄露后要当作已经失效处理。</figcaption>
+        </figure>
         <div class="concept-grid">
           <div class="concept-card">
             <div class="cc-emoji">&#x1F512;</div>

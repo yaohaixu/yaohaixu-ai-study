@@ -170,8 +170,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 .project-hero .eyebrow { margin-top: 80px; }
 .project-hero .body-lg { margin-top: 16px; }
 
-.project-content { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-.content-block { margin-bottom: 56px; }
+.project-content { width: 100%; max-width: 800px; min-width: 0; box-sizing: border-box; margin: 0 auto; padding: 0 24px; }
+.content-block { min-width: 0; margin-bottom: 56px; }
 .content-block h2 { font-size: 28px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
 .content-block h3 { font-size: 20px; margin: 28px 0 12px; }
 .content-block p { color: var(--text-soft); line-height: 1.75; margin-bottom: 16px; }
@@ -221,6 +221,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 
 /* Quote */
 blockquote.insight-quote { margin: 28px 0; padding: 24px 28px; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-style: italic; color: var(--text); font-size: 16px; }
+
+/* PDF Figures */
+.pdf-figure { width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; margin: 24px 0 28px; border: 1px solid var(--border); border-radius: var(--radius-md); background: #fff; overflow-x: auto; overflow-y: hidden; box-shadow: 0 12px 30px rgba(15, 23, 42, .06); }
+.pdf-figure img { display: block; width: 100%; min-width: 640px; max-width: none; height: auto; background: #fff; }
+.pdf-figure figcaption { padding: 10px 14px; border-top: 1px solid var(--border-soft); background: var(--bg-alt); color: var(--text-muted); font-size: 12.5px; line-height: 1.5; }
 
 /* Agent Framework Table */
 .agent-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 24px 0; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }

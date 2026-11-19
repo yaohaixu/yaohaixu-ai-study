@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yaohaixu.ai · AI Agent 课程</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17252b;
+      --muted: #5f737c;
+      --line: #d9e8e8;
+      --aqua: #13999a;
+      --aqua-soft: #e9fbfa;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f1fbfb 0%, #ffffff 42%);
+    }
+    main {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+    a { color: var(--aqua); text-decoration: none; font-weight: 700; }
+    header {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+    }
+    .eyebrow {
+      color: var(--aqua);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    .intro {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      display: grid;
+      min-height: 190px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #8bd7d4;
+      box-shadow: 0 16px 34px rgba(21, 65, 68, 0.10);
+    }
+    .meta {
+      color: var(--aqua);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    h2 {
+      margin: 12px 0 10px;
+      font-size: 23px;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+    .desc {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    .open {
+      align-self: end;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      color: var(--aqua);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    @media (max-width: 760px) {
+      main { width: min(100% - 28px, 1080px); padding-top: 34px; }
+      h1 { font-size: 29px; }
+      .grid { grid-template-columns: 1fr; }
+      .card { min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <a href="/yaohaixu-ai-study/">← 返回 yaohaixu AI 知识库</a>
+      <div class="eyebrow">yaohaixu.ai</div>
+      <h1>课件网页入口</h1>
+      <p class="intro">这里承载五份静态 HTML 课件的完整网页版本，保留原始排版、图片和页面内导航。飞书文档继续作为学习地图、总结、转录和材料索引使用；课件正文从这里打开。</p>
+    </header>
+    <section class="grid" aria-label="课件列表">
+      <a class="card" href="./mindset.html">
+        <div class="meta">01 / 2026-05-16 / 主课</div>
+        <h2>Agent 时代 Mindset 转化</h2>
+        <p class="desc">从 prompt 思维转向 context / system 思维，理解学习模型、生产模型和长期能力复利。</p>
+        <span class="open">打开网页课件 →</span>
+      </a>
+      <a class="card" href="./agent-framework.html">
+        <div class="meta">02 / 2026-05-19 / 主课</div>
+        <h2>Agent 框架选用与基础入门</h2>
+        <p class="desc">理解 Agent 框架、核心条件、工具与文件空间，并按使用场景选择合适框架。</p>
+        <span class="open">打开网页课件 →</span>
+      </a>
+      <a class="card" href="./agent-install-guide.html">
+        <div class="meta">03 / 2026-05-19 / 安装教程</div>
+        <h2>Agent 安装指南</h2>
+        <p class="desc">本地安装 cc switch、配置 IDE 与 Claude Code 插件，完成实操前置环境。</p>
+        <span class="open">打开网页课件 →</span>
+      </a>
+      <a class="card" href="./agent-depth.html">
+        <div class="meta">04 / 2026-05-26 / 主课</div>
+        <h2>Agent 深度使用</h2>
+        <p class="desc">把 Agent 接进真实项目：工作空间、核心文件、Skill、自动化、子 Agent、记忆与安全边界。</p>
+        <span class="open">打开网页课件 →</span>
+      </a>
+      <a class="card" href="./external-links.html">
+        <div class="meta">ORIGINAL LINKS / 外部资源</div>
+        <h2>原始链接与外部资源</h2>
+        <p class="desc">集中保留无法直接搬成本地网页或暂时不适合转存的工具下载、产品页面和延伸阅读链接。</p>
+        <span class="open">查看原始链接 →</span>
+      </a>
+    </section>
+    <footer>资料用于个人学习复盘。若飞书内打开不便，可复制当前页面地址到浏览器打开。</footer>
+  </main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

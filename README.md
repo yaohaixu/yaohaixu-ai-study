@@ -147,7 +147,7 @@ yaohaixu-ai-study/
 | `projects/agent-depth-usage/` | 项目 | ✅ 稳定 | 第 5 模块：工作空间 / AGENTS.md / Skill / 自动化（2026-07 新增） |
 | `projects/git-basics/` | 项目 | ✅ 稳定 | Git 入门模块（2026-07 新增） |
 | `projects/mvp-start/` | 项目 | ✅ 稳定 | MVP 启动模块（2026-07 新增） |
-| `projects/sola-agent-bootcamp/` | 独立课程 | ✅ 稳定 | SOLA AI Agent 共学营：5 个原排版课件页 + 38 个附件材料页 + 本地化资源（2026-11 新增） |
+| `projects/yaohaixu-ai-course/` | 独立课程 | ✅ 稳定 | yaohaixu.ai AI Agent 课程：5 个原排版课件页 + 38 个附件材料页（2026-11 新增，已去品牌化） |
 | `projects/knowledge-base/` | 项目 | ✅ 框架稳定，⚠️ 内容占位 | 14 章 77 知识点 + 7 认知模型子页面 |
 | `projects/knowledge-base/topics/` | 子页面 | ⚠️ 内容占位 | 77 个 HTML 文件，内容均为"内容正在整理中" |
 
@@ -585,6 +585,42 @@ gh pr merge --merge
 
 ---
 
+### Version 1.1
+
+**日期**: 2026-07-01
+**Agent**: Codex AI Agent (接手 Session #1, 续)
+**Git Commit**: `0cbf0ef`
+**分支**: dev
+
+**PR**: [#13](https://github.com/yaohaixu/yaohaixu-ai-study/pull/13)
+
+**本次目标**: 知识库子页面 hero 区域视觉重构
+
+**修改文件**:
+- 77 个 `projects/knowledge-base/topics/*.html` (308 行新增, 154 行删除)
+
+**新增功能**:
+- 77 个子页面 eyebrow + h1 统一包裹进 `.projects-head` 实现居中
+- eyebrow 文本从 "章节名 · X.Y" 重构为 "第 N 章 · X.Y"
+- 移除内联 `style="margin-top:60px;"`，让 CSS 默认 80px margin 接管
+
+**修复 Bug**:
+- 子页面 eyebrow 与"返回首页"链接视觉重合
+- 章节名在 eyebrow 中重复出现在标题上方，视觉冗余
+
+**影响范围**: 77 个知识点子页面
+
+**是否存在 Breaking Change**: 否（仅视觉变化）
+
+**为什么这样修改**:
+- 原格式 "大语言模型基础原理 · 1.1" 在子页面 hero 中显得拥挤且不美观
+- 内联 60px margin 覆盖了 CSS 80px 默认值，导致 eyebrow 过于靠近返回链接
+- 章节名在 eyebrow 和 home 页面中重复，不如使用简洁的"第 N 章 · X.Y"格式
+
+**需要继续完善**: 无
+
+---
+
 ### Version 1.2
 
 **日期**: 2026-11-19
@@ -634,39 +670,47 @@ gh pr merge --merge
 
 **建议下一位 Agent 做什么**: 验证线上课程入口与 5 页可访问；如用户要求，处理 footer 二维码与导航项
 
-### Version 1.1
+### Version 1.3
 
-**日期**: 2026-07-01
-**Agent**: Codex AI Agent (接手 Session #1, 续)
-**Git Commit**: `0cbf0ef`
+**日期**: 2026-11-19
+**Agent**: Codex AI Agent
 **分支**: dev
-
-**PR**: [#13](https://github.com/yaohaixu/yaohaixu-ai-study/pull/13)
-
-**本次目标**: 知识库子页面 hero 区域视觉重构
+**本次目标**: 课程页品牌与作者本地化——去 SOLA 化，统一为 yaohaixu.ai；首页改 5 张直达卡片
 
 **修改文件**:
-- 77 个 `projects/knowledge-base/topics/*.html` (308 行新增, 154 行删除)
+- `projects/sola-agent-bootcamp/` → `projects/yaohaixu-ai-course/`（目录改名，git mv 保留历史）
+- `index.html` — 1 张课程总卡片替换为 5 张直达课件卡片；hero 统计 6→10
+- 课程 6 个主页面 + 20 个附件页 — 品牌/作者/联系方式/页脚改造
+- `README.md` — 本记录
 
 **新增功能**:
-- 77 个子页面 eyebrow + h1 统一包裹进 `.projects-head` 实现居中
-- eyebrow 文本从 "章节名 · X.Y" 重构为 "第 N 章 · X.Y"
-- 移除内联 `style="margin-top:60px;"`，让 CSS 默认 80px margin 接管
+- 首页「学习笔记」区 5 张独立课程卡片直达课件（mindset / agent-framework / agent-install-guide / agent-depth / external-links）
 
-**修复 Bug**:
-- 子页面 eyebrow 与"返回首页"链接视觉重合
-- 章节名在 eyebrow 中重复出现在标题上方，视觉冗余
+**修复与改造**:
+- 作者署名 `shing` → `海旭`（4 个课件页 hero 作者区；头像仍用 assets/shing-avatar.jpg 作为本人头像）
+- 「联系方式」按钮从 `#footer-contact` 锚点改为新窗口打开 `https://github.com/yaohaixu`
+- 删除 4 个课件页页尾 Organization（Social Layer）/Author（shing）+ 二维码整块 footer-grid，仅保留 `yaohaixu.ai · 课程名 · 2026` credit
+- 品牌替换：`SOLA AI Agent 共学营` → `yaohaixu.ai AI Agent 课程`；`Social Layer` → `yaohaixu.ai`（主页面 + 20 个附件页）
+- 三个课件页 header 移除 Social Layer logo，品牌名改 `yaohaixu.ai`
+- 删除 6 个孤立品牌资源（social-layer-logo.jpg、3 张二维码、微信/小红书 logo）
+- 课程入口文案修正：四份静态课件 → 五份
 
-**影响范围**: 77 个知识点子页面
+**架构变化**: 无
 
-**是否存在 Breaking Change**: 否（仅视觉变化）
+**是否存在 Breaking Change**: 是（URL 变化）— 课程路径由 `/projects/sola-agent-bootcamp/` 变更为 `/projects/yaohaixu-ai-course/`
+
+**迁移要求**: 无
 
 **为什么这样修改**:
-- 原格式 "大语言模型基础原理 · 1.1" 在子页面 hero 中显得拥挤且不美观
-- 内联 60px margin 覆盖了 CSS 80px 默认值，导致 eyebrow 过于靠近返回链接
-- 章节名在 eyebrow 和 home 页面中重复，不如使用简洁的"第 N 章 · X.Y"格式
+- 用户要求课程页去除 SOLA / Social Layer 组织痕迹，统一为个人品牌 yaohaixu.ai，作者统一署名海旭
+- 页尾不再展示组织与作者资料及二维码
+- 首页单张总卡改 5 张直达卡，减少一次点击
 
-**需要继续完善**: 无
+**副作用**: 页尾高度缩小；课程入口 index.html 仍保留为目录页，首页 5 张卡片均直达课件
+
+**需要继续完善**: 顶部导航栏仍无课程入口；shing-avatar.jpg 为原头像文件，若更换海旭本人照片可直接替换该文件（4 页自动生效）
+
+**建议下一位 Agent 做什么**: 线上回归 5 个直达链接与渲染；若用户提供新头像则替换并改名引用
 
 ---
 
@@ -1055,6 +1099,7 @@ git push origin main --force  # 谨慎使用
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| v4.15 | 2026-11-19 | 课程去 SOLA 化：改名 yaohaixu-ai-course；作者改海旭；删除 org/author 页尾；首页 5 张直达卡片 |
 | v4.14 | 2026-11-19 | 新增 SOLA AI Agent 共学营独立课程（5 课件页 + 入口，原站原排版迁移） |
 | v4.13 | 2026-07-01 | 知识库子页面 hero 居中 + eyebrow 重构 (PR #13) |
 | v4.12 | 2026-07-01 | function-calling 重复引用修复 + kb-toc 移动端 padding (PR #12) |

@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>三个条件：AI 模型、Agent 框架、文件空间 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">Agent 运行的三大核心条件：AI 模型、Agent 框架、文件空间的详细展开</h2>
+<style>
+  .hero{text-align:center;margin:0 0 20px}
+  .hero h3{font-size:17px;font-weight:500;color:var(--color-text-primary);margin:0 0 4px}
+  .hero p{font-size:12px;color:var(--color-text-secondary);margin:0}
+
+  .pillar{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);overflow:hidden;margin:0 0 12px}
+  .p-head{display:grid;grid-template-columns:1fr 1fr;border-bottom:0.5px solid var(--color-border-tertiary)}
+  .p-left{padding:14px;display:flex;gap:10px;align-items:flex-start;border-right:0.5px solid var(--color-border-tertiary)}
+  .p-right{padding:14px;display:flex;gap:10px;align-items:flex-start}
+  .p-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px}
+  .pi-purple{background:#EEEDFE;color:#534AB7}
+  .pi-teal{background:#E1F5EE;color:#0F6E56}
+  .pi-amber{background:#FAEEDA;color:#BA7517}
+  @media(prefers-color-scheme:dark){
+    .pi-purple{background:#26215C;color:#AFA9EC}
+    .pi-teal{background:#04342C;color:#5DCAA5}
+    .pi-amber{background:#412402;color:#FAC775}
+  }
+  .p-text h4{font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0}
+  .p-text .sub{font-size:11px;color:var(--color-text-tertiary);margin:2px 0 0}
+  .p-text p{font-size:12px;color:var(--color-text-secondary);margin:4px 0 0;line-height:1.5}
+
+  .p-body{padding:14px}
+  .cap-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:0 0 10px}
+  .cap{padding:10px;border-radius:var(--border-radius-md);background:var(--color-background-secondary)}
+  .cap-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin:0 0 3px;display:flex;align-items:center;gap:4px}
+  .cap-title i{font-size:13px;color:var(--color-text-tertiary)}
+  .cap-desc{font-size:11px;color:var(--color-text-secondary);margin:0;line-height:1.5}
+
+  .analogy{padding:9px 12px;border-radius:var(--border-radius-md);font-size:11.5px;line-height:1.55;display:flex;gap:8px;align-items:flex-start;margin:0 0 10px}
+  .analogy i{font-size:14px;flex-shrink:0;margin-top:1px}
+  .an-purple{background:#EEEDFE;color:#3C3489}
+  .an-teal{background:#E1F5EE;color:#085041}
+  .an-amber{background:#FAEEDA;color:#633806}
+  @media(prefers-color-scheme:dark){
+    .an-purple{background:#26215C;color:#AFA9EC}
+    .an-teal{background:#04342C;color:#5DCAA5}
+    .an-amber{background:#412402;color:#FAC775}
+  }
+
+  .quality{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .q-card{padding:9px 11px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary)}
+  .q-label{font-size:10px;font-weight:500;color:var(--color-text-tertiary);margin:0 0 3px}
+  .q-text{font-size:11.5px;color:var(--color-text-primary);margin:0;line-height:1.5}
+  .q-sub{font-size:10.5px;color:var(--color-text-secondary);margin:2px 0 0;line-height:1.4}
+
+  .flow-section{margin:20px 0 0}
+  .flow-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 12px;text-align:center}
+  .flow-row{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0;align-items:center}
+  .flow-box{padding:12px;border-radius:var(--border-radius-lg);text-align:center;border:0.5px solid var(--color-border-tertiary)}
+  .fb-purple{background:#EEEDFE;border-color:#AFA9EC}
+  .fb-teal{background:#E1F5EE;border-color:#5DCAA5}
+  .fb-amber{background:#FAEEDA;border-color:#EF9F27}
+  @media(prefers-color-scheme:dark){
+    .fb-purple{background:#26215C;border-color:#534AB7}
+    .fb-teal{background:#04342C;border-color:#0F6E56}
+    .fb-amber{background:#412402;border-color:#BA7517}
+  }
+  .fb-icon{font-size:20px;margin-bottom:4px}
+  .fb-name{font-size:12px;font-weight:500;color:var(--color-text-primary);margin:0}
+  .fb-role{font-size:10.5px;color:var(--color-text-secondary);margin:2px 0 0}
+  .flow-arrow{text-align:center;font-size:11px;color:var(--color-text-tertiary);padding:0 6px;line-height:1.4}
+
+  .missing{margin:16px 0 0;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+  .missing-head{padding:10px 14px;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary);font-size:12px;font-weight:500;color:var(--color-text-primary)}
+  .missing-grid{display:grid;grid-template-columns:auto 1fr 1fr;font-size:11.5px}
+  .missing-grid>div{padding:8px 12px;border-bottom:0.5px solid var(--color-border-tertiary)}
+  .missing-grid>div:nth-child(3n+1){border-right:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary);color:var(--color-text-secondary);font-weight:500}
+  .missing-grid>div:nth-child(3n+2){border-right:0.5px solid var(--color-border-tertiary)}
+  .mg-last>div{border-bottom:none}
+  .missing-grid .no{color:var(--color-text-tertiary)}
+</style>
+
+<div class="hero">
+  <h3>运行一个 Agent 需要三样东西</h3>
+  <p>缺任何一样，它就从"律师"退化成"顾问"甚至更差</p>
+</div>
+
+<!-- ===== PILLAR 1: AI Model ===== -->
+<div class="pillar">
+  <div class="p-head">
+    <div class="p-left">
+      <div class="p-icon pi-purple"><i class="ti ti-brain" aria-hidden="true"></i></div>
+      <div class="p-text">
+        <h4>AI 模型</h4>
+        <div class="sub">技术概念</div>
+        <p>GPT、Claude、Deepseek 这些，是 Agent 的思维引擎。</p>
+      </div>
+    </div>
+    <div class="p-right">
+      <div class="p-icon pi-purple"><i class="ti ti-brain" aria-hidden="true"></i></div>
+      <div class="p-text">
+        <h4>＝ 大脑</h4>
+        <div class="sub">比喻</div>
+        <p>决定这个 Agent 有多"聪明"。</p>
+      </div>
+    </div>
+  </div>
+  <div class="p-body">
+    <div class="cap-grid">
+      <div class="cap">
+        <div class="cap-title"><i class="ti ti-puzzle" aria-hidden="true"></i> 解决难题</div>
+        <div class="cap-desc">面对复杂问题能想出好办法，不会"答非所问"或"一本正经胡说"。</div>
+      </div>
+      <div class="cap">
+        <div class="cap-title"><i class="ti ti-binary-tree" aria-hidden="true"></i> 拆解任务</div>
+        <div class="cap-desc">把一个大目标拆成可执行的小步骤。拆得好不好，直接决定后面能不能做对。</div>
+      </div>
+      <div class="cap">
+        <div class="cap-title"><i class="ti ti-route" aria-hidden="true"></i> 规划路径</div>
+        <div class="cap-desc">判断先做什么后做什么，预判哪里可能出错，提前准备备选方案。</div>
+      </div>
+    </div>
+    <div class="analogy an-purple">
+      <i class="ti ti-bulb" aria-hidden="true"></i>
+      <span>模型越强 ＝ 大脑越聪明。同一个任务，聪明的大脑能想出更优的路径、犯更少的错。但再聪明的大脑，没有身体也只能"纸上谈兵"。</span>
+    </div>
+    <div class="quality">
+      <div class="q-card">
+        <div class="q-label">强模型</div>
+        <div class="q-text">"帮我写一份融资 BP"</div>
+        <div class="q-sub">精准拆解：分析市场→梳理商业模式→财务预测→组织成完整文档，一步到位。</div>
+      </div>
+      <div class="q-card">
+        <div class="q-label">弱模型</div>
+        <div class="q-text">"帮我写一份融资 BP"</div>
+        <div class="q-sub">拆解混乱，遗漏关键部分，逻辑跳跃，需要你反复纠正方向。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PILLAR 2: Agent Framework ===== -->
+<div class="pillar">
+  <div class="p-head">
+    <div class="p-left">
+      <div class="p-icon pi-teal"><i class="ti ti-robot" aria-hidden="true"></i></div>
+      <div class="p-text">
+        <h4>Agent 框架</h4>
+        <div class="sub">技术概念</div>
+        <p>管理 Agent"怎么干活"的系统：调度任务、调用工具、控制流程。</p>
+      </div>
+    </div>
+    <div class="p-right">
+      <div class="p-icon pi-teal"><i class="ti ti-run" aria-hidden="true"></i></div>
+      <div class="p-text">
+        <h4>＝ 身体</h4>
+        <div class="sub">比喻</div>
+        <p>决定这个 Agent 能不能"跑起来"以及跑多久。</p>
+      </div>
+    </div>
+  </div>
+  <div class="p-body">
+    <div class="cap-grid">
+      <div class="cap">
+        <div class="cap-title"><i class="ti ti-bolt" aria-hidden="true"></i> 执行速度</div>
+        <div class="cap-desc">框架调度得好，步骤之间衔接紧密，不做多余的事。快速完成任务。</div>
+      </div>
+      <div class="cap">
+        <div class="cap-title"><i class="ti ti-shield-check" aria-hidden="true"></i> 稳定性</div>
+        <div class="cap-desc">中途出错能自动恢复，不会做到一半就崩溃或跑偏。能可靠地走完全流程。</div>
+      </div>
+      <div class="cap">
+        <div class="cap-title"><i class="ti ti-battery-eco" aria-hidden="true"></i> 控制消耗</div>
+        <div class="cap-desc">每次调用模型都花钱（token 消耗）。好的框架用最少的调用完成任务，省钱又高效。</div>
+      </div>
+    </div>
+    <div class="analogy an-teal">
+      <i class="ti ti-bulb" aria-hidden="true"></i>
+      <span><strong>特种兵 vs 普通市民：</strong>给同一颗聪明的大脑配上不同的身体。特种兵体能好、行动快、能在恶劣环境下持续作战。普通市民脑子也许一样聪明，但跑两步就喘，遇到意外就慌。框架就是这个"体能"——同一个模型，好框架让它像特种兵一样高效稳定，差框架让它像没经过训练的人一样笨手笨脚。</span>
+    </div>
+    <div class="quality">
+      <div class="q-card">
+        <div class="q-label">好框架（特种兵）</div>
+        <div class="q-text">连续写 10 篇文章</div>
+        <div class="q-sub">稳定推进，每篇之间无缝衔接。中途某篇格式出错，自动修复继续。消耗可控。</div>
+      </div>
+      <div class="q-card">
+        <div class="q-label">差框架（普通市民）</div>
+        <div class="q-text">连续写 10 篇文章</div>
+        <div class="q-sub">写到第 3 篇开始重复自己，第 5 篇格式全乱，第 7 篇直接卡住。消耗翻倍但产出减半。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PILLAR 3: File Space ===== -->
+<div class="pillar">
+  <div class="p-head">
+    <div class="p-left">
+      <div class="p-icon pi-amber"><i class="ti ti-folders" aria-hidden="true"></i></div>
+      <div class="p-text">
+        <h4>文件空间</h4>
+        <div class="sub">技术概念</div>
+        <p>Agent 能接触到的所有外部资源：文件、工具、账号、数据。</p>
+      </div>
+    </div>
+    <div class="p-right">
+      <div class="p-icon pi-amber"><i class="ti ti-world" aria-hidden="true"></i></div>
+      <div class="p-text">
+        <h4>＝ 外部资料</h4>
+        <div class="sub">比喻</div>
+        <p>决定这个 Agent 能接触到多少信息、拥有多少工具。</p>
+      </div>
+    </div>
+  </div>
+  <div class="p-body">
+    <div class="cap-grid">
+      <div class="cap">
+        <div class="cap-title"><i class="ti ti-book" aria-hidden="true"></i> 知识库</div>
+        <div class="cap-desc">项目文档、产品手册、历史数据……Agent 能随时翻阅，获取背景知识。</div>
+      </div>
+      <div class="cap">
+        <div class="cap-title"><i class="ti ti-world-www" aria-hidden="true"></i> 工具 + 账号</div>
+        <div class="cap-desc">浏览器能搜索信息，邮箱能发邮件，日历能排日程——Agent 的"装备"。</div>
+      </div>
+      <div class="cap">
+        <div class="cap-title"><i class="ti ti-subtask" aria-hidden="true"></i> 任务材料</div>
+        <div class="cap-desc">"写 10 篇文章"需要素材、"做竞品分析"需要数据。文件空间就是 Agent 的弹药库。</div>
+      </div>
+    </div>
+    <div class="analogy an-amber">
+      <i class="ti ti-bulb" aria-hidden="true"></i>
+      <span>大脑再聪明、身体再强壮，空手上战场也赢不了。文件空间就是 Agent 的<strong>环境 + 道具 + 弹药</strong>——知识库让它了解背景，工具让它与外部世界交互，任务材料让它有东西可加工。资料越丰富，Agent 产出的质量越高。</span>
+    </div>
+    <div class="quality">
+      <div class="q-card">
+        <div class="q-label">资料丰富</div>
+        <div class="q-text">"帮我写周报"</div>
+        <div class="q-sub">工作区里有需求文档、会议纪要、上周周报、项目进度表——Agent 综合所有信息，写出内容翔实的周报。</div>
+      </div>
+      <div class="q-card">
+        <div class="q-label">资料为空</div>
+        <div class="q-text">"帮我写周报"</div>
+        <div class="q-sub">什么背景材料都没有。Agent 只能问你"这周做了什么"，跟 Chat AI 没有区别。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FLOW: How they work together ===== -->
+<div class="flow-section">
+  <div class="flow-title">三者怎么配合</div>
+  <div class="flow-row">
+    <div class="flow-box fb-amber">
+      <div class="fb-icon"><i class="ti ti-folders" aria-hidden="true"></i></div>
+      <p class="fb-name">文件空间</p>
+      <p class="fb-role">提供信息和材料</p>
+    </div>
+    <div class="flow-arrow">→<br><span style="font-size:10px">喂给</span></div>
+    <div class="flow-box fb-purple">
+      <div class="fb-icon"><i class="ti ti-brain" aria-hidden="true"></i></div>
+      <p class="fb-name">AI 模型</p>
+      <p class="fb-role">思考、决策、规划</p>
+    </div>
+    <div class="flow-arrow">→<br><span style="font-size:10px">指挥</span></div>
+    <div class="flow-box fb-teal">
+      <div class="fb-icon"><i class="ti ti-robot" aria-hidden="true"></i></div>
+      <p class="fb-name">Agent 框架</p>
+      <p class="fb-role">执行、调度、验证</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin:6px 0 0">
+    <span style="font-size:11px;color:var(--color-text-tertiary)">←———— 执行结果写回文件空间，供下一步使用 ————←</span>
+  </div>
+</div>
+
+<!-- ===== Missing one? ===== -->
+<div class="missing">
+  <div class="missing-head">缺了任何一个会怎样？</div>
+  <div class="missing-grid">
+    <div>缺了什么</div><div>剩下什么</div><div>实际效果</div>
+
+    <div>没有大脑</div>
+    <div class="no">有身体、有资料，但不知道该做什么</div>
+    <div>传统自动化脚本——只能执行写死的流程，不会思考</div>
+
+    <div>没有身体</div>
+    <div class="no">有大脑、有资料，但做不了任何事</div>
+    <div>就是现在的 Chat AI——能看懂你的文件，但只能回你一段话</div>
+
+    <div style="border-bottom:none">没有资料</div>
+    <div class="no" style="border-bottom:none">有大脑、有身体，但两手空空</div>
+    <div style="border-bottom:none">Agent 能跑起来，但产出空洞——巧妇难为无米之炊</div>
+  </div>
+</div>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

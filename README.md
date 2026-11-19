@@ -144,6 +144,10 @@ yaohaixu-ai-study/
 | `assets/img/` | 资源 | ✅ 稳定 | 图片按模块分目录，相对路径 `../../assets/img/` |
 | `projects/ai-mindset/` | 项目 | ✅ 稳定 | 五幕完整内容 + TOC 侧边栏 |
 | `projects/agent-framework/` | 项目 | ✅ 稳定 | 五幕完整内容 + TOC 侧边栏 |
+| `projects/agent-depth-usage/` | 项目 | ✅ 稳定 | 第 5 模块：工作空间 / AGENTS.md / Skill / 自动化（2026-07 新增） |
+| `projects/git-basics/` | 项目 | ✅ 稳定 | Git 入门模块（2026-07 新增） |
+| `projects/mvp-start/` | 项目 | ✅ 稳定 | MVP 启动模块（2026-07 新增） |
+| `projects/sola-agent-bootcamp/` | 独立课程 | ✅ 稳定 | SOLA AI Agent 共学营：5 个原排版课件页 + 38 个附件材料页 + 本地化资源（2026-11 新增） |
 | `projects/knowledge-base/` | 项目 | ✅ 框架稳定，⚠️ 内容占位 | 14 章 77 知识点 + 7 认知模型子页面 |
 | `projects/knowledge-base/topics/` | 子页面 | ⚠️ 内容占位 | 77 个 HTML 文件，内容均为"内容正在整理中" |
 
@@ -581,6 +585,55 @@ gh pr merge --merge
 
 ---
 
+### Version 1.2
+
+**日期**: 2026-11-19
+**Agent**: Codex AI Agent
+**分支**: dev
+**本次目标**: 将 horacetang.com 上的 SOLA AI Agent 共学营 5 个课件页面迁移为站内独立课程（作者 shing 本人授权迁移自己的内容）
+
+**修改文件**:
+- `index.html` — 新增第 6 张项目卡片「SOLA Agent 共学营」，hero 统计「进行中项目」5→6
+- `projects/sola-agent-bootcamp/` — 新增 140 个文件（6 个 HTML + 134 个资源文件，约 20MB）
+- `README.md` — 本记录及目录/状态同步
+
+**新增功能**:
+- 独立课程入口 `projects/sola-agent-bootcamp/index.html`（5 张课件卡片）
+- 5 个原排版课件页：`mindset.html`、`agent-framework.html`、`agent-install-guide.html`、`agent-depth.html`、`external-links.html`
+- 完整资源包：80+ 图片/SVG、38 个 comment-materials 附件 HTML、1 个演示素材 zip、Google Fonts 字体 CSS
+
+**修复 Bug**:
+- 无（新功能）
+
+**架构变化**:
+- 站点首次出现「原站 HTML 直接迁移」型模块：课程页自带独立 CSS（Poolside/Social Layer 设计），不使用站点 Aurora 设计系统；通过 `projects/sola-agent-bootcamp/assets/` 自我闭包，与站点全局样式互不影响
+
+**新增依赖**: 无（Google Fonts 仍走外链 CDN）
+
+**影响范围**: 首页项目区、站点总文件数（+140）
+
+**是否存在 Breaking Change**: 否
+
+**迁移要求**: 无
+
+**为什么这样修改**:
+- 用户（shing，原站作者）要求把这 5 个课件作为独立课程收录进个人知识库
+- 保留原始排版而不重写为 Aurora 风格，是因为这些页面是「原始课件存档」，排版、配图、页内导航本身就是内容的一部分
+
+**链接本地化处理**:
+- 4 个课件页 brand 链接 `href="/"`（原站首页）→ `./index.html`（课程入口）
+- 课程入口页返回链接 → `/yaohaixu-ai-study/`（站点首页）
+- `assets/css2`（无扩展名字体 CSS）→ `assets/css2.css`，38 个附件页同步更新 `../css2.css`，避免 GitHub Pages MIME 类型导致样式失效
+
+**副作用**:
+- 课程目录约 20MB，仓库体积增大；`mindset.html` 等页面保留原站 footer 二维码（视频号/小红书/公众号），如需按历史 TODO 删除公众号二维码可另行处理
+
+**需要继续完善**:
+- 首页导航栏暂未添加 SOLA 课程入口（仅项目卡片可进入），如需全站导航一致可后续统一
+- 可考虑将课程资源图片压缩为 WebP
+
+**建议下一位 Agent 做什么**: 验证线上课程入口与 5 页可访问；如用户要求，处理 footer 二维码与导航项
+
 ### Version 1.1
 
 **日期**: 2026-07-01
@@ -1002,6 +1055,7 @@ git push origin main --force  # 谨慎使用
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| v4.14 | 2026-11-19 | 新增 SOLA AI Agent 共学营独立课程（5 课件页 + 入口，原站原排版迁移） |
 | v4.13 | 2026-07-01 | 知识库子页面 hero 居中 + eyebrow 重构 (PR #13) |
 | v4.12 | 2026-07-01 | function-calling 重复引用修复 + kb-toc 移动端 padding (PR #12) |
 | v4.11 | 2026-06-30 | KB 卡片默认折叠修复 + 宽度约束 900px 居中 (PR #11) |

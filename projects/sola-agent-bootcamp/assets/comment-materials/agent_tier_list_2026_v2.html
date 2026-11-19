@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>从夯到拉 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">2026 Agent 框架天梯榜（修正版）：从夯到拉的五个等级</h2>
+<style>
+  .tier-list{display:flex;flex-direction:column;gap:3px}
+  .tier-row{display:flex;align-items:stretch;min-height:80px;border-radius:10px;overflow:hidden}
+  .tier-label{width:72px;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:22px;flex-shrink:0;color:#000}
+  .tier-content{flex:1;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--color-background-secondary);flex-wrap:wrap;position:relative}
+  .tier-note{position:absolute;top:6px;right:10px;font-size:9.5px;color:var(--color-text-tertiary);max-width:220px;text-align:right;line-height:1.4}
+
+  .item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 8px;border-radius:var(--border-radius-md);background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);min-width:72px;cursor:default;transition:transform .15s}
+  .item:hover{transform:scale(1.04)}
+  .item-logo{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--color-background-secondary)}
+  .item-logo img{width:40px;height:40px;border-radius:8px;object-fit:cover}
+  .item-logo .fb{font-weight:500;font-size:14px;color:#fff;width:100%;height:100%;display:none;align-items:center;justify-content:center;border-radius:8px}
+  .item-name{font-size:10.5px;font-weight:500;color:var(--color-text-primary);text-align:center;line-height:1.3;white-space:nowrap}
+  .item-sub{font-size:8.5px;color:var(--color-text-tertiary);text-align:center;line-height:1.3}
+
+  .combo{display:flex;align-items:center;gap:0;padding:6px;border-radius:var(--border-radius-lg);background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary)}
+  .combo-item{display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 8px;min-width:64px}
+  .combo-item .item-logo{width:36px;height:36px}
+  .combo-item .item-logo img{width:36px;height:36px}
+  .combo-plus{font-size:14px;color:var(--color-text-tertiary);padding:0 2px}
+  .combo-label{font-size:9px;font-weight:500;color:var(--color-text-info);padding:2px 8px;border-radius:3px;background:var(--color-background-info);margin-top:4px;text-align:center;width:100%}
+
+  .chat-items{display:flex;gap:6px;flex-wrap:wrap}
+  .chat-item{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:var(--border-radius-md);background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary)}
+  .chat-icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--color-background-secondary)}
+  .chat-icon img{width:24px;height:24px;border-radius:6px;object-fit:cover}
+  .chat-name{font-size:10.5px;color:var(--color-text-primary)}
+  .local-logo{width:100%;height:100%;display:block}
+</style>
+
+<div class="tier-list">
+
+  <!-- 夯 -->
+  <div class="tier-row">
+    <div class="tier-label" style="background:#FF2D2D">夯</div>
+    <div class="tier-content">
+      <div class="item">
+        <div class="item-logo"><img src="https://github.com/anthropics.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#D97757">C</div></div>
+        <div class="item-name">Claude Code</div>
+        <div class="item-sub">Anthropic</div>
+      </div>
+      <div class="item">
+        <div class="item-logo"><img src="https://github.com/openai.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#10A37F">O</div></div>
+        <div class="item-name">Codex</div>
+        <div class="item-sub">OpenAI</div>
+      </div>
+      <div class="tier-note">需要账号 + 绑定自家模型<br>Claude Code 只能用 Claude<br>Codex 只能用 GPT</div>
+    </div>
+  </div>
+
+  <!-- 顶级 -->
+  <div class="tier-row">
+    <div class="tier-label" style="background:#FFA800">顶级</div>
+    <div class="tier-content">
+      <div class="combo">
+        <div class="combo-item">
+          <div class="item-logo"><img src="https://github.com/bytedance.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#3370FF">T</div></div>
+          <div class="item-name">Trae</div>
+          <div class="item-sub">IDE 界面</div>
+        </div>
+        <div class="combo-plus">+</div>
+        <div class="combo-item">
+          <div class="item-logo"><img src="https://github.com/anthropics.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#D97757">CC</div></div>
+          <div class="item-name">CC Switch</div>
+          <div class="item-sub">换第三方模型</div>
+        </div>
+        <div class="combo-label">一套完整方案</div>
+      </div>
+      <div class="tier-note">Trae 提供界面和工作流<br>CC Switch 接入 DeepSeek / Gemini 等<br>框架顶级 + 模型自由选 + 成本可控</div>
+    </div>
+  </div>
+
+  <!-- 人上人 -->
+  <div class="tier-row">
+    <div class="tier-label" style="background:#FFE500;color:#000">人上人</div>
+    <div class="tier-content">
+      <div class="item">
+        <div class="item-logo"><img src="https://github.com/NousResearch.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#7B3FE4">H</div></div>
+        <div class="item-name">Hermes Agent</div>
+        <div class="item-sub">Nous Research</div>
+      </div>
+      <div class="item">
+        <div class="item-logo"><svg class="local-logo" viewBox="0 0 80 80" role="img" aria-label="Trae Solo"><rect width="80" height="80" rx="18" fill="#0d1412"/><rect x="15" y="15" width="50" height="50" rx="12" fill="#2ff08f"/><path d="M23 51V29h9c7 0 11 4 11 11s-4 11-11 11h-9Zm9-7c3 0 5-1 5-4s-2-4-5-4h-2v8h2Zm16 7V29h8v15h9v7H48Z" fill="#0d1412"/></svg></div>
+        <div class="item-name">Trae Solo</div>
+        <div class="item-sub">Trae</div>
+      </div>
+      <div class="tier-note">开源 · 不绑模型 · 自学习<br>越用越聪明，但生态还在早期</div>
+    </div>
+  </div>
+
+  <!-- NPC -->
+  <div class="tier-row">
+    <div class="tier-label" style="background:#F5E6CA;color:#000">NPC</div>
+    <div class="tier-content">
+      <div class="item">
+        <div class="item-logo"><img src="https://github.com/openclaw.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#1a1a2e;color:#00d4ff">OC</div></div>
+        <div class="item-name">OpenClaw</div>
+        <div class="item-sub">开源框架</div>
+      </div>
+      <div class="item">
+        <div class="item-logo"><svg class="local-logo" viewBox="0 0 80 80" role="img" aria-label="WorkBuddy"><rect width="80" height="80" rx="18" fill="#1fcf91"/><path d="M19 52c0-16 10-27 27-29 9-1 16 5 16 14 0 7-5 12-12 12h-8c-5 0-8 3-8 8v3H19v-8Z" fill="#effff8"/><path d="M30 59c-7 0-11-4-11-10 0-8 7-13 15-11l21 5c2 1 3 2 3 4 0 3-3 5-6 4l-18-5c-5-1-9 1-9 5 0 3 2 5 6 5h15c3 0 5 2 5 5s-2 5-5 5H30Z" fill="#29304d"/></svg></div>
+        <div class="item-name">WorkBuddy</div>
+        <div class="item-sub">腾讯 CodeBuddy</div>
+      </div>
+      <span style="font-size:16px;color:var(--color-text-tertiary)">+</span>
+      <div class="item">
+        <div class="item-logo"><img src="https://github.com/volcengine.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#3370FF">Ark</div></div>
+        <div class="item-name">ArkClaw</div>
+        <div class="item-sub">字节</div>
+      </div>
+      <div class="item">
+        <div class="item-logo"><img src="https://github.com/MoonshotAI.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#6C38E0">Ki</div></div>
+        <div class="item-name">KimiClaw</div>
+        <div class="item-sub">月之暗面</div>
+      </div>
+      <div class="item">
+        <div class="item-logo"><img src="https://github.com/THUDM.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#2B6CB0">智</div></div>
+        <div class="item-name">AutoClaw</div>
+        <div class="item-sub">智谱</div>
+      </div>
+      <div class="item">
+        <div class="item-logo"><img src="https://github.com/Tencent.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#07C160">Q</div></div>
+        <div class="item-name">QClaw</div>
+        <div class="item-sub">腾讯</div>
+      </div>
+      <div class="item">
+        <div class="item-logo"><img src="https://github.com/MiniMax-AI.png?size=80" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fb" style="background:#F56C25">M</div></div>
+        <div class="item-name">MaxClaw</div>
+        <div class="item-sub">MiniMax</div>
+      </div>
+      <div class="tier-note">OpenClaw 框架<br>+ 国内云厂商托管方案<br>门槛低但天花板也低</div>
+    </div>
+  </div>
+
+  <!-- 拉 -->
+  <div class="tier-row">
+    <div class="tier-label" style="background:#fff;color:#000;border:0.5px solid var(--color-border-tertiary)">拉</div>
+    <div class="tier-content">
+      <div class="chat-items">
+        <div class="chat-item">
+          <div class="chat-icon"><img src="https://github.com/openai.png?size=48" alt="" onerror="this.style.display='none'"></div>
+          <span class="chat-name">ChatGPT</span>
+        </div>
+        <div class="chat-item">
+          <div class="chat-icon"><img src="https://github.com/google-gemini.png?size=48" alt="" onerror="this.style.display='none'"></div>
+          <span class="chat-name">Gemini</span>
+        </div>
+        <div class="chat-item">
+          <div class="chat-icon"><img src="https://github.com/deepseek-ai.png?size=48" alt="" onerror="this.style.display='none'"></div>
+          <span class="chat-name">DeepSeek</span>
+        </div>
+        <div class="chat-item">
+          <div class="chat-icon" style="background:#E6F1FB"><i class="ti ti-message-circle" aria-hidden="true" style="font-size:14px;color:#185FA5"></i></div>
+          <span class="chat-name">豆包</span>
+        </div>
+        <div class="chat-item">
+          <div class="chat-icon"><img src="https://github.com/MoonshotAI.png?size=48" alt="" onerror="this.style.display='none'"></div>
+          <span class="chat-name">Kimi</span>
+        </div>
+      </div>
+      <div class="tier-note">纯对话 · 没有文件空间<br>没有执行能力 · 没有任务框架<br>只有大脑，没有身体</div>
+    </div>
+  </div>
+
+</div>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

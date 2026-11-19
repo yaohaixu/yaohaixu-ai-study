@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>和主流聊天 AI（GPT/Gemini/Deepseek/豆包等）对比 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">Chat AI 与 Agent 的核心区别对比图</h2>
+<style>
+  .scene { display:flex; gap:24px; margin:0 0 20px; }
+  .col { flex:1; border-radius:var(--border-radius-lg); border:0.5px solid var(--color-border-tertiary); padding:20px 16px 16px; position:relative; overflow:hidden; }
+  .col.active { border-color:var(--color-border-info); border-width:2px; }
+  .badge { font-size:11px; font-weight:500; padding:3px 10px; border-radius:var(--border-radius-md); display:inline-block; margin-bottom:12px; }
+  .badge-a { background:#EEEDFE; color:#3C3489; }
+  .badge-b { background:#E1F5EE; color:#085041; }
+  .col-title { font-size:18px; font-weight:500; margin:0 0 4px; color:var(--color-text-primary); }
+  .col-sub { font-size:13px; color:var(--color-text-secondary); margin:0 0 16px; line-height:1.5; }
+  .flow { display:flex; flex-direction:column; gap:0; align-items:center; }
+  .step { width:100%; padding:10px 12px; border-radius:var(--border-radius-md); font-size:13px; line-height:1.5; text-align:center; transition:all .3s; opacity:0; transform:translateY(8px); }
+  .step.show { opacity:1; transform:translateY(0); }
+  .arrow-down { font-size:16px; color:var(--color-text-tertiary); opacity:0; transition:all .3s; }
+  .arrow-down.show { opacity:1; }
+  .s-user { background:#EEEDFE; color:#3C3489; }
+  .s-ai { background:var(--color-background-secondary); color:var(--color-text-primary); }
+  .s-tool { background:#FAEEDA; color:#633806; }
+  .s-loop { background:#E1F5EE; color:#085041; }
+  .s-result { background:#E6F1FB; color:#0C447C; }
+  .metaphor { font-size:13px; color:var(--color-text-secondary); padding:12px 14px; border-radius:var(--border-radius-md); background:var(--color-background-secondary); margin-top:12px; line-height:1.6; }
+  .metaphor i { font-style:normal; }
+  .play-btn { margin:0 auto; display:block; cursor:pointer; font-size:13px; padding:6px 16px; }
+  .tabs { display:flex; gap:8px; margin-bottom:16px; justify-content:center; }
+  .tab { cursor:pointer; font-size:13px; padding:5px 14px; border-radius:var(--border-radius-md); border:0.5px solid var(--color-border-tertiary); background:transparent; color:var(--color-text-secondary); transition:all .2s; }
+  .tab.on { background:var(--color-background-secondary); color:var(--color-text-primary); font-weight:500; border-color:var(--color-border-secondary); }
+  @media(prefers-color-scheme:dark){
+    .badge-a{background:#26215C;color:#AFA9EC}
+    .badge-b{background:#04342C;color:#5DCAA5}
+    .s-user{background:#26215C;color:#AFA9EC}
+    .s-tool{background:#412402;color:#FAC775}
+    .s-loop{background:#04342C;color:#5DCAA5}
+    .s-result{background:#042C53;color:#85B7EB}
+  }
+</style>
+
+<div class="tabs">
+  <button class="tab on" onclick="showScene('compare')">对比总览</button>
+  <button class="tab" onclick="showScene('chat')">Chat AI 流程</button>
+  <button class="tab" onclick="showScene('agent')">Agent 流程</button>
+</div>
+
+<div id="scene-compare" class="scene">
+  <div class="col">
+    <span class="badge badge-a">Chat AI</span>
+    <p class="col-title">问答顾问</p>
+    <p class="col-sub">你问一句，它答一句。所有行动都靠你自己完成。</p>
+    <div class="flow" id="flow-chat-mini">
+      <div class="step s-user show"><i class="ti ti-user" aria-hidden="true"></i> 你："帮我订明天去大阪的新干线"</div>
+      <div class="arrow-down show">↓</div>
+      <div class="step s-ai show"><i class="ti ti-message-circle" aria-hidden="true"></i> AI：你可以去 JR 官网，选择……（一段文字说明）</div>
+      <div class="arrow-down show">↓</div>
+      <div class="step s-user show" style="border:1px dashed var(--color-border-secondary);background:transparent;color:var(--color-text-secondary)"><i class="ti ti-hand-stop" aria-hidden="true"></i> 剩下的？你自己去操作吧</div>
+    </div>
+    <div class="metaphor"><i>🎓</i> 比喻：一本会说话的百科全书。它知道答案，但不会替你翻页、也不会帮你跑腿。</div>
+  </div>
+  <div class="col active">
+    <span class="badge badge-b">Agent</span>
+    <p class="col-title">全能助理</p>
+    <p class="col-sub">你说目标，它自己规划、调用工具、反复验证，直到搞定。</p>
+    <div class="flow" id="flow-agent-mini">
+      <div class="step s-user show"><i class="ti ti-user" aria-hidden="true"></i> 你："帮我订明天去大阪的新干线"</div>
+      <div class="arrow-down show">↓</div>
+      <div class="step s-loop show"><i class="ti ti-refresh" aria-hidden="true"></i> Agent 自动：查时刻表 → 比价 → 选座 → 付款 → 发确认邮件</div>
+      <div class="arrow-down show">↓</div>
+      <div class="step s-result show"><i class="ti ti-circle-check" aria-hidden="true"></i> "已订好！明日 8:30 のぞみ号，7号车12A座"</div>
+    </div>
+    <div class="metaphor"><i>🎓</i> 比喻：一个靠谱的私人助理。你只说"帮我搞定"，它就真的去搞定了。</div>
+  </div>
+</div>
+
+<div id="scene-chat" style="display:none">
+  <div class="col" style="max-width:480px;margin:0 auto">
+    <span class="badge badge-a">Chat AI 的工作方式</span>
+    <p class="col-sub" style="margin-bottom:12px">每一轮都是"你问 → 它答"，它没有记忆、没有手脚，只能输出文字。</p>
+    <div class="flow" id="flow-chat">
+      <div class="step s-user"><i class="ti ti-user" aria-hidden="true"></i> 你输入问题</div>
+      <div class="arrow-down">↓</div>
+      <div class="step s-ai"><i class="ti ti-brain" aria-hidden="true"></i> AI 思考，生成一段文字回答</div>
+      <div class="arrow-down">↓</div>
+      <div class="step s-user"><i class="ti ti-user" aria-hidden="true"></i> 你读完，再问下一个问题</div>
+      <div class="arrow-down">↓</div>
+      <div class="step s-ai"><i class="ti ti-brain" aria-hidden="true"></i> AI 再次思考，再生成文字</div>
+      <div class="arrow-down">↓</div>
+      <div class="step s-user" style="border:1px dashed var(--color-border-secondary);background:transparent;color:var(--color-text-secondary)">如此反复……永远是"你推一下，它动一下"</div>
+    </div>
+    <button class="play-btn" onclick="animateFlow('flow-chat')"><i class="ti ti-player-play" aria-hidden="true"></i> 播放动画</button>
+  </div>
+</div>
+
+<div id="scene-agent" style="display:none">
+  <div class="col" style="max-width:480px;margin:0 auto">
+    <span class="badge badge-b">Agent 的工作方式</span>
+    <p class="col-sub" style="margin-bottom:12px">你只给一个目标，Agent 自己拆解任务、调用工具、循环执行，直到完成。</p>
+    <div class="flow" id="flow-agent">
+      <div class="step s-user"><i class="ti ti-user" aria-hidden="true"></i> 你给出目标（一句话就够）</div>
+      <div class="arrow-down">↓</div>
+      <div class="step s-ai"><i class="ti ti-brain" aria-hidden="true"></i> Agent 拆解：需要哪些步骤？</div>
+      <div class="arrow-down">↓</div>
+      <div class="step s-tool"><i class="ti ti-tool" aria-hidden="true"></i> 调用工具：搜索、查数据库、发邮件……</div>
+      <div class="arrow-down">↓</div>
+      <div class="step s-loop"><i class="ti ti-refresh" aria-hidden="true"></i> 自我检查：结果对吗？不对就重来</div>
+      <div class="arrow-down">↓</div>
+      <div class="step s-result"><i class="ti ti-circle-check" aria-hidden="true"></i> 全部搞定，把结果交给你</div>
+    </div>
+    <button class="play-btn" onclick="animateFlow('flow-agent')"><i class="ti ti-player-play" aria-hidden="true"></i> 播放动画</button>
+  </div>
+</div>
+
+<script>
+function showScene(id) {
+  ['compare','chat','agent'].forEach(s => {
+    document.getElementById('scene-'+s).style.display = s===id ? '' : 'none';
+  });
+  document.querySelectorAll('.tab').forEach((t,i) => {
+    const names = ['compare','chat','agent'];
+    t.classList.toggle('on', names[i]===id);
+  });
+}
+
+function animateFlow(containerId) {
+  const el = document.getElementById(containerId);
+  const items = el.querySelectorAll('.step, .arrow-down');
+  items.forEach(i => i.classList.remove('show'));
+  items.forEach((item, idx) => {
+    setTimeout(() => item.classList.add('show'), idx * 350);
+  });
+}
+</script>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

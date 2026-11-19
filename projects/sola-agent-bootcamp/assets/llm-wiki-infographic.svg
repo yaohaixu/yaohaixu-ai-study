@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">LLM Wiki 模式核心优势信息图</title>
+  <desc id="desc">LLM Wiki 把知识从一次次检索答案，变成持续编译、维护和复合增长的知识系统。</desc>
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+        fill: #18343a;
+      }
+      .caption { fill: #4c4b46; font-size: 17px; }
+      .small { font-size: 16px; }
+      .tiny { fill: #4c4b46; font-size: 14px; }
+      .label { font-size: 20px; font-weight: 750; }
+      .hub-title { font-size: 30px; font-weight: 800; }
+      .hub-sub { font-size: 18px; font-weight: 650; fill: #1b4d7a; }
+      .lane-title { font-size: 18px; font-weight: 750; fill: #4c4b46; }
+      .arrow { fill: none; stroke: #74736c; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .dash { stroke-dasharray: 7 8; }
+      .card { rx: 14; ry: 14; stroke-width: 2; }
+      .pill { rx: 18; ry: 18; stroke-width: 1.6; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; }
+      .green { fill: #ddf7ef; stroke: #10a98c; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; }
+      .muted-line { stroke: #d5d1c7; stroke-width: 1.6; stroke-dasharray: 5 7; }
+    </style>
+  </defs>
+
+  <text x="512" y="46" text-anchor="middle" class="caption">核心 claim：检索答案 → 持续编译的知识系统</text>
+  <line x1="108" y1="66" x2="916" y2="66" class="muted-line"/>
+
+  <rect x="92" y="90" width="232" height="88" class="card yellow"/>
+  <text x="208" y="124" text-anchor="middle" class="lane-title">旧模式</text>
+  <text x="124" y="154" class="small">每次查询重新拼装</text>
+
+  <path d="M334 134 H414" class="arrow dash"/>
+  <polygon points="414,134 405,129 405,139" fill="#74736c"/>
+
+  <rect x="700" y="90" width="232" height="88" class="card green"/>
+  <text x="816" y="124" text-anchor="middle" class="lane-title">LLM Wiki 模式</text>
+  <text x="732" y="154" class="small">资料进入时先综合</text>
+
+  <path d="M610 134 H690" class="arrow dash"/>
+  <polygon points="690,134 681,129 681,139" fill="#74736c"/>
+
+  <rect x="402" y="82" width="220" height="104" class="card blue"/>
+  <text x="512" y="122" text-anchor="middle" class="label">编译而非检索</text>
+  <text x="432" y="153" class="small">一次综合，持续更新</text>
+
+  <rect x="354" y="274" width="316" height="170" class="card neutral"/>
+  <text x="512" y="323" text-anchor="middle" class="hub-title">LLM Wiki</text>
+  <text x="512" y="360" text-anchor="middle" class="hub-sub">可增长的知识系统</text>
+  <text x="512" y="397" text-anchor="middle" class="small">实体页 · 概念页 · 交叉引用</text>
+  <rect x="413" y="414" width="198" height="36" class="pill blue"/>
+  <text x="512" y="438" text-anchor="middle" class="tiny">答案已经在 wiki 里</text>
+
+  <path d="M512 186 V264" class="arrow"/>
+  <polygon points="512,264 507,255 517,255" fill="#74736c"/>
+
+  <rect x="62" y="270" width="258" height="136" class="card yellow"/>
+  <text x="191" y="311" text-anchor="middle" class="label">近零维护</text>
+  <text x="94" y="348" class="small">同步更新旧页面</text>
+  <text x="94" y="377" class="small">修复引用与一致性</text>
+
+  <path d="M320 338 H344" class="arrow"/>
+  <polygon points="344,338 335,333 335,343" fill="#74736c"/>
+
+  <rect x="704" y="270" width="258" height="136" class="card green"/>
+  <text x="833" y="311" text-anchor="middle" class="label">复合增长</text>
+  <text x="736" y="348" class="small">新来源丰富旧知识</text>
+  <text x="736" y="377" class="small">发现矛盾，补充论据</text>
+
+  <path d="M680 338 H704" class="arrow"/>
+  <polygon points="704,338 695,333 695,343" fill="#74736c"/>
+
+  <rect x="126" y="540" width="270" height="136" class="card purple"/>
+  <text x="261" y="581" text-anchor="middle" class="label">人机分工</text>
+  <text x="158" y="618" class="small">人筛选来源和问题</text>
+  <text x="158" y="647" class="small">AI 总结、归档、维护</text>
+
+  <path d="M420 444 C392 486 338 510 284 535" class="arrow"/>
+  <polygon points="284,535 293,526 297,537" fill="#74736c"/>
+
+  <rect x="628" y="540" width="270" height="136" class="card blue"/>
+  <text x="763" y="581" text-anchor="middle" class="label">探索沉淀</text>
+  <text x="660" y="618" class="small">对比分析变成页面</text>
+  <text x="660" y="647" class="small">聊天发现回到 wiki</text>
+
+  <path d="M604 444 C632 486 686 510 740 535" class="arrow"/>
+  <polygon points="740,535 727,537 731,526" fill="#74736c"/>
+
+  <path d="M270 540 C276 480 318 442 354 414" class="arrow dash"/>
+  <polygon points="354,414 350,424 343,416" fill="#74736c"/>
+
+  <path d="M754 540 C748 480 706 442 670 414" class="arrow dash"/>
+  <polygon points="670,414 681,416 674,424" fill="#74736c"/>
+
+  <path d="M191 406 C254 493 379 516 500 480" class="arrow dash"/>
+  <polygon points="500,480 490,479 496,471" fill="#74736c"/>
+
+  <path d="M833 406 C770 493 645 516 524 480" class="arrow dash"/>
+  <polygon points="524,480 528,471 534,479" fill="#74736c"/>
+
+  <rect x="188" y="706" width="648" height="40" class="pill neutral"/>
+  <text x="512" y="732" text-anchor="middle" class="caption">人的判断进入系统，AI 的苦力让知识持续变厚、变准、变可用</text>
+</svg>

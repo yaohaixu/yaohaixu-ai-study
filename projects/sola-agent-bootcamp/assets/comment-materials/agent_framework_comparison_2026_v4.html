@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent 框架 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">2026 年主流 Agent 框架全面对比（官方 Logo 版）</h2>
+<style>
+  .hd{text-align:center;margin:0 0 14px}
+  .hd h3{font-size:17px;font-weight:500;color:var(--color-text-primary);margin:0 0 3px}
+  .hd p{font-size:11.5px;color:var(--color-text-secondary);margin:0}
+  .tier{margin:0 0 16px}
+  .tier-label{font-size:10px;font-weight:500;letter-spacing:.3px;color:var(--color-text-tertiary);text-transform:uppercase;margin:0 0 8px;padding-left:2px}
+
+  .fw-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 10px}
+  .fw-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+  .fw-top{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:0.5px solid var(--color-border-tertiary)}
+  .fw-logo{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;background:var(--color-background-secondary)}
+  .fw-logo img{width:36px;height:36px;border-radius:10px;object-fit:cover;display:block}
+  .fw-logo .fallback{font-weight:500;font-size:13px;color:var(--color-text-secondary);display:none}
+  .fw-info{flex:1;min-width:0}
+  .fw-name{font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0;display:flex;align-items:center;gap:5px}
+  .fw-co{font-size:10.5px;color:var(--color-text-tertiary);margin:1px 0 0}
+  .tag{display:inline-block;font-size:8.5px;padding:1px 5px;border-radius:3px;white-space:nowrap;vertical-align:middle}
+  .t-open{background:#E1F5EE;color:#0F6E56}
+  .t-closed{background:var(--color-background-secondary);color:var(--color-text-tertiary)}
+  @media(prefers-color-scheme:dark){.t-open{background:#04342C;color:#5DCAA5}}
+
+  .fw-body{padding:12px 14px;font-size:11px;line-height:1.55}
+  .fw-section{margin:0 0 8px}
+  .fw-section:last-child{margin:0}
+  .fw-label{font-size:9.5px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:.2px;margin:0 0 3px}
+  .fw-body p{margin:0;color:var(--color-text-primary)}
+  .fw-body .sub{color:var(--color-text-secondary);font-size:10.5px}
+  .hi{color:var(--color-text-info);font-weight:500}
+  .chip-row{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+  .chip{font-size:9.5px;padding:2px 7px;border-radius:var(--border-radius-md);background:var(--color-background-secondary);color:var(--color-text-secondary);display:inline-flex;align-items:center;gap:3px;white-space:nowrap}
+  .chip i{font-size:11px}
+
+  .cn-section{margin:16px 0 0}
+  .cn-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .cn-card{padding:10px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);display:flex;gap:9px;align-items:flex-start}
+  .cn-logo{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;background:var(--color-background-secondary)}
+  .cn-logo img{width:28px;height:28px;border-radius:7px;object-fit:cover;display:block}
+  .cn-logo .fallback{font-weight:500;font-size:10px;color:var(--color-text-secondary);display:none}
+  .cn-text{flex:1;min-width:0}
+  .cn-card-name{font-size:12px;font-weight:500;color:var(--color-text-primary);margin:0 0 1px}
+  .cn-card-co{font-size:9.5px;color:var(--color-text-tertiary);margin:0 0 3px}
+  .cn-card-desc{font-size:10.5px;color:var(--color-text-secondary);margin:0;line-height:1.45}
+  .cn-card-tag{font-size:9px;margin-top:3px;display:inline-block;padding:1px 6px;border-radius:3px;background:var(--color-background-secondary);color:var(--color-text-secondary)}
+
+  .note-box{margin:14px 0 0;padding:10px 12px;border-radius:var(--border-radius-md);background:var(--color-background-secondary);font-size:11px;color:var(--color-text-secondary);line-height:1.6}
+</style>
+
+<div class="hd">
+  <h3>Agent 框架全景对比（2026.5）</h3>
+  <p>从专用编码 Agent 到通用自动化框架，再到中国厂商生态</p>
+</div>
+
+<div class="tier">
+  <div class="tier-label">核心对比 · 四大头部框架</div>
+  <div class="fw-row">
+    <!-- Claude Code -->
+    <div class="fw-card">
+      <div class="fw-top">
+        <div class="fw-logo" id="logo-anthropic">
+          <img src="https://github.com/anthropics.png?size=72" alt="Anthropic" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#D97757;color:#fff;border-radius:10px">A</span>
+        </div>
+        <div class="fw-info">
+          <div class="fw-name">Claude Code <span class="tag t-closed">闭源</span></div>
+          <div class="fw-co">Anthropic · Opus 4.7 · SWE-bench 80.9%</div>
+        </div>
+      </div>
+      <div class="fw-body">
+        <div class="fw-section"><div class="fw-label">定位</div><p>终端编码 Agent · 本地执行 · 应用层沙箱（Hook 权限控制）</p></div>
+        <div class="fw-section"><div class="fw-label">核心优势</div><p><span class="hi">代码质量最高</span>，首次通过率 95%。Agent Teams 多代理协作，3,000+ MCP 集成，26 个 Hook 生命周期事件。</p></div>
+        <div class="fw-section"><div class="fw-label">核心短板</div><p class="sub">Token 消耗大（同任务约 Codex 的 4 倍），重度使用烧钱快，闭源不可定制。</p></div>
+        <div class="chip-row"><span class="chip"><i class="ti ti-code" aria-hidden="true"></i>复杂重构</span><span class="chip"><i class="ti ti-users" aria-hidden="true"></i>多文件协作</span><span class="chip"><i class="ti ti-diamond" aria-hidden="true"></i>代码质量优先</span></div>
+      </div>
+    </div>
+    <!-- Codex -->
+    <div class="fw-card">
+      <div class="fw-top">
+        <div class="fw-logo">
+          <img src="https://github.com/openai.png?size=72" alt="OpenAI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#10A37F;color:#fff;border-radius:10px">O</span>
+        </div>
+        <div class="fw-info">
+          <div class="fw-name">Codex <span class="tag t-open">Apache 2.0</span></div>
+          <div class="fw-co">OpenAI · GPT-5.5 · Terminal-Bench 77.3% · 82k Stars</div>
+        </div>
+      </div>
+      <div class="fw-body">
+        <div class="fw-section"><div class="fw-label">定位</div><p>编码 Agent · 本地执行（默认）+ 可选云端异步 · OS 内核级沙箱</p></div>
+        <div class="fw-section"><div class="fw-label">核心优势</div><p><span class="hi">Token 效率 4x</span>（同任务消耗仅 1/4）。双模式：本地交互 + 云端委派。子代理并行，开源 Rust 实现。</p></div>
+        <div class="fw-section"><div class="fw-label">核心短板</div><p class="sub">长会话一致性不如 Claude Code，前端代码质量较弱，云端模式费用约 5x 本地。</p></div>
+        <div class="chip-row"><span class="chip"><i class="ti ti-bolt" aria-hidden="true"></i>快速原型</span><span class="chip"><i class="ti ti-stack-2" aria-hidden="true"></i>批量任务</span><span class="chip"><i class="ti ti-git-merge" aria-hidden="true"></i>CI/CD 集成</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="fw-row">
+    <!-- OpenClaw -->
+    <div class="fw-card">
+      <div class="fw-top">
+        <div class="fw-logo">
+          <img src="https://github.com/openclaw.png?size=72" alt="OpenClaw" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#1a1a2e;color:#00d4ff;border-radius:10px">OC</span>
+        </div>
+        <div class="fw-info">
+          <div class="fw-name">OpenClaw <span class="tag t-open">MIT</span></div>
+          <div class="fw-co">开源社区 · 不绑定模型 · 354k Stars</div>
+        </div>
+      </div>
+      <div class="fw-body">
+        <div class="fw-section"><div class="fw-label">定位</div><p>通用自动化 Agent · 本地优先 · 不限编码场景 · 中国衍生版最多</p></div>
+        <div class="fw-section"><div class="fw-label">核心优势</div><p><span class="hi">生态最大</span>：13,700+ 社区技能（ClawHub），50+ 平台接入，覆盖几乎所有工具集成需求。</p></div>
+        <div class="fw-section"><div class="fw-label">核心短板</div><p class="sub">无自学习能力，技能需手写。记忆脆弱"工作流断片"。安全事件频发（ClawHavoc / 插件投毒）。</p></div>
+        <div class="chip-row"><span class="chip"><i class="ti ti-plug" aria-hidden="true"></i>广泛集成</span><span class="chip"><i class="ti ti-robot" aria-hidden="true"></i>日常自动化</span><span class="chip"><i class="ti ti-world" aria-hidden="true"></i>成熟生态</span></div>
+      </div>
+    </div>
+    <!-- Hermes Agent -->
+    <div class="fw-card">
+      <div class="fw-top">
+        <div class="fw-logo">
+          <img src="https://github.com/NousResearch.png?size=72" alt="Nous Research" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#7B3FE4;color:#fff;border-radius:10px">H</span>
+        </div>
+        <div class="fw-info">
+          <div class="fw-name">Hermes Agent <span class="tag t-open">MIT</span></div>
+          <div class="fw-co">Nous Research · 不绑定模型 · 400+ 模型 · 47k Stars</div>
+        </div>
+      </div>
+      <div class="fw-body">
+        <div class="fw-section"><div class="fw-label">定位</div><p>自进化 Agent · 本地优先 · 越用越聪明 · 6 种沙箱后端</p></div>
+        <div class="fw-section"><div class="fw-label">核心优势</div><p><span class="hi">唯一内置学习闭环</span>：自动从经验生成可复用技能，四层记忆跨会话持久化。MCP 原生 + OAuth 2.1。</p></div>
+        <div class="fw-section"><div class="fw-label">核心短板</div><p class="sub">生态尚在早期，技能积累需 2-4 周见效，中文支持不如 OpenClaw。</p></div>
+        <div class="chip-row"><span class="chip"><i class="ti ti-brain" aria-hidden="true"></i>长期助理</span><span class="chip"><i class="ti ti-refresh" aria-hidden="true"></i>记忆延续</span><span class="chip"><i class="ti ti-flask" aria-hidden="true"></i>AI 研究</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 中国厂商 ===== -->
+<div class="cn-section">
+  <div class="tier-label">中国厂商 · 基于 OpenClaw 的衍生生态</div>
+  <div class="cn-grid">
+    <div class="cn-card">
+      <div class="cn-logo"><img src="https://github.com/volcengine.png?size=56" alt="火山引擎" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#3370FF;color:#fff;border-radius:7px;font-size:10px">Ark</span></div>
+      <div class="cn-text"><div class="cn-card-name">ArkClaw</div><div class="cn-card-co">字节跳动 · 火山引擎</div><div class="cn-card-desc">企业级 SaaS，控制面与执行面分离。飞书无缝集成，高并发稳定。</div><div class="cn-card-tag">飞书 / 团队协作 / 企业级</div></div>
+    </div>
+    <div class="cn-card">
+      <div class="cn-logo"><img src="https://github.com/MoonshotAI.png?size=56" alt="月之暗面" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#6C38E0;color:#fff;border-radius:7px;font-size:10px">Ki</span></div>
+      <div class="cn-text"><div class="cn-card-name">KimiClaw</div><div class="cn-card-co">月之暗面 · Kimi</div><div class="cn-card-desc">浏览器零部署，40GB 云存储 + 超长上下文，信息收集和长文档处理最强。</div><div class="cn-card-tag">零门槛 / 知识工作 / 长文档</div></div>
+    </div>
+    <div class="cn-card">
+      <div class="cn-logo"><img src="https://github.com/THUDM.png?size=56" alt="智谱" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#2B6CB0;color:#fff;border-radius:7px;font-size:10px">智</span></div>
+      <div class="cn-text"><div class="cn-card-name">AutoClaw</div><div class="cn-card-co">智谱 · GLM</div><div class="cn-card-desc">一键本地部署，浏览器操作能力突出。免费额度够日常，隐私优先。</div><div class="cn-card-tag">本地部署 / 隐私优先 / 免费</div></div>
+    </div>
+    <div class="cn-card">
+      <div class="cn-logo"><img src="https://github.com/Tencent.png?size=56" alt="腾讯" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#07C160;color:#fff;border-radius:7px;font-size:10px">腾</span></div>
+      <div class="cn-text"><div class="cn-card-name">QClaw</div><div class="cn-card-co">腾讯</div><div class="cn-card-desc">微信 / QQ 直接对话操控电脑。发消息"帮我订票"就自动执行。</div><div class="cn-card-tag">微信直连 / 远程操控 / 社交入口</div></div>
+    </div>
+    <div class="cn-card">
+      <div class="cn-logo"><img src="https://github.com/MiniMax-AI.png?size=56" alt="MiniMax" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#F56C25;color:#fff;border-radius:7px;font-size:9px">MM</span></div>
+      <div class="cn-text"><div class="cn-card-name">MaxClaw</div><div class="cn-card-co">MiniMax · OpenClaw 官方云端</div><div class="cn-card-desc">10 秒云端部署、零维护。6 个子智能体模板，50GB 云存储。</div><div class="cn-card-tag">小白友好 / 云托管 / 性价比</div></div>
+    </div>
+    <div class="cn-card">
+      <div class="cn-logo"><img src="https://github.com/aliyun.png?size=56" alt="阿里云" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#FF6A00;color:#fff;border-radius:7px;font-size:10px">阿</span></div>
+      <div class="cn-text"><div class="cn-card-name">CoPaw</div><div class="cn-card-co">阿里云</div><div class="cn-card-desc">阿里云全家桶：钉钉 / 飞书集成，VPC 隔离，等保合规。</div><div class="cn-card-tag">阿里云生态 / 企业上云 / 高可用</div></div>
+    </div>
+    <div class="cn-card">
+      <div class="cn-logo"><img src="https://github.com/netease-youdao.png?size=56" alt="网易有道" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#E34234;color:#fff;border-radius:7px;font-size:9px">龙</span></div>
+      <div class="cn-text"><div class="cn-card-name">LobsterAI（龙虾）</div><div class="cn-card-co">网易有道</div><div class="cn-card-desc">中文优化最深：PPT / Excel / 数据分析中式风格完美适配。开源可二次开发。</div><div class="cn-card-tag">中文优化 / 办公自动化 / 开源</div></div>
+    </div>
+    <div class="cn-card">
+      <div class="cn-logo"><img src="https://github.com/coze-dev.png?size=56" alt="Coze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="fallback" style="align-items:center;justify-content:center;width:100%;height:100%;background:#4E6EF2;color:#fff;border-radius:7px;font-size:9px">扣</span></div>
+      <div class="cn-text"><div class="cn-card-name">Coze（扣子）</div><div class="cn-card-co">字节跳动</div><div class="cn-card-desc">AI 工作流搭建平台，一键部署 OpenClaw 并接入飞书。"最快的满血版部署方案"。</div><div class="cn-card-tag">工作流平台 / 飞书 / 低代码</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>数据来源：</strong>GitHub 官方仓库（2026.4-5）、OpenAI Codex 官方文档、极客公园、知乎深度对比、安全内参评测报告、各厂商官网。Logo 引用自各项目 GitHub 头像，如加载失败会显示文字缩写。
+</div>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

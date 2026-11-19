@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Life OS 系统设计 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <style>
+    :root { --bg:#fffdf8; --ink:#17343a; --muted:rgba(23,52,58,.68); --line:rgba(23,52,58,.14); --accent:#178f92; --soft:#f4fbfa; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:0; background:transparent; }
+    body { padding:18px; color:var(--ink); font-family:"Plus Jakarta Sans","Noto Sans SC",ui-sans-serif,system-ui,sans-serif; font-size:15px; line-height:1.72; }
+    .material-content { display:block; border:1px solid var(--line); border-radius:18px; padding:18px 18px 20px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    h2 { margin:0 0 12px; font-size:22px; line-height:1.25; letter-spacing:0; }
+    p { margin:10px 0 0; color:var(--muted); }
+    p.lead { color:var(--muted); }
+    strong { color:var(--ink); font-weight:750; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(23,52,58,.08); border-radius:6px; padding:1px 5px; }
+    .source-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:rgba(23,52,58,.48); }
+  </style>
+</head>
+<body>
+<main class="material-content">
+  <p class="eyebrow">SOLA AI Agent 共学营 · 补充材料</p>
+  <h2>Life OS 系统设计</h2>
+  <p class="lead"><strong>工作空间结构</strong>用的是之前教的&quot;data/ + output/ + skills/ + templates/&quot;分层设计，README + SOUL.md + STATUS.md 三件套提供项目说明、Agent 人格、和跨会话状态记忆。</p>
+<p class="lead"><strong>八个技能</strong>覆盖六大模块——六个日常操作技能（daily-plan、journal-writer、finance-tracker、health-log、project-manager、todo-manage）+ 两个周期分析技能（weekly-review、monthly-insights）。每个技能的 description 里都写了多种触发方式（中文/英文/斜杠命令），确保不管你怎么说 Agent 都能匹配上。</p>
+<p class="lead"><strong>自动化时间表</strong>用了三种类型：每日定时（早间规划 + 晚间日记提醒 + 健康打卡提醒）、每周定时（周五下午自动生成周报）、每月定时（月度深度分析 + 新月初始化）。</p>
+<p class="lead"><strong>跨域洞察</strong>是最有价值的部分——单独看待办完成率或者单独看睡眠数据都意义有限，但把&quot;睡眠低于 6 小时的日子待办完成率只有 45%&quot;&quot;有运动的日子情绪平均 4.2 vs 没运动 2.8&quot;这种关联挖出来，对个人认知的帮助是巨大的。这正是 Agent 比人强的地方——它不会觉得&quot;这两件事有什么关系&quot;，它会老老实实地算相关性。</p>
+<p class="lead"><strong>数据格式</strong>全部用 Markdown + CSV——最简单、Agent 读写最方便、人也能直接打开看。不用数据库，不用复杂格式。</p>
+  <p class="source-note">从 agent-depth.html 主课件正文抽取生成，用于替代缺失的嵌入材料页面。</p>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

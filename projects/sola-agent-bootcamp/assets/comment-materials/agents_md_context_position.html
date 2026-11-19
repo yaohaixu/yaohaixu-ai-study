@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AGENTS.md 在何时发生、如何作用 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <style>
+    :root { --bg:#fffdf8; --ink:#17343a; --muted:rgba(23,52,58,.68); --line:rgba(23,52,58,.14); --accent:#178f92; --soft:#f4fbfa; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:0; background:transparent; }
+    body { padding:18px; color:var(--ink); font-family:"Plus Jakarta Sans","Noto Sans SC",ui-sans-serif,system-ui,sans-serif; font-size:15px; line-height:1.72; }
+    .material-content { display:block; border:1px solid var(--line); border-radius:18px; padding:18px 18px 20px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    h2 { margin:0 0 12px; font-size:22px; line-height:1.25; letter-spacing:0; }
+    p { margin:10px 0 0; color:var(--muted); }
+    p.lead { color:var(--muted); }
+    strong { color:var(--ink); font-weight:750; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(23,52,58,.08); border-radius:6px; padding:1px 5px; }
+    .source-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:rgba(23,52,58,.48); }
+  </style>
+</head>
+<body>
+<main class="material-content">
+  <p class="eyebrow">SOLA AI Agent 共学营 · 补充材料</p>
+  <h2>AGENTS.md 在何时发生、如何作用</h2>
+  <p class="lead"><strong>什么时候读：</strong> Agent 启动时自动读取，在你开口说第一句话之前就已经加载完毕。每次新会话都会重新读。你不需要说&quot;去看一下 AGENTS.md&quot;——它自己会找。</p>
+<p class="lead"><strong>在 context 里的位置：</strong> 紧跟系统指令之后，在你的对话之前——这意味着它比你说的任何话优先级都高。它是&quot;底色&quot;，你的每句话都在它的约束下被理解和执行。这个位置的特殊性在于：不管对话进行了多长、不管你后续给什么任务，AGENTS.md 里的规矩始终生效。</p>
+<p class="lead"><strong>该写什么：</strong> 利用&quot;永远在线&quot;这个特性，放的应该是所有任务通用的规范——语言风格、文件操作规矩、禁区红线、项目专属知识。不要放具体的一次性任务（那些直接在对话里说就行）。<strong>判断标准：如果这条规则只在某一次任务中有用，放对话里说；如果每次都要遵守，放 AGENTS.md。</strong></p>
+<p class="lead">把 AGENTS.md 想象成给新员工的&quot;入职须知&quot;——你不教他怎么思考（模型已经够聪明），你教他&quot;我们这里怎么做事&quot;。</p>
+  <p class="source-note">从 agent-depth.html 主课件正文抽取生成，用于替代缺失的嵌入材料页面。</p>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

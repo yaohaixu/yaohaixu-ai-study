@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 模型 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">2026 年 5 月 Agent 能力最强的 10 个 AI 模型排行，含基准分数和价格</h2>
+<style>
+  .hd{text-align:center;margin:0 0 6px}
+  .hd h3{font-size:17px;font-weight:500;color:var(--color-text-primary);margin:0 0 3px}
+  .hd p{font-size:11.5px;color:var(--color-text-secondary);margin:0;line-height:1.5}
+  .note{font-size:11px;color:var(--color-text-tertiary);line-height:1.5;padding:8px 12px;border-radius:var(--border-radius-md);background:var(--color-background-secondary);margin:8px 0 12px}
+
+  .tbl{width:100%;border-collapse:separate;border-spacing:0;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;font-size:11.5px}
+  .tbl th{padding:8px 10px;text-align:left;font-weight:500;font-size:10.5px;color:var(--color-text-tertiary);background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary);letter-spacing:.2px;white-space:nowrap}
+  .tbl td{padding:9px 10px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:top}
+  .tbl tr:last-child td{border-bottom:none}
+  .tbl tr:hover td{background:var(--color-background-secondary)}
+  .rank{font-weight:500;color:var(--color-text-secondary);text-align:center;width:28px}
+  .r1{color:#BA7517;font-size:14px}
+  .r2{color:#888780;font-size:13px}
+  .r3{color:#993C1D;font-size:13px}
+  .model-name{font-weight:500;color:var(--color-text-primary)}
+  .model-co{font-size:10px;color:var(--color-text-tertiary)}
+  .score{font-weight:500;font-size:12px}
+  .open-tag{font-size:9px;padding:1px 5px;border-radius:3px;background:#E1F5EE;color:#0F6E56;white-space:nowrap}
+  @media(prefers-color-scheme:dark){.open-tag{background:#04342C;color:#5DCAA5}}
+  .price-in{color:var(--color-text-secondary)}
+  .price-out{color:var(--color-text-primary);font-weight:500}
+  .price-note{font-size:9.5px;color:var(--color-text-tertiary)}
+  .bar{height:4px;border-radius:2px;margin-top:3px}
+  .bar-fill{height:100%;border-radius:2px}
+  .bf-purple{background:#7F77DD}
+  .bf-blue{background:#378ADD}
+  .bf-teal{background:#1D9E75}
+  .bf-amber{background:#EF9F27}
+  .bf-coral{background:#D85A30}
+  .bf-gray{background:#888780}
+
+  .sources{margin:14px 0 0;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:12px 14px}
+  .sources-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin:0 0 6px}
+  .src-list{font-size:11px;color:var(--color-text-secondary);line-height:1.7;margin:0;padding:0;list-style:none}
+  .src-list li{padding:2px 0}
+  .src-list a{color:var(--color-text-info);text-decoration:none}
+  .src-list a:hover{text-decoration:underline}
+
+  .caveat{margin:12px 0 0;padding:10px 12px;border-radius:var(--border-radius-md);background:#FAEEDA;color:#633806;font-size:11.5px;line-height:1.55}
+  @media(prefers-color-scheme:dark){.caveat{background:#412402;color:#FAC775}}
+</style>
+
+<div class="hd">
+  <h3>2026 年 5 月 · Agent 能力 Top 10 模型</h3>
+  <p>综合 BenchLM Agentic、SWE-bench Verified、OSWorld、GAIA 多个基准</p>
+</div>
+
+<div class="note">
+  Agent 能力 ≠ 单一分数。下表的"代表性分数"取各模型在 Agent 相关基准中最具代表性的成绩。排名综合多个榜单，不代表某一个基准的官方排序。
+</div>
+
+<table class="tbl">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>模型</th>
+      <th>Agent 代表性分数</th>
+      <th>API 价格（每百万 token）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="rank r1">1</td>
+      <td><span class="model-name">Claude Opus 4.7</span><br><span class="model-co">Anthropic</span></td>
+      <td>
+        <span class="score">SWE-bench 87.6%</span><br>LMSYS Arena #1（thinking 模式）
+        <div class="bar"><div class="bar-fill bf-purple" style="width:100%"></div></div>
+      </td>
+      <td><span class="price-in">输入 $5</span> / <span class="price-out">输出 $25</span></td>
+    </tr>
+    <tr>
+      <td class="rank r2">2</td>
+      <td><span class="model-name">GPT-5.5</span><br><span class="model-co">OpenAI · 2026.4.23</span></td>
+      <td>
+        <span class="score">BenchLM Agentic 90.1</span>（verified 榜 #1）<br>OSWorld 78.7%
+        <div class="bar"><div class="bar-fill bf-blue" style="width:95%"></div></div>
+      </td>
+      <td><span class="price-in">输入 $5</span> / <span class="price-out">输出 $30</span><br><span class="price-note">Batch 半价 $2.5/$15</span></td>
+    </tr>
+    <tr>
+      <td class="rank r3">3</td>
+      <td><span class="model-name">Gemini 3.1 Pro</span><br><span class="model-co">Google · 2M 上下文</span></td>
+      <td>
+        <span class="score">SWE-bench 78.8%</span><br>BenchLM Agentic ~95（provisional）
+        <div class="bar"><div class="bar-fill bf-teal" style="width:90%"></div></div>
+      </td>
+      <td><span class="price-in">输入 $2</span> / <span class="price-out">输出 $12</span><br><span class="price-note">200K+ 上下文 $4/$18</span></td>
+    </tr>
+    <tr>
+      <td class="rank">4</td>
+      <td><span class="model-name">Claude Opus 4.6</span><br><span class="model-co">Anthropic</span></td>
+      <td>
+        <span class="score">SWE-bench 80.8%</span><br>BenchLM Agentic 92.6（provisional）
+        <div class="bar"><div class="bar-fill bf-purple" style="width:88%"></div></div>
+      </td>
+      <td><span class="price-in">输入 $5</span> / <span class="price-out">输出 $25</span></td>
+    </tr>
+    <tr>
+      <td class="rank">5</td>
+      <td><span class="model-name">GPT-5.4</span><br><span class="model-co">OpenAI · Tool Search</span></td>
+      <td>
+        <span class="score">BenchLM Agentic 93.5</span>（provisional）<br>BenchLM 综合分 92
+        <div class="bar"><div class="bar-fill bf-blue" style="width:86%"></div></div>
+      </td>
+      <td><span class="price-in">输入 $2.5</span> / <span class="price-out">输出 $15</span></td>
+    </tr>
+    <tr>
+      <td class="rank">6</td>
+      <td><span class="model-name">Claude Sonnet 4.6</span><br><span class="model-co">Anthropic · 性价比之选</span></td>
+      <td>
+        <span class="score">SWE-bench 79.6%</span><br>GAIA 74.6%（#1）
+        <div class="bar"><div class="bar-fill bf-purple" style="width:82%"></div></div>
+      </td>
+      <td><span class="price-in">输入 $3</span> / <span class="price-out">输出 $15</span></td>
+    </tr>
+    <tr>
+      <td class="rank">7</td>
+      <td><span class="model-name">DeepSeek V4 Pro</span> <span class="open-tag">开源</span><br><span class="model-co">DeepSeek · 1.6T 参数 MoE</span></td>
+      <td>
+        <span class="score">SWE-bench 80.6%</span><br>1M 上下文 · 384K 输出
+        <div class="bar"><div class="bar-fill bf-teal" style="width:80%"></div></div>
+      </td>
+      <td><span class="price-in">输入 $0.44</span> / <span class="price-out">输出 $0.87</span><br><span class="price-note">促销价，原价约 $1.74/$3.48</span></td>
+    </tr>
+    <tr>
+      <td class="rank">8</td>
+      <td><span class="model-name">Grok 4.3</span><br><span class="model-co">xAI · 原生视频输入</span></td>
+      <td>
+        <span class="score">GDPval-AA 94.1%</span><br>长链 Agent 任务表现突出
+        <div class="bar"><div class="bar-fill bf-coral" style="width:77%"></div></div>
+      </td>
+      <td><span class="price-in">输入 ~$2</span> / <span class="price-out">输出 ~$10</span><br><span class="price-note">xAI 定价变动较频繁</span></td>
+    </tr>
+    <tr>
+      <td class="rank">9</td>
+      <td><span class="model-name">DeepSeek V3.2</span> <span class="open-tag">MIT 开源</span><br><span class="model-co">DeepSeek · 可自部署</span></td>
+      <td>
+        <span class="score">SWE-bench 73.1%</span><br>BenchLM 价值榜 #2
+        <div class="bar"><div class="bar-fill bf-teal" style="width:72%"></div></div>
+      </td>
+      <td><span class="price-in">输入 $0.28</span> / <span class="price-out">输出 $0.42</span><br><span class="price-note">自部署免费 · MIT 许可</span></td>
+    </tr>
+    <tr>
+      <td class="rank">10</td>
+      <td><span class="model-name">GLM-5</span> <span class="open-tag">开源</span><br><span class="model-co">智谱 · 中文最强开源</span></td>
+      <td>
+        <span class="score">SWE-bench 77.8%</span><br>Chatbot Arena Elo 1451
+        <div class="bar"><div class="bar-fill bf-amber" style="width:70%"></div></div>
+      </td>
+      <td><span class="price-in">订阅 ¥20/月</span><br><span class="price-note">API 定价另计 · 开源可自部署</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="sources">
+  <div class="sources-title">排行数据来源</div>
+  <ul class="src-list">
+    <li><strong>BenchLM.ai Agentic Leaderboard</strong>（2026.5）— 综合 Terminal-Bench 2.0 / OSWorld / BrowseComp 加权 → <a href="https://benchlm.ai/agentic" target="_blank">benchlm.ai/agentic</a></li>
+    <li><strong>SWE-bench Verified</strong> — 真实 GitHub Issue 修复，Agent 编码能力标杆 → <a href="https://www.swebench.com" target="_blank">swebench.com</a></li>
+    <li><strong>GAIA</strong>（Princeton HAL）— 多步骤通用 Agent 任务 → <a href="https://huggingface.co/spaces/gaia-benchmark/leaderboard" target="_blank">HuggingFace Leaderboard</a></li>
+    <li><strong>OSWorld</strong> — 真实桌面环境操作，最抗作弊 → Coasty Blog 2026.5 报告</li>
+    <li><strong>LMSYS Chatbot Arena</strong> — 人类偏好 Elo 排名 → <a href="https://arena.ai/leaderboard" target="_blank">arena.ai/leaderboard</a></li>
+    <li><strong>价格</strong> — 各厂商官网 + DevTk.AI / CloudZero 2026.5 汇总</li>
+  </ul>
+</div>
+
+<div class="caveat">
+  <i class="ti ti-alert-triangle" aria-hidden="true" style="font-size:13px;vertical-align:-1px;margin-right:4px"></i>
+  <strong>重要提醒：</strong>2026 年 Agent 基准正处于信任危机期。UC Berkeley 研究表明多个主流基准存在数据污染，OpenAI 已停止报告 SWE-bench 成绩。以上排名仅供参考方向，不建议作为采购决策的唯一依据。实际效果取决于你的具体任务和 Agent 框架搭配。
+</div>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

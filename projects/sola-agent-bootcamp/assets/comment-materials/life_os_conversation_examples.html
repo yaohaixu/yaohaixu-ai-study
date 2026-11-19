@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Life OS 使用场景 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <style>
+    :root { --bg:#fffdf8; --ink:#17343a; --muted:rgba(23,52,58,.68); --line:rgba(23,52,58,.14); --accent:#178f92; --soft:#f4fbfa; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:0; background:transparent; }
+    body { padding:18px; color:var(--ink); font-family:"Plus Jakarta Sans","Noto Sans SC",ui-sans-serif,system-ui,sans-serif; font-size:15px; line-height:1.72; }
+    .material-content { display:block; border:1px solid var(--line); border-radius:18px; padding:18px 18px 20px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    h2 { margin:0 0 12px; font-size:22px; line-height:1.25; letter-spacing:0; }
+    p { margin:10px 0 0; color:var(--muted); }
+    p.lead { color:var(--muted); }
+    strong { color:var(--ink); font-weight:750; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(23,52,58,.08); border-radius:6px; padding:1px 5px; }
+    .source-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:rgba(23,52,58,.48); }
+  </style>
+</head>
+<body>
+<main class="material-content">
+  <p class="eyebrow">SOLA AI Agent 共学营 · 补充材料</p>
+  <h2>Life OS 使用场景</h2>
+  <p class="lead">从早到晚的完整模拟展示了三种交互方式：</p>
+<p class="lead"><strong>你主动说的</strong>（紫色标签&quot;对话&quot;）：随手记账&quot;午饭 35 咖啡 18&quot;、汇报&quot;跑了 3 公里&quot;、问&quot;项目什么进度&quot;、下班路上一句话包含三件事——Agent 全部理解并分发到正确的模块。你不需要说&quot;记到财务表里&quot;&quot;更新项目进度&quot;，它根据 Skill 的触发词自动判断该往哪存。</p>
+<p class="lead"><strong>Agent 自己做的</strong>（绿色标签&quot;自动&quot;）：7:30 早间规划你还没起床它就生成好了；22:00 晚间回顾它主动问你今天怎么样；周五 17:00 自动汇总全周数据生成周报；每月 1 号自动做深度分析。这些全部是定时任务（cron），不需要你开口。</p>
+<p class="lead"><strong>最有价值的部分是跨域洞察</strong>——周报里那句&quot;周三睡 5.5 小时 → 当天只完成 2 项待办 + 情绪最低 + 点了两次外卖多花 56 块&quot;，月报里那句&quot;有跑步的日子第二天工作效率高 23%&quot;——这种关联分析你自己很难注意到，但 Agent 把所有数据放在一起算一下就出来了。这就是把六个模块连成一个系统的威力。</p>
+<p class="lead">注意月度分析那里用了<strong>子 Agent 并行</strong>——一个分析收支 CSV，一个分析健康 CSV，主 Agent 收两份摘要后做交叉关联。这就是前面讲的&quot;用摘要换空间&quot;在 Life OS 里的实际应用。</p>
+  <p class="source-note">从 agent-depth.html 主课件正文抽取生成，用于替代缺失的嵌入材料页面。</p>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">AI 帮助心力恢复：第二层辩证引擎</title>
+  <desc id="desc">AI 提高反题生成的概率和速度，让情绪通过正题、反题、合题、行动的辩证循环流动。</desc>
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 28px; font-weight: 700; }
+      .subtitle { font-size: 17px; fill: #4b5456; }
+      .section { font-size: 19px; font-weight: 700; }
+      .label { font-size: 20px; font-weight: 700; }
+      .small { font-size: 15px; fill: #4b5456; }
+      .tiny { font-size: 13px; fill: #5f6769; }
+      .card { stroke-width: 2; rx: 8; ry: 8; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; }
+      .green { fill: #ddf7ef; stroke: #10a98c; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; }
+      .arrow { stroke: #74736c; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .dash { stroke: #74736c; stroke-width: 1.5; stroke-dasharray: 6 8; fill: none; opacity: .72; }
+      .muted-line { stroke: #d5d1c7; stroke-width: 2; }
+      .arrow-head { fill: #74736c; }
+    </style>
+  </defs>
+
+  <!-- Header -->
+  <text x="52" y="66" class="title">辩证引擎</text>
+  <text x="52" y="96" class="subtitle">AI 提高反题生成的概率和速度，让情绪通过循环自己流动</text>
+
+  <!-- Main loop frame -->
+  <rect x="52" y="128" width="650" height="575" class="card neutral"/>
+  <text x="84" y="169" class="section">一次对话内的辩证循环</text>
+  <text x="84" y="195" class="small">不是安慰，而是让“想透了”的结论松动</text>
+
+  <!-- Loop nodes -->
+  <rect x="101" y="244" width="170" height="92" class="card yellow"/>
+  <text x="186" y="283" class="label" text-anchor="middle">正题</text>
+  <text x="186" y="311" class="small" text-anchor="middle">我选错方向？</text>
+
+  <rect x="318" y="224" width="214" height="132" class="card blue"/>
+  <text x="425" y="267" class="label" text-anchor="middle">AI 反题生成器</text>
+  <text x="425" y="296" class="small" text-anchor="middle">永远在线</text>
+  <text x="425" y="321" class="small" text-anchor="middle">同时拉出多角度</text>
+
+  <rect x="563" y="244" width="118" height="92" class="card purple"/>
+  <text x="622" y="283" class="label" text-anchor="middle">反题</text>
+  <text x="622" y="311" class="small" text-anchor="middle">切入盲点</text>
+
+  <rect x="483" y="522" width="174" height="92" class="card green"/>
+  <text x="570" y="561" class="label" text-anchor="middle">合题</text>
+  <text x="570" y="589" class="small" text-anchor="middle">重新组织判断</text>
+
+  <rect x="134" y="522" width="174" height="92" class="card neutral"/>
+  <text x="221" y="561" class="label" text-anchor="middle">行动 / 流动</text>
+  <text x="221" y="589" class="small" text-anchor="middle">看到更多之后</text>
+
+  <!-- Antithesis source chips -->
+  <rect x="307" y="390" width="112" height="54" class="card neutral"/>
+  <text x="363" y="423" class="small" text-anchor="middle">市场时机</text>
+  <rect x="435" y="390" width="112" height="54" class="card neutral"/>
+  <text x="491" y="423" class="small" text-anchor="middle">用户画像</text>
+  <rect x="563" y="390" width="112" height="54" class="card neutral"/>
+  <text x="619" y="423" class="small" text-anchor="middle">过往胜利</text>
+  <rect x="371" y="462" width="112" height="54" class="card neutral"/>
+  <text x="427" y="495" class="small" text-anchor="middle">替代路径</text>
+  <rect x="499" y="462" width="112" height="54" class="card neutral"/>
+  <text x="555" y="495" class="small" text-anchor="middle">反常证据</text>
+
+  <!-- Flow arrows -->
+  <path d="M271 290 L318 290" class="arrow"/>
+  <polygon points="318,290 309,285 309,295" class="arrow-head"/>
+  <path d="M532 290 L563 290" class="arrow"/>
+  <polygon points="563,290 554,285 554,295" class="arrow-head"/>
+  <path d="M622 336 C636 405 629 478 596 522" class="arrow"/>
+  <polygon points="596,522 594,512 603,517" class="arrow-head"/>
+  <path d="M483 568 L308 568" class="arrow"/>
+  <polygon points="308,568 317,563 317,573" class="arrow-head"/>
+  <path d="M221 522 C145 464 124 382 155 336" class="arrow"/>
+  <polygon points="155,336 156,346 148,341" class="arrow-head"/>
+
+  <!-- Generator fan lines -->
+  <path d="M386 356 L363 390" class="dash"/>
+  <path d="M425 356 L491 390" class="dash"/>
+  <path d="M486 356 L619 390" class="dash"/>
+  <path d="M411 356 L427 462" class="dash"/>
+  <path d="M473 356 L555 462" class="dash"/>
+
+  <!-- Center takeaway -->
+  <rect x="255" y="640" width="248" height="42" class="card green"/>
+  <text x="379" y="667" class="small" text-anchor="middle">正题 → 反题 → 合题：心力恢复的推进器</text>
+
+  <!-- Side comparison panel -->
+  <rect x="742" y="128" width="230" height="575" class="card neutral"/>
+  <text x="857" y="169" class="section" text-anchor="middle">速度改变</text>
+  <text x="857" y="196" class="small" text-anchor="middle">同一轮循环，更短路径</text>
+
+  <rect x="779" y="244" width="156" height="128" class="card yellow"/>
+  <text x="857" y="286" class="label" text-anchor="middle">过去</text>
+  <text x="857" y="317" class="small" text-anchor="middle">几周走一轮</text>
+  <text x="857" y="344" class="tiny" text-anchor="middle">等经验、等反馈</text>
+
+  <line x1="779" y1="424" x2="935" y2="424" class="muted-line"/>
+  <path d="M857 389 L857 455" class="arrow"/>
+  <polygon points="857,455 852,446 862,446" class="arrow-head"/>
+
+  <rect x="779" y="477" width="156" height="128" class="card green"/>
+  <text x="857" y="519" class="label" text-anchor="middle">现在</text>
+  <text x="857" y="550" class="small" text-anchor="middle">一次对话推进</text>
+  <text x="857" y="577" class="tiny" text-anchor="middle">概率更高、速度更快</text>
+
+  <rect x="769" y="637" width="176" height="42" class="card blue"/>
+  <text x="857" y="664" class="small" text-anchor="middle">看到更多，情绪流动</text>
+
+  <!-- Connector from loop to comparison -->
+  <path d="M702 416 L742 416" class="arrow"/>
+  <polygon points="742,416 733,411 733,421" class="arrow-head"/>
+</svg>

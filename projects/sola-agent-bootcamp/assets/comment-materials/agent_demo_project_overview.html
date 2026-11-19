@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>开始一个小项目 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<style>
+  .proj{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin:0 0 14px}
+  .proj-head{padding:12px 14px;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary);font-size:13px;font-weight:500;color:var(--color-text-primary);display:flex;align-items:center;gap:6px}
+  .proj-head i{font-size:16px;color:var(--color-text-secondary)}
+  .proj-body{padding:10px 14px}
+  .file-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:12px}
+  .file-row:last-child{border-bottom:none}
+  .file-row i{font-size:15px;color:var(--color-text-tertiary);flex-shrink:0}
+  .file-name{font-weight:500;color:var(--color-text-primary);min-width:160px}
+  .file-desc{color:var(--color-text-secondary);font-size:11px}
+  .file-tag{font-size:9px;padding:1px 6px;border-radius:3px;background:var(--color-background-secondary);color:var(--color-text-tertiary);white-space:nowrap;margin-left:auto}
+
+  .flow{display:flex;flex-direction:column;gap:0;align-items:center;margin:0 0 14px}
+  .flow-step{display:flex;align-items:center;gap:10px;width:100%;padding:10px 14px;border-radius:var(--border-radius-md)}
+  .flow-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;color:#fff}
+  .fn1{background:#7F77DD}
+  .fn2{background:#378ADD}
+  .fn3{background:#1D9E75}
+  .flow-text{flex:1}
+  .flow-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0}
+  .flow-desc{font-size:11px;color:var(--color-text-secondary);margin:2px 0 0}
+  .flow-arrow{font-size:16px;color:var(--color-text-tertiary);padding:2px 0}
+
+  .term{background:#1a1b26;border-radius:8px;font-family:var(--font-mono);font-size:11px;line-height:1.7;padding:10px 12px;color:#a9b1d6;margin:10px 0}
+  .t-g{color:#9ece6a}.t-b{color:#7aa2f7}.t-w{color:#c0caf5}.t-gr{color:#565f89}.t-y{color:#e0af68}
+
+  .think{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px;margin:0}
+  .think-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 8px}
+  .think-list{font-size:12px;color:var(--color-text-secondary);line-height:1.7;margin:0;padding:0 0 0 18px}
+</style>
+
+<div class="proj">
+  <div class="proj-head"><i class="ti ti-folder-open" aria-hidden="true"></i> agent-demo-project/ — 一个新媒体运营的乱糟糟工作文件夹</div>
+  <div class="proj-body">
+    <div class="file-row"><i class="ti ti-file-text" aria-hidden="true"></i><span class="file-name">老板周一发的消息.txt</span><span class="file-desc">群里复制的零碎要求</span><span class="file-tag">需求</span></div>
+    <div class="file-row"><i class="ti ti-file-spreadsheet" aria-hidden="true"></i><span class="file-name">各平台数据0512-0518.csv</span><span class="file-desc">4 个平台 13 条内容的数据</span><span class="file-tag">数据</span></div>
+    <div class="file-row"><i class="ti ti-file-text" aria-hidden="true"></i><span class="file-name">选题会议记录.md</span><span class="file-desc">周一开会讨论的内容</span><span class="file-tag">记录</span></div>
+    <div class="file-row"><i class="ti ti-file-text" aria-hidden="true"></i><span class="file-name">竞品笔记.txt</span><span class="file-desc">随手记的竞争对手动态</span><span class="file-tag">分析</span></div>
+    <div class="file-row"><i class="ti ti-file-text" aria-hidden="true"></i><span class="file-name">用户反馈汇总.txt</span><span class="file-desc">各平台评论和私信摘录</span><span class="file-tag">反馈</span></div>
+    <div class="file-row"><i class="ti ti-file-text" aria-hidden="true"></i><span class="file-name">上周周报0505-0511.md</span><span class="file-desc">上周的周报，作为格式参考</span><span class="file-tag">模板</span></div>
+    <div class="file-row"><i class="ti ti-file-text" aria-hidden="true"></i><span class="file-name">素材和灵感.txt</span><span class="file-desc">这周随手存的链接和想法</span><span class="file-tag">杂项</span></div>
+    <div class="file-row"><i class="ti ti-file-text" aria-hidden="true" style="color:var(--color-text-info)"></i><span class="file-name" style="color:var(--color-text-info)">README.md</span><span class="file-desc">任务说明书（给同学看的）</span><span class="file-tag" style="background:var(--color-background-info);color:var(--color-text-info)">说明</span></div>
+  </div>
+</div>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="flow-num fn1">1</div>
+    <div class="flow-text">
+      <div class="flow-title">解压文件夹，在终端里进入它</div>
+      <div class="flow-desc">把 zip 解压到电脑上，然后用 cd 命令进入文件夹</div>
+    </div>
+  </div>
+  <div class="term">
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> cd Downloads/agent-demo-project
+  </div>
+  <div class="flow-arrow"><i class="ti ti-chevron-down" aria-hidden="true"></i></div>
+  <div class="flow-step">
+    <div class="flow-num fn2">2</div>
+    <div class="flow-text">
+      <div class="flow-title">启动你的 Agent</div>
+      <div class="flow-desc">用 claude、codex、hermes 等命令启动 Agent（取决于你装了哪个）</div>
+    </div>
+  </div>
+  <div class="term">
+<span class="t-g">you@mac</span> <span class="t-b">~/agent-demo-project</span> <span class="t-w">$</span> claude <span class="t-gr">（或 codex / hermes）</span>
+  </div>
+  <div class="flow-arrow"><i class="ti ti-chevron-down" aria-hidden="true"></i></div>
+  <div class="flow-step">
+    <div class="flow-num fn3">3</div>
+    <div class="flow-text">
+      <div class="flow-title">把任务交给 Agent</div>
+      <div class="flow-desc">一句话说清楚目标，Agent 会自己读所有文件、理解上下文、生成周报</div>
+    </div>
+  </div>
+  <div class="term">
+<span class="t-b">></span> <span class="t-w">请阅读当前文件夹里的所有文件，了解我这周的新媒体运营情况，</span><br>
+<span class="t-w">&nbsp; 参考上周周报的格式，帮我生成本周运营周报（5/12-5/18）。</span><br>
+<span class="t-w">&nbsp; 回应老板提出的所有问题，分析爆款视频，给出下周建议。</span><br><br>
+<span class="t-y">Reading</span> <span class="t-gr">老板周一发的消息.txt</span><br>
+<span class="t-y">Reading</span> <span class="t-gr">各平台数据0512-0518.csv</span><br>
+<span class="t-y">Reading</span> <span class="t-gr">选题会议记录.md</span><br>
+<span class="t-y">Reading</span> <span class="t-gr">竞品笔记.txt</span><br>
+<span class="t-y">Reading</span> <span class="t-gr">用户反馈汇总.txt</span><br>
+<span class="t-y">Reading</span> <span class="t-gr">上周周报0505-0511.md</span><br>
+<span class="t-y">Reading</span> <span class="t-gr">素材和灵感.txt</span><br>
+<span class="t-g">Writing</span> <span class="t-gr">本周周报0512-0518.md ✓</span><br>
+  </div>
+</div>
+
+<div class="think">
+  <div class="think-title"><i class="ti ti-brain" aria-hidden="true" style="font-size:15px;vertical-align:-2px;margin-right:4px"></i> 做完后想一想</div>
+  <ol class="think-list">
+    <li>Agent 是不是自己把 7 个文件全部读了一遍？<strong>你有没有手动复制粘贴任何内容？</strong></li>
+    <li>它是不是理解了文件之间的关系？比如老板问"粉丝目标完成没"——答案在 CSV 数据里，但问题在另一个文件里。</li>
+    <li>生成的周报是不是一个<strong>可以直接下载的文件</strong>，而不是一段聊天文字？</li>
+    <li>如果你用普通 ChatGPT 做同样的事，你需要手动做多少步？（打开每个文件 → 复制 → 粘贴 → 反复描述上下文 → 手动整理格式……）</li>
+    <li><strong>这就是 Chat AI 和 Agent 的区别。</strong></li>
+  </ol>
+</div>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

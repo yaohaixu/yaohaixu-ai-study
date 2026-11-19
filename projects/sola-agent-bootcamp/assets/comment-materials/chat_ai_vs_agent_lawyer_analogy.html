@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>法律顾问和代理律师 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">用法律顾问和律师的类比，面向小白解释 Chat AI 与 Agent 的区别</h2>
+<style>
+  .hero{text-align:center;margin:0 0 20px}
+  .hero-title{font-size:18px;font-weight:500;color:var(--color-text-primary);margin:0 0 4px}
+  .hero-sub{font-size:13px;color:var(--color-text-secondary);margin:0}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 18px}
+  .col{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);padding:16px;position:relative}
+  .col.right{border:2px solid var(--color-border-info)}
+  .pill{font-size:10px;font-weight:500;padding:3px 10px;border-radius:var(--border-radius-md);display:inline-block;margin:0 0 10px}
+  .pill-a{background:#F1EFE8;color:#5F5E5A}
+  .pill-b{background:#E1F5EE;color:#0F6E56}
+  @media(prefers-color-scheme:dark){.pill-a{background:#2C2C2A;color:#B4B2A9}.pill-b{background:#04342C;color:#5DCAA5}}
+  .col-title{font-size:16px;font-weight:500;color:var(--color-text-primary);margin:0 0 2px}
+  .col-sub{font-size:12px;color:var(--color-text-secondary);margin:0 0 14px;line-height:1.5}
+  .bubble-list{display:flex;flex-direction:column;gap:6px}
+  .bub{padding:8px 11px;border-radius:10px;font-size:12px;line-height:1.55;max-width:92%}
+  .bub-you{background:var(--color-background-secondary);color:var(--color-text-primary);align-self:flex-end;border-bottom-right-radius:3px}
+  .bub-ai{align-self:flex-start;border-bottom-left-radius:3px}
+  .bub-talk{background:#EEEDFE;color:#3C3489}
+  .bub-do{background:#E1F5EE;color:#085041;padding-left:9px;border-left:2.5px solid #1D9E75}
+  .bub-result{background:#E6F1FB;color:#0C447C;padding-left:9px;border-left:2.5px solid #378ADD}
+  @media(prefers-color-scheme:dark){
+    .bub-talk{background:#26215C;color:#AFA9EC}
+    .bub-do{background:#04342C;color:#5DCAA5;border-left-color:#5DCAA5}
+    .bub-result{background:#042C53;color:#85B7EB;border-left-color:#85B7EB}
+  }
+  .you-turn{margin:6px 0 0;padding:10px;border:1px dashed var(--color-border-secondary);border-radius:var(--border-radius-md);text-align:center;font-size:11px;color:var(--color-text-tertiary);line-height:1.5}
+  .divider-line{height:0.5px;background:var(--color-border-tertiary);margin:18px 0}
+  .diff-grid{display:grid;grid-template-columns:auto 1fr 1fr;gap:0;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;font-size:12px}
+  .diff-grid>div{padding:10px 12px;border-bottom:0.5px solid var(--color-border-tertiary)}
+  .diff-grid>div:nth-child(3n+2){border-right:0.5px solid var(--color-border-tertiary)}
+  .diff-grid>div:nth-child(3n+1){border-right:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);background:var(--color-background-secondary)}
+  .diff-grid>div:nth-last-child(-n+3){border-bottom:none}
+  .gh{font-weight:500;color:var(--color-text-secondary);font-size:11px;background:var(--color-background-secondary)}
+  .one-liner{text-align:center;margin:18px 0 0;padding:14px;border-radius:var(--border-radius-lg);background:var(--color-background-secondary);font-size:13px;color:var(--color-text-primary);line-height:1.7}
+</style>
+
+<div class="hero">
+  <p class="hero-title">Chat AI vs Agent，到底差在哪？</p>
+  <p class="hero-sub">用"法律顾问"和"律师"来理解，一看就懂</p>
+</div>
+
+<!-- Two columns: scenario -->
+<div class="cols">
+  <div class="col">
+    <span class="pill pill-a">Chat AI ＝ 法律顾问</span>
+    <p class="col-title">能给意见，但不替你跑腿</p>
+    <p class="col-sub">你问什么都能答，但出了这间办公室的事它管不了。</p>
+    <div class="bubble-list">
+      <div class="bub bub-you">公司拖欠我三个月工资，怎么办？</div>
+      <div class="bub bub-ai bub-talk">你可以去劳动仲裁委申请仲裁。需要准备劳动合同、工资流水、考勤记录，填好《仲裁申请书》，然后到当地仲裁委窗口提交……</div>
+      <div class="bub bub-you">能帮我弄吗？</div>
+      <div class="bub bub-ai bub-talk">不好意思，我只能给你建议，具体的事还是得你自己来哦。</div>
+    </div>
+    <div class="you-turn">接下来全靠你自己：<br>找合同 → 跑银行打流水 → 写申请 → 去仲裁委排队 → 出庭 → ……</div>
+  </div>
+  <div class="col right">
+    <span class="pill pill-b">Agent ＝ 代理律师</span>
+    <p class="col-title">你说"帮我搞定"，它就真的去搞定</p>
+    <p class="col-sub">同样懂法律，但它还能替你行动、替你跑完全流程。</p>
+    <div class="bubble-list">
+      <div class="bub bub-you">公司拖欠我三个月工资，帮我搞定。</div>
+      <div class="bub bub-ai bub-do">好的。我先帮你整理银行流水和合同证据……</div>
+      <div class="bub bub-ai bub-do">仲裁申请书已经写好，正在提交仲裁委……</div>
+      <div class="bub bub-ai bub-do">对方提了新证据，我已经调整策略准备反驳……</div>
+      <div class="bub bub-ai bub-do">已代你出庭完成辩论。</div>
+      <div class="bub bub-ai bub-result">搞定！仲裁胜诉，赔偿款三天内到账。</div>
+    </div>
+  </div>
+</div>
+
+<!-- Difference grid -->
+<div class="diff-grid">
+  <div class="gh"></div>
+  <div class="gh">法律顾问（Chat AI）</div>
+  <div class="gh">代理律师（Agent）</div>
+
+  <div>你说一句话后</div>
+  <div>给你一段建议，然后等你再问</div>
+  <div>自己动手，一步步做到底</div>
+
+  <div>能不能碰"外面的东西"</div>
+  <div>不能。只能在对话里跟你聊</div>
+  <div>能。读文件、查资料、发邮件、填表格</div>
+
+  <div>遇到意外怎么办</div>
+  <div>等你来问"下一步怎么办"</div>
+  <div>自己判断，换个方法继续推进</div>
+
+  <div>最后交给你的是</div>
+  <div>一段文字（"你应该这么做"）</div>
+  <div>一个结果（"已经帮你做完了"）</div>
+
+  <div>它有多大用？</div>
+  <div>很有用！很多时候你只需要一个好建议</div>
+  <div>更进一步——不只告诉你该怎么做，还替你做了</div>
+</div>
+
+<div class="one-liner">
+  一句话记住：<strong>法律顾问动嘴，代理律师动手。</strong><br>Chat AI 和 Agent 的区别，就这么大。
+</div>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

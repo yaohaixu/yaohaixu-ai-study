@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent 对话技巧 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <style>
+    :root { --bg:#fffdf8; --ink:#17343a; --muted:rgba(23,52,58,.68); --line:rgba(23,52,58,.14); --accent:#178f92; --soft:#f4fbfa; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:0; background:transparent; }
+    body { padding:18px; color:var(--ink); font-family:"Plus Jakarta Sans","Noto Sans SC",ui-sans-serif,system-ui,sans-serif; font-size:15px; line-height:1.72; }
+    .material-content { display:block; border:1px solid var(--line); border-radius:18px; padding:18px 18px 20px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    h2 { margin:0 0 12px; font-size:22px; line-height:1.25; letter-spacing:0; }
+    p { margin:10px 0 0; color:var(--muted); }
+    p.lead { color:var(--muted); }
+    strong { color:var(--ink); font-weight:750; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(23,52,58,.08); border-radius:6px; padding:1px 5px; }
+    .source-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:rgba(23,52,58,.48); }
+  </style>
+</head>
+<body>
+<main class="material-content">
+  <p class="eyebrow">SOLA AI Agent 共学营 · 补充材料</p>
+  <h2>Agent 对话技巧</h2>
+  <p class="lead"><strong>&quot;先想再做&quot;是性价比最高的一句话。</strong> 加上&quot;先列计划，我确认后再动手&quot;这 12 个字，能避免 80% 的返工。Agent 的默认行为是&quot;拿到指令就开干&quot;——你不拦它，它就不会停下来想&quot;方向对不对&quot;。</p>
+<p class="lead"><strong>分步下达是防崩溃的基本功。</strong> 一条指令里独立要求不超过 3 个。超过就拆成多轮。每轮确认对了再下一轮。这样出了问题只回退一步，不用从头来。</p>
+<p class="lead"><strong>开新会话的判断标准很简单：</strong> 新任务跟上个无关 → 开新的。Agent 开始搞混数据或重复自己 → 开新的。超过 20-30 轮 → 开新的。不用舍不得当前会话——文件空间是持久的，Agent 在新会话里重新读文件就能恢复上下文。</p>
+<p class="lead"><strong>Context window 是 Agent &quot;越聊越笨&quot;的根本原因。</strong> 所有东西挤在一个固定大小的窗口里，对话越长占的越多，其他信息被挤掉，质量就下降。即使窗口大（GPT-5.5 有 1M），中间位置的信息也比开头结尾更容易被遗忘。</p>
+<p class="lead"><strong>检查点是省钱利器。</strong> &quot;每完成一步停下来让我看&quot;——第 2 步发现错了只浪费 2 步的 token，不设检查点跑完 10 步才发现，10 步全浪费。</p>
+  <p class="source-note">从 agent-depth.html 主课件正文抽取生成，用于替代缺失的嵌入材料页面。</p>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

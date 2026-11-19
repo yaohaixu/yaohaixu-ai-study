@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>理解这些概念 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">AI 相关核心概念解释：模型、平台、框架、账号、API Key 等</h2>
+<style>
+  .cards{display:flex;flex-direction:column;gap:10px}
+  .card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+  .card-head{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer}
+  .card-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+  .card-title{flex:1}
+  .card-title h4{font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0}
+  .card-title .en{font-size:10px;color:var(--color-text-tertiary);font-family:var(--font-mono)}
+  .card-chevron{font-size:16px;color:var(--color-text-tertiary);transition:transform .2s}
+  .card.open .card-chevron{transform:rotate(180deg)}
+  .card-body{display:none;padding:0 14px 14px}
+  .card.open .card-body{display:block}
+
+  .one-liner{font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 8px;line-height:1.5}
+  .explain{font-size:12px;color:var(--color-text-secondary);margin:0 0 8px;line-height:1.6}
+  .analogy{padding:8px 10px;border-radius:var(--border-radius-md);background:var(--color-background-secondary);font-size:11.5px;color:var(--color-text-secondary);line-height:1.55;margin:0 0 8px;display:flex;gap:6px;align-items:flex-start}
+  .analogy i{font-size:13px;flex-shrink:0;margin-top:2px;color:var(--color-text-tertiary)}
+
+  .example{font-family:var(--font-mono);font-size:11px;padding:8px 10px;border-radius:6px;background:#1a1b26;color:#a9b1d6;margin:0 0 8px;line-height:1.6;overflow-x:auto}
+  .eg-g{color:#9ece6a}.eg-gr{color:#565f89}.eg-y{color:#e0af68}.eg-r{color:#f7768e}.eg-b{color:#7aa2f7}
+
+  .warn{padding:8px 10px;border-radius:var(--border-radius-md);font-size:11px;line-height:1.5;display:flex;gap:6px;align-items:flex-start;margin:0 0 0}
+  .warn i{font-size:13px;flex-shrink:0;margin-top:1px}
+  .warn-r{background:var(--color-background-danger);color:var(--color-text-danger)}
+  .warn-b{background:var(--color-background-info);color:var(--color-text-info)}
+
+  .ci-purple{background:#EEEDFE;color:#534AB7}
+  .ci-blue{background:#E6F1FB;color:#185FA5}
+  .ci-teal{background:#E1F5EE;color:#0F6E56}
+  .ci-amber{background:#FAEEDA;color:#BA7517}
+  .ci-coral{background:#FAECE7;color:#993C1D}
+  .ci-pink{background:#FBEAF0;color:#993556}
+  .ci-green{background:#EAF3DE;color:#3B6D11}
+  .ci-red{background:#FCEBEB;color:#A32D2D}
+  .ci-gray{background:#F1EFE8;color:#5F5E5A}
+  @media(prefers-color-scheme:dark){
+    .ci-purple{background:#26215C;color:#AFA9EC}
+    .ci-blue{background:#042C53;color:#85B7EB}
+    .ci-teal{background:#04342C;color:#5DCAA5}
+    .ci-amber{background:#412402;color:#FAC775}
+    .ci-coral{background:#4A1B0C;color:#F0997B}
+    .ci-pink{background:#4B1528;color:#ED93B1}
+    .ci-green{background:#173404;color:#97C459}
+    .ci-red{background:#501313;color:#F09595}
+    .ci-gray{background:#2C2C2A;color:#B4B2A9}
+  }
+
+  .rel{margin:10px 0 0;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px}
+  .rel-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin:0 0 10px}
+  .rel-flow{display:flex;align-items:center;gap:0;flex-wrap:wrap;justify-content:center}
+  .rel-node{padding:6px 12px;border-radius:var(--border-radius-md);font-size:11px;font-weight:500;text-align:center}
+  .rel-arrow{font-size:14px;color:var(--color-text-tertiary);padding:0 4px}
+</style>
+
+<div class="cards">
+
+  <!-- 模型 -->
+  <div class="card open" onclick="toggle(this)">
+    <div class="card-head">
+      <div class="card-icon ci-purple"><i class="ti ti-brain" aria-hidden="true"></i></div>
+      <div class="card-title"><h4>模型</h4><div class="en">Model</div></div>
+      <i class="ti ti-chevron-down card-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <div class="one-liner">AI 的"大脑"本身。GPT、Claude、DeepSeek、Gemini 这些都是模型的名字。</div>
+      <div class="explain">模型是一个经过海量数据训练出来的程序，能理解你的话、生成回答、写代码、分析文件。不同模型由不同公司训练，各有强项。你可以把它想象成不同品牌的发动机——都能提供动力，但性能和特点不同。</div>
+      <div class="analogy"><i class="ti ti-bulb" aria-hidden="true"></i> 类比：模型 = 厨师的手艺。同一道菜，不同厨师做出来味道不同。GPT 是一位厨师，Claude 是另一位，各有拿手菜。</div>
+    </div>
+  </div>
+
+  <!-- 平台 -->
+  <div class="card open" onclick="toggle(this)">
+    <div class="card-head">
+      <div class="card-icon ci-blue"><i class="ti ti-building" aria-hidden="true"></i></div>
+      <div class="card-title"><h4>平台 / 厂商</h4><div class="en">Platform / Provider</div></div>
+      <i class="ti ti-chevron-down card-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <div class="one-liner">训练和运营模型的公司。你要用它家的模型，就得在它家注册。</div>
+      <div class="explain">OpenAI 做了 GPT，Anthropic 做了 Claude，Google 做了 Gemini，DeepSeek 做了 DeepSeek。每家公司有自己的网站、自己的收费标准、自己的注册流程。就像不同的手机厂商——华为、苹果、小米各有各的系统和生态。</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0;font-size:11px">
+        <div style="padding:6px 8px;border-radius:var(--border-radius-md);background:var(--color-background-secondary)"><span style="font-weight:500;color:var(--color-text-primary)">OpenAI</span><span style="color:var(--color-text-tertiary)"> → GPT 系列</span></div>
+        <div style="padding:6px 8px;border-radius:var(--border-radius-md);background:var(--color-background-secondary)"><span style="font-weight:500;color:var(--color-text-primary)">Anthropic</span><span style="color:var(--color-text-tertiary)"> → Claude 系列</span></div>
+        <div style="padding:6px 8px;border-radius:var(--border-radius-md);background:var(--color-background-secondary)"><span style="font-weight:500;color:var(--color-text-primary)">Google</span><span style="color:var(--color-text-tertiary)"> → Gemini 系列</span></div>
+        <div style="padding:6px 8px;border-radius:var(--border-radius-md);background:var(--color-background-secondary)"><span style="font-weight:500;color:var(--color-text-primary)">DeepSeek</span><span style="color:var(--color-text-tertiary)"> → DeepSeek 系列</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 账号 -->
+  <div class="card open" onclick="toggle(this)">
+    <div class="card-head">
+      <div class="card-icon ci-teal"><i class="ti ti-user-circle" aria-hidden="true"></i></div>
+      <div class="card-title"><h4>账号</h4><div class="en">Account</div></div>
+      <i class="ti ti-chevron-down card-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <div class="one-liner">在平台上注册的身份。有账号才能用它家的东西。</div>
+      <div class="explain">跟你注册微信、注册淘宝一个道理。每个平台需要单独注册。有些平台（OpenAI、Anthropic）需要海外手机号或邮箱，这就是很多人说的"搞定海外账号"的门槛。国内平台（DeepSeek、智谱、Kimi）用手机号就能注册。</div>
+    </div>
+  </div>
+
+  <!-- 订阅 -->
+  <div class="card open" onclick="toggle(this)">
+    <div class="card-head">
+      <div class="card-icon ci-amber"><i class="ti ti-credit-card" aria-hidden="true"></i></div>
+      <div class="card-title"><h4>订阅</h4><div class="en">Subscription</div></div>
+      <i class="ti ti-chevron-down card-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <div class="one-liner">每月交固定费用，获得使用资格。就像视频会员。</div>
+      <div class="explain">ChatGPT Plus $20/月、Claude Pro $20/月——交了月费就能在网页或 App 上使用。通常有使用量上限，超了要加钱或等下个月。这是普通用户最常见的付费方式。</div>
+      <div class="analogy"><i class="ti ti-bulb" aria-hidden="true"></i> 类比：就像爱奇艺 / Netflix 会员。按月付费，享受服务，不续费就断。</div>
+    </div>
+  </div>
+
+  <!-- API Key -->
+  <div class="card open" onclick="toggle(this)">
+    <div class="card-head">
+      <div class="card-icon ci-coral"><i class="ti ti-key" aria-hidden="true"></i></div>
+      <div class="card-title"><h4>API Key</h4><div class="en">API Key / 密钥</div></div>
+      <i class="ti ti-chevron-down card-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <div class="one-liner">一串让程序代替你访问模型的"通行证"。Agent 框架用它来调用 AI。</div>
+      <div class="explain">你在网页上聊天时，平台知道你是谁（因为你登录了）。但 Agent 框架是另一个程序，它怎么告诉平台"我是替某某人来的"？答案就是 API Key——一串长长的字母数字，像一把钥匙，持有它的程序就能以你的名义调用模型。</div>
+      <div class="example">
+<span class="eg-gr">// 这就是一个 API Key 的样子：</span><br>
+<span class="eg-y">sk-proj-</span><span class="eg-b">a3Bf9xK2mNpQ7rTw...</span><br><br>
+<span class="eg-gr">// Agent 框架用它来调用模型：</span><br>
+<span class="eg-g">ANTHROPIC_API_KEY</span>=<span class="eg-y">"sk-ant-..."</span><br>
+<span class="eg-g">OPENAI_API_KEY</span>=<span class="eg-y">"sk-proj-..."</span>
+      </div>
+      <div class="warn warn-r"><i class="ti ti-alert-triangle" aria-hidden="true"></i> API Key 等于你的银行卡密码。绝对不能发给别人、不能贴到公开网页上。别人拿到你的 Key 就能用你的钱调用模型。</div>
+    </div>
+  </div>
+
+  <!-- API vs 订阅 -->
+  <div class="card open" onclick="toggle(this)">
+    <div class="card-head">
+      <div class="card-icon ci-pink"><i class="ti ti-arrows-diff" aria-hidden="true"></i></div>
+      <div class="card-title"><h4>订阅 vs API：两种付费方式</h4><div class="en">Subscription vs API billing</div></div>
+      <i class="ti ti-chevron-down card-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <div class="one-liner">订阅 = 包月自助餐，API = 按量点菜。</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0">
+        <div style="padding:10px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary)">
+          <div style="font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px"><i class="ti ti-credit-card" aria-hidden="true" style="font-size:13px;vertical-align:-1px;margin-right:3px"></i> 订阅（自助餐）</div>
+          <div style="font-size:11px;color:var(--color-text-secondary);line-height:1.5">每月固定 $20。在网页 / App 上聊天。有使用上限但不用操心费用波动。适合自己用。</div>
+        </div>
+        <div style="padding:10px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary)">
+          <div style="font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px"><i class="ti ti-key" aria-hidden="true" style="font-size:13px;vertical-align:-1px;margin-right:3px"></i> API（按量点菜）</div>
+          <div style="font-size:11px;color:var(--color-text-secondary);line-height:1.5">用多少付多少。Agent 框架通过 API Key 调用。灵活但费用不可预测。适合开发者和 Agent。</div>
+        </div>
+      </div>
+      <div class="warn warn-b"><i class="ti ti-info-circle" aria-hidden="true"></i> Agent 框架（Claude Code、Codex、Trae 等）大多走 API 计费或需要对应的订阅。纯网页聊天用订阅就够。</div>
+    </div>
+  </div>
+
+  <!-- Token -->
+  <div class="card open" onclick="toggle(this)">
+    <div class="card-head">
+      <div class="card-icon ci-green"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+      <div class="card-title"><h4>Token</h4><div class="en">Token / 令牌</div></div>
+      <i class="ti ti-chevron-down card-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <div class="one-liner">AI 世界里的"计量单位"。你发的话和 AI 回的话，都按 token 数计费。</div>
+      <div class="explain">1 个英文单词约等于 1 个 token，1 个中文汉字约等于 1.5-2 个 token。当你看到"$5 / 百万 token"时，意思是处理 100 万个 token 收 5 美元。一般一次普通对话大约消耗几百到几千 token，一次复杂的 Agent 任务可能消耗几万到几十万 token。</div>
+      <div class="analogy"><i class="ti ti-bulb" aria-hidden="true"></i> 类比：token 就像电费里的"度"。你用了多少电（token），就付多少钱。模型越贵 = 每度电单价越高。</div>
+    </div>
+  </div>
+
+  <!-- Agent 框架 -->
+  <div class="card open" onclick="toggle(this)">
+    <div class="card-head">
+      <div class="card-icon ci-red"><i class="ti ti-robot" aria-hidden="true"></i></div>
+      <div class="card-title"><h4>Agent 框架</h4><div class="en">Agent Framework</div></div>
+      <i class="ti ti-chevron-down card-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <div class="one-liner">给模型接上"手脚"的那层程序。有了它，AI 才能从"只会聊天"变成"能干活"。</div>
+      <div class="explain">Agent 框架负责管理任务流程（拆解目标、规划步骤、检查结果）、调用工具（读写文件、搜索网页、发邮件）、控制执行（沙箱安全、权限管理）。它本身不会"思考"——思考由模型完成——它是让模型的思考落地执行的那层"管理系统"。</div>
+      <div class="analogy"><i class="ti ti-bulb" aria-hidden="true"></i> 类比：模型是厨师的手艺，框架是厨房。有了厨房（灶台、刀具、调料架、上菜流程），厨师的手艺才能变成一桌菜。没有厨房，厨师只能跟你聊怎么做菜。</div>
+    </div>
+  </div>
+
+  <!-- MCP -->
+  <div class="card open" onclick="toggle(this)">
+    <div class="card-head">
+      <div class="card-icon ci-gray"><i class="ti ti-plug" aria-hidden="true"></i></div>
+      <div class="card-title"><h4>MCP</h4><div class="en">Model Context Protocol</div></div>
+      <i class="ti ti-chevron-down card-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="card-body">
+      <div class="one-liner">让 Agent 连接外部工具的"通用插头标准"。</div>
+      <div class="explain">Agent 想发邮件、查日历、读 GitHub——每个工具接口都不一样。MCP 是一个统一的连接协议，类似于 USB-C：只要工具支持 MCP，Agent 就能直接插上用，不用为每个工具单独写代码。Claude Code 支持 3000+ MCP 集成就是这个意思。</div>
+      <div class="analogy"><i class="ti ti-bulb" aria-hidden="true"></i> 类比：MCP = USB-C 接口。以前每个工具都是不同的充电线，现在统一成一个口，什么都能插。</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 关系图 -->
+<div class="rel">
+  <div class="rel-title">这些概念之间是什么关系？</div>
+  <div class="rel-flow">
+    <div class="rel-node ci-teal">你注册账号</div>
+    <div class="rel-arrow">→</div>
+    <div class="rel-node ci-blue">在平台上</div>
+    <div class="rel-arrow">→</div>
+    <div class="rel-node ci-amber">付费（订阅/API）</div>
+    <div class="rel-arrow">→</div>
+    <div class="rel-node ci-coral">拿到 API Key</div>
+    <div class="rel-arrow">→</div>
+    <div class="rel-node ci-red">填入 Agent 框架</div>
+    <div class="rel-arrow">→</div>
+    <div class="rel-node ci-purple">框架调用模型</div>
+  </div>
+  <div style="text-align:center;font-size:11px;color:var(--color-text-tertiary);margin-top:8px">框架每次调用模型都消耗 token → token 按量计费 → 从你账户扣钱</div>
+</div>
+
+<script>
+function toggle(card){card.classList.toggle('open')}
+</script>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>如何打开终端 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">教小白如何在 Mac、Windows、Linux 上打开终端</h2>
+<style>
+  .tabs{display:flex;gap:6px;margin:0 0 14px;justify-content:center}
+  .tab{cursor:pointer;font-size:12px;padding:6px 16px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);background:transparent;color:var(--color-text-secondary);transition:all .2s;display:flex;align-items:center;gap:5px}
+  .tab.on{background:var(--color-background-secondary);color:var(--color-text-primary);font-weight:500;border-color:var(--color-border-secondary)}
+  .tab i{font-size:15px}
+  .panel{display:none}
+  .panel.show{display:block}
+
+  .steps{display:flex;flex-direction:column;gap:12px}
+  .step{display:flex;gap:12px;align-items:flex-start}
+  .step-num{width:28px;height:28px;border-radius:50%;background:var(--color-background-secondary);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--color-text-secondary);flex-shrink:0;margin-top:2px}
+  .step-content{flex:1}
+  .step-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 4px}
+  .step-desc{font-size:12px;color:var(--color-text-secondary);margin:0 0 6px;line-height:1.55}
+
+  .kbd{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:6px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--color-text-primary)}
+  .kbd-plus{font-size:11px;color:var(--color-text-tertiary)}
+
+  .mock-screen{border-radius:var(--border-radius-lg);overflow:hidden;border:0.5px solid var(--color-border-tertiary);margin:8px 0 0}
+  .mock-bar{padding:5px 10px;display:flex;align-items:center;gap:6px;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+  .mock-dot{width:7px;height:7px;border-radius:50%}
+  .mock-title{font-size:10px;color:var(--color-text-tertiary);margin-left:6px}
+
+  .term-body{background:#1a1b26;padding:12px 14px;font-family:var(--font-mono);font-size:12px;line-height:1.7;color:#a9b1d6;min-height:60px}
+  .t-g{color:#9ece6a}.t-b{color:#7aa2f7}.t-w{color:#c0caf5}.t-gr{color:#565f89}
+  .cursor-b{display:inline-block;width:7px;height:14px;background:#c0caf5;animation:blink 1s step-end infinite;vertical-align:text-bottom}
+  @keyframes blink{50%{opacity:0}}
+
+  .finder-body{background:var(--color-background-primary);padding:10px}
+  .finder-search{display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:8px;background:var(--color-background-secondary);margin:0 0 8px;font-size:12px;color:var(--color-text-secondary)}
+  .finder-search i{font-size:14px;color:var(--color-text-tertiary)}
+  .finder-result{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:var(--border-radius-md);background:var(--color-background-info)}
+  .finder-icon{width:32px;height:32px;border-radius:8px;background:#1a1b26;display:flex;align-items:center;justify-content:center}
+  .finder-icon i{font-size:18px;color:#a9b1d6}
+  .finder-name{font-size:12px;font-weight:500;color:var(--color-text-primary)}
+  .finder-sub{font-size:10px;color:var(--color-text-tertiary)}
+
+  .tip{margin:12px 0 0;padding:10px 12px;border-radius:var(--border-radius-md);background:var(--color-background-secondary);font-size:11.5px;color:var(--color-text-secondary);line-height:1.55;display:flex;gap:6px;align-items:flex-start}
+  .tip i{font-size:14px;color:var(--color-text-tertiary);flex-shrink:0;margin-top:1px}
+
+  .alt{font-size:11px;color:var(--color-text-tertiary);margin:8px 0 0;padding-left:40px}
+  .alt a{color:var(--color-text-info);text-decoration:none}
+</style>
+
+<div class="tabs">
+  <button class="tab on" onclick="show(0)"><i class="ti ti-brand-apple" aria-hidden="true"></i> Mac</button>
+  <button class="tab" onclick="show(1)"><i class="ti ti-brand-windows" aria-hidden="true"></i> Windows</button>
+  <button class="tab" onclick="show(2)"><i class="ti ti-brand-ubuntu" aria-hidden="true"></i> Linux</button>
+</div>
+
+<!-- ===== MAC ===== -->
+<div class="panel show" id="p0">
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">最快的方式：Spotlight 搜索</div>
+        <div class="step-desc">同时按下这两个键：</div>
+        <span class="kbd"><i class="ti ti-command" aria-hidden="true" style="font-size:14px"></i> Command</span> <span class="kbd-plus">+</span> <span class="kbd">空格</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">在弹出的搜索框里输入"终端"</div>
+        <div class="step-desc">输入中文"终端"或英文"Terminal"都行，看到结果后按回车。</div>
+        <div class="mock-screen">
+          <div class="finder-body">
+            <div class="finder-search"><i class="ti ti-search" aria-hidden="true"></i> 终端</div>
+            <div class="finder-result">
+              <div class="finder-icon"><i class="ti ti-terminal-2" aria-hidden="true"></i></div>
+              <div><div class="finder-name">终端</div><div class="finder-sub">应用程序 — 实用工具</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">看到这个界面就对了</div>
+        <div class="step-desc">出现黑底（或白底）的文字窗口，有一个闪烁的光标等你输入——这就是终端。</div>
+        <div class="mock-screen">
+          <div class="mock-bar"><span class="mock-dot" style="background:#ff5f57"></span><span class="mock-dot" style="background:#febc2e"></span><span class="mock-dot" style="background:#28c840"></span><span class="mock-title">终端 — zsh</span></div>
+          <div class="term-body">
+            <span class="t-gr">Last login: Mon May 18 10:30:00 on ttys000</span><br>
+            <span class="t-g">your-name@MacBook</span> <span class="t-b">~</span> <span class="t-w">%</span> <span class="cursor-b"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alt">另一种方式：打开"访达" → 应用程序 → 实用工具 → 终端</div>
+  <div class="tip"><i class="ti ti-bulb" aria-hidden="true"></i> 建议把终端固定到 Dock 栏（在终端图标上右键 → 选项 → 在 Dock 中保留），以后一键就能打开。</div>
+</div>
+
+<!-- ===== WINDOWS ===== -->
+<div class="panel" id="p1">
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">最快的方式：搜索 "终端"</div>
+        <div class="step-desc">点击任务栏的搜索框（或按 Windows 键直接打字）：</div>
+        <span class="kbd"><i class="ti ti-brand-windows" aria-hidden="true" style="font-size:14px"></i> Win</span> <span style="font-size:11px;color:var(--color-text-tertiary);margin:0 4px">然后直接输入</span> <span class="kbd">终端</span> <span style="font-size:11px;color:var(--color-text-tertiary);margin:0 4px">或</span> <span class="kbd">Terminal</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">在搜索结果里点击"终端"</div>
+        <div class="step-desc">Windows 11 自带"终端"应用（Windows Terminal）。如果是 Win10，搜"PowerShell"。</div>
+        <div class="mock-screen">
+          <div class="finder-body">
+            <div class="finder-search"><i class="ti ti-search" aria-hidden="true"></i> 终端</div>
+            <div class="finder-result">
+              <div class="finder-icon" style="background:#0C2D4A"><i class="ti ti-terminal-2" aria-hidden="true" style="color:#2CC4E0"></i></div>
+              <div><div class="finder-name">终端</div><div class="finder-sub">Windows Terminal · 应用</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">看到这个界面就对了</div>
+        <div class="step-desc">出现深色的文字窗口，有一个闪烁光标——这就是终端。</div>
+        <div class="mock-screen">
+          <div class="mock-bar"><span class="mock-dot" style="background:var(--color-border-secondary)"></span><span class="mock-dot" style="background:var(--color-border-secondary)"></span><span class="mock-dot" style="background:var(--color-border-secondary)"></span><span class="mock-title">Windows Terminal — PowerShell</span></div>
+          <div class="term-body" style="background:#0C2D4A">
+            <span style="color:#2CC4E0">Windows PowerShell</span><br>
+            <span style="color:#6d8aa0">Copyright (C) Microsoft Corporation.</span><br><br>
+            <span style="color:#2CC4E0">PS C:\Users\you></span> <span class="cursor-b" style="background:#2CC4E0"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alt">另一种方式：在任意文件夹空白处 右键 → "在终端中打开"</div>
+  <div class="tip"><i class="ti ti-bulb" aria-hidden="true"></i>Windows 11 自带的"终端"已经很好用了。Win10 用户建议去 Microsoft Store 搜索安装"Windows Terminal"。</div>
+</div>
+
+<!-- ===== LINUX ===== -->
+<div class="panel" id="p2">
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">最快的方式：快捷键</div>
+        <div class="step-desc">在大多数 Linux 发行版上，同时按：</div>
+        <span class="kbd">Ctrl</span> <span class="kbd-plus">+</span> <span class="kbd">Alt</span> <span class="kbd-plus">+</span> <span class="kbd">T</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">直接弹出终端</div>
+        <div class="step-desc">Ubuntu、Debian、Fedora 等主流发行版都支持这个快捷键。</div>
+        <div class="mock-screen">
+          <div class="mock-bar"><span class="mock-dot" style="background:#ff5f57"></span><span class="mock-dot" style="background:#febc2e"></span><span class="mock-dot" style="background:#28c840"></span><span class="mock-title">Terminal — bash</span></div>
+          <div class="term-body">
+            <span class="t-g">you@ubuntu</span>:<span class="t-b">~</span><span class="t-w">$</span> <span class="cursor-b"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alt">另一种方式：在应用菜单里搜索"Terminal"或"终端模拟器"</div>
+  <div class="tip"><i class="ti ti-bulb" aria-hidden="true"></i>如果你用的是 Linux，大概率已经知道终端在哪了。</div>
+</div>
+
+<script>
+function show(idx){
+  document.querySelectorAll('.panel').forEach((p,i)=>p.classList.toggle('show',i===idx));
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',i===idx));
+}
+</script>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

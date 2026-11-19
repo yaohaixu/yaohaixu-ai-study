@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">聪明 -&gt; 认知复利</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：对比进入跨境电商时，没有 Agent 的线性认知路径，与有 Agent 的多维分析和认知复利阶梯。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 30px; font-weight: 760; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 21px; font-weight: 760; }
+      .panel-note { font-size: 13.5px; fill: #596362; }
+      .badge { font-size: 12px; font-weight: 760; }
+      .node-title { font-size: 18px; font-weight: 760; }
+      .small-title { font-size: 16px; font-weight: 760; }
+      .caption { font-size: 13.5px; fill: #3f4e4c; }
+      .tiny { font-size: 12px; fill: #596362; }
+      .footer { font-size: 18px; font-weight: 760; fill: #364642; }
+      .panel { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .left-text { fill: #7a3f00; }
+      .green-text { fill: #006b61; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.72; }
+      .dash { stroke-dasharray: 6 7; }
+      .step-line { stroke: #10a98c; stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .muted-line { stroke: #d5d1c7; stroke-width: 1.3; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Header -->
+  <text x="512" y="45" text-anchor="middle" class="title">聪明 -&gt; 认知复利</text>
+  <text x="512" y="74" text-anchor="middle" class="claim">同样进入跨境电商，Agent 把“多懂一点”变成“下一步起点更高”。</text>
+
+  <rect x="335" y="91" width="354" height="32" rx="8" class="white"/>
+  <text x="512" y="112" text-anchor="middle" class="tiny">场景：从零进入一个陌生市场，需要连续做出判断</text>
+
+  <!-- Two lanes -->
+  <rect x="52" y="140" width="420" height="474" rx="8" class="panel"/>
+  <rect x="552" y="140" width="420" height="474" rx="8" class="panel"/>
+  <line x1="512" y1="146" x2="512" y2="612" class="soft-line dash"/>
+
+  <!-- Left lane: no agent -->
+  <rect x="82" y="166" width="104" height="30" rx="15" class="yellow"/>
+  <text x="134" y="186" text-anchor="middle" class="badge left-text">没有 Agent</text>
+  <text x="82" y="225" class="panel-title left-text">线性路径</text>
+  <text x="82" y="250" class="panel-note">一周看 20 篇文章，形成初步认知；</text>
+  <text x="82" y="272" class="panel-note">样本少、盲区多，后续判断从低处开始。</text>
+
+  <rect x="106" y="304" width="312" height="68" rx="8" class="yellow"/>
+  <text x="262" y="333" text-anchor="middle" class="node-title left-text">粗糙认知</text>
+  <text x="262" y="355" text-anchor="middle" class="caption">看到了信息，但没有完整框架</text>
+
+  <line x1="262" y1="372" x2="262" y2="410" class="line"/>
+  <polygon points="262,410 256,400 268,400" fill="#74736c"/>
+
+  <rect x="106" y="410" width="312" height="68" rx="8" class="yellow"/>
+  <text x="262" y="439" text-anchor="middle" class="node-title left-text">一般决策</text>
+  <text x="262" y="461" text-anchor="middle" class="caption">靠片段判断，容易漏掉关键变量</text>
+
+  <line x1="262" y1="478" x2="262" y2="516" class="line"/>
+  <polygon points="262,516 256,506 268,506" fill="#74736c"/>
+
+  <rect x="106" y="516" width="312" height="68" rx="8" class="yellow"/>
+  <text x="262" y="545" text-anchor="middle" class="node-title left-text">低起点</text>
+  <text x="262" y="567" text-anchor="middle" class="caption">下一步仍从低质量假设出发</text>
+
+  <rect x="118" y="166" width="0" height="0" fill="none"/>
+  <rect x="112" y="591" width="300" height="1" fill="#d5d1c7"/>
+  <text x="262" y="604" text-anchor="middle" class="tiny">每一步都在修补上一层遗漏</text>
+
+  <!-- Right lane: with agent -->
+  <rect x="582" y="166" width="88" height="30" rx="15" class="green"/>
+  <text x="626" y="186" text-anchor="middle" class="badge green-text">有 Agent</text>
+  <text x="582" y="225" class="panel-title green-text">复利路径</text>
+  <text x="582" y="250" class="panel-note">一天内并行分析关键维度，先建立认知框架；</text>
+  <text x="582" y="272" class="panel-note">决策质量被串联继承，差距逐层放大。</text>
+
+  <rect x="594" y="292" width="336" height="110" rx="8" class="blue"/>
+  <text x="762" y="320" text-anchor="middle" class="node-title blue-text">多维认知框架</text>
+  <rect x="619" y="336" width="132" height="28" rx="8" fill="#ffffff" stroke="#4f8fd6" stroke-width="1.1"/>
+  <text x="685" y="355" text-anchor="middle" class="caption">市场数据</text>
+  <rect x="773" y="336" width="132" height="28" rx="8" fill="#ffffff" stroke="#4f8fd6" stroke-width="1.1"/>
+  <text x="839" y="355" text-anchor="middle" class="caption">竞品策略</text>
+  <rect x="619" y="371" width="132" height="28" rx="8" fill="#ffffff" stroke="#4f8fd6" stroke-width="1.1"/>
+  <text x="685" y="390" text-anchor="middle" class="caption">供应链逻辑</text>
+  <rect x="773" y="371" width="132" height="28" rx="8" fill="#ffffff" stroke="#4f8fd6" stroke-width="1.1"/>
+  <text x="839" y="390" text-anchor="middle" class="caption">法规风险</text>
+
+  <line x1="666" y1="402" x2="666" y2="514" class="line"/>
+  <polygon points="666,524 660,514 672,514" fill="#74736c"/>
+
+  <path d="M 596 594 L 596 582 L 746 582 L 746 522 L 864 522 L 864 466 L 940 466" class="step-line"/>
+  <polygon points="940,466 930,460 930,472" fill="#10a98c"/>
+  <text x="884" y="489" class="tiny green-text">机会层级上移</text>
+
+  <rect x="586" y="524" width="160" height="58" rx="8" class="green"/>
+  <text x="666" y="549" text-anchor="middle" class="small-title green-text">高质量第一步</text>
+  <text x="666" y="568" text-anchor="middle" class="caption">带框架试水</text>
+
+  <rect x="696" y="464" width="182" height="58" rx="8" class="green"/>
+  <text x="787" y="489" text-anchor="middle" class="small-title green-text">更高第二步起点</text>
+  <text x="787" y="508" text-anchor="middle" class="caption">反馈继续增益</text>
+
+  <rect x="790" y="404" width="148" height="58" rx="8" class="green"/>
+  <text x="864" y="429" text-anchor="middle" class="small-title green-text">更高机会层级</text>
+  <text x="864" y="448" text-anchor="middle" class="caption">进入复杂组合</text>
+
+  <rect x="596" y="588" width="318" height="24" rx="8" class="purple"/>
+  <text x="755" y="605" text-anchor="middle" class="tiny purple-text">每一层认知，都抬高下一层决策的起点</text>
+
+  <!-- Gap cue -->
+  <line x1="420" y1="550" x2="578" y2="550" class="soft-line dash"/>
+  <polygon points="578,550 568,544 568,556" fill="#74736c" opacity="0.72"/>
+  <text x="503" y="536" text-anchor="middle" class="tiny">串联后差距放大</text>
+
+  <!-- Bottom conclusion -->
+  <rect x="72" y="648" width="880" height="76" rx="8" fill="#f1efe7" stroke="#d5d1c7" stroke-width="1.4"/>
+  <text x="512" y="681" text-anchor="middle" class="footer">不是每次多懂一点，</text>
+  <text x="512" y="707" text-anchor="middle" class="footer">而是每一层认知都在抬高下一层起点。</text>
+</svg>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>操作的区别 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">最基础地解释本地 Agent 和云端 Agent 的区别：谁在哪里、怎么连接</h2>
+<style>
+  .hd{text-align:center;margin:0 0 18px}
+  .hd h3{font-size:17px;font-weight:500;color:var(--color-text-primary);margin:0 0 4px}
+  .hd p{font-size:12px;color:var(--color-text-secondary);margin:0}
+
+  .scene{margin:0 0 16px}
+  .scene-label{font-size:10px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:.3px;margin:0 0 8px;padding-left:2px}
+  .scene-box{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+  .scene-box.hi-box{border:2px solid var(--color-border-info)}
+
+  .machine{padding:16px;position:relative}
+  .machine-label{font-size:9px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:.2px;position:absolute;top:8px;right:12px}
+  .machine-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 12px;display:flex;align-items:center;gap:6px}
+  .machine-title i{font-size:18px;color:var(--color-text-secondary)}
+
+  .inside-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:0 0 10px}
+  .inside-item{padding:10px;border-radius:var(--border-radius-md);background:var(--color-background-secondary);text-align:center}
+  .inside-item i{font-size:20px;display:block;margin-bottom:4px;color:var(--color-text-secondary)}
+  .inside-item .ii-name{font-size:11.5px;font-weight:500;color:var(--color-text-primary);margin:0 0 2px}
+  .inside-item .ii-desc{font-size:10px;color:var(--color-text-secondary);margin:0;line-height:1.4}
+
+  .person-bar{padding:10px 14px;border-top:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;gap:8px;background:var(--color-background-secondary)}
+  .person-bar i{font-size:16px;color:var(--color-text-secondary)}
+  .person-bar .pb-text{font-size:11.5px;color:var(--color-text-primary)}
+  .person-bar .pb-sub{font-size:10px;color:var(--color-text-tertiary)}
+
+  .cloud-layout{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch}
+  .cl-left{padding:14px;border-right:0.5px solid var(--color-border-tertiary)}
+  .cl-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 12px;background:var(--color-background-secondary);gap:6px}
+  .cl-mid-line{font-size:10px;color:var(--color-text-tertiary);text-align:center;line-height:1.4}
+  .cl-mid-arrow{font-size:16px;color:var(--color-text-tertiary)}
+  .cl-right{padding:14px}
+  .cl-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 10px;display:flex;align-items:center;gap:5px}
+  .cl-title i{font-size:16px;color:var(--color-text-secondary)}
+
+  .cl-item{display:flex;align-items:flex-start;gap:6px;padding:6px 0;font-size:11px;line-height:1.5}
+  .cl-item i{font-size:14px;color:var(--color-text-tertiary);flex-shrink:0;margin-top:1px}
+  .cl-item+.cl-item{border-top:0.5px solid var(--color-border-tertiary)}
+
+  .access-section{margin:16px 0 0}
+  .access-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 10px}
+  .access-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .access-card{padding:10px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);text-align:center}
+  .access-card i{font-size:22px;display:block;margin-bottom:4px;color:var(--color-text-secondary)}
+  .access-card .ac-name{font-size:11.5px;font-weight:500;color:var(--color-text-primary);margin:0 0 2px}
+  .access-card .ac-desc{font-size:10px;color:var(--color-text-secondary);margin:0;line-height:1.4}
+  .ac-tag{font-size:8.5px;margin-top:4px;display:inline-block;padding:1px 6px;border-radius:3px}
+  .ac-local{background:#EEEDFE;color:#534AB7}
+  .ac-cloud{background:#E6F1FB;color:#185FA5}
+  @media(prefers-color-scheme:dark){.ac-local{background:#26215C;color:#AFA9EC}.ac-cloud{background:#042C53;color:#85B7EB}}
+
+  .bottom-line{text-align:center;margin:16px 0 0;padding:14px;border-radius:var(--border-radius-lg);background:var(--color-background-secondary);font-size:13px;color:var(--color-text-primary);line-height:1.7}
+</style>
+
+<div class="hd">
+  <h3>本地 vs 云端：谁在哪里？</h3>
+  <p>搞清楚三样东西的位置关系：你、Agent、文件</p>
+</div>
+
+<!-- ===== LOCAL ===== -->
+<div class="scene">
+  <div class="scene-label"><i class="ti ti-device-laptop" aria-hidden="true" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i> 本地模式</div>
+  <div class="scene-box">
+    <div class="machine">
+      <div class="machine-label">全部在这一台机器上 ↓</div>
+      <div class="machine-title"><i class="ti ti-device-laptop" aria-hidden="true"></i> 你的电脑</div>
+      <div class="inside-grid">
+        <div class="inside-item">
+          <i class="ti ti-robot" aria-hidden="true"></i>
+          <div class="ii-name">Agent 程序</div>
+          <div class="ii-desc">装在这台电脑上</div>
+        </div>
+        <div class="inside-item">
+          <i class="ti ti-folders" aria-hidden="true"></i>
+          <div class="ii-name">你的文件</div>
+          <div class="ii-desc">就在硬盘上的某个文件夹</div>
+        </div>
+        <div class="inside-item">
+          <i class="ti ti-terminal-2" aria-hidden="true"></i>
+          <div class="ii-name">操作界面</div>
+          <div class="ii-desc">打开终端直接用</div>
+        </div>
+      </div>
+    </div>
+    <div class="person-bar">
+      <i class="ti ti-user" aria-hidden="true"></i>
+      <div>
+        <div class="pb-text">你坐在这台电脑前操作，Agent 也在这台电脑上跑。</div>
+        <div class="pb-sub">文件不出这台机器。不联网也能用（如果模型也在本地）。只能在这台电脑上操作。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CLOUD ===== -->
+<div class="scene">
+  <div class="scene-label"><i class="ti ti-cloud" aria-hidden="true" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i> 云端模式</div>
+  <div class="scene-box hi-box">
+    <div class="cloud-layout">
+      <!-- Left: your devices -->
+      <div class="cl-left">
+        <div class="cl-title"><i class="ti ti-user" aria-hidden="true"></i> 你这边</div>
+        <div class="cl-item"><i class="ti ti-device-laptop" aria-hidden="true"></i><span>你的电脑 / 手机 / 平板<br><span style="color:var(--color-text-tertiary);font-size:10px">上面没有装 Agent，只有一个"遥控器"</span></span></div>
+        <div class="cl-item"><i class="ti ti-upload" aria-hidden="true"></i><span>文件要先上传到云端<br><span style="color:var(--color-text-tertiary);font-size:10px">或者 Agent 从你的 Git 仓库拉取</span></span></div>
+        <div class="cl-item"><i class="ti ti-eye" aria-hidden="true"></i><span>你看到的是远程传回来的结果<br><span style="color:var(--color-text-tertiary);font-size:10px">不是本机上的实时变化</span></span></div>
+      </div>
+
+      <!-- Mid: connection -->
+      <div class="cl-mid">
+        <div class="cl-mid-arrow"><i class="ti ti-arrows-left-right" aria-hidden="true"></i></div>
+        <div class="cl-mid-line">通过网络<br>远程连接</div>
+        <div class="cl-mid-arrow"><i class="ti ti-wifi" aria-hidden="true"></i></div>
+      </div>
+
+      <!-- Right: cloud server -->
+      <div class="cl-right">
+        <div class="cl-title"><i class="ti ti-server" aria-hidden="true"></i> 云端服务器</div>
+        <div class="cl-item"><i class="ti ti-robot" aria-hidden="true"></i><span>Agent 在这里运行<br><span style="color:var(--color-text-tertiary);font-size:10px">装在远程服务器上，不在你电脑上</span></span></div>
+        <div class="cl-item"><i class="ti ti-folders" aria-hidden="true"></i><span>文件在这里存储和处理<br><span style="color:var(--color-text-tertiary);font-size:10px">你上传的 + Agent 生成的，都在远程</span></span></div>
+        <div class="cl-item"><i class="ti ti-cpu" aria-hidden="true"></i><span>计算也在这里完成<br><span style="color:var(--color-text-tertiary);font-size:10px">用的是服务器的算力，不是你电脑的</span></span></div>
+      </div>
+    </div>
+
+    <div class="person-bar">
+      <i class="ti ti-user" aria-hidden="true"></i>
+      <div>
+        <div class="pb-text">你和 Agent 不在同一台机器上。你通过网络"遥控"它。</div>
+        <div class="pb-sub">任何设备都能连。但必须联网。文件在别人的服务器上。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ACCESS METHODS ===== -->
+<div class="access-section">
+  <div class="access-title">云端 Agent 怎么"遥控"？三种常见方式</div>
+  <div class="access-grid">
+    <div class="access-card">
+      <i class="ti ti-terminal-2" aria-hidden="true"></i>
+      <div class="ac-name">SSH 终端</div>
+      <div class="ac-desc">用命令行远程登录服务器，像坐在服务器前面一样操作。</div>
+      <div class="ac-tag ac-cloud">开发者常用</div>
+    </div>
+    <div class="access-card">
+      <i class="ti ti-message-circle" aria-hidden="true"></i>
+      <div class="ac-name">IM 通讯工具</div>
+      <div class="ac-desc">在飞书 / Telegram / 微信里跟 Agent 发消息，它在云端执行后把结果发回来。</div>
+      <div class="ac-tag ac-cloud">小白最友好</div>
+    </div>
+    <div class="access-card">
+      <i class="ti ti-browser" aria-hidden="true"></i>
+      <div class="ac-name">网页界面</div>
+      <div class="ac-desc">打开浏览器访问一个网址，在网页上操作 Agent。像用百度网盘一样。</div>
+      <div class="ac-tag ac-cloud">最通用</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PUNCHLINE ===== -->
+<div class="bottom-line">
+  <strong>最简单的判断方法：</strong><br><br>
+  本地 → Agent 装在你电脑上，文件在你电脑上，<strong>只能在这台电脑前用</strong>。<br>
+  云端 → Agent 装在远程服务器上，文件也在远程，<strong>你用任何设备通过网络"遥控"它</strong>。<br><br>
+  <span style="color:var(--color-text-secondary);font-size:12px">就像打游戏：本地 = 单机游戏装在你电脑上，云端 = 云游戏在服务器上跑，你手机上只是一个画面。</span>
+</div>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">低成本到试错复利的信息图</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：对比传统创业验证的高成本单点下注，与 Agent 带来的低成本高频实验循环，说明试错经验会随着验证频率形成复利。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 28px; font-weight: 760; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 20px; font-weight: 760; }
+      .section-title { font-size: 17px; font-weight: 760; }
+      .node-title { font-size: 15px; font-weight: 760; }
+      .body { font-size: 13px; fill: #3f4e4c; }
+      .small { font-size: 12px; fill: #596362; }
+      .tiny { font-size: 11px; fill: #596362; }
+      .footer { font-size: 18px; font-weight: 760; fill: #006b61; }
+      .panel { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .yellow-soft { fill: #fffaf0; stroke: #f1a23a; stroke-width: 1.1; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .blue-soft { fill: #f4f9ff; stroke: #4f8fd6; stroke-width: 1.1; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .purple-soft { fill: #faf7ff; stroke: #8b6fd6; stroke-width: 1.1; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .green-soft { fill: #f3fffb; stroke: #10a98c; stroke-width: 1.1; }
+      .muted-line { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-linecap: round; }
+      .dashed-line { stroke: #74736c; stroke-width: 1.5; stroke-dasharray: 5 6; fill: none; stroke-linecap: round; }
+      .arrow-line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; }
+      .thin-link { stroke: #10a98c; stroke-width: 1.5; fill: none; stroke-linecap: round; }
+      .yellow-text { fill: #7a3f00; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+      .green-text { fill: #006b61; }
+      .muted-text { fill: #7d7b72; }
+    </style>
+  </defs>
+
+  <text x="512" y="38" text-anchor="middle" class="title">低成本 -&gt; 试错复利</text>
+  <text x="512" y="66" text-anchor="middle" class="claim">当验证 10 个创业想法的成本从“几千块 / 几个月”降到“几块钱 / 几小时”，</text>
+  <text x="512" y="88" text-anchor="middle" class="claim">变化的不只是省钱，而是试错频率、经验沉淀和判断成功率一起加速。</text>
+
+  <line x1="512" y1="112" x2="512" y2="602" class="dashed-line"/>
+
+  <rect x="38" y="112" width="452" height="490" rx="8" class="yellow-soft"/>
+  <text x="62" y="145" class="panel-title yellow-text">传统方式：高成本单点下注</text>
+  <text x="62" y="168" class="small yellow-text">每个想法都要预算、外包、调研和几个月周期。</text>
+
+  <rect x="68" y="188" width="70" height="28" rx="7" class="yellow"/>
+  <text x="103" y="207" text-anchor="middle" class="tiny yellow-text">想法 1</text>
+  <rect x="150" y="188" width="70" height="28" rx="7" class="white"/>
+  <text x="185" y="207" text-anchor="middle" class="tiny muted-text">想法 2</text>
+  <rect x="232" y="188" width="70" height="28" rx="7" class="white"/>
+  <text x="267" y="207" text-anchor="middle" class="tiny muted-text">想法 3</text>
+  <rect x="314" y="188" width="70" height="28" rx="7" class="white"/>
+  <text x="349" y="207" text-anchor="middle" class="tiny muted-text">想法 4</text>
+  <rect x="396" y="188" width="70" height="28" rx="7" class="white"/>
+  <text x="431" y="207" text-anchor="middle" class="tiny muted-text">想法 5</text>
+  <rect x="68" y="226" width="70" height="28" rx="7" class="white"/>
+  <text x="103" y="245" text-anchor="middle" class="tiny muted-text">想法 6</text>
+  <rect x="150" y="226" width="70" height="28" rx="7" class="white"/>
+  <text x="185" y="245" text-anchor="middle" class="tiny muted-text">想法 7</text>
+  <rect x="232" y="226" width="70" height="28" rx="7" class="white"/>
+  <text x="267" y="245" text-anchor="middle" class="tiny muted-text">想法 8</text>
+  <rect x="314" y="226" width="70" height="28" rx="7" class="white"/>
+  <text x="349" y="245" text-anchor="middle" class="tiny muted-text">想法 9</text>
+  <rect x="396" y="226" width="70" height="28" rx="7" class="white"/>
+  <text x="431" y="245" text-anchor="middle" class="tiny muted-text">想法 10</text>
+
+  <line x1="267" y1="262" x2="267" y2="283" class="arrow-line"/>
+  <polygon points="267,291 261,281 273,281" fill="#74736c"/>
+
+  <rect x="96" y="292" width="342" height="76" rx="8" class="yellow"/>
+  <text x="267" y="319" text-anchor="middle" class="section-title yellow-text">成本瓶颈</text>
+  <text x="267" y="342" text-anchor="middle" class="body yellow-text">每个要几千块、几个月，只能压缩样本量</text>
+
+  <line x1="267" y1="374" x2="267" y2="399" class="arrow-line"/>
+  <polygon points="267,407 261,397 273,397" fill="#74736c"/>
+
+  <rect x="136" y="408" width="262" height="74" rx="8" class="purple"/>
+  <text x="267" y="436" text-anchor="middle" class="section-title purple-text">挑一个赌</text>
+  <text x="267" y="459" text-anchor="middle" class="body purple-text">剩下 9 个想法被搁置</text>
+
+  <rect x="68" y="510" width="110" height="52" rx="8" class="white"/>
+  <text x="123" y="532" text-anchor="middle" class="node-title yellow-text">样本太少</text>
+  <text x="123" y="551" text-anchor="middle" class="tiny">只学一个市场</text>
+  <rect x="210" y="510" width="110" height="52" rx="8" class="white"/>
+  <text x="265" y="532" text-anchor="middle" class="node-title yellow-text">反馈太慢</text>
+  <text x="265" y="551" text-anchor="middle" class="tiny">几个月一轮</text>
+  <rect x="352" y="510" width="110" height="52" rx="8" class="white"/>
+  <text x="407" y="532" text-anchor="middle" class="node-title yellow-text">学习太贵</text>
+  <text x="407" y="551" text-anchor="middle" class="tiny">失败也很重</text>
+
+  <path d="M123 568 C166 586, 348 586, 407 568" class="dashed-line"/>
+  <text x="267" y="590" text-anchor="middle" class="tiny yellow-text">试错经验不够密集，难以形成复利。</text>
+
+  <rect x="534" y="112" width="452" height="490" rx="8" class="green-soft"/>
+  <text x="558" y="145" class="panel-title green-text">Agent：低成本高频实验循环</text>
+  <text x="558" y="168" class="small green-text">每个想法先做初步验证，再把经验写回下一轮判断。</text>
+
+  <rect x="574" y="204" width="128" height="62" rx="8" class="green"/>
+  <text x="638" y="231" text-anchor="middle" class="section-title green-text">想法池</text>
+  <text x="638" y="252" text-anchor="middle" class="tiny green-text">10 个都能初筛</text>
+
+  <line x1="708" y1="235" x2="744" y2="235" class="arrow-line"/>
+  <polygon points="752,235 742,229 742,241" fill="#74736c"/>
+
+  <rect x="758" y="204" width="176" height="62" rx="8" class="blue"/>
+  <text x="846" y="229" text-anchor="middle" class="section-title blue-text">Agent 验证</text>
+  <text x="846" y="250" text-anchor="middle" class="tiny blue-text">几小时 / 几块钱</text>
+
+  <path d="M846 272 C846 300, 888 302, 888 330" class="arrow-line"/>
+  <polygon points="888,338 882,328 894,328" fill="#74736c"/>
+
+  <rect x="804" y="340" width="132" height="62" rx="8" class="purple"/>
+  <text x="870" y="365" text-anchor="middle" class="section-title purple-text">经验沉淀</text>
+  <text x="870" y="386" text-anchor="middle" class="tiny purple-text">市场 / 壁垒 / 用户</text>
+
+  <path d="M852 408 C830 444, 800 458, 778 474" class="arrow-line"/>
+  <polygon points="771,479 776,468 783,478" fill="#74736c"/>
+
+  <rect x="682" y="474" width="142" height="62" rx="8" class="green"/>
+  <text x="753" y="499" text-anchor="middle" class="section-title green-text">判断更准</text>
+  <text x="753" y="520" text-anchor="middle" class="tiny green-text">排除坏假设更快</text>
+
+  <path d="M674 505 C632 500, 608 456, 620 416" class="arrow-line"/>
+  <polygon points="623,408 627,420 615,417" fill="#74736c"/>
+
+  <rect x="568" y="340" width="150" height="62" rx="8" class="green"/>
+  <text x="643" y="365" text-anchor="middle" class="section-title green-text">成功率更高</text>
+  <text x="643" y="386" text-anchor="middle" class="tiny green-text">下一次验证更准</text>
+
+  <path d="M626 334 C602 308, 600 292, 624 272" class="arrow-line"/>
+  <polygon points="631,267 625,278 618,269" fill="#74736c"/>
+
+  <rect x="568" y="544" width="392" height="38" rx="8" class="blue-soft"/>
+  <text x="590" y="568" class="node-title blue-text">一次验证包</text>
+  <rect x="690" y="552" width="58" height="22" rx="6" fill="#ffffff" stroke="#4f8fd6" stroke-width="1"/>
+  <text x="719" y="567" text-anchor="middle" class="tiny blue-text">市场规模</text>
+  <rect x="758" y="552" width="58" height="22" rx="6" fill="#ffffff" stroke="#4f8fd6" stroke-width="1"/>
+  <text x="787" y="567" text-anchor="middle" class="tiny blue-text">用户画像</text>
+  <rect x="826" y="552" width="58" height="22" rx="6" fill="#ffffff" stroke="#4f8fd6" stroke-width="1"/>
+  <text x="855" y="567" text-anchor="middle" class="tiny blue-text">MVP 原型</text>
+  <rect x="894" y="552" width="58" height="22" rx="6" fill="#ffffff" stroke="#4f8fd6" stroke-width="1"/>
+  <text x="923" y="567" text-anchor="middle" class="tiny blue-text">竞争格局</text>
+
+  <rect x="38" y="626" width="948" height="106" rx="8" class="panel"/>
+  <text x="62" y="657" class="section-title">底部结论</text>
+  <rect x="164" y="642" width="188" height="38" rx="8" class="yellow"/>
+  <text x="258" y="666" text-anchor="middle" class="node-title yellow-text">低成本不是省钱</text>
+  <line x1="362" y1="661" x2="396" y2="661" class="arrow-line"/>
+  <polygon points="404,661 394,655 394,667" fill="#74736c"/>
+  <rect x="414" y="642" width="188" height="38" rx="8" class="blue"/>
+  <text x="508" y="666" text-anchor="middle" class="node-title blue-text">把试错频率拉高</text>
+  <line x1="612" y1="661" x2="646" y2="661" class="arrow-line"/>
+  <polygon points="654,661 644,655 644,667" fill="#74736c"/>
+  <rect x="664" y="642" width="220" height="38" rx="8" class="green"/>
+  <text x="774" y="666" text-anchor="middle" class="node-title green-text">让经验进入加速循环</text>
+
+  <text x="512" y="711" text-anchor="middle" class="footer">高频试错 -&gt; 经验更快 -&gt; 判断更准 -&gt; 成功率更高。</text>
+</svg>

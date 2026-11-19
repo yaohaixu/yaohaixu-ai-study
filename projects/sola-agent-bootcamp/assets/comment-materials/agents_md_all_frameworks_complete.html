@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>在哪里放 AGENTS.md · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <style>
+    :root { --bg:#fffdf8; --ink:#17343a; --muted:rgba(23,52,58,.68); --line:rgba(23,52,58,.14); --accent:#178f92; --soft:#f4fbfa; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:0; background:transparent; }
+    body { padding:18px; color:var(--ink); font-family:"Plus Jakarta Sans","Noto Sans SC",ui-sans-serif,system-ui,sans-serif; font-size:15px; line-height:1.72; }
+    .material-content { display:block; border:1px solid var(--line); border-radius:18px; padding:18px 18px 20px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    h2 { margin:0 0 12px; font-size:22px; line-height:1.25; letter-spacing:0; }
+    p { margin:10px 0 0; color:var(--muted); }
+    p.lead { color:var(--muted); }
+    strong { color:var(--ink); font-weight:750; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(23,52,58,.08); border-radius:6px; padding:1px 5px; }
+    .source-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:rgba(23,52,58,.48); }
+  </style>
+</head>
+<body>
+<main class="material-content">
+  <p class="eyebrow">SOLA AI Agent 共学营 · 补充材料</p>
+  <h2>在哪里放 AGENTS.md</h2>
+  <p class="lead">最核心的区别是两种设计哲学：</p>
+<p class="lead"><strong>Claude Code 和 Codex 是&quot;以项目为中心&quot;</strong>——指令文件跟着项目走。你换一个项目文件夹，Agent 读到的规矩就变了。同一个项目里不同的子目录可以有不同的规则（前端和后端的规范不一样）。团队共享同一份 CLAUDE.md / AGENTS.md，所有人的 Agent 行为一致。这种设计适合开发团队协作。</p>
+<p class="lead"><strong>OpenClaw 和 Hermes 是&quot;以 Agent 为中心&quot;</strong>——SOUL.md 跟着 Agent 走，不跟着项目走。不管你打开哪个文件夹，Agent 的&quot;性格&quot;是一样的。这种设计更适合个人助理场景：你的 Agent 了解你的偏好、记得你的习惯，不因切换项目而失忆。</p>
+<p class="lead"><strong>全局默认文件每个框架都有</strong>：<code>~/.claude/CLAUDE.md</code>、<code>~/.codex/AGENTS.md</code>、<code>~/.openclaw/SOUL.md</code>、<code>~/.hermes/SOUL.md</code>。这是你的&quot;个人底线规矩&quot;——不管做什么项目都生效的偏好（比如&quot;始终用中文&quot;、&quot;代码用 2 空格缩进&quot;）。</p>
+<p class="lead"><strong>读取优先级的统一规律</strong>：越具体的覆盖越通用的。全局 &lt; 项目级 &lt; 子目录级 &lt; 个人覆盖。这意味着你可以在全局设一个默认风格，在项目里覆盖成团队规范，在某个子目录里再覆盖成特殊规则——层层叠加，像 CSS 的优先级一样。</p>
+  <p class="source-note">从 agent-depth.html 主课件正文抽取生成，用于替代缺失的嵌入材料页面。</p>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

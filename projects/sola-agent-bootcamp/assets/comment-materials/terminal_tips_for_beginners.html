@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>使用终端小知识 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">终端新手必知的实用小知识</h2>
+<style>
+  .tips{display:flex;flex-direction:column;gap:12px}
+  .tip-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+  .tip-head{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer}
+  .tip-num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0}
+  .tip-title{flex:1;font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0}
+  .tip-badge{font-size:9px;padding:2px 7px;border-radius:3px;font-weight:500;white-space:nowrap}
+  .tb-必知{background:#FCEBEB;color:#A32D2D}
+  .tb-实用{background:#E6F1FB;color:#185FA5}
+  .tb-救命{background:#FAEEDA;color:#854F0B}
+  @media(prefers-color-scheme:dark){.tb-必知{background:#501313;color:#F09595}.tb-实用{background:#042C53;color:#85B7EB}.tb-救命{background:#412402;color:#FAC775}}
+  .tip-chevron{font-size:16px;color:var(--color-text-tertiary);transition:transform .2s}
+  .tip-card.open .tip-chevron{transform:rotate(180deg)}
+  .tip-body{display:none;padding:0 14px 14px;border-top:0.5px solid var(--color-border-tertiary);margin-top:0}
+  .tip-card.open .tip-body{display:block}
+  .tip-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:12px 0 8px}
+
+  .term{background:#1a1b26;border-radius:8px;font-family:var(--font-mono);font-size:11.5px;line-height:1.7;padding:10px 12px;color:#a9b1d6;margin:0 0 0;overflow-x:auto}
+  .t-g{color:#9ece6a}.t-b{color:#7aa2f7}.t-w{color:#c0caf5}.t-gr{color:#565f89}.t-y{color:#e0af68}.t-r{color:#f7768e}.t-c{color:#7dcfff}
+  .cursor-b{display:inline-block;width:7px;height:13px;background:#c0caf5;animation:blink 1s step-end infinite;vertical-align:text-bottom}
+  @keyframes blink{50%{opacity:0}}
+
+  .kbd{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:5px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--color-text-primary);white-space:nowrap}
+
+  .warn-box{padding:8px 10px;border-radius:var(--border-radius-md);font-size:11px;line-height:1.5;margin:8px 0 0;display:flex;gap:6px;align-items:flex-start}
+  .warn-box i{font-size:13px;flex-shrink:0;margin-top:1px}
+  .wb-info{background:var(--color-background-info);color:var(--color-text-info)}
+  .wb-warn{background:var(--color-background-warning);color:var(--color-text-warning)}
+
+  .n-red{background:#FF2D2D;color:#fff}
+  .n-amber{background:#FFA800;color:#000}
+  .n-blue{background:#378ADD;color:#fff}
+  .n-teal{background:#1D9E75;color:#fff}
+  .n-purple{background:#7F77DD;color:#fff}
+  .n-coral{background:#D85A30;color:#fff}
+  .n-gray{background:#888780;color:#fff}
+  .n-pink{background:#D4537E;color:#fff}
+  .n-green{background:#639922;color:#fff}
+</style>
+
+<div class="tips">
+
+  <!-- 1: 密码不可见 -->
+  <div class="tip-card open" onclick="toggle(this)">
+    <div class="tip-head">
+      <div class="tip-num n-red">1</div>
+      <div class="tip-title">输入密码时屏幕没反应——别慌，它在记录</div>
+      <span class="tip-badge tb-必知">必知</span>
+      <i class="ti ti-chevron-down tip-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="tip-body">
+      <div class="tip-desc">终端里输入密码时，屏幕上不会显示任何字符——没有星号 ****，没有圆点 ●●●●，完全空白。这不是卡了，是故意的安全设计。你的输入正在被记录，打完直接按回车就行。</div>
+      <div class="term">
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> sudo install something<br>
+<span class="t-w">Password:</span> <span class="cursor-b"></span> <span class="t-gr">← 你正在打字，但屏幕上什么都看不到</span>
+      </div>
+      <div class="warn-box wb-info"><i class="ti ti-info-circle" aria-hidden="true"></i> 打错了也看不出来。如果回车后提示"密码错误"，重新输一遍就好。</div>
+    </div>
+  </div>
+
+  <!-- 2: Ctrl+C -->
+  <div class="tip-card open" onclick="toggle(this)">
+    <div class="tip-head">
+      <div class="tip-num n-amber">2</div>
+      <div class="tip-title">卡住了 / 输错了？按 Ctrl + C 一键中止</div>
+      <span class="tip-badge tb-救命">救命</span>
+      <i class="ti ti-chevron-down tip-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="tip-body">
+      <div class="tip-desc">终端里的"万能取消键"。不管是命令输错了、程序跑飞了、还是不知道发生了什么——按 <span class="kbd">Ctrl</span> + <span class="kbd">C</span> 就能强制停止当前操作，回到可以输入的状态。</div>
+      <div class="term">
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> npm install something<br>
+<span class="t-y">Installing...</span> <span class="t-gr">（已经跑了 5 分钟，好像卡住了）</span><br><br>
+<span class="t-r">^C</span> <span class="t-gr">← 按了 Ctrl+C，立刻终止</span><br>
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> <span class="cursor-b"></span> <span class="t-gr">← 回到正常状态，可以重新输入了</span>
+      </div>
+      <div class="warn-box wb-info"><i class="ti ti-info-circle" aria-hidden="true"></i> 记住：终端里 Ctrl+C 不是"复制"，是"中止"。复制的快捷键见第 6 条。</div>
+    </div>
+  </div>
+
+  <!-- 3: 上箭头 -->
+  <div class="tip-card open" onclick="toggle(this)">
+    <div class="tip-head">
+      <div class="tip-num n-blue">3</div>
+      <div class="tip-title">按 ↑ 上箭头可以翻出之前输过的命令</div>
+      <span class="tip-badge tb-实用">实用</span>
+      <i class="ti ti-chevron-down tip-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="tip-body">
+      <div class="tip-desc">不用每次都重新打一遍。按 <span class="kbd"><i class="ti ti-arrow-up" aria-hidden="true" style="font-size:12px"></i></span> 上箭头，终端会自动填入你上一条命令。连续按可以一直往前翻。找到想要的那条后直接按回车运行。</div>
+      <div class="term">
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> <span class="t-gr">← 按了 ↑</span><br>
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> claude "帮我重构 auth 模块" <span class="t-gr">← 自动填入了上次的命令</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4: Tab 自动补全 -->
+  <div class="tip-card open" onclick="toggle(this)">
+    <div class="tip-head">
+      <div class="tip-num n-teal">4</div>
+      <div class="tip-title">按 Tab 键可以自动补全文件名和命令</div>
+      <span class="tip-badge tb-实用">实用</span>
+      <i class="ti ti-chevron-down tip-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="tip-body">
+      <div class="tip-desc">输到一半按 <span class="kbd">Tab</span>，终端会自动帮你补全。输入 <code style="font-size:12px">cd Docu</code> 然后按 Tab，它自动变成 <code style="font-size:12px">cd Documents/</code>。省得你一个字一个字地打完整个文件名。</div>
+      <div class="term">
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> cd Docu<span class="t-y">[Tab]</span><br>
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> cd Documents/ <span class="t-gr">← 自动补全了！</span>
+      </div>
+      <div class="warn-box wb-info"><i class="ti ti-info-circle" aria-hidden="true"></i> 如果有多个匹配项，按两次 Tab 会列出所有选项让你选。</div>
+    </div>
+  </div>
+
+  <!-- 5: 大量文字滚动 -->
+  <div class="tip-card open" onclick="toggle(this)">
+    <div class="tip-head">
+      <div class="tip-num n-purple">5</div>
+      <div class="tip-title">屏幕疯狂滚动文字——不要慌，是正常的</div>
+      <span class="tip-badge tb-必知">必知</span>
+      <i class="ti ti-chevron-down tip-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="tip-body">
+      <div class="tip-desc">安装软件时经常会刷出几十上百行日志，看着很吓人。这是正常的——它在告诉你正在做什么。不用逐行看，等它停下来、光标重新出现就好了。如果停在某一行不动超过 5 分钟，那才可能是卡住了（用 Ctrl+C 中止）。</div>
+      <div class="term">
+<span class="t-y">Installing dependencies...</span><br>
+<span class="t-gr">added 127 packages in 4s</span><br>
+<span class="t-gr">added 89 packages in 2s</span><br>
+<span class="t-gr">added 203 packages in 6s</span><br>
+<span class="t-gr">... 几十行日志飞速滚过 ...</span><br>
+<span class="t-c">Done!</span> <span class="t-gr">← 看到 Done 或光标重新出现就是完成了</span><br>
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> <span class="cursor-b"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6: 复制粘贴 -->
+  <div class="tip-card open" onclick="toggle(this)">
+    <div class="tip-head">
+      <div class="tip-num n-coral">6</div>
+      <div class="tip-title">终端里怎么复制粘贴</div>
+      <span class="tip-badge tb-必知">必知</span>
+      <i class="ti ti-chevron-down tip-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="tip-body">
+      <div class="tip-desc">跟平时不太一样！因为 Ctrl+C 在终端里是"中止"，不是"复制"。</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0">
+        <div style="padding:10px;border-radius:var(--border-radius-md);background:var(--color-background-secondary)">
+          <div style="font-size:11px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px"><i class="ti ti-brand-apple" aria-hidden="true" style="font-size:13px;vertical-align:-1px;margin-right:3px"></i> Mac</div>
+          <div style="font-size:11px;color:var(--color-text-secondary);line-height:1.5">复制：<span class="kbd" style="font-size:10px">Cmd + C</span><br>粘贴：<span class="kbd" style="font-size:10px">Cmd + V</span><br>跟平时一样，不冲突</div>
+        </div>
+        <div style="padding:10px;border-radius:var(--border-radius-md);background:var(--color-background-secondary)">
+          <div style="font-size:11px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px"><i class="ti ti-brand-windows" aria-hidden="true" style="font-size:13px;vertical-align:-1px;margin-right:3px"></i> Windows</div>
+          <div style="font-size:11px;color:var(--color-text-secondary);line-height:1.5">复制：<span class="kbd" style="font-size:10px">Ctrl + Shift + C</span><br>粘贴：<span class="kbd" style="font-size:10px">Ctrl + Shift + V</span><br>多按一个 Shift！或者直接右键</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7: y/n 确认 -->
+  <div class="tip-card open" onclick="toggle(this)">
+    <div class="tip-head">
+      <div class="tip-num n-gray">7</div>
+      <div class="tip-title">看到 (y/n) 就是在问你"是否继续"</div>
+      <span class="tip-badge tb-必知">必知</span>
+      <i class="ti ti-chevron-down tip-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="tip-body">
+      <div class="tip-desc">y = yes（确认），n = no（取消）。输入一个字母然后按回车。大写的那个是默认选项——比如 <code style="font-size:12px">[Y/n]</code> 表示直接按回车等于选了 Yes。</div>
+      <div class="term">
+<span class="t-w">Do you want to continue? [Y/n]</span> <span class="t-g">y</span> <span class="t-gr">← 输入 y 回车，或者直接回车（Y 是默认）</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8: cd 进入目录 -->
+  <div class="tip-card open" onclick="toggle(this)">
+    <div class="tip-head">
+      <div class="tip-num n-pink">8</div>
+      <div class="tip-title">cd 就是"打开文件夹"的意思</div>
+      <span class="tip-badge tb-实用">实用</span>
+      <i class="ti ti-chevron-down tip-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="tip-body">
+      <div class="tip-desc">在图形界面里你双击文件夹打开它。终端里用 <code style="font-size:12px">cd 文件夹名</code> 做同样的事。<code style="font-size:12px">cd ..</code> 是返回上一层（相当于点"返回"按钮）。</div>
+      <div class="term">
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> cd Documents <span class="t-gr">← 进入 Documents 文件夹</span><br>
+<span class="t-g">you@mac</span> <span class="t-b">~/Documents</span> <span class="t-w">$</span> cd my-project <span class="t-gr">← 再进入 my-project</span><br>
+<span class="t-g">you@mac</span> <span class="t-b">~/Documents/my-project</span> <span class="t-w">$</span> cd .. <span class="t-gr">← 返回上一层</span><br>
+<span class="t-g">you@mac</span> <span class="t-b">~/Documents</span> <span class="t-w">$</span> <span class="cursor-b"></span>
+      </div>
+      <div class="warn-box wb-info"><i class="ti ti-info-circle" aria-hidden="true"></i><span> <code style="font-size:11px">ls</code>（Mac/Linux）或 <code style="font-size:11px">dir</code>（Windows）可以列出当前文件夹里有什么——相当于"看看这个文件夹里面的东西"。</span></div>
+    </div>
+  </div>
+
+  <!-- 9: sudo -->
+  <div class="tip-card open" onclick="toggle(this)">
+    <div class="tip-head">
+      <div class="tip-num n-green">9</div>
+      <div class="tip-title">看到 sudo 就是"用管理员权限运行"</div>
+      <span class="tip-badge tb-必知">必知</span>
+      <i class="ti ti-chevron-down tip-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="tip-body">
+      <div class="tip-desc">有些操作需要管理员权限（比如安装软件到系统目录），命令前面会加 <code style="font-size:12px">sudo</code>。运行后会要求输入你的电脑开机密码（输入过程看不到，参考第 1 条）。</div>
+      <div class="term">
+<span class="t-g">you@mac</span> <span class="t-b">~</span> <span class="t-w">$</span> sudo npm install -g claude<br>
+<span class="t-w">Password:</span> <span class="t-gr">← 输入你的电脑开机密码，看不见的</span>
+      </div>
+      <div class="warn-box wb-warn"><i class="ti ti-alert-triangle" aria-hidden="true"></i> 不要随意给不认识的命令加 sudo。有 sudo 的命令有权修改系统文件，用错了可能搞坏系统。只在官方教程明确要求时才用。</div>
+    </div>
+  </div>
+
+  <!-- 10: 退出 -->
+  <div class="tip-card open" onclick="toggle(this)">
+    <div class="tip-head">
+      <div class="tip-num n-red">10</div>
+      <div class="tip-title">怎么退出终端 / 退出某个程序</div>
+      <span class="tip-badge tb-救命">救命</span>
+      <i class="ti ti-chevron-down tip-chevron" aria-hidden="true"></i>
+    </div>
+    <div class="tip-body">
+      <div class="tip-desc">不同情况用不同方法。按优先级试：</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin:8px 0">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-primary)"><span class="kbd" style="font-size:10px">q</span><span style="color:var(--color-text-secondary)">很多查看类程序（如 less、man）按 q 退出</span></div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-primary)"><span class="kbd" style="font-size:10px">Ctrl + C</span><span style="color:var(--color-text-secondary)">中止正在运行的程序</span></div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-primary)"><span class="kbd" style="font-size:10px">Ctrl + D</span><span style="color:var(--color-text-secondary)">退出当前终端会话</span></div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-primary)"><span class="kbd" style="font-size:10px">exit</span><span style="color:var(--color-text-secondary)">输入 exit 回车，关闭终端</span></div>
+      </div>
+      <div class="warn-box wb-info"><i class="ti ti-info-circle" aria-hidden="true"></i> 如果以上都不管用，直接关掉终端窗口也行——不会爆炸的。</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggle(card){
+  card.classList.toggle('open');
+}
+</script>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

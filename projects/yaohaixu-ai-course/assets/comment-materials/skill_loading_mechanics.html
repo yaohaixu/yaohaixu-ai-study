@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent 如何加载技能 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <style>
+    :root { --bg:#fffdf8; --ink:#17343a; --muted:rgba(23,52,58,.68); --line:rgba(23,52,58,.14); --accent:#178f92; --soft:#f4fbfa; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:0; background:transparent; }
+    body { padding:18px; color:var(--ink); font-family:"Plus Jakarta Sans","Noto Sans SC",ui-sans-serif,system-ui,sans-serif; font-size:15px; line-height:1.72; }
+    .material-content { display:block; border:1px solid var(--line); border-radius:18px; padding:18px 18px 20px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    h2 { margin:0 0 12px; font-size:22px; line-height:1.25; letter-spacing:0; }
+    p { margin:10px 0 0; color:var(--muted); }
+    p.lead { color:var(--muted); }
+    strong { color:var(--ink); font-weight:750; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(23,52,58,.08); border-radius:6px; padding:1px 5px; }
+    .source-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:rgba(23,52,58,.48); }
+  </style>
+</head>
+<body>
+<main class="material-content">
+  <p class="eyebrow">yaohaixu.ai AI Agent 课程 · 补充材料</p>
+  <h2>Agent 如何加载技能</h2>
+  <p class="lead">四个关键认知点：</p>
+<p class="lead"><strong>装在哪</strong>：全局（~/.claude/skills/）对所有项目生效，项目级（.claude/skills/）只在当前项目生效。项目级覆盖全局。就像 CLAUDE.md 的层级一样——越具体的优先。</p>
+<p class="lead"><strong>在 context 里的位置</strong>：技能元数据在第三层（紧跟 CLAUDE.md 之后），始终在线。技能全文在&quot;动态层&quot;，只有被触发时才加载。这两层位置不同，成本也不同。</p>
+<p class="lead"><strong>渐进式加载是核心设计</strong>：100 个技能只加载 100 条&quot;封面&quot;（name + description），大约 3000 token。你说一句话触发了其中 1 个，才把那 1 个的全文（3000-5000 token）载入。其他 99 个纹丝不动。这就是为什么可以放心装很多技能而不担心 context 爆炸。</p>
+<p class="lead"><strong>description 是触发器</strong>：技能能不能被用上，全靠 description 里的关键词和 Agent 的语义匹配。如果 description 写得太笼统或者缺少用户常用的表述方式，技能就是&quot;装了但白装&quot;。把用户可能说的所有关键词（中文、英文、口语、斜杠命令）都写进 description，是最高杠杆的动作。</p>
+  <p class="source-note">从 agent-depth.html 主课件正文抽取生成，用于替代缺失的嵌入材料页面。</p>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

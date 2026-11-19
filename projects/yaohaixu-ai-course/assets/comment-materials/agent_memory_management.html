@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>如何实现跨会话的记忆 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <style>
+    :root { --bg:#fffdf8; --ink:#17343a; --muted:rgba(23,52,58,.68); --line:rgba(23,52,58,.14); --accent:#178f92; --soft:#f4fbfa; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:0; background:transparent; }
+    body { padding:18px; color:var(--ink); font-family:"Plus Jakarta Sans","Noto Sans SC",ui-sans-serif,system-ui,sans-serif; font-size:15px; line-height:1.72; }
+    .material-content { display:block; border:1px solid var(--line); border-radius:18px; padding:18px 18px 20px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    h2 { margin:0 0 12px; font-size:22px; line-height:1.25; letter-spacing:0; }
+    p { margin:10px 0 0; color:var(--muted); }
+    p.lead { color:var(--muted); }
+    strong { color:var(--ink); font-weight:750; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(23,52,58,.08); border-radius:6px; padding:1px 5px; }
+    .source-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:rgba(23,52,58,.48); }
+  </style>
+</head>
+<body>
+<main class="material-content">
+  <p class="eyebrow">yaohaixu.ai AI Agent 课程 · 补充材料</p>
+  <h2>如何实现跨会话的记忆</h2>
+  <p class="lead">五层记忆从短到长：<strong>会话记忆</strong>（关掉就没）→ <strong>文件记忆</strong>（永久但没上下文）→ <strong>框架记忆</strong>（跨会话但不完全可靠）→ <strong>手动记忆</strong>（你控制的 STATUS.md / DECISIONS.md，最可靠）→ <strong>自动沉淀</strong>（Hermes 独有，越用越聪明）。</p>
+<p class="lead">核心实践就三步：</p>
+<p class="lead"><strong>开始时读档</strong>：&quot;先读 STATUS.md 和最新的 handoff 文件再开始工作。&quot; 这一句话就能让新会话的 Agent 跟上次衔接起来。</p>
+<p class="lead"><strong>做决策时立刻记</strong>：讨论完一个重要决定后马上说&quot;把刚才的决策记到 DECISIONS.md&quot;。这是为了防止下次 Agent 又提出你否决过的方案——它不是故意的，是真的忘了。</p>
+<p class="lead"><strong>结束时存档</strong>：&quot;写一份交接摘要，更新 STATUS.md。&quot; 养成这个习惯后，Agent 的跨会话连贯性提升巨大。</p>
+<p class="lead"><strong>本质就是游戏存档/读档</strong>——会话结束时存档（STATUS.md），新会话开始时读档。框架自带的记忆系统是辅助（Claude 的 /memory 不能编辑，OpenClaw 容易断片，Hermes 最好但需要 2-4 周养成），手动维护的文件是底线——因为你控制内容、保证准确。</p>
+  <p class="source-note">从 agent-depth.html 主课件正文抽取生成，用于替代缺失的嵌入材料页面。</p>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

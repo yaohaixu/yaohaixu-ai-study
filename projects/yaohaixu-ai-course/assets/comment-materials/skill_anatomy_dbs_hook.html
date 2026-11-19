@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>一个复杂的技能长什么样 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <style>
+    :root { --bg:#fffdf8; --ink:#17343a; --muted:rgba(23,52,58,.68); --line:rgba(23,52,58,.14); --accent:#178f92; --soft:#f4fbfa; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:0; background:transparent; }
+    body { padding:18px; color:var(--ink); font-family:"Plus Jakarta Sans","Noto Sans SC",ui-sans-serif,system-ui,sans-serif; font-size:15px; line-height:1.72; }
+    .material-content { display:block; border:1px solid var(--line); border-radius:18px; padding:18px 18px 20px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    h2 { margin:0 0 12px; font-size:22px; line-height:1.25; letter-spacing:0; }
+    p { margin:10px 0 0; color:var(--muted); }
+    p.lead { color:var(--muted); }
+    strong { color:var(--ink); font-weight:750; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(23,52,58,.08); border-radius:6px; padding:1px 5px; }
+    .source-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:rgba(23,52,58,.48); }
+  </style>
+</head>
+<body>
+<main class="material-content">
+  <p class="eyebrow">yaohaixu.ai AI Agent 课程 · 补充材料</p>
+  <h2>一个复杂的技能长什么样</h2>
+  <p class="lead">三个设计决策：</p>
+<p class="lead"><strong>第一，敢拦截。</strong> 大部分人写 Skill 只写&quot;怎么做&quot;，这个 Skill 花了 15% 的篇幅写&quot;什么时候不做&quot;。Phase 2 的质量门禁是整个技能最聪明的部分——内容没价值就停手，素材不够就警告，不会对着垃圾硬挤方案。没有这道门禁，Agent 的默认行为是&quot;用户让我做什么我就做什么&quot;，哪怕做出来是废品。</p>
+<p class="lead"><strong>第二，正反例成对出现。</strong> 每条核心信念都配了&quot;❌ 错误做法&quot;和&quot;✅ 正确做法&quot;。Agent 从抽象规则里学到的远不如从具体对比里学到的。&quot;制造悬念不给答案&quot;这条规则，写一百个字不如&quot;李亚鹏&quot;那个正反例一组。</p>
+<p class="lead"><strong>第三，技能之间能串联。</strong> 底部的&quot;下一步建议&quot;不是独立的——它根据诊断结果条件触发，把用户引导到其他 Skill（/dbs-content 做整体诊断、建议重新评估选题等）。单个 Skill 解决单个问题，多个 Skill 串联起来覆盖完整工作流。</p>
+<p class="lead">如果要写自己的第一个 Skill，记住优先级：<strong>流程 &gt; 门禁 &gt; 案例 &gt; 元数据 &gt; 其余。</strong> 流程是骨架，门禁是判断力，案例是精度校准——这三样有了，就是一个 80 分的 Skill。</p>
+  <p class="source-note">从 agent-depth.html 主课件正文抽取生成，用于替代缺失的嵌入材料页面。</p>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

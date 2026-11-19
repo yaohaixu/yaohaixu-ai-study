@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">凸性：下行有限，上行无限</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：对比传统产品试错的少量重下注与 AI 时代的大量轻下注，说明 AI 不提高单次成功概率，而是把失败成本降到接近零，让样本量从 3 扩展到 100，并形成下行有限、上行无限的凸性 payoff。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 30px; font-weight: 760; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 21px; font-weight: 760; }
+      .section-title { font-size: 17px; font-weight: 760; }
+      .node-title { font-size: 15px; font-weight: 760; }
+      .body { font-size: 13px; fill: #3f4e4c; }
+      .small { font-size: 12px; fill: #596362; }
+      .tiny { font-size: 11px; fill: #596362; }
+      .formula { font-size: 21px; font-weight: 760; fill: #18343a; }
+      .footer { font-size: 17px; font-weight: 760; fill: #006b61; }
+      .panel { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .yellow-soft { fill: #fffaf0; stroke: #f1a23a; stroke-width: 1.1; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .green-soft { fill: #f3fffb; stroke: #10a98c; stroke-width: 1.1; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .blue-soft { fill: #f4f9ff; stroke: #4f8fd6; stroke-width: 1.1; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .yellow-text { fill: #7a3f00; }
+      .green-text { fill: #006b61; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+      .muted-text { fill: #7d7b72; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.72; }
+      .dash { stroke-dasharray: 6 7; }
+      .axis { stroke: #74736c; stroke-width: 1.6; fill: none; stroke-linecap: round; }
+      .curve { stroke: #10a98c; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .loss { stroke: #f1a23a; stroke-width: 3; fill: none; stroke-linecap: round; }
+      .dot { fill: #ffffff; stroke: #10a98c; stroke-width: 1.05; }
+    </style>
+
+    <g id="trial-row">
+      <circle cx="0" cy="0" r="5.6" class="dot"/>
+      <circle cx="18" cy="0" r="5.6" class="dot"/>
+      <circle cx="36" cy="0" r="5.6" class="dot"/>
+      <circle cx="54" cy="0" r="5.6" class="dot"/>
+      <circle cx="72" cy="0" r="5.6" class="dot"/>
+      <circle cx="90" cy="0" r="5.6" class="dot"/>
+      <circle cx="108" cy="0" r="5.6" class="dot"/>
+      <circle cx="126" cy="0" r="5.6" class="dot"/>
+      <circle cx="144" cy="0" r="5.6" class="dot"/>
+      <circle cx="162" cy="0" r="5.6" class="dot"/>
+    </g>
+  </defs>
+
+  <text x="512" y="40" text-anchor="middle" class="title">凸性：下行有限，上行无限</text>
+  <text x="512" y="69" text-anchor="middle" class="claim">AI 没有提高单次成功概率，而是把失败成本砍到接近零；</text>
+  <text x="512" y="91" text-anchor="middle" class="claim">可承受样本量从 3 变成 100，总到达概率被推高一个数量级。</text>
+
+  <line x1="512" y1="116" x2="512" y2="486" class="soft-line dash"/>
+
+  <rect x="42" y="118" width="440" height="370" rx="8" class="yellow-soft"/>
+  <text x="68" y="151" class="panel-title yellow-text">传统：少量重下注</text>
+  <text x="68" y="174" class="small yellow-text">失败一次：几十万 + 半年；普通人只能承受 2-3 次。</text>
+
+  <rect x="344" y="137" width="92" height="32" rx="8" class="yellow"/>
+  <text x="390" y="158" text-anchor="middle" class="node-title yellow-text">n ≈ 3</text>
+
+  <rect x="79" y="214" width="96" height="104" rx="8" class="yellow"/>
+  <text x="127" y="244" text-anchor="middle" class="section-title yellow-text">押注 1</text>
+  <text x="127" y="270" text-anchor="middle" class="body yellow-text">几十万</text>
+  <text x="127" y="292" text-anchor="middle" class="body yellow-text">半年</text>
+
+  <rect x="214" y="214" width="96" height="104" rx="8" class="yellow"/>
+  <text x="262" y="244" text-anchor="middle" class="section-title yellow-text">押注 2</text>
+  <text x="262" y="270" text-anchor="middle" class="body yellow-text">再亏一次</text>
+  <text x="262" y="292" text-anchor="middle" class="body yellow-text">现金吃紧</text>
+
+  <rect x="349" y="214" width="96" height="104" rx="8" class="yellow"/>
+  <text x="397" y="244" text-anchor="middle" class="section-title yellow-text">押注 3</text>
+  <text x="397" y="270" text-anchor="middle" class="body yellow-text">心力耗尽</text>
+  <text x="397" y="292" text-anchor="middle" class="body yellow-text">停止探索</text>
+
+  <line x1="181" y1="266" x2="205" y2="266" class="line"/>
+  <polygon points="213,266 203,260 203,272" fill="#74736c"/>
+  <line x1="316" y1="266" x2="340" y2="266" class="line"/>
+  <polygon points="348,266 338,260 338,272" fill="#74736c"/>
+
+  <rect x="78" y="352" width="368" height="86" rx="8" class="white"/>
+  <text x="262" y="381" text-anchor="middle" class="section-title yellow-text">失败成本决定样本量</text>
+  <text x="262" y="407" text-anchor="middle" class="body">单次概率 p 没变，但 n 太小；</text>
+  <text x="262" y="429" text-anchor="middle" class="body">还没等到长尾，资源先被耗尽。</text>
+
+  <rect x="542" y="118" width="440" height="370" rx="8" class="green-soft"/>
+  <text x="568" y="151" class="panel-title green-text">AI：大量轻下注</text>
+  <text x="568" y="174" class="small green-text">开发、原型、分发和复盘变便宜，失败不伤筋动骨。</text>
+
+  <rect x="844" y="137" width="94" height="32" rx="8" class="green"/>
+  <text x="891" y="158" text-anchor="middle" class="node-title green-text">n ≈ 100</text>
+
+  <rect x="590" y="202" width="220" height="220" rx="8" class="white"/>
+  <text x="700" y="230" text-anchor="middle" class="section-title green-text">100 个轻样本</text>
+  <g transform="translate(619 256)">
+    <use href="#trial-row" x="0" y="0"/>
+    <use href="#trial-row" x="0" y="18"/>
+    <use href="#trial-row" x="0" y="36"/>
+    <use href="#trial-row" x="0" y="54"/>
+    <use href="#trial-row" x="0" y="72"/>
+    <use href="#trial-row" x="0" y="90"/>
+    <use href="#trial-row" x="0" y="108"/>
+    <use href="#trial-row" x="0" y="126"/>
+    <use href="#trial-row" x="0" y="144"/>
+    <use href="#trial-row" x="0" y="162"/>
+    <circle cx="36" cy="36" r="6.8" fill="#ddf7ef" stroke="#10a98c" stroke-width="1.6"/>
+    <circle cx="126" cy="90" r="6.8" fill="#ddf7ef" stroke="#10a98c" stroke-width="1.6"/>
+    <circle cx="72" cy="144" r="6.8" fill="#ddf7ef" stroke="#10a98c" stroke-width="1.6"/>
+  </g>
+
+  <rect x="836" y="212" width="108" height="58" rx="8" class="blue"/>
+  <text x="890" y="236" text-anchor="middle" class="node-title blue-text">单次 p</text>
+  <text x="890" y="256" text-anchor="middle" class="tiny blue-text">没有神奇提高</text>
+
+  <line x1="812" y1="250" x2="828" y2="250" class="line"/>
+  <polygon points="836,250 826,244 826,256" fill="#74736c"/>
+
+  <rect x="836" y="298" width="108" height="58" rx="8" class="green"/>
+  <text x="890" y="322" text-anchor="middle" class="node-title green-text">失败成本</text>
+  <text x="890" y="342" text-anchor="middle" class="tiny green-text">接近零</text>
+
+  <line x1="812" y1="327" x2="828" y2="327" class="line"/>
+  <polygon points="836,327 826,321 826,333" fill="#74736c"/>
+
+  <rect x="570" y="448" width="386" height="28" rx="8" class="green"/>
+  <text x="763" y="467" text-anchor="middle" class="tiny green-text">关键变化：不是更会命中，而是更能承受大量未命中。</text>
+
+  <rect x="42" y="514" width="440" height="196" rx="8" class="panel"/>
+  <text x="68" y="547" class="section-title">概率直觉</text>
+
+  <rect x="70" y="568" width="120" height="36" rx="8" class="blue"/>
+  <text x="130" y="592" text-anchor="middle" class="node-title blue-text">单次 p 不变</text>
+  <line x1="199" y1="586" x2="235" y2="586" class="line"/>
+  <polygon points="243,586 233,580 233,592" fill="#74736c"/>
+  <rect x="254" y="568" width="184" height="36" rx="8" class="green"/>
+  <text x="346" y="592" text-anchor="middle" class="node-title green-text">n 从 3 到 100</text>
+
+  <text x="262" y="640" text-anchor="middle" class="formula">总到达概率 = 1 - (1 - p)^n</text>
+  <text x="262" y="671" text-anchor="middle" class="body">独立样本越多，至少一次到达的机会越高；</text>
+  <text x="262" y="694" text-anchor="middle" class="body">AI 主要是在扩大可承受样本量。</text>
+
+  <rect x="522" y="514" width="460" height="196" rx="8" class="panel"/>
+  <text x="760" y="547" text-anchor="middle" class="section-title">塔勒布式凸性 payoff</text>
+
+  <line x1="596" y1="672" x2="928" y2="672" class="axis"/>
+  <polygon points="936,672 926,666 926,678" fill="#74736c"/>
+  <line x1="626" y1="686" x2="626" y2="552" class="axis"/>
+  <polygon points="626,544 620,554 632,554" fill="#74736c"/>
+  <text x="944" y="676" class="tiny muted-text">结果</text>
+  <text x="616" y="540" text-anchor="end" class="tiny muted-text">收益</text>
+
+  <path d="M548 681 C570 681, 594 680, 626 672" class="loss"/>
+  <path d="M626 672 C690 666, 748 640, 800 598 C848 558, 892 530, 934 520" class="curve"/>
+
+  <rect x="548" y="606" width="124" height="44" rx="8" class="yellow"/>
+  <text x="610" y="625" text-anchor="middle" class="tiny yellow-text">下行有限</text>
+  <text x="610" y="643" text-anchor="middle" class="tiny yellow-text">每次只是小损失</text>
+
+  <rect x="796" y="554" width="138" height="44" rx="8" class="green"/>
+  <text x="865" y="573" text-anchor="middle" class="tiny green-text">上行不封顶</text>
+  <text x="865" y="591" text-anchor="middle" class="tiny green-text">一次命中覆盖失败</text>
+
+  <line x1="626" y1="672" x2="626" y2="693" class="soft-line"/>
+  <text x="626" y="705" text-anchor="middle" class="tiny muted-text">失败成本地板</text>
+
+  <text x="512" y="744" text-anchor="middle" class="footer">Fail fast 的本质：用廉价失败购买更多独立样本，把有限下行换成无限上行暴露。</text>
+</svg>

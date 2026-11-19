@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">跨山头：敢下山，才可能找到更高峰</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：用适应峰地形说明 fail fast 的真正含义不是在同一座山上跑得更快，而是 AI 降低下山成本后，敢换方向，去更多山头试错。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 29px; font-weight: 780; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 21px; font-weight: 780; }
+      .section-title { font-size: 18px; font-weight: 780; }
+      .node-title { font-size: 16px; font-weight: 760; }
+      .body { font-size: 13px; fill: #3f4e4c; }
+      .small { font-size: 12px; fill: #596362; }
+      .footer { font-size: 19px; font-weight: 800; fill: #006b61; }
+      .panel { fill: #f8f7f2; stroke: #d5d1c7; stroke-width: 1.4; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .yellow-soft { fill: #fffaf0; stroke: #f1a23a; stroke-width: 1.1; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .blue-soft { fill: #f4f9ff; stroke: #4f8fd6; stroke-width: 1.1; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .purple-soft { fill: #faf7ff; stroke: #8b6fd6; stroke-width: 1.1; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .green-soft { fill: #f3fffb; stroke: #10a98c; stroke-width: 1.1; }
+      .yellow-text { fill: #7a3f00; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+      .green-text { fill: #006b61; }
+      .muted-text { fill: #596362; }
+      .axis { stroke: #74736c; stroke-width: 1.8; fill: none; stroke-linecap: round; }
+      .grid { stroke: #d5d1c7; stroke-width: 1; fill: none; stroke-dasharray: 4 7; }
+      .path-old { stroke: #f1a23a; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .path-ai { stroke: #10a98c; stroke-width: 3.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .path-soft { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-dasharray: 5 7; stroke-linecap: round; }
+      .mountain-neutral { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.5; }
+      .mountain-blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.5; }
+    </style>
+    <marker id="arrowOld" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#f1a23a"/>
+    </marker>
+    <marker id="arrowAi" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#10a98c"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#74736c"/>
+    </marker>
+  </defs>
+
+  <text x="512" y="42" text-anchor="middle" class="title">跨山头：敢下山，才可能找到更高峰</text>
+  <text x="512" y="72" text-anchor="middle" class="claim">fail fast 的真正含义不是在同一座山上跑得更快，</text>
+  <text x="512" y="96" text-anchor="middle" class="claim">而是下山成本变低后，敢换方向，去 100 座山头各试一次。</text>
+
+  <rect x="44" y="118" width="936" height="462" rx="10" class="panel"/>
+  <text x="74" y="154" class="panel-title">适应峰：熟练不等于找到最高峰</text>
+  <text x="74" y="179" class="body">在一座山上越爬越熟练，但更大的机会可能在远处；跨过去必须先下山，短期看像退步。</text>
+
+  <line x1="100" y1="520" x2="940" y2="520" class="axis"/>
+  <line x1="100" y1="520" x2="100" y2="198" class="axis"/>
+  <polygon points="948,520 938,514 938,526" fill="#74736c"/>
+  <polygon points="100,190 94,200 106,200" fill="#74736c"/>
+  <text x="108" y="214" class="small muted-text">机会高度</text>
+  <text x="812" y="548" class="small muted-text">方向 / 项目空间</text>
+
+  <line x1="100" y1="450" x2="940" y2="450" class="grid"/>
+  <line x1="100" y1="380" x2="940" y2="380" class="grid"/>
+  <line x1="100" y1="310" x2="940" y2="310" class="grid"/>
+  <line x1="100" y1="240" x2="940" y2="240" class="grid"/>
+
+  <path d="M 124 520 C 168 500, 192 413, 226 352 C 253 305, 269 260, 292 252 C 326 240, 361 350, 414 520 Z" class="mountain-neutral"/>
+  <path d="M 360 520 C 400 505, 423 437, 468 400 C 508 365, 532 342, 564 354 C 604 370, 624 440, 652 520 Z" class="mountain-neutral"/>
+  <path d="M 542 520 C 600 498, 622 420, 670 336 C 718 252, 772 178, 830 164 C 878 154, 910 330, 944 520 Z" class="mountain-blue"/>
+
+  <text x="292" y="302" text-anchor="middle" class="node-title">局部峰</text>
+  <text x="292" y="324" text-anchor="middle" class="small">越优化越熟</text>
+  <text x="548" y="396" text-anchor="middle" class="node-title">另一个山头</text>
+  <text x="548" y="418" text-anchor="middle" class="small">也值得试</text>
+  <text x="824" y="210" text-anchor="middle" class="node-title blue-text">更高峰</text>
+  <text x="824" y="232" text-anchor="middle" class="small blue-text">更大机会</text>
+
+  <path d="M 142 504 C 180 470, 210 372, 244 330 C 264 292, 276 268, 292 252" class="path-old" marker-end="url(#arrowOld)"/>
+  <circle cx="292" cy="252" r="7" fill="#fff1d9" stroke="#f1a23a" stroke-width="2"/>
+  <rect x="148" y="206" width="212" height="58" rx="8" class="yellow"/>
+  <text x="254" y="231" text-anchor="middle" class="node-title yellow-text">传统路径</text>
+  <text x="254" y="253" text-anchor="middle" class="body yellow-text">继续在熟悉方向加速</text>
+
+  <path d="M 292 252 C 336 308, 372 430, 446 488 C 508 536, 585 500, 652 410 C 720 316, 772 190, 830 164" class="path-ai" marker-end="url(#arrowAi)"/>
+  <circle cx="446" cy="488" r="6" fill="#faf7ff" stroke="#8b6fd6" stroke-width="2"/>
+  <rect x="412" y="434" width="202" height="66" rx="8" class="purple"/>
+  <text x="513" y="460" text-anchor="middle" class="node-title purple-text">先下山</text>
+  <text x="513" y="482" text-anchor="middle" class="body purple-text">短期退步，换方向</text>
+
+  <rect x="690" y="252" width="230" height="66" rx="8" class="green"/>
+  <text x="805" y="278" text-anchor="middle" class="node-title green-text">AI 路径</text>
+  <text x="805" y="300" text-anchor="middle" class="body green-text">下山成本低，敢跨过去</text>
+
+  <path d="M 362 238 C 425 206, 574 202, 674 268" class="path-soft" marker-end="url(#arrowGray)"/>
+  <text x="514" y="222" text-anchor="middle" class="small muted-text">如果成本太高，就很难离开当前峰</text>
+
+  <rect x="74" y="532" width="410" height="34" rx="8" class="yellow-soft"/>
+  <text x="279" y="554" text-anchor="middle" class="body yellow-text">过去：下山成本太高，宁愿留在局部最优</text>
+  <rect x="500" y="532" width="424" height="34" rx="8" class="green-soft"/>
+  <text x="712" y="554" text-anchor="middle" class="body green-text">AI：下山成本接近零，换方向变成可承受</text>
+
+  <rect x="44" y="604" width="936" height="124" rx="10" class="panel"/>
+  <text x="74" y="638" class="section-title">100 次失败，关键看分布在哪里</text>
+
+  <rect x="82" y="656" width="360" height="52" rx="8" class="yellow"/>
+  <text x="262" y="678" text-anchor="middle" class="node-title yellow-text">100 次都在同一座山</text>
+  <text x="262" y="700" text-anchor="middle" class="body yellow-text">只是把同一个方向越磨越细</text>
+
+  <line x1="462" y1="682" x2="520" y2="682" class="axis" marker-end="url(#arrowGray)"/>
+
+  <rect x="540" y="656" width="398" height="52" rx="8" class="green"/>
+  <text x="739" y="678" text-anchor="middle" class="node-title green-text">100 座山头各试一次</text>
+  <text x="739" y="700" text-anchor="middle" class="body green-text">把廉价失败买成更大的搜索范围</text>
+
+  <text x="512" y="748" text-anchor="middle" class="footer">fail fast 的重点是敢换方向，不是原地加速。</text>
+</svg>

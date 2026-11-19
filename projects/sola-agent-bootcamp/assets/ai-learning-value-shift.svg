@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">AI 时代学习价值的消长</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：展示 AI 让读完、记住、总结、找答案等信息处理型优势贬值，同时让品味、提问能力、身体化经验、信任协作和容忍模糊更珍贵。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 30px; font-weight: 760; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 20px; font-weight: 760; }
+      .badge { font-size: 12px; font-weight: 760; }
+      .node-title { font-size: 18px; font-weight: 760; }
+      .caption { font-size: 13.5px; fill: #3f4e4c; }
+      .tiny { font-size: 11.5px; fill: #596362; }
+      .footer { font-size: 17px; font-weight: 760; fill: #364642; }
+      .panel { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke-width: 1.1; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; }
+      .dash { stroke-dasharray: 6 7; }
+      .left-text { fill: #7a3f00; }
+      .green-text { fill: #006b61; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+    </style>
+  </defs>
+
+  <!-- Header -->
+  <text x="512" y="47" text-anchor="middle" class="title">AI 时代学习价值的消长</text>
+  <text x="512" y="76" text-anchor="middle" class="claim">AI 让“信息处理型优势”贬值，让“判断与实践型能力”更珍贵。</text>
+
+  <!-- Left lane: devalued information advantages -->
+  <rect x="52" y="114" width="344" height="500" rx="8" class="panel"/>
+  <text x="86" y="151" class="panel-title left-text">被归零 / 贬值</text>
+  <rect x="262" y="129" width="98" height="28" rx="14" class="yellow"/>
+  <text x="311" y="147" text-anchor="middle" class="badge left-text">信息处理</text>
+  <text x="86" y="176" class="tiny">当接触、记忆、压缩、检索都变便宜，优势不再稀缺。</text>
+
+  <rect x="82" y="205" width="284" height="70" rx="8" class="yellow"/>
+  <text x="106" y="235" class="node-title left-text">读完了</text>
+  <text x="106" y="258" class="caption">接触过信息不再是壁垒</text>
+  <circle cx="335" cy="240" r="15" fill="#fffaf0" stroke="#f1a23a" stroke-width="1.2"/>
+  <line x1="328" y1="240" x2="342" y2="240" stroke="#f1a23a" stroke-width="1.8"/>
+
+  <rect x="82" y="290" width="284" height="70" rx="8" class="yellow"/>
+  <text x="106" y="320" class="node-title left-text">记住了</text>
+  <text x="106" y="343" class="caption">记忆不再是稀缺资源</text>
+  <circle cx="335" cy="325" r="15" fill="#fffaf0" stroke="#f1a23a" stroke-width="1.2"/>
+  <path d="M 329 326 C 329 318, 342 318, 342 326 C 342 335, 329 335, 329 326" fill="none" stroke="#f1a23a" stroke-width="1.6"/>
+
+  <rect x="82" y="375" width="284" height="70" rx="8" class="yellow"/>
+  <text x="106" y="405" class="node-title left-text">能总结</text>
+  <text x="106" y="428" class="caption">信息压缩被 AI 自动化</text>
+  <circle cx="335" cy="410" r="15" fill="#fffaf0" stroke="#f1a23a" stroke-width="1.2"/>
+  <line x1="327" y1="405" x2="343" y2="405" stroke="#f1a23a" stroke-width="1.5"/>
+  <line x1="327" y1="411" x2="343" y2="411" stroke="#f1a23a" stroke-width="1.5"/>
+  <line x1="327" y1="417" x2="339" y2="417" stroke="#f1a23a" stroke-width="1.5"/>
+
+  <rect x="82" y="460" width="284" height="70" rx="8" class="yellow"/>
+  <text x="106" y="490" class="node-title left-text">找答案</text>
+  <text x="106" y="513" class="caption">检索摩擦急剧下降</text>
+  <circle cx="335" cy="495" r="15" fill="#fffaf0" stroke="#f1a23a" stroke-width="1.2"/>
+  <circle cx="332" cy="492" r="6" fill="none" stroke="#f1a23a" stroke-width="1.7"/>
+  <line x1="337" y1="497" x2="344" y2="504" stroke="#f1a23a" stroke-width="1.7" stroke-linecap="round"/>
+
+  <rect x="91" y="556" width="266" height="34" rx="8" fill="#ffffff" stroke="#d5d1c7" stroke-width="1.1"/>
+  <text x="224" y="578" text-anchor="middle" class="tiny">这些能力仍有用，但不再构成壁垒</text>
+
+  <!-- Bridge -->
+  <line x1="396" y1="360" x2="440" y2="360" class="line"/>
+  <polygon points="440,360 430,354 430,366" fill="#74736c"/>
+
+  <rect x="434" y="247" width="156" height="226" rx="8" class="blue"/>
+  <text x="512" y="282" text-anchor="middle" class="node-title blue-text">AI 降低成本</text>
+  <text x="512" y="308" text-anchor="middle" class="caption">接触 / 记忆</text>
+  <text x="512" y="330" text-anchor="middle" class="caption">总结 / 检索</text>
+  <line x1="474" y1="358" x2="550" y2="358" class="soft-line dash"/>
+  <text x="512" y="390" text-anchor="middle" class="node-title blue-text">稀缺资源迁移</text>
+  <text x="512" y="418" text-anchor="middle" class="caption">从信息处理</text>
+  <text x="512" y="440" text-anchor="middle" class="caption">转向判断实践</text>
+
+  <line x1="590" y1="360" x2="628" y2="360" class="line"/>
+  <polygon points="628,360 618,354 618,366" fill="#74736c"/>
+
+  <!-- Right lane: more valuable capabilities -->
+  <rect x="628" y="114" width="344" height="500" rx="8" class="panel"/>
+  <text x="660" y="151" class="panel-title green-text">更珍贵</text>
+  <rect x="824" y="129" width="110" height="28" rx="14" class="green"/>
+  <text x="879" y="147" text-anchor="middle" class="badge green-text">判断与实践</text>
+  <text x="660" y="176" class="tiny">当答案更容易得到，真正稀缺的是能把答案放进现实的人。</text>
+
+  <rect x="658" y="194" width="284" height="63" rx="8" class="green"/>
+  <text x="682" y="221" class="node-title green-text">品味</text>
+  <text x="682" y="242" class="caption">判断哪个方案会在现实中崩掉</text>
+  <circle cx="912" cy="226" r="13" fill="#ffffff" stroke="#10a98c" stroke-width="1.2"/>
+  <path d="M 905 226 L 911 232 L 921 219" fill="none" stroke="#10a98c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="658" y="271" width="284" height="63" rx="8" class="blue"/>
+  <text x="682" y="298" class="node-title blue-text">提问能力</text>
+  <text x="682" y="319" class="caption">问题质量决定 AI 产出上限</text>
+  <circle cx="912" cy="303" r="13" fill="#ffffff" stroke="#4f8fd6" stroke-width="1.2"/>
+  <text x="912" y="308" text-anchor="middle" font-size="16" font-weight="760" fill="#1b4d7a">?</text>
+
+  <rect x="658" y="348" width="284" height="63" rx="8" class="green"/>
+  <text x="682" y="375" class="node-title green-text">身体里知道</text>
+  <text x="682" y="396" class="caption">地图不等于地形，做过才有体感</text>
+  <circle cx="912" cy="380" r="13" fill="#ffffff" stroke="#10a98c" stroke-width="1.2"/>
+  <path d="M 905 384 C 908 372, 916 372, 920 384" fill="none" stroke="#10a98c" stroke-width="1.7" stroke-linecap="round"/>
+  <circle cx="912" cy="378" r="3" fill="#10a98c"/>
+
+  <rect x="658" y="425" width="284" height="63" rx="8" class="purple"/>
+  <text x="682" y="452" class="node-title purple-text">信任协作</text>
+  <text x="682" y="473" class="caption">知识易得，和谁一起思考更重要</text>
+  <circle cx="912" cy="457" r="13" fill="#ffffff" stroke="#8b6fd6" stroke-width="1.2"/>
+  <circle cx="907" cy="456" r="4" fill="#8b6fd6"/>
+  <circle cx="917" cy="456" r="4" fill="#8b6fd6"/>
+  <path d="M 904 466 C 908 462, 916 462, 920 466" fill="none" stroke="#8b6fd6" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect x="658" y="502" width="284" height="63" rx="8" class="purple"/>
+  <text x="682" y="529" class="node-title purple-text">容忍模糊</text>
+  <text x="682" y="550" class="caption">能在无清晰答案处持续思考</text>
+  <circle cx="912" cy="534" r="13" fill="#ffffff" stroke="#8b6fd6" stroke-width="1.2"/>
+  <path d="M 904 534 C 908 526, 916 542, 920 534" fill="none" stroke="#8b6fd6" stroke-width="1.7" stroke-linecap="round"/>
+
+  <rect x="686" y="579" width="228" height="24" rx="8" fill="#ffffff" stroke="#d5d1c7" stroke-width="1.1"/>
+  <text x="800" y="596" text-anchor="middle" class="tiny">不可复制的现实判断，成为学习护城河</text>
+
+  <!-- Bottom conclusion -->
+  <rect x="72" y="648" width="880" height="76" rx="8" fill="#f1efe7" stroke="#d5d1c7" stroke-width="1.4"/>
+  <text x="512" y="681" text-anchor="middle" class="footer">过去稀缺的是信息和处理信息的时间；</text>
+  <text x="512" y="707" text-anchor="middle" class="footer">现在稀缺的是判断力、体感和耐心。</text>
+</svg>

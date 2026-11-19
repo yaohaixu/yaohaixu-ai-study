@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">红皇后效应：快不再稀缺，方向才稀缺</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：左侧展示 AI 让所有人都能快速迭代，速度同质化后快的相对优势消失；右侧展示少量有方向的试验通过反馈和结构性认知升级向上偏转。底部结论是快速迭代只是门票，方向感才是优势。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 29px; font-weight: 780; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 21px; font-weight: 780; }
+      .section-title { font-size: 17px; font-weight: 760; }
+      .node-title { font-size: 16px; font-weight: 760; }
+      .body { font-size: 13px; fill: #3f4e4c; }
+      .small { font-size: 12px; fill: #596362; }
+      .tiny { font-size: 11px; fill: #596362; }
+      .footer { font-size: 21px; font-weight: 800; fill: #006b61; }
+      .footer-small { font-size: 14px; fill: #3f4e4c; }
+      .panel { fill: #f8f7f2; stroke: #d5d1c7; stroke-width: 1.4; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .yellow-soft { fill: #fffaf0; stroke: #f1a23a; stroke-width: 1.1; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .blue-soft { fill: #f4f9ff; stroke: #4f8fd6; stroke-width: 1.1; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .green-soft { fill: #f3fffb; stroke: #10a98c; stroke-width: 1.1; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .purple-soft { fill: #faf7ff; stroke: #8b6fd6; stroke-width: 1.1; }
+      .yellow-text { fill: #7a3f00; }
+      .blue-text { fill: #1b4d7a; }
+      .green-text { fill: #006b61; }
+      .purple-text { fill: #4b2e83; }
+      .muted { fill: #596362; }
+      .soft-line { stroke: #74736c; stroke-width: 1.35; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.58; }
+      .dash-line { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 5 7; opacity: 0.58; }
+      .arrow-line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .green-path { stroke: #10a98c; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .blue-path { stroke: #4f8fd6; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .grid { stroke: #d5d1c7; stroke-width: 1; stroke-dasharray: 4 8; fill: none; opacity: 0.75; }
+      .track-line { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-linecap: round; opacity: 0.62; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#74736c"/>
+    </marker>
+    <marker id="greenArrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#10a98c"/>
+    </marker>
+    <marker id="blueArrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#4f8fd6"/>
+    </marker>
+  </defs>
+
+  <text x="512" y="42" text-anchor="middle" class="title">红皇后效应：快不再稀缺，方向才稀缺</text>
+  <text x="512" y="72" text-anchor="middle" class="claim">AI 让所有人都能快速迭代，所以“快”的相对优势消失。</text>
+  <text x="512" y="94" text-anchor="middle" class="claim">真正稀缺的是方向感，以及每次失败带来的结构性认知升级。</text>
+
+  <line x1="512" y1="122" x2="512" y2="604" class="dash-line"/>
+
+  <rect x="44" y="122" width="428" height="482" rx="10" class="yellow-soft"/>
+  <text x="74" y="157" class="panel-title yellow-text">所有人都快</text>
+  <text x="74" y="181" class="body yellow-text">变异不再稀缺，速度被 AI 工具同质化。</text>
+  <rect x="320" y="140" width="112" height="30" rx="15" class="yellow"/>
+  <text x="376" y="160" text-anchor="middle" class="small yellow-text">速度同质化</text>
+
+  <g aria-label="同速迭代轨道">
+    <text x="82" y="235" text-anchor="middle" class="node-title yellow-text">团队 A</text>
+    <rect x="120" y="204" width="306" height="58" rx="8" class="white"/>
+    <path d="M 150 233 L 392 233" class="arrow-line" marker-end="url(#arrow)"/>
+    <line x1="148" y1="248" x2="392" y2="248" class="track-line" stroke-dasharray="9 10"/>
+    <circle cx="180" cy="233" r="12" class="yellow"/>
+    <text x="180" y="237" text-anchor="middle" class="tiny yellow-text">想法</text>
+    <circle cx="264" cy="233" r="12" class="blue"/>
+    <text x="264" y="237" text-anchor="middle" class="tiny blue-text">原型</text>
+    <circle cx="348" cy="233" r="12" class="green"/>
+    <text x="348" y="237" text-anchor="middle" class="tiny green-text">发布</text>
+    <text x="273" y="286" text-anchor="middle" class="small muted">同样的 Agent，同样的节奏</text>
+
+    <text x="82" y="335" text-anchor="middle" class="node-title yellow-text">团队 B</text>
+    <rect x="120" y="304" width="306" height="58" rx="8" class="white"/>
+    <path d="M 150 333 L 392 333" class="arrow-line" marker-end="url(#arrow)"/>
+    <line x1="148" y1="348" x2="392" y2="348" class="track-line" stroke-dasharray="9 10"/>
+    <circle cx="180" cy="333" r="12" class="yellow"/>
+    <text x="180" y="337" text-anchor="middle" class="tiny yellow-text">想法</text>
+    <circle cx="264" cy="333" r="12" class="blue"/>
+    <text x="264" y="337" text-anchor="middle" class="tiny blue-text">原型</text>
+    <circle cx="348" cy="333" r="12" class="green"/>
+    <text x="348" y="337" text-anchor="middle" class="tiny green-text">发布</text>
+    <text x="273" y="386" text-anchor="middle" class="small muted">同样的提示词，同样的产能</text>
+
+    <text x="82" y="435" text-anchor="middle" class="node-title yellow-text">团队 C</text>
+    <rect x="120" y="404" width="306" height="58" rx="8" class="white"/>
+    <path d="M 150 433 L 392 433" class="arrow-line" marker-end="url(#arrow)"/>
+    <line x1="148" y1="448" x2="392" y2="448" class="track-line" stroke-dasharray="9 10"/>
+    <circle cx="180" cy="433" r="12" class="yellow"/>
+    <text x="180" y="437" text-anchor="middle" class="tiny yellow-text">想法</text>
+    <circle cx="264" cy="433" r="12" class="blue"/>
+    <text x="264" y="437" text-anchor="middle" class="tiny blue-text">原型</text>
+    <circle cx="348" cy="433" r="12" class="green"/>
+    <text x="348" y="437" text-anchor="middle" class="tiny green-text">发布</text>
+  </g>
+
+  <rect x="86" y="506" width="344" height="68" rx="8" class="yellow"/>
+  <text x="258" y="532" text-anchor="middle" class="section-title yellow-text">快变成门槛，不再是护城河</text>
+  <text x="258" y="555" text-anchor="middle" class="body yellow-text">大家都在跑步机上加速，差距被抹平。</text>
+
+  <rect x="552" y="122" width="428" height="482" rx="10" class="green-soft"/>
+  <text x="582" y="157" class="panel-title green-text">方向感才稀缺</text>
+  <text x="582" y="181" class="body green-text">少量试验也能通过反馈，持续向更高认知偏转。</text>
+  <rect x="824" y="140" width="112" height="30" rx="15" class="green"/>
+  <text x="880" y="160" text-anchor="middle" class="small green-text">认知升级</text>
+
+  <g aria-label="方向感路径">
+    <line x1="612" y1="516" x2="936" y2="516" class="soft-line"/>
+    <line x1="612" y1="516" x2="612" y2="232" class="soft-line"/>
+    <path d="M 612 460 L 936 460" class="grid"/>
+    <path d="M 612 404 L 936 404" class="grid"/>
+    <path d="M 612 348 L 936 348" class="grid"/>
+    <path d="M 612 292 L 936 292" class="grid"/>
+    <path d="M 676 516 L 676 232" class="grid"/>
+    <path d="M 740 516 L 740 232" class="grid"/>
+    <path d="M 804 516 L 804 232" class="grid"/>
+    <path d="M 868 516 L 868 232" class="grid"/>
+    <text x="600" y="231" text-anchor="middle" class="tiny muted">认知高度</text>
+    <text x="874" y="540" text-anchor="middle" class="tiny muted">试验轮次</text>
+
+    <path d="M 640 486 C 676 472, 690 446, 718 432 C 746 418, 750 382, 782 368 C 816 352, 826 320, 858 302 C 884 286, 894 258, 914 244" class="green-path" marker-end="url(#greenArrow)"/>
+
+    <circle cx="640" cy="486" r="7" fill="#ffffff" stroke="#10a98c" stroke-width="2"/>
+    <circle cx="718" cy="432" r="7" fill="#ffffff" stroke="#10a98c" stroke-width="2"/>
+    <circle cx="782" cy="368" r="7" fill="#ffffff" stroke="#10a98c" stroke-width="2"/>
+    <circle cx="858" cy="302" r="7" fill="#ffffff" stroke="#10a98c" stroke-width="2"/>
+    <circle cx="914" cy="244" r="7" fill="#ffffff" stroke="#10a98c" stroke-width="2"/>
+
+    <rect x="588" y="488" width="102" height="34" rx="8" class="white"/>
+    <text x="639" y="510" text-anchor="middle" class="small">试验 1</text>
+    <rect x="672" y="398" width="102" height="34" rx="8" class="yellow"/>
+    <text x="723" y="420" text-anchor="middle" class="small yellow-text">失败信号</text>
+    <rect x="724" y="340" width="112" height="34" rx="8" class="blue"/>
+    <text x="780" y="362" text-anchor="middle" class="small blue-text">结构复盘</text>
+    <rect x="810" y="278" width="104" height="34" rx="8" class="purple"/>
+    <text x="862" y="300" text-anchor="middle" class="small purple-text">重写假设</text>
+    <rect x="842" y="214" width="124" height="38" rx="8" class="green"/>
+    <text x="904" y="238" text-anchor="middle" class="node-title green-text">方向更准</text>
+
+    <path d="M 724 432 C 744 456, 779 451, 790 376" class="blue-path" marker-end="url(#blueArrow)"/>
+    <text x="762" y="459" text-anchor="middle" class="tiny blue-text">反馈让路径偏转</text>
+    <path d="M 838 368 C 872 390, 900 356, 866 310" class="blue-path" marker-end="url(#blueArrow)"/>
+    <text x="883" y="386" text-anchor="middle" class="tiny blue-text">失败进入模型</text>
+  </g>
+
+  <rect x="610" y="552" width="324" height="34" rx="8" class="blue-soft"/>
+  <text x="772" y="574" text-anchor="middle" class="node-title blue-text">能走更远的不是变异最多的人</text>
+
+  <rect x="64" y="628" width="896" height="98" rx="10" class="panel"/>
+  <text x="512" y="661" text-anchor="middle" class="footer">快速迭代只是门票，方向感才是优势。</text>
+
+  <rect x="118" y="680" width="142" height="34" rx="8" class="yellow"/>
+  <text x="189" y="702" text-anchor="middle" class="node-title yellow-text">快迭代</text>
+  <line x1="270" y1="697" x2="314" y2="697" class="arrow-line" marker-end="url(#arrow)"/>
+  <rect x="326" y="680" width="154" height="34" rx="8" class="blue"/>
+  <text x="403" y="702" text-anchor="middle" class="node-title blue-text">可解释反馈</text>
+  <line x1="490" y1="697" x2="534" y2="697" class="arrow-line" marker-end="url(#arrow)"/>
+  <rect x="546" y="680" width="164" height="34" rx="8" class="purple"/>
+  <text x="628" y="702" text-anchor="middle" class="node-title purple-text">结构性升级</text>
+  <line x1="720" y1="697" x2="764" y2="697" class="arrow-line" marker-end="url(#arrow)"/>
+  <rect x="776" y="680" width="130" height="34" rx="8" class="green"/>
+  <text x="841" y="702" text-anchor="middle" class="node-title green-text">方向优势</text>
+  <text x="512" y="745" text-anchor="middle" class="footer-small">AI 廉价失败的关键，不是失败更多，而是每次失败都能让下一次更接近正确方向。</text>
+</svg>

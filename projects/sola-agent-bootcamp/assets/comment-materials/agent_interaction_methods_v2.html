@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>界面差异 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">五种与 Agent 交互方式的模拟界面：本地 App、本地终端、SSH 远程、IM 聊天、网页界面</h2>
+<style>
+  .tabs{display:flex;gap:5px;margin:0 0 14px;flex-wrap:wrap;justify-content:center}
+  .tab{cursor:pointer;font-size:11.5px;padding:5px 12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);background:transparent;color:var(--color-text-secondary);transition:all .2s}
+  .tab.on{background:var(--color-background-secondary);color:var(--color-text-primary);font-weight:500;border-color:var(--color-border-secondary)}
+  .mockup{display:none;border-radius:var(--border-radius-lg);overflow:hidden;background:var(--color-background-secondary);padding:16px}
+  .mockup.show{display:block}
+  .mock-label{display:flex;align-items:center;gap:6px;margin:0 0 10px}
+  .ml-badge{font-size:9px;font-weight:500;padding:2px 8px;border-radius:3px}
+  .ml-local{background:#EEEDFE;color:#534AB7}
+  .ml-cloud{background:#E6F1FB;color:#185FA5}
+  @media(prefers-color-scheme:dark){.ml-local{background:#26215C;color:#AFA9EC}.ml-cloud{background:#042C53;color:#85B7EB}}
+  .ml-text{font-size:12px;font-weight:500;color:var(--color-text-primary)}
+  .ml-sub{font-size:11px;color:var(--color-text-secondary);margin:2px 0 0}
+  .note{font-size:11px;color:var(--color-text-secondary);line-height:1.55;margin:10px 0 0;padding:0 4px}
+  .note i{font-size:12px;vertical-align:-1px;margin-right:3px;color:var(--color-text-tertiary)}
+
+  .term{background:#1a1b26;border-radius:var(--border-radius-lg);overflow:hidden;font-family:var(--font-mono);font-size:12px;line-height:1.7}
+  .term-bar{background:#24283b;padding:6px 12px;display:flex;align-items:center;gap:6px}
+  .term-dot{width:8px;height:8px;border-radius:50%}
+  .term-title{font-size:10px;color:#7982a9;margin-left:8px}
+  .term-body{padding:12px 14px;color:#a9b1d6;min-height:180px}
+  .t-green{color:#9ece6a}.t-blue{color:#7aa2f7}.t-yellow{color:#e0af68}.t-gray{color:#565f89}.t-purple{color:#bb9af7}.t-cyan{color:#7dcfff}.t-white{color:#c0caf5}.t-red{color:#f7768e}
+  .cursor-blink{display:inline-block;width:7px;height:14px;background:#c0caf5;animation:blink 1s step-end infinite;vertical-align:text-bottom}
+  @keyframes blink{50%{opacity:0}}
+
+  .app{background:var(--color-background-primary);border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);overflow:hidden}
+  .app-bar{padding:5px 12px;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;gap:8px;background:var(--color-background-secondary)}
+  .app-dots{display:flex;gap:4px}
+  .app-dots span{width:8px;height:8px;border-radius:50%}
+  .app-title{font-size:11px;font-weight:500;color:var(--color-text-secondary);flex:1;text-align:center}
+  .app-body{display:grid;grid-template-columns:150px 1fr 1fr;min-height:270px}
+  .app-sidebar{border-right:0.5px solid var(--color-border-tertiary);padding:8px;overflow:hidden}
+  .app-sidebar-title{font-size:9px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:.2px;margin:0 0 6px}
+  .app-file{display:flex;align-items:center;gap:3px;font-size:10.5px;padding:3px 5px;border-radius:4px;color:var(--color-text-primary);margin:0 0 1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .app-file i{font-size:12px;color:var(--color-text-tertiary);flex-shrink:0}
+  .app-file.active{background:var(--color-background-secondary);font-weight:500}
+  .app-file.changed{color:var(--color-text-info)}
+  .app-file.changed i{color:var(--color-text-info)}
+  .app-code{border-right:0.5px solid var(--color-border-tertiary);padding:8px 10px;font-family:var(--font-mono);font-size:10px;line-height:1.8;color:var(--color-text-secondary);overflow:hidden}
+  .app-code .ln{color:var(--color-text-tertiary);display:inline-block;width:18px;text-align:right;margin-right:8px;user-select:none}
+  .app-code .added{background:var(--color-background-success);color:var(--color-text-success);display:block;margin:0 -10px;padding:0 10px;border-left:2px solid var(--color-text-success)}
+  .app-code .removed{background:var(--color-background-danger);color:var(--color-text-danger);display:block;margin:0 -10px;padding:0 10px;border-left:2px solid var(--color-text-danger);text-decoration:line-through;opacity:.6}
+  .app-chat{padding:10px;display:flex;flex-direction:column;gap:6px;justify-content:flex-end}
+  .app-chat-title{font-size:9px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:.2px;margin:0 0 4px}
+  .ac-msg{padding:6px 9px;border-radius:8px;font-size:10.5px;line-height:1.5;max-width:95%}
+  .ac-user{align-self:flex-end;background:var(--color-background-info);color:var(--color-text-info)}
+  .ac-bot{align-self:flex-start;background:var(--color-background-secondary);color:var(--color-text-primary)}
+  .ac-status{font-size:9.5px;color:var(--color-text-tertiary);display:flex;align-items:center;gap:3px;padding:2px 0}
+  .ac-status i{font-size:11px;color:#1D9E75}
+  .ac-input{display:flex;gap:6px;margin-top:4px;padding-top:6px;border-top:0.5px solid var(--color-border-tertiary)}
+  .ac-input-box{flex:1;padding:5px 8px;border-radius:6px;background:var(--color-background-secondary);font-size:10px;color:var(--color-text-tertiary)}
+
+  .im{background:var(--color-background-primary);border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);overflow:hidden}
+  .im-bar{padding:10px 14px;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;gap:8px;background:var(--color-background-secondary)}
+  .im-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;background:#E1F5EE;color:#0F6E56}
+  @media(prefers-color-scheme:dark){.im-avatar{background:#04342C;color:#5DCAA5}}
+  .im-name{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+  .im-status{font-size:10px;color:var(--color-text-tertiary)}
+  .im-body{padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-height:200px}
+  .bub{max-width:82%;padding:8px 12px;border-radius:12px;font-size:12px;line-height:1.55}
+  .bub-me{align-self:flex-end;background:#95EC69;color:#000;border-bottom-right-radius:4px}
+  .bub-bot{align-self:flex-start;background:var(--color-background-secondary);color:var(--color-text-primary);border-bottom-left-radius:4px}
+  .bub-file{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border-radius:8px;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);font-size:11px;color:var(--color-text-primary);margin-top:4px}
+  .bub-file i{font-size:16px;color:var(--color-text-info)}
+  .bub-progress{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--color-text-secondary);padding:2px 0}
+  .bub-progress i{font-size:12px;color:#1D9E75}
+  @media(prefers-color-scheme:dark){.bub-me{background:#2A5C1B;color:#d4f5c0}}
+  .im-input{padding:10px 14px;border-top:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;gap:8px}
+  .im-input-box{flex:1;padding:7px 12px;border-radius:18px;background:var(--color-background-secondary);font-size:12px;color:var(--color-text-tertiary)}
+
+  .web{background:var(--color-background-primary);border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);overflow:hidden}
+  .web-bar{padding:6px 12px;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;gap:8px;background:var(--color-background-secondary)}
+  .web-dots{display:flex;gap:4px}
+  .web-dots span{width:8px;height:8px;border-radius:50%;background:var(--color-border-secondary)}
+  .web-url{flex:1;padding:4px 10px;border-radius:6px;background:var(--color-background-primary);font-size:10px;color:var(--color-text-secondary);font-family:var(--font-mono)}
+  .web-body{display:grid;grid-template-columns:155px 1fr;min-height:240px}
+  .web-sidebar{border-right:0.5px solid var(--color-border-tertiary);padding:10px}
+  .web-sidebar-title{font-size:9.5px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:.2px;margin:0 0 6px}
+  .web-file{display:flex;align-items:center;gap:4px;font-size:11px;padding:4px 6px;border-radius:4px;color:var(--color-text-primary);margin:0 0 2px}
+  .web-file i{font-size:13px;color:var(--color-text-tertiary)}
+  .web-main{padding:12px}
+  .web-main-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin:0 0 8px}
+  .web-chat{display:flex;flex-direction:column;gap:6px;margin:0 0 8px}
+  .web-msg{padding:6px 10px;border-radius:8px;font-size:11px;line-height:1.5;max-width:90%}
+  .web-msg-user{align-self:flex-end;background:var(--color-background-info);color:var(--color-text-info)}
+  .web-msg-bot{align-self:flex-start;background:var(--color-background-secondary);color:var(--color-text-primary)}
+  .web-btn{padding:4px 10px;border-radius:6px;font-size:10px;border:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);background:transparent;display:inline-flex;align-items:center;gap:3px}
+</style>
+
+<div class="tabs">
+  <button class="tab on" onclick="show(0)"><i class="ti ti-app-window" aria-hidden="true" style="font-size:12px;vertical-align:-1px"></i> 本地 App</button>
+  <button class="tab" onclick="show(1)"><i class="ti ti-terminal-2" aria-hidden="true" style="font-size:12px;vertical-align:-1px"></i> 本地终端</button>
+  <button class="tab" onclick="show(2)"><i class="ti ti-terminal-2" aria-hidden="true" style="font-size:12px;vertical-align:-1px"></i> SSH 远程</button>
+  <button class="tab" onclick="show(3)"><i class="ti ti-message-circle" aria-hidden="true" style="font-size:12px;vertical-align:-1px"></i> IM 聊天</button>
+  <button class="tab" onclick="show(4)"><i class="ti ti-browser" aria-hidden="true" style="font-size:12px;vertical-align:-1px"></i> 网页界面</button>
+</div>
+
+<!-- ===== 0. LOCAL APP ===== -->
+<div class="mockup show" id="m0">
+  <div class="mock-label">
+    <span class="ml-badge ml-local">本地</span>
+    <div><div class="ml-text">本地 App — 装在你电脑上的桌面应用</div><div class="ml-sub">像 Word、VS Code 一样装在你电脑上。左边看文件、中间看代码变化、右边跟 Agent 聊天。所有操作都在本机完成。</div></div>
+  </div>
+  <div class="app">
+    <div class="app-bar">
+      <div class="app-dots"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span></div>
+      <div class="app-title">Codex — ~/projects/my-app</div>
+    </div>
+    <div class="app-body">
+      <div class="app-sidebar">
+        <div class="app-sidebar-title"><i class="ti ti-folder-open" aria-hidden="true" style="font-size:10px;vertical-align:-1px"></i> my-app</div>
+        <div class="app-file"><i class="ti ti-folder" aria-hidden="true"></i> src/</div>
+        <div class="app-file" style="padding-left:16px"><i class="ti ti-file-code" aria-hidden="true"></i> index.ts</div>
+        <div class="app-file changed" style="padding-left:16px"><i class="ti ti-file-code" aria-hidden="true"></i> api.ts</div>
+        <div class="app-file changed" style="padding-left:16px"><i class="ti ti-file-code" aria-hidden="true"></i> auth.ts</div>
+        <div class="app-file"><i class="ti ti-folder" aria-hidden="true"></i> test/</div>
+        <div class="app-file changed" style="padding-left:16px"><i class="ti ti-file-code" aria-hidden="true"></i> api.test.ts</div>
+        <div class="app-file active"><i class="ti ti-file-text" aria-hidden="true"></i> package.json</div>
+        <div class="app-file"><i class="ti ti-file-text" aria-hidden="true"></i> README.md</div>
+        <div style="margin-top:10px;padding-top:8px;border-top:0.5px solid var(--color-border-tertiary)">
+          <div class="app-sidebar-title" style="color:var(--color-text-info)"><i class="ti ti-pencil" aria-hidden="true" style="font-size:10px;vertical-align:-1px"></i> 已修改 3 个文件</div>
+        </div>
+      </div>
+      <div class="app-code">
+        <div class="app-sidebar-title" style="margin-bottom:6px">api.ts — Agent 修改预览</div>
+        <span class="ln">12</span><span style="color:var(--color-text-primary)">async function fetchUser(id) {</span><br>
+        <span class="removed"><span class="ln">13</span>  const res = await fetch(`/api/${id}`);</span>
+        <span class="added"><span class="ln">13</span>  const res = await fetch(`/api/${id}`, {</span>
+        <span class="added"><span class="ln">14</span>    headers: { Authorization: token }</span>
+        <span class="added"><span class="ln">15</span>  });</span>
+        <span class="ln">16</span><span style="color:var(--color-text-primary)">  if (!res.ok) throw new Error();</span><br>
+        <span class="removed"><span class="ln">17</span>  return res.json();</span>
+        <span class="added"><span class="ln">17</span>  return validateUser(await res.json());</span>
+        <span class="ln">18</span><span style="color:var(--color-text-primary)">}</span><br>
+      </div>
+      <div class="app-chat">
+        <div class="app-chat-title"><i class="ti ti-message-circle" aria-hidden="true" style="font-size:10px;vertical-align:-1px"></i> Agent</div>
+        <div class="ac-msg ac-user">给所有 API 请求加上 auth header，然后加上返回值校验</div>
+        <div class="ac-msg ac-bot">
+          正在扫描项目中的 API 调用…
+          <div class="ac-status"><i class="ti ti-check" aria-hidden="true"></i> api.ts — 添加 Authorization header</div>
+          <div class="ac-status"><i class="ti ti-check" aria-hidden="true"></i> auth.ts — 新增 token 获取逻辑</div>
+          <div class="ac-status"><i class="ti ti-check" aria-hidden="true"></i> api.test.ts — 更新测试用例</div>
+        </div>
+        <div class="ac-msg ac-bot" style="font-size:10px">修改了 3 个文件。左侧蓝色标记的是改动文件，中间可以预览每处变更的 diff。确认没问题后可以提交。</div>
+        <div class="ac-input"><div class="ac-input-box">继续对话…</div><i class="ti ti-send" aria-hidden="true" style="font-size:14px;color:var(--color-text-tertiary)"></i></div>
+      </div>
+    </div>
+  </div>
+  <div class="note"><i class="ti ti-info-circle" aria-hidden="true"></i>像用 Word 或 Photoshop 一样——装在你电脑上的本地应用。Agent 直接操作你硬盘上的项目文件，你在同一个窗口里实时看到每一行代码的变化。不需要联网（除了调用云端 AI 模型）。Claude Code 和 Codex 桌面版都是这种形态。</div>
+</div>
+
+<!-- ===== 1. LOCAL TERMINAL ===== -->
+<div class="mockup" id="m1">
+  <div class="mock-label">
+    <span class="ml-badge ml-local">本地</span>
+    <div><div class="ml-text">本地终端 — 在命令行里用纯文字交互</div><div class="ml-sub">同样是本地执行，但没有图形界面，全靠打字。开发者日常最快的方式。</div></div>
+  </div>
+  <div class="term">
+    <div class="term-bar"><span class="term-dot" style="background:#ff5f57"></span><span class="term-dot" style="background:#febc2e"></span><span class="term-dot" style="background:#28c840"></span><span class="term-title">Terminal — ~/projects/my-app</span></div>
+    <div class="term-body">
+<span class="t-green">~/projects/my-app</span> <span class="t-blue">$</span> <span class="t-white">claude</span>
+<br><br><span class="t-purple">Claude Code</span> <span class="t-gray">v2.1.139 · Opus 4.7</span>
+<br><br><span class="t-blue">></span> <span class="t-white">帮我把 README 翻译成中文，然后更新版本号</span>
+<br><br><span class="t-yellow">Reading</span> <span class="t-gray">README.md, package.json</span>
+<br><span class="t-green">Writing</span> <span class="t-gray">README.md — 翻译完成</span>
+<br><span class="t-green">Writing</span> <span class="t-gray">package.json — 1.2.0 → 1.3.0</span>
+<br><br><span class="t-cyan">Done.</span> <span class="t-gray">Modified 2 files.</span>
+<br><br><span class="t-blue">></span> <span class="cursor-blink"></span>
+    </div>
+  </div>
+  <div class="note"><i class="ti ti-info-circle" aria-hidden="true"></i>跟本地 App 做的事情一样，但界面是纯文字。速度最快、消耗最少，但看不到文件结构和 diff 预览。适合熟练开发者。</div>
+</div>
+
+<!-- ===== 2. SSH ===== -->
+<div class="mockup" id="m2">
+  <div class="mock-label">
+    <span class="ml-badge ml-cloud">云端</span>
+    <div><div class="ml-text">SSH 远程终端 — 远程登录到服务器操作</div><div class="ml-sub">看起来跟本地终端一模一样，但你其实在操作远程服务器。文件和 Agent 都在远程。</div></div>
+  </div>
+  <div class="term">
+    <div class="term-bar"><span class="term-dot" style="background:#ff5f57"></span><span class="term-dot" style="background:#febc2e"></span><span class="term-dot" style="background:#28c840"></span><span class="term-title">Terminal — SSH</span></div>
+    <div class="term-body">
+<span class="t-gray"># 从你的电脑连到远程服务器</span>
+<br><span class="t-green">~</span> <span class="t-blue">$</span> <span class="t-white">ssh <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3247415740724157404457401c515d5f">[email&#160;protected]</a></span>
+<br><span class="t-gray">Welcome to Ubuntu 24.04 · server.com</span>
+<br><br><span class="t-red">user@server</span><span class="t-white">:</span><span class="t-blue">/workspace</span><span class="t-white">$</span> <span class="t-white">hermes</span>
+<br><br><span class="t-purple">Hermes Agent</span> <span class="t-gray">v0.10.0</span>
+<br><br><span class="t-blue">></span> <span class="t-white">分析 data/ 下所有 CSV，生成汇总报告</span>
+<br><span class="t-yellow">Scanning</span> <span class="t-gray">47 files</span>
+<br><span class="t-green">Writing</span> <span class="t-gray">/workspace/output/report.xlsx</span>
+<br><span class="t-cyan">Done.</span>
+<br><br><span class="t-blue">></span> <span class="cursor-blink"></span>
+    </div>
+  </div>
+  <div class="note"><i class="ti ti-info-circle" aria-hidden="true"></i>界面跟本地终端一模一样——但所有文件和执行都在远程。你的电脑只是"遥控屏幕"。做完后要用 scp 或 Git 把结果拿回来。</div>
+</div>
+
+<!-- ===== 3. IM ===== -->
+<div class="mockup" id="m3">
+  <div class="mock-label">
+    <span class="ml-badge ml-cloud">云端</span>
+    <div><div class="ml-text">IM 聊天 — 在飞书 / Telegram 里跟 Agent 发消息</div><div class="ml-sub">最像"发微信"的体验。发文件 + 指令，Agent 在云端执行完把结果发回来。手机也能用。</div></div>
+  </div>
+  <div class="im">
+    <div class="im-bar">
+      <div class="im-avatar"><i class="ti ti-robot" aria-hidden="true" style="font-size:15px"></i></div>
+      <div><div class="im-name">ArkClaw Agent</div><div class="im-status">在线 · 飞书</div></div>
+    </div>
+    <div class="im-body">
+      <div class="bub bub-me">帮我把这个 Excel 里的销售数据按月份做图表</div>
+      <div style="align-self:flex-end"><div class="bub-file"><i class="ti ti-file-spreadsheet" aria-hidden="true"></i> Q1-sales.xlsx <span style="color:var(--color-text-tertiary);font-size:10px">2.4 MB</span></div></div>
+      <div class="bub bub-bot">
+        收到，正在处理。
+        <div class="bub-progress"><i class="ti ti-check" aria-hidden="true"></i> 读取 3,847 条记录</div>
+        <div class="bub-progress"><i class="ti ti-check" aria-hidden="true"></i> 按月汇总 + 图表生成</div>
+      </div>
+      <div class="bub bub-bot">
+        完成！1 月 ¥342 万 → 3 月 ¥511 万，环比增长。
+        <div class="bub-file"><i class="ti ti-file-chart" aria-hidden="true"></i> Q1-report.xlsx</div>
+      </div>
+    </div>
+    <div class="im-input">
+      <i class="ti ti-plus" aria-hidden="true" style="font-size:18px;color:var(--color-text-tertiary)"></i>
+      <div class="im-input-box">输入消息…</div>
+      <i class="ti ti-send" aria-hidden="true" style="font-size:18px;color:var(--color-text-tertiary)"></i>
+    </div>
+  </div>
+  <div class="note"><i class="ti ti-info-circle" aria-hidden="true"></i>会打字就能用，不需要任何技术背景。手机、电脑、平板都行。Agent 在云端处理，结果文件直接发到聊天里。</div>
+</div>
+
+<!-- ===== 4. WEB ===== -->
+<div class="mockup" id="m4">
+  <div class="mock-label">
+    <span class="ml-badge ml-cloud">云端</span>
+    <div><div class="ml-text">网页界面 — 打开浏览器访问 Agent 平台</div><div class="ml-sub">像"会聊天的百度网盘"。左边是文件列表，右边跟 Agent 对话。</div></div>
+  </div>
+  <div class="web">
+    <div class="web-bar">
+      <div class="web-dots"><span></span><span></span><span></span></div>
+      <div class="web-url"><i class="ti ti-lock" aria-hidden="true" style="font-size:10px;margin-right:4px"></i>agent.example.com/workspace</div>
+    </div>
+    <div class="web-body">
+      <div class="web-sidebar">
+        <div class="web-sidebar-title"><i class="ti ti-folder-open" aria-hidden="true" style="font-size:11px;vertical-align:-1px"></i> 项目文件</div>
+        <div class="web-file"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 需求文档.pdf</div>
+        <div class="web-file"><i class="ti ti-file-spreadsheet" aria-hidden="true"></i> 竞品分析.xlsx</div>
+        <div class="web-file"><i class="ti ti-file-type-doc" aria-hidden="true"></i> 周报.docx</div>
+        <div style="border-top:0.5px solid var(--color-border-tertiary);margin:6px 0;padding-top:6px">
+          <div class="web-sidebar-title" style="color:var(--color-text-info)"><i class="ti ti-sparkles" aria-hidden="true" style="font-size:11px;vertical-align:-1px"></i> Agent 生成</div>
+          <div class="web-file" style="color:var(--color-text-info)"><i class="ti ti-file-plus" aria-hidden="true" style="color:var(--color-text-info)"></i> 周报-0518.docx</div>
+        </div>
+      </div>
+      <div class="web-main">
+        <div class="web-main-title"><i class="ti ti-message-circle" aria-hidden="true" style="font-size:14px;vertical-align:-2px;margin-right:3px"></i> Agent</div>
+        <div class="web-chat">
+          <div class="web-msg web-msg-user">根据需求文档和竞品分析写周报</div>
+          <div class="web-msg web-msg-bot">已生成"周报-0518.docx"，包含进展、计划和风险三部分。</div>
+        </div>
+        <div style="display:flex;gap:6px"><button class="web-btn"><i class="ti ti-download" aria-hidden="true" style="font-size:11px"></i> 下载</button><button class="web-btn"><i class="ti ti-eye" aria-hidden="true" style="font-size:11px"></i> 预览</button><button class="web-btn"><i class="ti ti-share" aria-hidden="true" style="font-size:11px"></i> 分享</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="note"><i class="ti ti-info-circle" aria-hidden="true"></i>不用装任何东西，打开浏览器就能用。文件管理 + Agent 对话在同一页面。适合团队共享同一个项目空间。</div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function show(idx){
+  document.querySelectorAll('.mockup').forEach((m,i)=>{m.classList.toggle('show',i===idx)});
+  document.querySelectorAll('.tab').forEach((t,i)=>{t.classList.toggle('on',i===idx)});
+}
+</script>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

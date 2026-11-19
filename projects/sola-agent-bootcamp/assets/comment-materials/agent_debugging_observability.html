@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent 表现不好怎么排查 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <style>
+    :root { --bg:#fffdf8; --ink:#17343a; --muted:rgba(23,52,58,.68); --line:rgba(23,52,58,.14); --accent:#178f92; --soft:#f4fbfa; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:0; background:transparent; }
+    body { padding:18px; color:var(--ink); font-family:"Plus Jakarta Sans","Noto Sans SC",ui-sans-serif,system-ui,sans-serif; font-size:15px; line-height:1.72; }
+    .material-content { display:block; border:1px solid var(--line); border-radius:18px; padding:18px 18px 20px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    h2 { margin:0 0 12px; font-size:22px; line-height:1.25; letter-spacing:0; }
+    p { margin:10px 0 0; color:var(--muted); }
+    p.lead { color:var(--muted); }
+    strong { color:var(--ink); font-weight:750; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(23,52,58,.08); border-radius:6px; padding:1px 5px; }
+    .source-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:rgba(23,52,58,.48); }
+  </style>
+</head>
+<body>
+<main class="material-content">
+  <p class="eyebrow">SOLA AI Agent 共学营 · 补充材料</p>
+  <h2>Agent 表现不好怎么排查</h2>
+  <p class="lead">五个症状覆盖了日常 90% 的问题，排查逻辑都是一样的：</p>
+<p class="lead"><strong>先查 context 满没满</strong>（<code>/status</code>）——这是最常见的根因。context 超过 80% 之后 Agent 的所有行为都会开始走样，不管是读错文件、漏用技能、还是数据不对，都可能是 context 溢出的症状。解法最简单：开新会话。</p>
+<p class="lead"><strong>再查文件读对没读对</strong>——直接问 Agent &quot;你读了哪些文件&quot;。大部分时候不是 Agent 能力不行，而是它压根没看到你想让它看的文件（文件名不直观、目录太深、或者你忘了上传）。</p>
+<p class="lead"><strong>然后查技能和指令</strong>——<code>/skills</code> 确认技能加载了，再让 Agent 列出&quot;你当前遵守哪些规则&quot;排查指令冲突。CLAUDE.md 里的规则、Skill 里的规则、你口头说的指令三层可能互相矛盾。</p>
+<p class="lead"><strong>最后查数据来源</strong>——让 Agent 打印计算过程。如果它给不出&quot;我是用 pandas 从 CSV 第 3 列求和得到 342 万&quot;这样的过程，说明它是在&quot;编&quot;不是在&quot;算&quot;。Skill 里写死&quot;数据必须用代码计算&quot;能从根本上防止这个问题。</p>
+<p class="lead"><strong>最实用的一招：直接问 Agent。</strong> &quot;你为什么这么做&quot;&quot;你读了什么&quot;&quot;你 context 里有什么&quot;——它能回答自己行为的大部分问题。不需要先翻日志，先问它，答案可疑时再查底层。</p>
+  <p class="source-note">从 agent-depth.html 主课件正文抽取生成，用于替代缺失的嵌入材料页面。</p>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

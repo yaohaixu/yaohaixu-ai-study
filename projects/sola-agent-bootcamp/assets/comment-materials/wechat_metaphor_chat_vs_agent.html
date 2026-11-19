@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用微信举例 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+  :root {
+    --color-background-primary: #fffdf8;
+    --color-background-secondary: #f4fbfa;
+    --color-background-info: #e6f1fb;
+    --color-background-success: #e1f5ee;
+    --color-background-warning: #faeeda;
+    --color-background-danger: #ffe9e4;
+    --color-text-primary: #17343a;
+    --color-text-secondary: rgba(23, 52, 58, .72);
+    --color-text-tertiary: rgba(23, 52, 58, .52);
+    --color-text-info: #0c447c;
+    --color-text-success: #085041;
+    --color-text-warning: #633806;
+    --color-text-danger: #8c241c;
+    --color-border-secondary: rgba(23, 52, 58, .24);
+    --color-border-tertiary: rgba(23, 52, 58, .12);
+    --color-border-info: #178f92;
+    --border-radius-md: 10px;
+    --border-radius-lg: 18px;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 0; background: transparent; }
+  body {
+    padding: 18px;
+    color: var(--color-text-primary);
+    font-family: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  button {
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-md);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  svg, img { max-width: 100%; height: auto; }
+  .material-content { display: block; }
+</style>
+</head>
+<body>
+<main class="material-content">
+
+<h2 class="sr-only">用微信聊天和点外卖的生活场景类比 Chat AI 与 Agent 的区别</h2>
+<style>
+  *{box-sizing:border-box}
+  .scene-wrap{display:flex;gap:20px}
+  .phone{flex:1;border-radius:20px;border:0.5px solid var(--color-border-tertiary);overflow:hidden;background:var(--color-background-primary)}
+  .phone-bar{padding:8px 14px;font-size:12px;font-weight:500;color:var(--color-text-primary);border-bottom:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;gap:6px;background:var(--color-background-secondary)}
+  .phone-bar i{font-size:14px}
+  .chat-area{padding:12px;display:flex;flex-direction:column;gap:8px;min-height:340px}
+  .bub{max-width:88%;padding:8px 12px;border-radius:12px;font-size:12.5px;line-height:1.6;opacity:0;transform:translateY(6px);transition:all .35s}
+  .bub.show{opacity:1;transform:translateY(0)}
+  .me{align-self:flex-end;background:#95EC69;color:#000;border-bottom-right-radius:4px}
+  .them{align-self:flex-start;background:var(--color-background-secondary);color:var(--color-text-primary);border-bottom-left-radius:4px}
+  .them.action{background:#E1F5EE;color:#085041;border-left:2.5px solid #1D9E75}
+  .them.done{background:#E6F1FB;color:#0C447C;border-left:2.5px solid #378ADD}
+  .them.warn{background:#FAEEDA;color:#633806;font-style:italic}
+  @media(prefers-color-scheme:dark){
+    .me{background:#2A5C1B;color:#d4f5c0}
+    .them.action{background:#04342C;color:#5DCAA5;border-left-color:#5DCAA5}
+    .them.done{background:#042C53;color:#85B7EB;border-left-color:#85B7EB}
+    .them.warn{background:#412402;color:#FAC775}
+  }
+  .divider{text-align:center;font-size:10px;color:var(--color-text-tertiary);padding:4px 0}
+  .you-do{padding:10px 12px;margin:4px 0;border-radius:var(--border-radius-md);border:1px dashed var(--color-border-secondary);text-align:center;font-size:11px;color:var(--color-text-tertiary);line-height:1.5}
+  .you-do i{font-size:14px;display:block;margin-bottom:2px}
+  .bottom-note{font-size:12px;color:var(--color-text-secondary);line-height:1.6;padding:10px 14px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);margin-top:8px}
+  .pill{display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:var(--border-radius-md);margin-bottom:8px}
+  .pill-a{background:#EEEDFE;color:#3C3489}
+  .pill-b{background:#E1F5EE;color:#085041}
+  @media(prefers-color-scheme:dark){
+    .pill-a{background:#26215C;color:#AFA9EC}
+    .pill-b{background:#04342C;color:#5DCAA5}
+  }
+  .play{display:block;margin:8px auto 0;cursor:pointer;font-size:12px;padding:5px 14px}
+</style>
+
+<div class="scene-wrap">
+  <!-- LEFT: Chat AI = 微信问朋友 -->
+  <div style="flex:1">
+    <span class="pill pill-a">Chat AI</span>
+    <div class="phone">
+      <div class="phone-bar"><i class="ti ti-message-circle" aria-hidden="true"></i> 微信问一个很懂吃的朋友</div>
+      <div class="chat-area" id="chat-left">
+        <div class="bub me">今晚想吃意面，附近有推荐吗？</div>
+        <div class="bub them">城西那家「小意思」不错！招牌是松露奶油意面，人均 80，营业到 10 点。地址是 XX 路 88 号。</div>
+        <div class="bub me">能帮我点一份外卖吗？</div>
+        <div class="bub them warn">我帮不了你点哦～你自己打开美团/饿了么搜一下吧</div>
+        <div class="you-do">
+          <i class="ti ti-apps" aria-hidden="true"></i>
+          接下来全靠你自己：<br>打开外卖 App → 搜店 → 选菜 → 下单 → 付款 → 等配送
+        </div>
+      </div>
+    </div>
+    <div class="bottom-note">相当于：你有一个无所不知的朋友，但 ta 只能在微信里打字，不能替你动手做任何事。</div>
+  </div>
+
+  <!-- RIGHT: Agent = 私人助理 -->
+  <div style="flex:1">
+    <span class="pill pill-b">Agent</span>
+    <div class="phone" style="border-color:var(--color-border-info)">
+      <div class="phone-bar"><i class="ti ti-user-star" aria-hidden="true"></i> 跟你的私人助理对话</div>
+      <div class="chat-area" id="chat-right">
+        <div class="bub me">今晚想吃意面，帮我搞定。</div>
+        <div class="bub them action"><i class="ti ti-search" aria-hidden="true" style="font-size:12px"></i> 正在查附近意面馆的评分和配送范围…</div>
+        <div class="bub them action"><i class="ti ti-star" aria-hidden="true" style="font-size:12px"></i> 找到 3 家，「小意思」评分最高且能送到。选了松露奶油意面。</div>
+        <div class="bub them action"><i class="ti ti-credit-card" aria-hidden="true" style="font-size:12px"></i> 已下单并完成支付，订单号 #20260518。</div>
+        <div class="bub them action"><i class="ti ti-truck-delivery" aria-hidden="true" style="font-size:12px"></i> 配送中，骑手小王距你 1.2km，预计 22 分钟到。</div>
+        <div class="bub them done"><i class="ti ti-circle-check" aria-hidden="true" style="font-size:12px"></i> 搞定！松露奶油意面已下单，预计 8:42 送到，你等着吃就行。</div>
+      </div>
+    </div>
+    <div class="bottom-note">相当于：同一个聪明的大脑，但这次它能打开 App、选餐、下单、付款、追踪骑手——你只管等着吃。</div>
+  </div>
+</div>
+
+<button class="play" onclick="replay()"><i class="ti ti-player-play" aria-hidden="true"></i> 重新播放对话</button>
+
+<div style="margin-top:16px;padding:14px;border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary)">
+  <p style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 8px">用你熟悉的东西类比</p>
+  <table style="width:100%;font-size:12px;border-collapse:collapse">
+    <tr style="color:var(--color-text-tertiary)"><td style="padding:4px 0;width:30%"></td><td style="padding:4px 8px">Chat AI 像…</td><td style="padding:4px 8px">Agent 像…</td></tr>
+    <tr><td style="padding:6px 0;color:var(--color-text-secondary)">吃饭</td><td style="padding:6px 8px;color:var(--color-text-primary)">问朋友"吃什么好"</td><td style="padding:6px 8px;color:var(--color-text-primary)">叫助理直接把饭点好送来</td></tr>
+    <tr style="background:var(--color-background-secondary);border-radius:4px"><td style="padding:6px 0;color:var(--color-text-secondary)">出行</td><td style="padding:6px 8px;color:var(--color-text-primary)">查百度地图看路线</td><td style="padding:6px 8px;color:var(--color-text-primary)">滴滴一键叫车，直接到目的地</td></tr>
+    <tr><td style="padding:6px 0;color:var(--color-text-secondary)">购物</td><td style="padding:6px 8px;color:var(--color-text-primary)">问小红书"买哪款好"</td><td style="padding:6px 8px;color:var(--color-text-primary)">助理帮你比价下单，快递送到家</td></tr>
+    <tr style="background:var(--color-background-secondary);border-radius:4px"><td style="padding:6px 0;color:var(--color-text-secondary)">工作</td><td style="padding:6px 8px;color:var(--color-text-primary)">问 ChatGPT"PPT 怎么写"</td><td style="padding:6px 8px;color:var(--color-text-primary)">Agent 直接生成 PPT 文件给你</td></tr>
+  </table>
+</div>
+
+<script>
+function replay(){
+  const ids=['chat-left','chat-right'];
+  ids.forEach(id=>{
+    const bubs=document.getElementById(id).querySelectorAll('.bub');
+    bubs.forEach(b=>b.classList.remove('show'));
+    bubs.forEach((b,i)=>setTimeout(()=>b.classList.add('show'), i*500+200));
+  });
+}
+replay();
+</script>
+
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

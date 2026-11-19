@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>安全与权限边界 · comment material</title>
+  <link rel="stylesheet" href="../css2.css">
+  <style>
+    :root { --bg:#fffdf8; --ink:#17343a; --muted:rgba(23,52,58,.68); --line:rgba(23,52,58,.14); --accent:#178f92; --soft:#f4fbfa; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:0; background:transparent; }
+    body { padding:18px; color:var(--ink); font-family:"Plus Jakarta Sans","Noto Sans SC",ui-sans-serif,system-ui,sans-serif; font-size:15px; line-height:1.72; }
+    .material-content { display:block; border:1px solid var(--line); border-radius:18px; padding:18px 18px 20px; background:linear-gradient(180deg,#fff,var(--soft)); }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:0 0 6px; }
+    h2 { margin:0 0 12px; font-size:22px; line-height:1.25; letter-spacing:0; }
+    p { margin:10px 0 0; color:var(--muted); }
+    p.lead { color:var(--muted); }
+    strong { color:var(--ink); font-weight:750; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(23,52,58,.08); border-radius:6px; padding:1px 5px; }
+    .source-note { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:rgba(23,52,58,.48); }
+  </style>
+</head>
+<body>
+<main class="material-content">
+  <p class="eyebrow">SOLA AI Agent 共学营 · 补充材料</p>
+  <h2>安全与权限边界</h2>
+  <p class="lead">五步全流程，核心就一个原理：<strong>密钥在 .env 里，Agent 通过框架间接调用，自始至终看不到密钥是什么。</strong></p>
+<p class="lead">像 ATM 机一样——你把银行卡（密钥）插进 ATM（框架），ATM 帮你取钱（调用 API），但排队的人（Agent）只知道&quot;钱出来了&quot;，看不到你的卡号。</p>
+<p class="lead"><strong>第一道锁 .gitignore</strong>：防止密钥被提交到 GitHub 公开泄露。这是最基础的——多少人因为忘了加 .gitignore 导致 API Key 泄露，被扫描机器人发现后几分钟内就被盗用。</p>
+<p class="lead"><strong>第二道锁 .claudeignore / settings.json</strong>：防止 Agent 读取 .env 内容。就算 Agent &quot;好心&quot;想帮你检查配置，也读不到敏感信息。</p>
+<p class="lead"><strong>第三道锁 AGENTS.md 红线</strong>：行为层面的保险。即使前两道锁没生效，Agent 也有一条规则告诉自己&quot;不要碰 .env&quot;。三层防护，任意一层挡住就安全。</p>
+<p class="lead">第 5 步的 .env.example 是团队协作的最佳实践——只提交&quot;需要填什么&quot;的模板，不提交真实值。队友 <code>cp .env.example .env</code> 然后填自己的密钥就行。</p>
+  <p class="source-note">从 agent-depth.html 主课件正文抽取生成，用于替代缺失的嵌入材料页面。</p>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"63f59b01e07241aa8c6168844a796794","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">时代红利 -&gt; 势能复利</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：对比普通 Excel 主题与 AI Agent 主题在同样投入下的初始曝光差异，并展示超额曝光如何变成粉丝本金、算法推荐和影响力雪球。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 30px; font-weight: 780; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 21px; font-weight: 780; }
+      .lane-title { font-size: 17px; font-weight: 780; }
+      .node-title { font-size: 18px; font-weight: 760; }
+      .node-main { font-size: 22px; font-weight: 800; }
+      .caption { font-size: 14px; fill: #3f4e4c; }
+      .tiny { font-size: 12px; font-weight: 720; fill: #596362; }
+      .footer { font-size: 20px; font-weight: 800; fill: #364642; }
+      .footer-small { font-size: 15px; fill: #3f4e4c; }
+      .panel { fill: #f8f7f2; stroke: #d5d1c7; stroke-width: 1.4; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .blue-text { fill: #1b4d7a; }
+      .green-text { fill: #006b61; }
+      .purple-text { fill: #4b2e83; }
+      .yellow-text { fill: #7a3f00; }
+      .muted { fill: #596362; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.35; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.58; }
+      .dash-line { stroke: #74736c; stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 5 7; opacity: 0.58; }
+      .green-line { stroke: #10a98c; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .blue-line { stroke: #4f8fd6; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .purple-line { stroke: #8b6fd6; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .snow { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.5; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#74736c"/>
+    </marker>
+    <marker id="greenArrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#10a98c"/>
+    </marker>
+    <marker id="blueArrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#4f8fd6"/>
+    </marker>
+    <marker id="purpleArrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#8b6fd6"/>
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="512" y="43" text-anchor="middle" class="title">时代红利 -&gt; 势能复利</text>
+  <text x="512" y="73" text-anchor="middle" class="claim">同样质量的深度文章，AI 主题获得超额初始回报，并把它变成下一轮本金。</text>
+
+  <!-- Comparison panel -->
+  <rect x="44" y="100" width="936" height="312" rx="10" class="panel"/>
+  <text x="74" y="134" class="panel-title">同样投入，不同初始回报</text>
+  <text x="74" y="160" class="caption">差异不在文章更长，而在分发起点。</text>
+
+  <line x1="70" y1="260" x2="954" y2="260" class="dash-line"/>
+  <text x="74" y="202" class="lane-title yellow-text">普通主题</text>
+  <text x="74" y="328" class="lane-title green-text">AI 时代红利</text>
+
+  <rect x="88" y="220" width="152" height="80" rx="8" class="neutral"/>
+  <text x="164" y="250" text-anchor="middle" class="node-title">同样投入</text>
+  <text x="164" y="275" text-anchor="middle" class="caption">同质量深度文</text>
+
+  <path d="M 240 246 C 260 226, 266 197, 288 197" class="line" marker-end="url(#arrow)"/>
+  <path d="M 240 276 C 260 296, 266 323, 288 323" class="line" marker-end="url(#greenArrow)"/>
+
+  <rect x="288" y="158" width="152" height="78" rx="8" class="yellow"/>
+  <text x="364" y="187" text-anchor="middle" class="node-title yellow-text">Excel 主题</text>
+  <text x="364" y="214" text-anchor="middle" class="caption">几百人看</text>
+
+  <path d="M 440 197 L 488 197" class="line" marker-end="url(#arrow)"/>
+  <rect x="488" y="158" width="160" height="78" rx="8" class="neutral"/>
+  <text x="568" y="187" text-anchor="middle" class="node-title">低初始曝光</text>
+  <text x="568" y="214" text-anchor="middle" class="caption">新粉丝很少</text>
+
+  <path d="M 648 197 L 696 197" class="line" marker-end="url(#arrow)"/>
+  <rect x="696" y="158" width="226" height="78" rx="8" class="neutral"/>
+  <text x="809" y="187" text-anchor="middle" class="node-title">第二篇仍冷启动</text>
+  <text x="809" y="214" text-anchor="middle" class="caption">起点变化不大</text>
+
+  <rect x="288" y="284" width="152" height="78" rx="8" class="blue"/>
+  <text x="364" y="313" text-anchor="middle" class="node-title blue-text">AI Agent 文章</text>
+  <text x="364" y="340" text-anchor="middle" class="caption">几万人看到</text>
+
+  <path d="M 440 323 L 488 323" class="green-line" marker-end="url(#greenArrow)"/>
+  <rect x="488" y="284" width="180" height="78" rx="8" class="green"/>
+  <text x="578" y="313" text-anchor="middle" class="node-title green-text">超额初始曝光</text>
+  <text x="578" y="340" text-anchor="middle" class="caption">注意力/资本/媒体</text>
+
+  <path d="M 668 323 L 714 323" class="green-line" marker-end="url(#greenArrow)"/>
+  <rect x="714" y="284" width="208" height="78" rx="8" class="purple"/>
+  <text x="818" y="313" text-anchor="middle" class="node-title purple-text">1000 粉丝本金</text>
+  <text x="818" y="340" text-anchor="middle" class="caption">第二篇自带起步</text>
+
+  <rect x="706" y="376" width="232" height="22" rx="11" class="white"/>
+  <text x="822" y="392" text-anchor="middle" class="tiny">超额回报进入下一轮，而不是用完即止。</text>
+
+  <!-- Compounding flywheel -->
+  <rect x="44" y="430" width="936" height="218" rx="10" class="panel"/>
+  <text x="74" y="464" class="panel-title green-text">从流量红利到复利本金</text>
+  <text x="74" y="490" class="caption">第一篇带来的粉丝、互动和平台信号，会抬高第二篇的起跑线。</text>
+
+  <rect x="82" y="520" width="150" height="70" rx="8" class="purple"/>
+  <text x="157" y="548" text-anchor="middle" class="node-title purple-text">粉丝本金</text>
+  <text x="157" y="572" text-anchor="middle" class="caption">1000 起步</text>
+
+  <path d="M 232 555 L 280 555" class="purple-line" marker-end="url(#purpleArrow)"/>
+  <rect x="280" y="520" width="170" height="70" rx="8" class="blue"/>
+  <text x="365" y="548" text-anchor="middle" class="node-title blue-text">更高起点</text>
+  <text x="365" y="572" text-anchor="middle" class="caption">先有曝光池</text>
+
+  <path d="M 450 555 L 500 555" class="blue-line" marker-end="url(#blueArrow)"/>
+  <rect x="500" y="520" width="170" height="70" rx="8" class="green"/>
+  <text x="585" y="548" text-anchor="middle" class="node-title green-text">算法推荐</text>
+  <text x="585" y="572" text-anchor="middle" class="caption">互动证据更足</text>
+
+  <path d="M 670 555 L 720 555" class="green-line" marker-end="url(#greenArrow)"/>
+  <rect x="720" y="500" width="210" height="112" rx="8" class="green"/>
+  <text x="825" y="528" text-anchor="middle" class="node-title green-text">影响力雪球</text>
+  <circle cx="782" cy="574" r="15" class="snow"/>
+  <circle cx="824" cy="574" r="24" class="snow"/>
+  <circle cx="878" cy="574" r="35" class="snow"/>
+  <text x="878" y="580" text-anchor="middle" class="node-main green-text">5-10x</text>
+
+  <rect x="340" y="600" width="326" height="34" rx="17" class="white"/>
+  <text x="503" y="622" text-anchor="middle" class="caption">新增粉丝 / 互动数据 / 口碑，继续变厚</text>
+  <path d="M 720 608 L 666 608" class="green-line" marker-end="url(#greenArrow)"/>
+  <path d="M 340 617 C 292 617, 265 586, 232 574" class="green-line" marker-end="url(#greenArrow)"/>
+
+  <!-- Bottom conclusion -->
+  <rect x="64" y="676" width="896" height="60" rx="10" class="yellow"/>
+  <text x="512" y="701" text-anchor="middle" class="footer">时代红利不是一次性流量，而是放大每轮复利本金。</text>
+  <text x="512" y="724" text-anchor="middle" class="footer-small">超额初始回报越早进入下一轮，影响力滚雪球越快。</text>
+</svg>

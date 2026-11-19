@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">可演化性：把 100 次廉价失败串成系统</title>
+  <desc id="desc">一张透明背景、文字可复制的 SVG 信息图：左侧输入凸性、跨山头、进化三要素和方向感，中间形成包含模块化、反馈、记忆和重组的可演化系统，右侧输出可被选择捕捉、可被遗传保留和下一轮更有方向。</desc>
+
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        fill: #18343a;
+      }
+      .title { font-size: 28px; font-weight: 780; }
+      .claim { font-size: 15px; fill: #596362; }
+      .panel-title { font-size: 20px; font-weight: 780; }
+      .section-title { font-size: 17px; font-weight: 760; }
+      .node-title { font-size: 16px; font-weight: 760; }
+      .body { font-size: 13px; fill: #3f4e4c; }
+      .small { font-size: 12px; fill: #596362; }
+      .tiny { font-size: 11px; fill: #596362; }
+      .footer { font-size: 22px; font-weight: 820; fill: #006b61; }
+      .footer-small { font-size: 14px; fill: #3f4e4c; }
+      .badge { font-size: 12px; font-weight: 800; }
+      .panel { fill: #f8f7f2; stroke: #d5d1c7; stroke-width: 1.4; }
+      .neutral { fill: #f1efe7; stroke: #d5d1c7; stroke-width: 1.4; }
+      .white { fill: #ffffff; stroke: #d5d1c7; stroke-width: 1.1; }
+      .yellow { fill: #fff1d9; stroke: #f1a23a; stroke-width: 1.4; }
+      .blue { fill: #e6f2ff; stroke: #4f8fd6; stroke-width: 1.4; }
+      .purple { fill: #f0e8ff; stroke: #8b6fd6; stroke-width: 1.4; }
+      .green { fill: #ddf7ef; stroke: #10a98c; stroke-width: 1.4; }
+      .green-soft { fill: #f3fffb; stroke: #10a98c; stroke-width: 1.4; }
+      .yellow-text { fill: #7a3f00; }
+      .blue-text { fill: #1b4d7a; }
+      .purple-text { fill: #4b2e83; }
+      .green-text { fill: #006b61; }
+      .muted-text { fill: #596362; }
+      .line { stroke: #74736c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .soft-line { stroke: #74736c; stroke-width: 1.35; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.6; }
+      .green-line { stroke: #10a98c; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .dash-line { stroke: #74736c; stroke-width: 1.35; stroke-dasharray: 5 7; fill: none; stroke-linecap: round; opacity: 0.58; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#74736c"/>
+    </marker>
+    <marker id="greenArrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#10a98c"/>
+    </marker>
+  </defs>
+
+  <text x="512" y="38" text-anchor="middle" class="title">可演化性：把 100 次廉价失败串成系统</text>
+  <text x="512" y="67" text-anchor="middle" class="claim">AI 给了你廉价失败 100 次的能力；但如果不把它们串成能进化的系统，</text>
+  <text x="512" y="89" text-anchor="middle" class="claim">廉价失败就只是廉价的。</text>
+
+  <!-- Inputs -->
+  <rect x="36" y="122" width="278" height="480" rx="10" class="panel"/>
+  <text x="58" y="154" class="panel-title">四个输入</text>
+  <text x="58" y="178" class="small">把失败变成可学习的材料</text>
+  <line x1="58" y1="188" x2="292" y2="188" class="dash-line"/>
+
+  <rect x="58" y="202" width="234" height="82" rx="8" class="white"/>
+  <rect x="76" y="217" width="30" height="24" rx="6" class="yellow"/>
+  <text x="91" y="234" text-anchor="middle" class="badge yellow-text">1</text>
+  <text x="120" y="232" class="node-title yellow-text">凸性</text>
+  <text x="120" y="254" class="body">3 次 -&gt; 100 次</text>
+  <text x="120" y="274" class="body">下行有限，上行打开</text>
+
+  <rect x="58" y="298" width="234" height="82" rx="8" class="white"/>
+  <rect x="76" y="313" width="30" height="24" rx="6" class="blue"/>
+  <text x="91" y="330" text-anchor="middle" class="badge blue-text">2</text>
+  <text x="120" y="328" class="node-title blue-text">跨山头</text>
+  <text x="120" y="350" class="body">下山成本低</text>
+  <text x="120" y="370" class="body">敢换方向，找高峰</text>
+
+  <rect x="58" y="394" width="234" height="82" rx="8" class="white"/>
+  <rect x="76" y="409" width="30" height="24" rx="6" class="purple"/>
+  <text x="91" y="426" text-anchor="middle" class="badge purple-text">3</text>
+  <text x="120" y="424" class="node-title purple-text">变异选择遗传</text>
+  <text x="120" y="446" class="body">AI 变异 / 市场选择</text>
+  <text x="120" y="466" class="body">记忆机制负责遗传</text>
+
+  <rect x="58" y="490" width="234" height="82" rx="8" class="white"/>
+  <rect x="76" y="505" width="30" height="24" rx="6" class="yellow"/>
+  <text x="91" y="522" text-anchor="middle" class="badge yellow-text">4</text>
+  <text x="120" y="520" class="node-title yellow-text">方向感</text>
+  <text x="120" y="542" class="body">快变成标配</text>
+  <text x="120" y="562" class="body">结构升级才稀缺</text>
+
+  <!-- Input connectors -->
+  <path d="M 292 243 C 312 243, 322 230, 338 230" class="line" marker-end="url(#arrow)"/>
+  <path d="M 292 339 C 312 339, 322 324, 338 324" class="line" marker-end="url(#arrow)"/>
+  <path d="M 292 435 C 312 435, 322 434, 338 434" class="line" marker-end="url(#arrow)"/>
+  <path d="M 292 531 C 312 531, 322 508, 338 508" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Evolvable system -->
+  <rect x="346" y="122" width="344" height="480" rx="10" class="green-soft"/>
+  <text x="518" y="154" text-anchor="middle" class="panel-title green-text">5 可演化性</text>
+  <text x="518" y="178" text-anchor="middle" class="small green-text">让每次失败改变下一轮</text>
+  <line x1="372" y1="188" x2="664" y2="188" class="dash-line"/>
+
+  <rect x="368" y="200" width="300" height="326" rx="10" class="white"/>
+  <text x="518" y="232" text-anchor="middle" class="section-title green-text">可演化系统</text>
+  <text x="518" y="254" text-anchor="middle" class="small">把 100 次失败串起来</text>
+
+  <rect x="388" y="282" width="116" height="76" rx="8" class="green"/>
+  <text x="446" y="313" text-anchor="middle" class="node-title green-text">模块化</text>
+  <text x="446" y="338" text-anchor="middle" class="tiny green-text">拆成可替换件</text>
+
+  <rect x="532" y="282" width="116" height="76" rx="8" class="green"/>
+  <text x="590" y="313" text-anchor="middle" class="node-title green-text">反馈机制</text>
+  <text x="590" y="338" text-anchor="middle" class="tiny green-text">真实信号回流</text>
+
+  <rect x="388" y="406" width="116" height="76" rx="8" class="green"/>
+  <text x="446" y="437" text-anchor="middle" class="node-title green-text">记忆</text>
+  <text x="446" y="462" text-anchor="middle" class="tiny green-text">保留假设结果</text>
+
+  <rect x="532" y="406" width="116" height="76" rx="8" class="green"/>
+  <text x="590" y="437" text-anchor="middle" class="node-title green-text">重组能力</text>
+  <text x="590" y="462" text-anchor="middle" class="tiny green-text">组合旧经验</text>
+
+  <path d="M 504 320 L 524 320" class="green-line" marker-end="url(#greenArrow)"/>
+  <path d="M 590 358 L 590 398" class="green-line" marker-end="url(#greenArrow)"/>
+  <path d="M 532 444 L 512 444" class="green-line" marker-end="url(#greenArrow)"/>
+  <path d="M 446 406 L 446 366" class="green-line" marker-end="url(#greenArrow)"/>
+  <rect x="478" y="377" width="80" height="34" rx="17" class="neutral"/>
+  <text x="518" y="399" text-anchor="middle" class="small green-text">进化循环</text>
+
+  <rect x="390" y="546" width="256" height="34" rx="8" class="neutral"/>
+  <text x="518" y="568" text-anchor="middle" class="small">失败不消失，而是写进系统结构</text>
+
+  <!-- Outputs -->
+  <rect x="724" y="122" width="264" height="480" rx="10" class="panel"/>
+  <text x="746" y="154" class="panel-title">系统输出</text>
+  <text x="746" y="178" class="small">每一轮都更容易积累</text>
+  <line x1="746" y1="188" x2="966" y2="188" class="dash-line"/>
+
+  <rect x="748" y="204" width="216" height="86" rx="8" class="blue"/>
+  <text x="856" y="236" text-anchor="middle" class="node-title blue-text">可被选择捕捉</text>
+  <text x="856" y="263" text-anchor="middle" class="body blue-text">市场信号更清晰</text>
+
+  <rect x="748" y="326" width="216" height="86" rx="8" class="purple"/>
+  <text x="856" y="358" text-anchor="middle" class="node-title purple-text">可被遗传保留</text>
+  <text x="856" y="385" text-anchor="middle" class="body purple-text">经验进入记忆</text>
+
+  <rect x="748" y="448" width="216" height="86" rx="8" class="green"/>
+  <text x="856" y="480" text-anchor="middle" class="node-title green-text">下一轮更有方向</text>
+  <text x="856" y="507" text-anchor="middle" class="body green-text">少盲试，多升级</text>
+
+  <path d="M 690 369 L 716 369" class="soft-line"/>
+  <line x1="716" y1="247" x2="716" y2="491" class="soft-line"/>
+  <path d="M 716 247 L 740 247" class="line" marker-end="url(#arrow)"/>
+  <path d="M 716 369 L 740 369" class="line" marker-end="url(#arrow)"/>
+  <path d="M 716 491 L 740 491" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Bottom conclusion -->
+  <rect x="56" y="634" width="912" height="84" rx="10" class="neutral"/>
+  <text x="512" y="674" text-anchor="middle" class="footer">爆款是结果，系统是原因。</text>
+  <text x="512" y="700" text-anchor="middle" class="footer-small">100 次廉价失败，只有进入模块、反馈、记忆和重组，才会变成下一轮优势。</text>
+</svg>
